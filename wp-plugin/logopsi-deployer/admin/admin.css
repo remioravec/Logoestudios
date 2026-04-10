@@ -1,0 +1,40 @@
+
+.logopsi-wrap { max-width: 1200px; }
+.logopsi-wrap h1 { display: flex; align-items: center; margin-bottom: 20px; font-size: 24px; }
+
+.logopsi-stats { display: flex; gap: 20px; margin-bottom: 30px; }
+.logopsi-stat-card {
+    background: #fff; border: 1px solid #e0e0e0; border-radius: 12px;
+    padding: 24px 32px; text-align: center; flex: 1; box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.logopsi-stat-number { font-size: 36px; font-weight: 700; color: #111; }
+.logopsi-stat-label { font-size: 13px; color: #777; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+
+.logopsi-actions { margin-bottom: 30px; display: flex; align-items: center; }
+.logopsi-btn-deploy {
+    background: #05C86B !important; border-color: #04b05e !important;
+    font-size: 15px !important; padding: 10px 30px !important; border-radius: 8px !important;
+    display: flex; align-items: center; gap: 8px;
+}
+.logopsi-btn-deploy:hover { background: #04b05e !important; }
+
+.logopsi-progress-bar {
+    width: 100%; height: 8px; background: #e0e0e0; border-radius: 4px;
+    margin: 20px 0 10px; overflow: hidden;
+}
+.logopsi-progress-fill {
+    height: 100%; background: #05C86B; border-radius: 4px;
+    transition: width 0.3s ease; width: 0%;
+}
+
+.logopsi-group { margin-bottom: 30px; }
+.logopsi-group-title {
+    font-size: 18px; font-weight: 600; margin-bottom: 10px;
+    padding-bottom: 8px; border-bottom: 2px solid #05C86B;
+}
+.logopsi-group-count { color: #999; font-weight: 400; font-size: 14px; }
+
+.logopsi-badge {
+    background: #f0f0f0; border-radius: 10px; padding: 2px 8px;
+    font-size: 12px; font-weight: 600;
+}

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orthophoniste Fente Palatine en ligne - Logopsi Studios</title>
+    <meta name="description" content="Votre enfant est né avec une fente palatine ? Nos orthophonistes spécialisés proposent un accompagnement en ligne pour la parole et l'alimentation.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#05C86B',
+                        primaryHover: '#04b05e',
+                        light: '#FBF9F6',
+                        dark: '#111111'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .faq-content { transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding-bottom 0.3s ease; max-height: 0; opacity: 0; overflow: hidden; }
+        .faq-content.open { max-height: 500px; opacity: 1; }
+        .mega-menu-enter { animation: fadeInDown 0.2s ease-out forwards; }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        .modal-enter { animation: fadeIn 0.2s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .mega-menu { display: none; }
+        .mega-menu.active { display: block; }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-light min-h-screen">
+
+    <!-- NAVBAR -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="../index.html" class="flex items-center space-x-2 z-50">
+                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">L</span>
+                    </div>
+                    <span class="text-xl font-bold text-dark">Logopsi <span class="text-primary">Studios</span></span>
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-1">
+                    <div class="relative" id="ortho-trigger" onmouseenter="openMegaMenu('ortho')" onmouseleave="scheduleMegaClose('ortho')">
+                        <button class="px-4 py-2 flex items-center gap-1 font-semibold text-[15px] text-gray-800 hover:text-primary transition-colors">
+                            Orthophonie <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                    <div class="relative" id="psycho-trigger" onmouseenter="openMegaMenu('psycho')" onmouseleave="scheduleMegaClose('psycho')">
+                        <button class="px-4 py-2 flex items-center gap-1 font-semibold text-[15px] text-gray-800 hover:text-primary transition-colors">
+                            Psychologie <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                    <a href="../soutien-scolaire/" class="px-4 py-2 font-semibold text-[15px] text-gray-800 hover:text-primary transition-colors">Soutien Scolaire</a>
+                </div>
+
+                <div class="hidden lg:flex items-center gap-4">
+                    <button class="bg-primary text-white font-semibold px-6 py-2.5 rounded-full hover:bg-primaryHover transition-colors shadow-md text-[15px]">
+                        Prendre rendez-vous
+                    </button>
+                </div>
+
+                <button class="lg:hidden p-2 text-gray-900 z-50" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Orthophonie Mega Menu -->
+        <div id="ortho-mega" class="mega-menu absolute left-0 w-full bg-white shadow-xl border-t border-gray-100 z-50 mega-menu-enter" onmouseenter="cancelMegaClose('ortho')" onmouseleave="scheduleMegaClose('ortho')">
+            <div class="max-w-7xl mx-auto px-6 py-8 grid grid-cols-12 gap-8">
+                <div class="col-span-3 border-r border-gray-100 pr-6">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Orthophonie en ligne</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Rééducation des troubles du langage, de la communication et des apprentissages.</p>
+                </div>
+                <div class="col-span-6 pr-6">
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Explorer par besoin</h4>
+                    <ul class="grid grid-cols-2 gap-x-6 gap-y-2.5">
+                        <li><a href="../orthophonie/dyslexie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dyslexie</a></li>
+                        <li><a href="../orthophonie/dysorthographie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dysorthographie</a></li>
+                        <li><a href="../orthophonie/dyscalculie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dyscalculie</a></li>
+                        <li><a href="../orthophonie/dysphasie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dysphasie</a></li>
+                        <li><a href="../orthophonie/begaiement.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Bégaiement</a></li>
+                        <li><a href="../orthophonie/tsa.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">TSA</a></li>
+                        <li><a href="../orthophonie/oralite.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Troubles de l'oralité</a></li>
+                        <li><a href="../orthophonie/surdite.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Surdité</a></li>
+                        <li><a href="../orthophonie/paralysie-cerebrale.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Paralysie cérébrale</a></li>
+                        <li><a href="../orthophonie/fente-palatine.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Fente palatine</a></li>
+                        <li><a href="../orthophonie/trisomie-21.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Trisomie 21</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-3 bg-light rounded-2xl p-5 border border-gray-100">
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Par ville</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="../orthophonie/villes/paris.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Paris</a></li>
+                        <li><a href="../orthophonie/villes/marseille.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Marseille</a></li>
+                        <li><a href="../orthophonie/villes/lyon.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Lyon</a></li>
+                        <li><a href="../orthophonie/villes/toulouse.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Toulouse</a></li>
+                        <li><a href="../orthophonie/villes/nice.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Nice</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Psychologie Mega Menu -->
+        <div id="psycho-mega" class="mega-menu absolute left-0 w-full bg-white shadow-xl border-t border-gray-100 z-50 mega-menu-enter" onmouseenter="cancelMegaClose('psycho')" onmouseleave="scheduleMegaClose('psycho')">
+            <div class="max-w-7xl mx-auto px-6 py-8 grid grid-cols-12 gap-8">
+                <div class="col-span-3 border-r border-gray-100 pr-6">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Psychologie en ligne</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Accompagnement psychologique des enfants et adolescents, partout en France.</p>
+                </div>
+                <div class="col-span-6 pr-6">
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Explorer par besoin</h4>
+                    <ul class="grid grid-cols-2 gap-x-6 gap-y-2.5">
+                        <li><a href="../psychologie/anxiete.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Anxiété</a></li>
+                        <li><a href="../psychologie/depression.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dépression</a></li>
+                        <li><a href="../psychologie/tdah.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">TDAH</a></li>
+                        <li><a href="../psychologie/hpi.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Haut Potentiel (HPI)</a></li>
+                        <li><a href="../psychologie/phobie-scolaire.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Phobie scolaire</a></li>
+                        <li><a href="../psychologie/harcelement-scolaire.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Harcèlement scolaire</a></li>
+                        <li><a href="../psychologie/tca.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">TCA</a></li>
+                        <li><a href="../psychologie/addictions-ecrans.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Addictions aux écrans</a></li>
+                        <li><a href="../psychologie/troubles-sommeil.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Troubles du sommeil</a></li>
+                        <li><a href="../psychologie/enuresie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Énurésie</a></li>
+                        <li><a href="../psychologie/traumatismes-deuil.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Traumatismes & deuil</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-3 bg-light rounded-2xl p-5 border border-gray-100">
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Par ville</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="../psychologie/villes/paris.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Paris</a></li>
+                        <li><a href="../psychologie/villes/marseille.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Marseille</a></li>
+                        <li><a href="../psychologie/villes/lyon.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Lyon</a></li>
+                        <li><a href="../psychologie/villes/toulouse.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Toulouse</a></li>
+                        <li><a href="../psychologie/villes/nice.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Nice</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100">
+            <div class="px-6 py-6 space-y-4">
+                <a href="../orthophonie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Orthophonie</a>
+                <a href="../psychologie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Psychologie</a>
+                <a href="../soutien-scolaire/" class="block text-gray-900 hover:text-primary font-semibold py-2">Soutien Scolaire</a>
+                <button class="w-full bg-primary text-white font-semibold py-3 rounded-full shadow-md mt-4">Prendre rendez-vous</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="pt-16 pb-20 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+            <div class="flex items-center gap-2 text-sm text-gray-500 mb-4">
+                <a href="../index.html" class="hover:text-primary transition-colors">Accueil</a>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <a href="../orthophonie/" class="hover:text-primary transition-colors">Orthophonie</a>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span class="text-gray-900 font-medium">Fente Palatine</span>
+            </div>
+
+            <h1 class="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-gray-900">
+                Orthophoniste spécialisé dans la <span class="text-primary">Fente Palatine</span> en ligne
+            </h1>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                Votre enfant est né avec une fente labio-palatine et rencontre des difficultés de parole ou d'alimentation ? Nos orthophonistes spécialisés l'accompagnent en ligne, en coordination avec l'équipe chirurgicale.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                <button class="bg-primary text-white font-semibold px-8 py-4 rounded-full hover:bg-primaryHover transition-colors shadow-lg flex items-center justify-center gap-2">
+                    Réserver un bilan <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+                <button onclick="openModal()" class="bg-white text-gray-900 border-2 border-gray-200 font-semibold px-8 py-4 rounded-full hover:border-primary hover:text-primary transition-colors flex items-center justify-center">
+                    Faire le test gratuit
+                </button>
+            </div>
+
+            <div class="flex items-center gap-6 pt-6 border-t border-gray-200 mt-8">
+                <div class="flex items-center gap-2 text-sm font-semibold text-gray-800">
+                    <i data-lucide="check-circle-2" class="w-[18px] h-[18px] text-primary"></i> Prise en charge rapide
+                </div>
+                <div class="flex items-center gap-2 text-sm font-semibold text-gray-800">
+                    <i data-lucide="check-circle-2" class="w-[18px] h-[18px] text-primary"></i> 100% en ligne
+                </div>
+            </div>
+        </div>
+        <div class="relative">
+            <img src="https://images.unsplash.com/photo-1565843708714-52ecf69ab81f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bébé souriant" class="rounded-[2rem] shadow-xl object-cover w-full h-[400px]">
+            <div class="absolute -bottom-6 -right-6 bg-white p-5 rounded-2xl shadow-xl border border-gray-100 hidden md:block">
+                <div class="flex items-center gap-3">
+                    <div class="bg-rose-100 text-rose-600 p-2 rounded-lg">
+                        <i data-lucide="smile" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold text-gray-900">Suivi pré et post-op</p>
+                        <p class="text-xs text-gray-500">Accompagnement dès la naissance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIMULATOR MODAL -->
+    <div id="simulator-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm modal-enter">
+        <div class="bg-white rounded-3xl w-full max-w-lg shadow-2xl overflow-hidden relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-800 hover:bg-gray-100 rounded-full transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div class="p-8">
+                <div id="quiz-container">
+                    <div class="mb-8">
+                        <span id="quiz-step-text" class="text-sm font-bold text-primary uppercase tracking-wider">Question 1 sur 3</span>
+                        <div class="w-full bg-gray-100 h-2 rounded-full mt-3">
+                            <div id="quiz-progress-bar" class="bg-primary h-2 rounded-full transition-all duration-300" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    <h3 id="quiz-question-text" class="text-2xl font-bold text-gray-900 mb-8 leading-tight">Question...</h3>
+                    <div id="quiz-options-container" class="space-y-3"></div>
+                </div>
+                <div id="result-container" class="hidden text-center py-6">
+                    <div class="w-16 h-16 bg-primary/20 text-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="check-circle-2" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Test terminé</h3>
+                    <p id="result-text" class="text-gray-600 mb-8"></p>
+                    <button class="w-full bg-primary text-white font-bold py-4 rounded-xl hover:bg-primaryHover transition-colors shadow-lg">
+                        Prendre rendez-vous avec un expert
+                    </button>
+                    <button onclick="closeModal()" class="w-full mt-4 text-gray-500 font-medium hover:text-gray-800">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SYMPTOMES SECTION -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <h2 class="text-3xl font-bold text-gray-900">Quand consulter un orthophoniste pour une fente palatine ?</h2>
+                <p class="text-gray-600 leading-relaxed">La fente labio-palatine nécessite un suivi orthophonique dès la naissance et tout au long de la croissance. Voici les principaux domaines d'intervention :</p>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <div class="mt-1 bg-red-100 text-red-500 rounded-full p-1"><i data-lucide="baby" class="w-4 h-4"></i></div>
+                        <span class="text-gray-700"><strong>Difficultés d'alimentation précoces :</strong> Dès la naissance, le bébé peut avoir des difficultés à téter en raison de la fente. L'orthophoniste guide les parents pour l'alimentation.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="mt-1 bg-orange-100 text-orange-500 rounded-full p-1"><i data-lucide="volume-2" class="w-4 h-4"></i></div>
+                        <span class="text-gray-700"><strong>Nasalisation de la parole :</strong> Après la chirurgie, la parole peut rester nasillarde (rhinolalie) si le voile du palais ne fonctionne pas correctement.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="mt-1 bg-purple-100 text-purple-500 rounded-full p-1"><i data-lucide="ear" class="w-4 h-4"></i></div>
+                        <span class="text-gray-700"><strong>Otites et audition :</strong> Les enfants porteurs de fente sont plus sujets aux otites séreuses, pouvant impacter l'audition et donc le langage.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-light p-8 md:p-12 rounded-3xl border border-gray-200">
+                <h3 class="text-2xl font-bold mb-6 text-gray-900">Notre approche de rééducation</h3>
+                <p class="text-gray-600 mb-6 text-sm leading-relaxed">Notre prise en charge suit les étapes de développement de l'enfant : guidance alimentaire néonatale, stimulation du langage oral, rééducation de l'articulation et du souffle nasal après chirurgie. Nous travaillons en lien étroit avec l'équipe chirurgicale et ORL pour ajuster les objectifs à chaque étape.</p>
+                <button class="w-full bg-white border-2 border-primary text-primary font-bold py-3 rounded-full hover:bg-primary hover:text-white transition-colors">
+                    Découvrir le déroulement d'une séance
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- A PROPOS SECTION -->
+    <section class="py-20 px-6 bg-light border-t border-gray-100">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1 relative">
+                <div class="absolute -inset-4 bg-primary/10 rounded-3xl transform -rotate-3"></div>
+                <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Équipe Logopsi Studios" class="relative rounded-2xl shadow-lg w-full object-cover h-[400px]">
+            </div>
+            <div class="order-1 md:order-2 space-y-6">
+                <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
+                    <i data-lucide="award" class="w-4 h-4"></i> Professionnels diplômés
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Pourquoi choisir Logopsi Studios ?</h2>
+                <p class="text-gray-600 leading-relaxed">Chez Logopsi Studios, nous réunissons des orthophonistes diplômés d'État, formés aux dernières avancées scientifiques. Notre plateforme vous connecte avec le bon professionnel en moins de 48h, partout en France.</p>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <div class="mt-1 bg-primary/10 text-primary rounded-full p-1"><i data-lucide="check" class="w-4 h-4"></i></div>
+                        <span class="text-gray-700"><strong>Rendez-vous sous 48h</strong> — Plus de listes d'attente interminables</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="mt-1 bg-primary/10 text-primary rounded-full p-1"><i data-lucide="check" class="w-4 h-4"></i></div>
+                        <span class="text-gray-700"><strong>Séances remboursables</strong> — Éligible Sécurité sociale et mutuelles</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="mt-1 bg-primary/10 text-primary rounded-full p-1"><i data-lucide="check" class="w-4 h-4"></i></div>
+                        <span class="text-gray-700"><strong>100% en ligne</strong> — Depuis chez vous, sans déplacement</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CITY LINKS -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Consultez un orthophoniste près de chez vous</h2>
+                <p class="text-gray-600 mt-3">Nos orthophonistes sont disponibles en ligne, partout en France.</p>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <a href="villes/fente-palatine-paris.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
+                        </div>
+                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Paris</span>
+                    </a>
+                    <a href="villes/fente-palatine-marseille.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
+                        </div>
+                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Marseille</span>
+                    </a>
+                    <a href="villes/fente-palatine-lyon.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
+                        </div>
+                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Lyon</span>
+                    </a>
+                    <a href="villes/fente-palatine-toulouse.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
+                        </div>
+                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Toulouse</span>
+                    </a>
+                    <a href="villes/fente-palatine-nice.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
+                        </div>
+                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Nice</span>
+                    </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-light">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Questions fréquentes</h2>
+                <p class="text-gray-600 mt-3">Tout ce que vous devez savoir.</p>
+            </div>
+            <div class="space-y-4">
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-gray-900 pr-4">L'orthophonie est-elle nécessaire pour toutes les fentes ?</span>
+                        <i data-lucide="plus" class="w-5 h-5 text-primary flex-shrink-0 faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-0">
+                        <p class="text-gray-600 leading-relaxed pb-6">Oui, un suivi orthophonique est recommandé pour toutes les fentes, même les fentes labiales isolées. L'intensité du suivi varie selon le type de fente et les difficultés rencontrées. Un bilan régulier permet de surveiller le développement du langage.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-gray-900 pr-4">À quel âge commencer l'orthophonie ?</span>
+                        <i data-lucide="plus" class="w-5 h-5 text-primary flex-shrink-0 faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-0">
+                        <p class="text-gray-600 leading-relaxed pb-6">L'orthophoniste peut intervenir dès la naissance pour la guidance alimentaire (succion, alimentation au biberon adapté). Le suivi du langage oral commence vers 12-18 mois, et la rééducation de l'articulation après la chirurgie du palais.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-gray-900 pr-4">Combien de temps dure le suivi orthophonique ?</span>
+                        <i data-lucide="plus" class="w-5 h-5 text-primary flex-shrink-0 faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-0">
+                        <p class="text-gray-600 leading-relaxed pb-6">Le suivi est généralement long, de la naissance jusqu'à la fin de la croissance faciale (vers 18 ans). L'intensité varie : séances régulières après la chirurgie, puis suivi ponctuel pour contrôler le développement du langage et de l'articulation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="bg-primary rounded-3xl p-12 text-center text-white relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10">
+                    <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <path d="M0,20 Q25,0 50,20 T100,20 V100 H0 Z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-bold mb-4">Besoin d'un orthophoniste pour la fente palatine ?</h2>
+                    <p class="text-lg mb-8 text-green-50">Réservez votre bilan en ligne et bénéficiez d'un accompagnement spécialisé, en coordination avec l'équipe chirurgicale.</p>
+                    <a href="#" class="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-green-50 transition text-lg inline-block shadow-lg">
+                        Réserver mon bilan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">L</span>
+                        </div>
+                        <span class="text-xl font-bold text-white">Logopsi <span class="text-primary">Studios</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Orthophonie, psychologie et soutien scolaire en ligne. Des professionnels diplômés, partout en France.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Orthophonie</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../orthophonie/dyslexie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dyslexie</a></li>
+                        <li><a href="../orthophonie/dysorthographie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dysorthographie</a></li>
+                        <li><a href="../orthophonie/dyscalculie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dyscalculie</a></li>
+                        <li><a href="../orthophonie/begaiement.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Bégaiement</a></li>
+                        <li><a href="../orthophonie/tsa.html" class="text-gray-400 hover:text-primary text-sm transition-colors">TSA</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Psychologie</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../psychologie/tdah.html" class="text-gray-400 hover:text-primary text-sm transition-colors">TDAH</a></li>
+                        <li><a href="../psychologie/hpi.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Haut Potentiel</a></li>
+                        <li><a href="../psychologie/phobie-scolaire.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Phobie scolaire</a></li>
+                        <li><a href="../psychologie/anxiete.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Anxiété</a></li>
+                        <li><a href="../psychologie/depression.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dépression</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Soutien Scolaire</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../soutien-scolaire/mathematiques/" class="text-gray-400 hover:text-primary text-sm transition-colors">Mathématiques</a></li>
+                        <li><a href="../soutien-scolaire/francais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Français</a></li>
+                        <li><a href="../soutien-scolaire/anglais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Anglais</a></li>
+                        <li><a href="../soutien-scolaire/physique-chimie/" class="text-gray-400 hover:text-primary text-sm transition-colors">Physique-Chimie</a></li>
+                        <li><a href="../soutien-scolaire/aide-aux-devoirs/" class="text-gray-400 hover:text-primary text-sm transition-colors">Aide aux devoirs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">&copy; 2025 Logopsi Studios. Tous droits réservés.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-primary text-sm transition-colors">Mentions légales</a>
+                    <a href="#" class="text-gray-500 hover:text-primary text-sm transition-colors">Politique de confidentialité</a>
+                    <a href="#" class="text-gray-500 hover:text-primary text-sm transition-colors">CGV</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Mega Menu
+        var megaCloseTimers = { ortho: null, psycho: null };
+        function openMegaMenu(menu) {
+            cancelMegaClose(menu);
+            var menus = { ortho: 'ortho-mega', psycho: 'psycho-mega' };
+            Object.keys(menus).forEach(function(key) {
+                var el = document.getElementById(menus[key]);
+                if (key === menu) { el.classList.add('active'); }
+                else { el.classList.remove('active'); clearTimeout(megaCloseTimers[key]); }
+            });
+        }
+        function scheduleMegaClose(menu) {
+            megaCloseTimers[menu] = setTimeout(function() {
+                document.getElementById(menu === 'ortho' ? 'ortho-mega' : 'psycho-mega').classList.remove('active');
+            }, 200);
+        }
+        function cancelMegaClose(menu) { clearTimeout(megaCloseTimers[menu]); }
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
+
+        // FAQ
+        function toggleFaq(btn) {
+            var content = btn.nextElementSibling;
+            var icon = btn.querySelector('.faq-icon');
+            var isOpen = content.classList.contains('open');
+            document.querySelectorAll('.faq-content').forEach(function(c) { c.classList.remove('open'); });
+            document.querySelectorAll('.faq-icon').forEach(function(i) { i.style.transform = ''; });
+            if (!isOpen) {
+                content.classList.add('open');
+                if (icon) icon.style.transform = 'rotate(45deg)';
+            }
+        }
+
+        // Quiz Modal
+        var quizData = [
+    {q: "Votre enfant a-t-il une voix nasillarde ?", opts: ["Oui, très marquée", "Un peu", "Non"]},
+    {q: "A-t-il des difficultés d'articulation ?", opts: ["Oui, on le comprend difficilement", "Quelques sons posent problème", "Non, sa parole est claire"]},
+    {q: "A-t-il déjà été opéré ?", opts: ["Oui, chirurgie réalisée", "Chirurgie prévue", "Pas encore planifié"]},
+];
+        var currentQ = 0;
+        var score = 0;
+
+        function openModal() {
+            currentQ = 0; score = 0;
+            document.getElementById('simulator-modal').classList.remove('hidden');
+            document.getElementById('quiz-container').classList.remove('hidden');
+            document.getElementById('result-container').classList.add('hidden');
+            showQuestion();
+            lucide.createIcons();
+        }
+        function closeModal() { document.getElementById('simulator-modal').classList.add('hidden'); }
+        function showQuestion() {
+            var q = quizData[currentQ];
+            document.getElementById('quiz-step-text').textContent = 'Question ' + (currentQ + 1) + ' sur ' + quizData.length;
+            document.getElementById('quiz-progress-bar').style.width = ((currentQ) / quizData.length * 100) + '%';
+            document.getElementById('quiz-question-text').textContent = q.q;
+            var container = document.getElementById('quiz-options-container');
+            container.innerHTML = '';
+            q.opts.forEach(function(opt, i) {
+                var btn = document.createElement('button');
+                btn.className = 'w-full text-left p-4 rounded-xl border-2 border-gray-200 hover:border-primary hover:bg-primary/5 font-medium transition-all';
+                btn.textContent = opt;
+                btn.onclick = function() { selectOption(i); };
+                container.appendChild(btn);
+            });
+        }
+        function selectOption(idx) {
+            if (idx === 0) score += 2;
+            else if (idx === 1) score += 1;
+            currentQ++;
+            if (currentQ < quizData.length) { showQuestion(); }
+            else { showResult(); }
+        }
+        function showResult() {
+            document.getElementById('quiz-progress-bar').style.width = '100%';
+            document.getElementById('quiz-container').classList.add('hidden');
+            document.getElementById('result-container').classList.remove('hidden');
+            var text = '';
+            if (score >= 5) { text = "Les réponses indiquent des signes qui méritent une évaluation approfondie par un professionnel. Nous vous recommandons de prendre rendez-vous pour un bilan complet."; }
+            else if (score >= 3) { text = "Certaines réponses suggèrent des difficultés modérées. Un bilan pourrait aider à clarifier la situation et proposer un accompagnement adapté si nécessaire."; }
+            else { text = "Les réponses ne semblent pas indiquer de difficultés majeures pour le moment. N'hésitez pas à consulter si vous avez des doutes ou si la situation évolue."; }
+            document.getElementById('result-text').textContent = text;
+            lucide.createIcons();
+        }
+
+        // Close modal on backdrop click
+        document.getElementById('simulator-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
+</body>
+</html>

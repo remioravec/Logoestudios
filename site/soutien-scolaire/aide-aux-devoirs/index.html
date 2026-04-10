@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aide aux devoirs en ligne - Logopsi Studios</title>
+    <meta name="description" content="Aide aux devoirs en ligne du CP à la 3ème. Nos enseignants accompagnent votre enfant dans ses devoirs quotidiens avec des méthodes personnalisées.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: {
+                colors: { primary: '#05C86B', primaryHover: '#04b05e', light: '#FBF9F6', dark: '#111111' },
+                fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+            }}
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .mega-menu { display: none; }
+        .mega-menu.active { display: block; }
+        .mobile-menu { display: none; }
+        .mobile-menu.active { display: block; }
+    </style>
+</head>
+<body class="bg-light text-dark font-sans">
+    <!-- NAVBAR -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../../index.html" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">L</span>
+                    </div>
+                    <span class="text-xl font-bold text-dark">Logopsi <span class="text-primary">Studios</span></span>
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-8">
+                    <div class="relative" id="ortho-trigger" onmouseenter="openMegaMenu('ortho')" onmouseleave="scheduleMegaClose('ortho')">
+                        <button class="flex items-center space-x-1 text-dark hover:text-primary font-medium transition-colors py-5">
+                            <span>Orthophonie</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                    <div class="relative" id="psycho-trigger" onmouseenter="openMegaMenu('psycho')" onmouseleave="scheduleMegaClose('psycho')">
+                        <button class="flex items-center space-x-1 text-dark hover:text-primary font-medium transition-colors py-5">
+                            <span>Psychologie</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                    <div class="relative" id="scolaire-trigger" onmouseenter="openMegaMenu('scolaire')" onmouseleave="scheduleMegaClose('scolaire')">
+                        <button class="flex items-center space-x-1 text-dark hover:text-primary font-medium transition-colors py-5">
+                            <span>Soutien Scolaire</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <a href="#contact" class="hidden sm:inline-flex bg-primary hover:bg-primaryHover text-white font-semibold px-5 py-2.5 rounded-full transition-colors">
+                        Prendre RDV
+                    </a>
+                    <button class="lg:hidden" onclick="toggleMobileMenu()">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orthophonie Mega Menu -->
+        <div id="ortho-mega" class="mega-menu absolute left-1/2 -translate-x-1/2 w-full max-w-4xl bg-white shadow-xl rounded-b-2xl border border-gray-100 z-50 mt-0" onmouseenter="cancelMegaClose('ortho')" onmouseleave="scheduleMegaClose('ortho')">
+            <div class="p-8">
+                <div class="grid grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="font-bold text-dark mb-4 flex items-center"><i data-lucide="book-open" class="w-5 h-5 mr-2 text-primary"></i>Troubles pris en charge</h3>
+                        <ul class="space-y-2">
+                            <li><a href="../../orthophonie/dyslexie.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Dyslexie</a></li>
+                            <li><a href="../../orthophonie/dysorthographie.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Dysorthographie</a></li>
+                            <li><a href="../../orthophonie/dyscalculie.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Dyscalculie</a></li>
+                            <li><a href="../../orthophonie/dysphasie.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Dysphasie</a></li>
+                            <li><a href="../../orthophonie/begaiement.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Bégaiement</a></li>
+                            <li><a href="../../orthophonie/tsa.html" class="text-gray-600 hover:text-primary transition-colors text-sm">TSA</a></li>
+                            <li><a href="../../orthophonie/oralite.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Troubles de l'oralité</a></li>
+                            <li><a href="../../orthophonie/surdite.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Surdité</a></li>
+                            <li><a href="../../orthophonie/paralysie-cerebrale.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Paralysie cérébrale</a></li>
+                            <li><a href="../../orthophonie/fente-palatine.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Fente palatine</a></li>
+                            <li><a href="../../orthophonie/trisomie-21.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Trisomie 21</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-dark mb-4 flex items-center"><i data-lucide="map-pin" class="w-5 h-5 mr-2 text-primary"></i>Par ville</h3>
+                        <ul class="space-y-2">
+                            <li><a href="../../orthophonie/villes/paris.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Paris</a></li>
+                            <li><a href="../../orthophonie/villes/marseille.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Marseille</a></li>
+                            <li><a href="../../orthophonie/villes/lyon.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Lyon</a></li>
+                            <li><a href="../../orthophonie/villes/toulouse.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Toulouse</a></li>
+                            <li><a href="../../orthophonie/villes/nice.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Nice</a></li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 rounded-2xl p-6 flex flex-col justify-center">
+                        <h3 class="font-bold text-dark text-lg mb-2">Besoin d'un orthophoniste ?</h3>
+                        <p class="text-gray-600 text-sm mb-4">Nos orthophonistes diplômés sont disponibles en ligne, partout en France.</p>
+                        <a href="#contact" class="bg-primary hover:bg-primaryHover text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-center text-sm">Prendre rendez-vous</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Psychologie Mega Menu -->
+        <div id="psycho-mega" class="mega-menu absolute left-1/2 -translate-x-1/2 w-full max-w-4xl bg-white shadow-xl rounded-b-2xl border border-gray-100 z-50 mt-0" onmouseenter="cancelMegaClose('psycho')" onmouseleave="scheduleMegaClose('psycho')">
+            <div class="p-8">
+                <div class="grid grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="font-bold text-dark mb-4 flex items-center"><i data-lucide="brain" class="w-5 h-5 mr-2 text-primary"></i>Troubles pris en charge</h3>
+                        <ul class="space-y-2">
+                            <li><a href="../../psychologie/tdah.html" class="text-gray-600 hover:text-primary transition-colors text-sm">TDAH</a></li>
+                            <li><a href="../../psychologie/hpi.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Haut Potentiel (HPI)</a></li>
+                            <li><a href="../../psychologie/phobie-scolaire.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Phobie scolaire</a></li>
+                            <li><a href="../../psychologie/harcelement-scolaire.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Harcèlement scolaire</a></li>
+                            <li><a href="../../psychologie/anxiete.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Anxiété</a></li>
+                            <li><a href="../../psychologie/depression.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Dépression</a></li>
+                            <li><a href="../../psychologie/tca.html" class="text-gray-600 hover:text-primary transition-colors text-sm">TCA</a></li>
+                            <li><a href="../../psychologie/addictions-ecrans.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Addictions aux écrans</a></li>
+                            <li><a href="../../psychologie/troubles-sommeil.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Troubles du sommeil</a></li>
+                            <li><a href="../../psychologie/enuresie.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Énurésie</a></li>
+                            <li><a href="../../psychologie/traumatismes-deuil.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Traumatismes & deuil</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-dark mb-4 flex items-center"><i data-lucide="map-pin" class="w-5 h-5 mr-2 text-primary"></i>Par ville</h3>
+                        <ul class="space-y-2">
+                            <li><a href="../../psychologie/villes/paris.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Paris</a></li>
+                            <li><a href="../../psychologie/villes/marseille.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Marseille</a></li>
+                            <li><a href="../../psychologie/villes/lyon.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Lyon</a></li>
+                            <li><a href="../../psychologie/villes/toulouse.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Toulouse</a></li>
+                            <li><a href="../../psychologie/villes/nice.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Nice</a></li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 rounded-2xl p-6 flex flex-col justify-center">
+                        <h3 class="font-bold text-dark text-lg mb-2">Besoin d'un psychologue ?</h3>
+                        <p class="text-gray-600 text-sm mb-4">Nos psychologues diplômés accompagnent votre enfant en ligne.</p>
+                        <a href="#contact" class="bg-primary hover:bg-primaryHover text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-center text-sm">Prendre rendez-vous</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Soutien Scolaire Mega Menu -->
+        <div id="scolaire-mega" class="mega-menu absolute left-1/2 -translate-x-1/2 w-full max-w-4xl bg-white shadow-xl rounded-b-2xl border border-gray-100 z-50 mt-0" onmouseenter="cancelMegaClose('scolaire')" onmouseleave="scheduleMegaClose('scolaire')">
+            <div class="p-8">
+                <div class="grid grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="font-bold text-dark mb-4 flex items-center"><i data-lucide="graduation-cap" class="w-5 h-5 mr-2 text-primary"></i>Matières</h3>
+                        <ul class="space-y-2">
+                            <li><a href="../../soutien-scolaire/mathematiques/" class="text-gray-600 hover:text-primary transition-colors text-sm">Mathématiques</a></li>
+                            <li><a href="../../soutien-scolaire/francais/" class="text-gray-600 hover:text-primary transition-colors text-sm">Français</a></li>
+                            <li><a href="../../soutien-scolaire/anglais/" class="text-gray-600 hover:text-primary transition-colors text-sm">Anglais</a></li>
+                            <li><a href="../../soutien-scolaire/physique-chimie/" class="text-gray-600 hover:text-primary transition-colors text-sm">Physique-Chimie</a></li>
+                            <li><a href="../../soutien-scolaire/aide-aux-devoirs/" class="text-gray-600 hover:text-primary transition-colors text-sm">Aide aux devoirs</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-dark mb-4 flex items-center"><i data-lucide="map-pin" class="w-5 h-5 mr-2 text-primary"></i>Par ville</h3>
+                        <ul class="space-y-2">
+                            <li><a href="../../soutien-scolaire/villes/paris.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Paris</a></li>
+                            <li><a href="../../soutien-scolaire/villes/marseille.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Marseille</a></li>
+                            <li><a href="../../soutien-scolaire/villes/lyon.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Lyon</a></li>
+                            <li><a href="../../soutien-scolaire/villes/toulouse.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Toulouse</a></li>
+                            <li><a href="../../soutien-scolaire/villes/nice.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Nice</a></li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 rounded-2xl p-6 flex flex-col justify-center">
+                        <h3 class="font-bold text-dark text-lg mb-2">Besoin de soutien scolaire ?</h3>
+                        <p class="text-gray-600 text-sm mb-4">Enseignants qualifiés, cours en ligne du CP à la Terminale.</p>
+                        <a href="#contact" class="bg-primary hover:bg-primaryHover text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-center text-sm">Prendre rendez-vous</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu lg:hidden bg-white border-t">
+            <div class="px-4 py-4 space-y-3">
+                <a href="../../orthophonie/" class="block text-dark hover:text-primary font-medium py-2">Orthophonie</a>
+                <a href="../../psychologie/" class="block text-dark hover:text-primary font-medium py-2">Psychologie</a>
+                <a href="../../soutien-scolaire/" class="block text-dark hover:text-primary font-medium py-2">Soutien Scolaire</a>
+                <a href="#contact" class="block bg-primary hover:bg-primaryHover text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-center">Prendre RDV</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BREADCRUMB -->
+    <div class="max-w-6xl mx-auto px-4 py-4">
+        <nav class="text-sm text-gray-500">
+            <a href="/site/" class="hover:text-primary">Accueil</a>
+            <span class="mx-2">></span>
+            <a href="/site/soutien-scolaire/" class="hover:text-primary">Soutien scolaire</a>
+            <span class="mx-2">></span>
+            <span class="text-dark font-medium">Aide aux devoirs</span>
+        </nav>
+    </div>
+
+    <!-- HERO -->
+    <section class="bg-white py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Aide aux devoirs en ligne</h1>
+                <p class="text-lg text-gray-600 mb-8">Les devoirs sont un moment clé de la scolarité de votre enfant. Ils permettent de consolider les apprentissages, de développer l'autonomie et de préparer les évaluations. Pourtant, ils sont souvent source de stress et de conflits à la maison. Chez Logopsi Studios, nos enseignants qualifiés accompagnent votre enfant du CP à la 3ème pour transformer les devoirs en un moment productif et serein.</p>
+                <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                    <a href="#cta" class="bg-primary text-white px-8 py-3.5 rounded-lg font-semibold text-lg hover:bg-primaryHover transition text-center">Prendre rendez-vous</a>
+                    <a href="#niveaux" class="border-2 border-primary text-primary px-8 py-3.5 rounded-lg font-semibold text-lg hover:bg-primary hover:text-white transition text-center">Choisir un niveau</a>
+                </div>
+                <div class="flex gap-6">
+                    <div class="flex items-center gap-2 text-sm text-gray-600">
+                        <i data-lucide="graduation-cap" class="w-4 h-4 text-primary"></i>
+                        <span>Enseignants diplômés</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-gray-600">
+                        <i data-lucide="monitor" class="w-4 h-4 text-primary"></i>
+                        <span>100% en ligne</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-gray-600">
+                        <i data-lucide="star" class="w-4 h-4 text-primary"></i>
+                        <span>Du CP à la 3ème</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY SECTION -->
+    <section class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-4">Pourquoi choisir notre aide aux devoirs ?</h2>
+            <p class="text-gray-600 max-w-3xl mb-12">Notre approche va au-delà de la simple correction des exercices. Nous donnons à votre enfant les outils pour devenir autonome dans son travail scolaire.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-6 shadow-sm">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="compass" class="w-6 h-6 text-primary"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Méthodologie personnalisée</h3>
+                    <p class="text-gray-600 text-sm">Chaque enfant apprend différemment. Nos enseignants identifient le profil d'apprentissage de votre enfant et adaptent leurs méthodes : visuelles, auditives, kinesthésiques. Nous lui enseignons les techniques de travail les plus efficaces pour son profil.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-sm">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="calendar" class="w-6 h-6 text-primary"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Suivi régulier et structuré</h3>
+                    <p class="text-gray-600 text-sm">Nos séances suivent un programme défini avec des objectifs clairs. Après chaque séance, vous recevez un compte-rendu détaillé des progrès de votre enfant et des points à travailler. Ce suivi permet d'ajuster l'accompagnement en permanence.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-sm">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="smile" class="w-6 h-6 text-primary"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Climat de confiance</h3>
+                    <p class="text-gray-600 text-sm">Les devoirs ne doivent plus être un moment de tension. Nos enseignants créent un espace bienveillant où votre enfant peut poser toutes ses questions sans jugement. Cette confiance est le socle sur lequel se construisent les progrès durables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEVELS GRID -->
+    <section id="niveaux" class="bg-white py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Choisissez le niveau de votre enfant</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Nous proposons une aide aux devoirs adaptée à chaque classe, du CP à la 3ème. Cliquez sur le niveau de votre enfant pour découvrir notre programme.</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6">
+                <a href="/site/soutien-scolaire/aide-aux-devoirs/cp.html" class="bg-light rounded-2xl p-6 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition">
+                        <i data-lucide="pencil" class="w-6 h-6 text-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Aide aux devoirs CP</h3>
+                    <p class="text-gray-500 text-sm">Cycle primaire</p>
+                </a>
+                <a href="/site/soutien-scolaire/aide-aux-devoirs/ce1.html" class="bg-light rounded-2xl p-6 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition">
+                        <i data-lucide="book-open" class="w-6 h-6 text-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Aide aux devoirs CE1</h3>
+                    <p class="text-gray-500 text-sm">Cycle primaire</p>
+                </a>
+                <a href="/site/soutien-scolaire/aide-aux-devoirs/ce2.html" class="bg-light rounded-2xl p-6 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition">
+                        <i data-lucide="clock" class="w-6 h-6 text-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Aide aux devoirs CE2</h3>
+                    <p class="text-gray-500 text-sm">Cycle primaire</p>
+                </a>
+                <a href="/site/soutien-scolaire/aide-aux-devoirs/cm1.html" class="bg-light rounded-2xl p-6 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition">
+                        <i data-lucide="clipboard-list" class="w-6 h-6 text-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Aide aux devoirs CM1</h3>
+                    <p class="text-gray-500 text-sm">Cycle primaire</p>
+                </a>
+                <a href="/site/soutien-scolaire/aide-aux-devoirs/cm2.html" class="bg-light rounded-2xl p-6 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition">
+                        <i data-lucide="arrow-right-circle" class="w-6 h-6 text-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Aide aux devoirs CM2</h3>
+                    <p class="text-gray-500 text-sm">Cycle primaire</p>
+                </a>
+                <a href="/site/soutien-scolaire/aide-aux-devoirs/6eme.html" class="bg-light rounded-2xl p-6 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition">
+                        <i data-lucide="school" class="w-6 h-6 text-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Aide aux devoirs 6ème</h3>
+                    <p class="text-gray-500 text-sm">Cycle collège</p>
+                </a>
+                <a href="/site/soutien-scolaire/aide-aux-devoirs/5eme.html" class="bg-light rounded-2xl p-6 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition">
+                        <i data-lucide="notebook-pen" class="w-6 h-6 text-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Aide aux devoirs 5ème</h3>
+                    <p class="text-gray-500 text-sm">Cycle collège</p>
+                </a>
+                <a href="/site/soutien-scolaire/aide-aux-devoirs/4eme.html" class="bg-light rounded-2xl p-6 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition">
+                        <i data-lucide="file-text" class="w-6 h-6 text-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Aide aux devoirs 4ème</h3>
+                    <p class="text-gray-500 text-sm">Cycle collège</p>
+                </a>
+                <a href="/site/soutien-scolaire/aide-aux-devoirs/3eme.html" class="bg-light rounded-2xl p-6 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition">
+                        <i data-lucide="award" class="w-6 h-6 text-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Aide aux devoirs 3ème</h3>
+                    <p class="text-gray-500 text-sm">Cycle collège</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Comment fonctionne l'aide aux devoirs en ligne ?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+                    <h3 class="font-bold mb-2">Bilan initial</h3>
+                    <p class="text-gray-600 text-sm">Nous évaluons le niveau, les méthodes de travail et les besoins spécifiques de votre enfant lors d'une première séance gratuite.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+                    <h3 class="font-bold mb-2">Programme sur mesure</h3>
+                    <p class="text-gray-600 text-sm">Nous définissons ensemble un programme d'accompagnement adapté : fréquence des séances, objectifs, matières prioritaires.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+                    <h3 class="font-bold mb-2">Séances en visio</h3>
+                    <p class="text-gray-600 text-sm">Votre enfant retrouve son tuteur en visio pour travailler ses devoirs, comprendre ses leçons et préparer ses évaluations.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
+                    <h3 class="font-bold mb-2">Suivi des progrès</h3>
+                    <p class="text-gray-600 text-sm">Après chaque séance, un compte-rendu vous est envoyé. Nous ajustons le programme en fonction des progrès et des nouvelles priorités.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="py-20">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="bg-dark rounded-3xl p-12 text-center text-white">
+                <h2 class="text-3xl font-bold mb-4">Transformez les devoirs en moment de réussite</h2>
+                <p class="text-gray-300 mb-8">Nos enseignants sont disponibles en ligne pour accompagner votre enfant du CP à la 3ème. Première séance d'évaluation offerte.</p>
+                <a href="#" class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primaryHover transition">Prendre rendez-vous</a>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="bg-dark py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">L</span>
+                        </div>
+                        <span class="text-xl font-bold text-white">Logopsi <span class="text-primary">Studios</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Orthophonie, psychologie et soutien scolaire en ligne. Des professionnels diplômés, partout en France.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Orthophonie</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../../orthophonie/dyslexie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dyslexie</a></li>
+                        <li><a href="../../orthophonie/dysorthographie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dysorthographie</a></li>
+                        <li><a href="../../orthophonie/dyscalculie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dyscalculie</a></li>
+                        <li><a href="../../orthophonie/begaiement.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Bégaiement</a></li>
+                        <li><a href="../../orthophonie/tsa.html" class="text-gray-400 hover:text-primary text-sm transition-colors">TSA</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Psychologie</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../../psychologie/tdah.html" class="text-gray-400 hover:text-primary text-sm transition-colors">TDAH</a></li>
+                        <li><a href="../../psychologie/hpi.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Haut Potentiel</a></li>
+                        <li><a href="../../psychologie/phobie-scolaire.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Phobie scolaire</a></li>
+                        <li><a href="../../psychologie/anxiete.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Anxiété</a></li>
+                        <li><a href="../../psychologie/depression.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dépression</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Soutien Scolaire</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../../soutien-scolaire/mathematiques/" class="text-gray-400 hover:text-primary text-sm transition-colors">Mathématiques</a></li>
+                        <li><a href="../../soutien-scolaire/francais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Français</a></li>
+                        <li><a href="../../soutien-scolaire/anglais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Anglais</a></li>
+                        <li><a href="../../soutien-scolaire/physique-chimie/" class="text-gray-400 hover:text-primary text-sm transition-colors">Physique-Chimie</a></li>
+                        <li><a href="../../soutien-scolaire/aide-aux-devoirs/" class="text-gray-400 hover:text-primary text-sm transition-colors">Aide aux devoirs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">&copy; 2025 Logopsi Studios. Tous droits réservés.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-primary text-sm transition-colors">Mentions légales</a>
+                    <a href="#" class="text-gray-500 hover:text-primary text-sm transition-colors">Politique de confidentialité</a>
+                    <a href="#" class="text-gray-500 hover:text-primary text-sm transition-colors">CGV</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function toggleMegaMenu(menu) {
+            const menus = {
+                ortho: document.getElementById('ortho-mega'),
+                psycho: document.getElementById('psycho-mega'),
+                scolaire: document.getElementById('scolaire-mega')
+            };
+            Object.keys(menus).forEach(key => {
+                if (key === menu) {
+                    menus[key].classList.toggle('active');
+                } else {
+                    menus[key].classList.remove('active');
+                }
+            });
+        }
+
+        document.addEventListener('click', function(e) {
+            const triggers = ['ortho-trigger', 'psycho-trigger', 'scolaire-trigger'];
+            const megaMenus = ['ortho-mega', 'psycho-mega', 'scolaire-mega'];
+
+            triggers.forEach((triggerId, i) => {
+                const trigger = document.getElementById(triggerId);
+                const mega = document.getElementById(megaMenus[i]);
+                if (trigger && mega && !trigger.contains(e.target) && !mega.contains(e.target)) {
+                    mega.classList.remove('active');
+                }
+            });
+        });
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        }
+    </script>
+
+    <script>
+        lucide.createIcons();
+
+        var megaCloseTimers = { ortho: null, psycho: null, scolaire: null };
+
+        function openMegaMenu(menu) {
+            cancelMegaClose(menu);
+            var menus = { ortho: 'ortho-mega', psycho: 'psycho-mega', scolaire: 'scolaire-mega' };
+            Object.keys(menus).forEach(function(key) {
+                var el = document.getElementById(menus[key]);
+                if (key === menu) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                    clearTimeout(megaCloseTimers[key]);
+                }
+            });
+        }
+
+        function scheduleMegaClose(menu) {
+            megaCloseTimers[menu] = setTimeout(function() {
+                var id = menu === 'ortho' ? 'ortho-mega' : menu === 'psycho' ? 'psycho-mega' : 'scolaire-mega';
+                document.getElementById(id).classList.remove('active');
+            }, 150);
+        }
+
+        function cancelMegaClose(menu) {
+            clearTimeout(megaCloseTimers[menu]);
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        }
+    </script>
+
+    <script>
+        lucide.createIcons();
+
+        var megaCloseTimers = { ortho: null, psycho: null, scolaire: null };
+
+        function openMegaMenu(menu) {
+            cancelMegaClose(menu);
+            var menus = { ortho: 'ortho-mega', psycho: 'psycho-mega', scolaire: 'scolaire-mega' };
+            Object.keys(menus).forEach(function(key) {
+                var el = document.getElementById(menus[key]);
+                if (key === menu) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                    clearTimeout(megaCloseTimers[key]);
+                }
+            });
+        }
+
+        function scheduleMegaClose(menu) {
+            megaCloseTimers[menu] = setTimeout(function() {
+                var id = menu === 'ortho' ? 'ortho-mega' : menu === 'psycho' ? 'psycho-mega' : 'scolaire-mega';
+                document.getElementById(id).classList.remove('active');
+            }, 150);
+        }
+
+        function cancelMegaClose(menu) {
+            clearTimeout(megaCloseTimers[menu]);
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

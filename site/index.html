@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logopsi Studios — Orthophonie, Psychologie & Soutien Scolaire pour enfants</title>
+    <meta name="description" content="Séances d'orthophonie et de psychologie en ligne pour enfants. Des professionnels diplômés et du soutien scolaire en ligne, disponibles partout en France.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#05C86B',
+                        primaryHover: '#04b05e',
+                        light: '#FBF9F6',
+                        dark: '#111111',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .mega-menu { display: none; }
+        .mega-menu.active { display: block; }
+        .mobile-menu { display: none; }
+        .mobile-menu.active { display: block; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-answer.open { max-height: 500px; }
+        .zigzag-bg {
+            background: linear-gradient(135deg, #05C86B 25%, transparent 25%) -50px 0,
+                        linear-gradient(225deg, #05C86B 25%, transparent 25%) -50px 0,
+                        linear-gradient(315deg, #05C86B 25%, transparent 25%),
+                        linear-gradient(45deg, #05C86B 25%, transparent 25%);
+            background-size: 100px 100px;
+            background-color: #04b05e;
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <!-- NAVBAR -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="./index.html" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">L</span>
+                    </div>
+                    <span class="text-xl font-bold text-dark">Logopsi <span class="text-primary">Studios</span></span>
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-8">
+                    <div class="relative" id="ortho-trigger" onmouseenter="openMegaMenu('ortho')" onmouseleave="scheduleMegaClose('ortho')">
+                        <button class="flex items-center space-x-1 text-dark hover:text-primary font-medium transition-colors py-5">
+                            <span>Orthophonie</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                    <div class="relative" id="psycho-trigger" onmouseenter="openMegaMenu('psycho')" onmouseleave="scheduleMegaClose('psycho')">
+                        <button class="flex items-center space-x-1 text-dark hover:text-primary font-medium transition-colors py-5">
+                            <span>Psychologie</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                    <div class="relative" id="scolaire-trigger" onmouseenter="openMegaMenu('scolaire')" onmouseleave="scheduleMegaClose('scolaire')">
+                        <button class="flex items-center space-x-1 text-dark hover:text-primary font-medium transition-colors py-5">
+                            <span>Soutien Scolaire</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <a href="#contact" class="hidden sm:inline-flex bg-primary hover:bg-primaryHover text-white font-semibold px-5 py-2.5 rounded-full transition-colors">
+                        Prendre RDV
+                    </a>
+                    <button class="lg:hidden" onclick="toggleMobileMenu()">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orthophonie Mega Menu -->
+        <div id="ortho-mega" class="mega-menu absolute left-1/2 -translate-x-1/2 w-full max-w-4xl bg-white shadow-xl rounded-b-2xl border border-gray-100 z-50 mt-0" onmouseenter="cancelMegaClose('ortho')" onmouseleave="scheduleMegaClose('ortho')">
+            <div class="p-8">
+                <div class="grid grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="font-bold text-dark mb-4 flex items-center"><i data-lucide="book-open" class="w-5 h-5 mr-2 text-primary"></i>Troubles pris en charge</h3>
+                        <ul class="space-y-2">
+                            <li><a href="./orthophonie/dyslexie.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Dyslexie</a></li>
+                            <li><a href="./orthophonie/dysorthographie.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Dysorthographie</a></li>
+                            <li><a href="./orthophonie/dyscalculie.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Dyscalculie</a></li>
+                            <li><a href="./orthophonie/dysphasie.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Dysphasie</a></li>
+                            <li><a href="./orthophonie/begaiement.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Bégaiement</a></li>
+                            <li><a href="./orthophonie/tsa.html" class="text-gray-600 hover:text-primary transition-colors text-sm">TSA</a></li>
+                            <li><a href="./orthophonie/oralite.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Troubles de l'oralité</a></li>
+                            <li><a href="./orthophonie/surdite.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Surdité</a></li>
+                            <li><a href="./orthophonie/paralysie-cerebrale.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Paralysie cérébrale</a></li>
+                            <li><a href="./orthophonie/fente-palatine.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Fente palatine</a></li>
+                            <li><a href="./orthophonie/trisomie-21.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Trisomie 21</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-dark mb-4 flex items-center"><i data-lucide="map-pin" class="w-5 h-5 mr-2 text-primary"></i>Par ville</h3>
+                        <ul class="space-y-2">
+                            <li><a href="./orthophonie/villes/paris.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Paris</a></li>
+                            <li><a href="./orthophonie/villes/marseille.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Marseille</a></li>
+                            <li><a href="./orthophonie/villes/lyon.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Lyon</a></li>
+                            <li><a href="./orthophonie/villes/toulouse.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Toulouse</a></li>
+                            <li><a href="./orthophonie/villes/nice.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Nice</a></li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 rounded-2xl p-6 flex flex-col justify-center">
+                        <h3 class="font-bold text-dark text-lg mb-2">Besoin d'un orthophoniste ?</h3>
+                        <p class="text-gray-600 text-sm mb-4">Nos orthophonistes diplômés sont disponibles en ligne, partout en France.</p>
+                        <a href="#contact" class="bg-primary hover:bg-primaryHover text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-center text-sm">Prendre rendez-vous</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Psychologie Mega Menu -->
+        <div id="psycho-mega" class="mega-menu absolute left-1/2 -translate-x-1/2 w-full max-w-4xl bg-white shadow-xl rounded-b-2xl border border-gray-100 z-50 mt-0" onmouseenter="cancelMegaClose('psycho')" onmouseleave="scheduleMegaClose('psycho')">
+            <div class="p-8">
+                <div class="grid grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="font-bold text-dark mb-4 flex items-center"><i data-lucide="brain" class="w-5 h-5 mr-2 text-primary"></i>Troubles pris en charge</h3>
+                        <ul class="space-y-2">
+                            <li><a href="./psychologie/tdah.html" class="text-gray-600 hover:text-primary transition-colors text-sm">TDAH</a></li>
+                            <li><a href="./psychologie/hpi.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Haut Potentiel (HPI)</a></li>
+                            <li><a href="./psychologie/phobie-scolaire.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Phobie scolaire</a></li>
+                            <li><a href="./psychologie/harcelement-scolaire.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Harcèlement scolaire</a></li>
+                            <li><a href="./psychologie/anxiete.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Anxiété</a></li>
+                            <li><a href="./psychologie/depression.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Dépression</a></li>
+                            <li><a href="./psychologie/tca.html" class="text-gray-600 hover:text-primary transition-colors text-sm">TCA</a></li>
+                            <li><a href="./psychologie/addictions-ecrans.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Addictions aux écrans</a></li>
+                            <li><a href="./psychologie/troubles-sommeil.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Troubles du sommeil</a></li>
+                            <li><a href="./psychologie/enuresie.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Énurésie</a></li>
+                            <li><a href="./psychologie/traumatismes-deuil.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Traumatismes & deuil</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-dark mb-4 flex items-center"><i data-lucide="map-pin" class="w-5 h-5 mr-2 text-primary"></i>Par ville</h3>
+                        <ul class="space-y-2">
+                            <li><a href="./psychologie/villes/paris.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Paris</a></li>
+                            <li><a href="./psychologie/villes/marseille.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Marseille</a></li>
+                            <li><a href="./psychologie/villes/lyon.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Lyon</a></li>
+                            <li><a href="./psychologie/villes/toulouse.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Toulouse</a></li>
+                            <li><a href="./psychologie/villes/nice.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Nice</a></li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 rounded-2xl p-6 flex flex-col justify-center">
+                        <h3 class="font-bold text-dark text-lg mb-2">Besoin d'un psychologue ?</h3>
+                        <p class="text-gray-600 text-sm mb-4">Nos psychologues diplômés accompagnent votre enfant en ligne.</p>
+                        <a href="#contact" class="bg-primary hover:bg-primaryHover text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-center text-sm">Prendre rendez-vous</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Soutien Scolaire Mega Menu -->
+        <div id="scolaire-mega" class="mega-menu absolute left-1/2 -translate-x-1/2 w-full max-w-4xl bg-white shadow-xl rounded-b-2xl border border-gray-100 z-50 mt-0" onmouseenter="cancelMegaClose('scolaire')" onmouseleave="scheduleMegaClose('scolaire')">
+            <div class="p-8">
+                <div class="grid grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="font-bold text-dark mb-4 flex items-center"><i data-lucide="graduation-cap" class="w-5 h-5 mr-2 text-primary"></i>Matières</h3>
+                        <ul class="space-y-2">
+                            <li><a href="./soutien-scolaire/mathematiques/" class="text-gray-600 hover:text-primary transition-colors text-sm">Mathématiques</a></li>
+                            <li><a href="./soutien-scolaire/francais/" class="text-gray-600 hover:text-primary transition-colors text-sm">Français</a></li>
+                            <li><a href="./soutien-scolaire/anglais/" class="text-gray-600 hover:text-primary transition-colors text-sm">Anglais</a></li>
+                            <li><a href="./soutien-scolaire/physique-chimie/" class="text-gray-600 hover:text-primary transition-colors text-sm">Physique-Chimie</a></li>
+                            <li><a href="./soutien-scolaire/aide-aux-devoirs/" class="text-gray-600 hover:text-primary transition-colors text-sm">Aide aux devoirs</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-dark mb-4 flex items-center"><i data-lucide="map-pin" class="w-5 h-5 mr-2 text-primary"></i>Par ville</h3>
+                        <ul class="space-y-2">
+                            <li><a href="./soutien-scolaire/villes/paris.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Paris</a></li>
+                            <li><a href="./soutien-scolaire/villes/marseille.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Marseille</a></li>
+                            <li><a href="./soutien-scolaire/villes/lyon.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Lyon</a></li>
+                            <li><a href="./soutien-scolaire/villes/toulouse.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Toulouse</a></li>
+                            <li><a href="./soutien-scolaire/villes/nice.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Nice</a></li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 rounded-2xl p-6 flex flex-col justify-center">
+                        <h3 class="font-bold text-dark text-lg mb-2">Besoin de soutien scolaire ?</h3>
+                        <p class="text-gray-600 text-sm mb-4">Enseignants qualifiés, cours en ligne du CP à la Terminale.</p>
+                        <a href="#contact" class="bg-primary hover:bg-primaryHover text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-center text-sm">Prendre rendez-vous</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu lg:hidden bg-white border-t">
+            <div class="px-4 py-4 space-y-3">
+                <a href="./orthophonie/" class="block text-dark hover:text-primary font-medium py-2">Orthophonie</a>
+                <a href="./psychologie/" class="block text-dark hover:text-primary font-medium py-2">Psychologie</a>
+                <a href="./soutien-scolaire/" class="block text-dark hover:text-primary font-medium py-2">Soutien Scolaire</a>
+                <a href="#contact" class="block bg-primary hover:bg-primaryHover text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-center">Prendre RDV</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center bg-green-50 text-primary font-medium px-4 py-2 rounded-full text-sm mb-6">
+                        <i data-lucide="sparkles" class="w-4 h-4 mr-2"></i>
+                        Orthophonie, Psychologie & Soutien Scolaire
+                    </div>
+                    <h1 class="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-dark leading-tight mb-6">
+                        Votre enfant mérite le <span class="text-primary">meilleur suivi</span>, où que vous soyez
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Des orthophonistes et psychologues diplômés d'État, disponibles en ligne. Fini les listes d'attente interminables et les déplacements compliqués.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="bg-primary hover:bg-primaryHover text-white font-semibold px-8 py-4 rounded-full transition-colors text-center text-lg">
+                            Prendre rendez-vous
+                        </a>
+                        <a href="#comment-ca-marche" class="border-2 border-gray-200 hover:border-primary text-dark font-semibold px-8 py-4 rounded-full transition-colors text-center text-lg">
+                            Comment ça marche
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-6 mt-8 text-sm text-gray-500">
+                        <div class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 mr-1 text-primary"></i>Diplômés d'État</div>
+                        <div class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 mr-1 text-primary"></i>Remboursé</div>
+                        <div class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 mr-1 text-primary"></i>Sans liste d'attente</div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Enfant en séance d'orthophonie en ligne" class="rounded-3xl shadow-2xl w-full object-cover" style="max-height: 500px;">
+                    <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-lg p-4 flex items-center space-x-3">
+                        <div class="bg-green-100 rounded-full p-2"><i data-lucide="video" class="w-5 h-5 text-primary"></i></div>
+                        <div>
+                            <p class="font-semibold text-dark text-sm">Séances en visio</p>
+                            <p class="text-xs text-gray-500">Depuis votre salon</p>
+                        </div>
+                    </div>
+                    <div class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-lg p-4 flex items-center space-x-3">
+                        <div class="bg-green-100 rounded-full p-2"><i data-lucide="calendar-check" class="w-5 h-5 text-primary"></i></div>
+                        <div>
+                            <p class="font-semibold text-dark text-sm">RDV sous 48h</p>
+                            <p class="text-xs text-gray-500">Sans liste d'attente</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAIN POINTS SECTION -->
+    <section class="bg-light py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Parent inquiet pour son enfant" class="rounded-3xl shadow-lg w-full object-cover" style="max-height: 450px;">
+                </div>
+                <div>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-dark mb-6">Vous reconnaissez-vous ?</h2>
+                    <div class="space-y-5">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-red-100 rounded-full p-2 mt-1 flex-shrink-0"><i data-lucide="clock" class="w-5 h-5 text-red-500"></i></div>
+                            <div>
+                                <h3 class="font-bold text-dark">Des mois d'attente pour un rendez-vous</h3>
+                                <p class="text-gray-600">En moyenne 18 mois d'attente pour un bilan orthophonique en France.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-red-100 rounded-full p-2 mt-1 flex-shrink-0"><i data-lucide="map-pin" class="w-5 h-5 text-red-500"></i></div>
+                            <div>
+                                <h3 class="font-bold text-dark">Aucun praticien à proximité</h3>
+                                <p class="text-gray-600">Les déserts médicaux rendent l'accès aux soins quasi impossible dans certaines régions.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-red-100 rounded-full p-2 mt-1 flex-shrink-0"><i data-lucide="car" class="w-5 h-5 text-red-500"></i></div>
+                            <div>
+                                <h3 class="font-bold text-dark">Des déplacements épuisants</h3>
+                                <p class="text-gray-600">Jongler entre l'école, le travail et les rendez-vous médicaux est un défi quotidien.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-red-100 rounded-full p-2 mt-1 flex-shrink-0"><i data-lucide="globe" class="w-5 h-5 text-red-500"></i></div>
+                            <div>
+                                <h3 class="font-bold text-dark">Expatrié sans accès à un professionnel francophone</h3>
+                                <p class="text-gray-600">Trouver un orthophoniste ou un psychologue francophone à l'étranger relève du parcours du combattant.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="bg-white py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-dark mb-4">Nos services</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Un accompagnement complet pour chaque enfant, adapté à ses besoins spécifiques.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Orthophonie Card -->
+                <a href="./orthophonie/" class="group bg-light rounded-3xl p-8 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary">
+                    <div class="bg-green-100 rounded-2xl w-14 h-14 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                        <i data-lucide="message-circle" class="w-7 h-7 text-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Orthophonie</h3>
+                    <p class="text-gray-600 mb-4">Bilan et rééducation des troubles du langage, de la lecture, de l'écriture et de la communication.</p>
+                    <span class="text-primary font-semibold flex items-center">
+                        En savoir plus <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </span>
+                </a>
+                <!-- Psychologie Card -->
+                <a href="./psychologie/" class="group bg-light rounded-3xl p-8 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary">
+                    <div class="bg-green-100 rounded-2xl w-14 h-14 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                        <i data-lucide="brain" class="w-7 h-7 text-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Psychologie & Soutien Scolaire</h3>
+                    <p class="text-gray-600 mb-4">Accompagnement psychologique, gestion des émotions, TDAH, HPI, phobie scolaire et bien plus.</p>
+                    <span class="text-primary font-semibold flex items-center">
+                        En savoir plus <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </span>
+                </a>
+                <!-- Soutien Scolaire Card -->
+                <a href="./soutien-scolaire/" class="group bg-light rounded-3xl p-8 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary">
+                    <div class="bg-green-100 rounded-2xl w-14 h-14 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                        <i data-lucide="graduation-cap" class="w-7 h-7 text-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Soutien Scolaire</h3>
+                    <p class="text-gray-600 mb-4">Cours particuliers en ligne du CP à la Terminale. Maths, français, anglais, physique-chimie et aide aux devoirs.</p>
+                    <span class="text-primary font-semibold flex items-center">
+                        En savoir plus <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADVANTAGES SECTION -->
+    <section id="avantages" class="bg-primary py-16 lg:py-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0,20 Q25,0 50,20 T100,20 V100 H0 Z" fill="white"/>
+            </svg>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-white mb-6">Pourquoi choisir Logopsi Studios ?</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-white/20 rounded-full p-2 mt-1 flex-shrink-0"><i data-lucide="award" class="w-5 h-5 text-white"></i></div>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">Professionnels diplômés d'État</h3>
+                                <p class="text-white/80">Tous nos praticiens sont certifiés et sélectionnés avec soin pour garantir un suivi de qualité.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-white/20 rounded-full p-2 mt-1 flex-shrink-0"><i data-lucide="zap" class="w-5 h-5 text-white"></i></div>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">Rendez-vous sous 48h</h3>
+                                <p class="text-white/80">Plus besoin d'attendre des mois. Obtenez un premier rendez-vous en moins de 48 heures.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-white/20 rounded-full p-2 mt-1 flex-shrink-0"><i data-lucide="shield-check" class="w-5 h-5 text-white"></i></div>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">Séances remboursables</h3>
+                                <p class="text-white/80">Nos séances sont éligibles au remboursement par la Sécurité sociale et les mutuelles.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-white/20 rounded-full p-2 mt-1 flex-shrink-0"><i data-lucide="heart" class="w-5 h-5 text-white"></i></div>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">Suivi personnalisé</h3>
+                                <p class="text-white/80">Chaque enfant est unique. Nos praticiens adaptent leur approche à chaque profil.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Enfant heureux qui apprend" class="rounded-3xl shadow-2xl w-full max-w-md object-cover" style="max-height: 450px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="comment-ca-marche" class="bg-white py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-dark mb-4">Comment ça marche ?</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">3 étapes simples pour démarrer le suivi de votre enfant.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-2xl">1</div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Prenez rendez-vous</h3>
+                    <p class="text-gray-600">Remplissez notre formulaire en ligne ou appelez-nous. Nous vous proposons un créneau sous 48h.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-2xl">2</div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Bilan initial</h3>
+                    <p class="text-gray-600">Notre praticien réalise un bilan complet en visioconférence pour identifier les besoins de votre enfant.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-2xl">3</div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Suivi régulier</h3>
+                    <p class="text-gray-600">Des séances hebdomadaires en ligne, avec un compte-rendu régulier et des conseils pour la maison.</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#contact" class="bg-primary hover:bg-primaryHover text-white font-semibold px-8 py-4 rounded-full transition-colors text-lg inline-block">
+                    Commencer maintenant
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="bg-light py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-dark mb-4">Ce que disent les parents</h2>
+                <p class="text-lg text-gray-600">Ils nous font confiance pour le suivi de leurs enfants.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-3xl p-8 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Après 14 mois d'attente sans résultat, nous avons trouvé une orthophoniste en 2 jours avec Logopsi Studios. Notre fils a fait des progrès incroyables en seulement 3 mois."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3">
+                            <span class="text-primary font-bold text-sm">SB</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-dark text-sm">Sophie B.</p>
+                            <p class="text-gray-500 text-xs">Maman de Lucas, 7 ans</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl p-8 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Expatriés à Singapour, impossible de trouver un orthophoniste francophone. Logopsi Studios a été une vraie bouée de sauvetage pour notre fille."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3">
+                            <span class="text-primary font-bold text-sm">MR</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-dark text-sm">Marc R.</p>
+                            <p class="text-gray-500 text-xs">Papa d'Emma, 5 ans — Singapour</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl p-8 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"La psychologue a su créer un lien incroyable avec notre ado en visio. Il refuse d'aller chez un psy en cabinet, mais adore ses séances en ligne !"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3">
+                            <span class="text-primary font-bold text-sm">CL</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-dark text-sm">Claire L.</p>
+                            <p class="text-gray-500 text-xs">Maman de Théo, 14 ans</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="bg-white py-16 lg:py-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-dark mb-4">Questions fréquentes</h2>
+                <p class="text-lg text-gray-600">Tout ce que vous devez savoir sur nos services.</p>
+            </div>
+            <div class="space-y-4">
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-dark pr-4">Les séances en ligne sont-elles aussi efficaces qu'en cabinet ?</span>
+                        <i data-lucide="plus" class="w-5 h-5 text-primary flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">Oui ! De nombreuses études scientifiques ont démontré que la téléorthophonie et la téléconsultation psychologique sont tout aussi efficaces que les séances en présentiel. Les enfants sont souvent plus à l'aise dans leur environnement familier, ce qui favorise les apprentissages.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-dark pr-4">Les séances sont-elles remboursées ?</span>
+                        <i data-lucide="plus" class="w-5 h-5 text-primary flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">Les séances d'orthophonie sont remboursées à 60% par la Sécurité sociale sur prescription médicale, et le complément est généralement pris en charge par la mutuelle. Pour la psychologie, de plus en plus de mutuelles proposent un forfait annuel. Nous vous aidons dans toutes les démarches administratives.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-dark pr-4">Quel matériel est nécessaire ?</span>
+                        <i data-lucide="plus" class="w-5 h-5 text-primary flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">Un ordinateur, une tablette ou un smartphone avec une connexion internet stable, une webcam et un micro. C'est tout ! Nos praticiens utilisent des outils interactifs adaptés aux enfants pour rendre les séances ludiques et engageantes.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-dark pr-4">À partir de quel âge peut-on commencer ?</span>
+                        <i data-lucide="plus" class="w-5 h-5 text-primary flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">Nos orthophonistes prennent en charge les enfants dès 3 ans pour l'orthophonie et dès 4 ans pour la psychologie. Pour les plus jeunes, les séances impliquent davantage les parents en tant que co-thérapeutes, ce qui renforce l'efficacité du suivi.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-dark pr-4">Proposez-vous un accompagnement pour les expatriés ?</span>
+                        <i data-lucide="plus" class="w-5 h-5 text-primary flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">Absolument ! C'est même l'une de nos spécialités. Nous accompagnons des familles francophones partout dans le monde, avec des créneaux adaptés à tous les fuseaux horaires. Nos praticiens ont une expertise en bilinguisme et en problématiques interculturelles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / CTA -->
+    <section id="contact" class="bg-primary py-16 lg:py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-white mb-6">Prêt à aider votre enfant ?</h2>
+            <p class="text-lg text-white/80 mb-8 max-w-2xl mx-auto">Prenez rendez-vous dès maintenant et obtenez un premier créneau sous 48h. Sans engagement, sans liste d'attente.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:contact@logopsistudios.com" class="bg-white text-primary hover:bg-gray-100 font-semibold px-8 py-4 rounded-full transition-colors text-lg inline-flex items-center justify-center">
+                    <i data-lucide="mail" class="w-5 h-5 mr-2"></i>
+                    Nous écrire
+                </a>
+                <a href="tel:+33100000000" class="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-4 rounded-full transition-colors text-lg inline-flex items-center justify-center">
+                    <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
+                    Nous appeler
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="bg-dark py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">L</span>
+                        </div>
+                        <span class="text-xl font-bold text-white">Logopsi <span class="text-primary">Studios</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Orthophonie, psychologie et soutien scolaire en ligne. Des professionnels diplômés, partout en France.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Orthophonie</h4>
+                    <ul class="space-y-2">
+                        <li><a href="./orthophonie/dyslexie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dyslexie</a></li>
+                        <li><a href="./orthophonie/dysorthographie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dysorthographie</a></li>
+                        <li><a href="./orthophonie/dyscalculie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dyscalculie</a></li>
+                        <li><a href="./orthophonie/begaiement.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Bégaiement</a></li>
+                        <li><a href="./orthophonie/tsa.html" class="text-gray-400 hover:text-primary text-sm transition-colors">TSA</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Psychologie</h4>
+                    <ul class="space-y-2">
+                        <li><a href="./psychologie/tdah.html" class="text-gray-400 hover:text-primary text-sm transition-colors">TDAH</a></li>
+                        <li><a href="./psychologie/hpi.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Haut Potentiel</a></li>
+                        <li><a href="./psychologie/phobie-scolaire.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Phobie scolaire</a></li>
+                        <li><a href="./psychologie/anxiete.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Anxiété</a></li>
+                        <li><a href="./psychologie/depression.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dépression</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Soutien Scolaire</h4>
+                    <ul class="space-y-2">
+                        <li><a href="./soutien-scolaire/mathematiques/" class="text-gray-400 hover:text-primary text-sm transition-colors">Mathématiques</a></li>
+                        <li><a href="./soutien-scolaire/francais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Français</a></li>
+                        <li><a href="./soutien-scolaire/anglais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Anglais</a></li>
+                        <li><a href="./soutien-scolaire/physique-chimie/" class="text-gray-400 hover:text-primary text-sm transition-colors">Physique-Chimie</a></li>
+                        <li><a href="./soutien-scolaire/aide-aux-devoirs/" class="text-gray-400 hover:text-primary text-sm transition-colors">Aide aux devoirs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">&copy; 2025 Logopsi Studios. Tous droits réservés.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-primary text-sm transition-colors">Mentions légales</a>
+                    <a href="#" class="text-gray-500 hover:text-primary text-sm transition-colors">Politique de confidentialité</a>
+                    <a href="#" class="text-gray-500 hover:text-primary text-sm transition-colors">CGV</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        var megaCloseTimers = { ortho: null, psycho: null, scolaire: null };
+
+        function openMegaMenu(menu) {
+            cancelMegaClose(menu);
+            var menus = { ortho: 'ortho-mega', psycho: 'psycho-mega', scolaire: 'scolaire-mega' };
+            Object.keys(menus).forEach(function(key) {
+                var el = document.getElementById(menus[key]);
+                if (key === menu) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                    clearTimeout(megaCloseTimers[key]);
+                }
+            });
+        }
+
+        function scheduleMegaClose(menu) {
+            megaCloseTimers[menu] = setTimeout(function() {
+                var id = menu === 'ortho' ? 'ortho-mega' : menu === 'psycho' ? 'psycho-mega' : 'scolaire-mega';
+                document.getElementById(id).classList.remove('active');
+            }, 150);
+        }
+
+        function cancelMegaClose(menu) {
+            clearTimeout(megaCloseTimers[menu]);
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        }
+    </script>
+
+    <script>
+        lucide.createIcons();
+
+        var megaCloseTimers = { ortho: null, psycho: null, scolaire: null };
+
+        function openMegaMenu(menu) {
+            cancelMegaClose(menu);
+            var menus = { ortho: 'ortho-mega', psycho: 'psycho-mega', scolaire: 'scolaire-mega' };
+            Object.keys(menus).forEach(function(key) {
+                var el = document.getElementById(menus[key]);
+                if (key === menu) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                    clearTimeout(megaCloseTimers[key]);
+                }
+            });
+        }
+
+        function scheduleMegaClose(menu) {
+            megaCloseTimers[menu] = setTimeout(function() {
+                var id = menu === 'ortho' ? 'ortho-mega' : menu === 'psycho' ? 'psycho-mega' : 'scolaire-mega';
+                document.getElementById(id).classList.remove('active');
+            }, 150);
+        }
+
+        function cancelMegaClose(menu) {
+            clearTimeout(megaCloseTimers[menu]);
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
