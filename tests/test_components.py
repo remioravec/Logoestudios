@@ -5,6 +5,7 @@ import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from shared_components import get_booking_modal, get_booking_js, get_js
+from shared_components import get_navbar
 
 
 def test_modal_has_marker():
@@ -66,6 +67,25 @@ def test_get_js_includes_booking_js():
     assert "closeBookingModal" in js
 
 
+def test_navbar_has_connexion_link_desktop():
+    html = get_navbar("./")
+    assert "Connexion" in html
+    assert "app.logopsiestudios.com/fr/login" in html
+    # Desktop + mobile: link to login appears at least twice
+    assert html.count("app.logopsiestudios.com/fr/login") >= 2
+
+
+def test_navbar_cta_opens_popup():
+    html = get_navbar("./")
+    # The "Prendre rendez-vous" green button should call openBookingModal()
+    assert "openBookingModal()" in html
+
+
+def test_navbar_keeps_prefix_for_other_links():
+    html = get_navbar("../")
+    assert "../orthophonie/" in html
+
+
 if __name__ == "__main__":
     test_modal_has_marker()
     test_modal_has_price_and_delay()
@@ -77,4 +97,7 @@ if __name__ == "__main__":
     test_booking_js_handles_escape()
     test_booking_js_handles_rappel_ok()
     test_get_js_includes_booking_js()
+    test_navbar_has_connexion_link_desktop()
+    test_navbar_cta_opens_popup()
+    test_navbar_keeps_prefix_for_other_links()
     print("test_components: OK")
