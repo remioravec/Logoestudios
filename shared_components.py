@@ -124,6 +124,7 @@ def get_navbar(prefix):
         ("mathematiques", "Math\u00e9matiques"),
         ("francais", "Fran\u00e7ais"),
         ("anglais", "Anglais"),
+        ("espagnol", "Espagnol"),
         ("physique-chimie", "Physique-Chimie"),
         ("aide-aux-devoirs", "Aide aux devoirs"),
     ]
@@ -164,10 +165,7 @@ def get_navbar(prefix):
         '        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">\n'
         '            <div class="flex justify-between items-center h-20">\n'
         '                <a href="' + prefix + 'index.html" class="flex items-center space-x-2 z-50">\n'
-        '                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">\n'
-        '                        <span class="text-white font-bold text-sm">L</span>\n'
-        '                    </div>\n'
-        '                    <span class="text-xl font-bold text-dark">Logopsi <span class="text-primary">Studios</span></span>\n'
+        '                    <img src="' + prefix + 'logo-logopsi.png" alt="Logopsi Studios" class="h-14 w-auto">\n'
         '                </a>\n'
         '\n'
         '                <div class="hidden lg:flex items-center space-x-1">\n'
@@ -293,10 +291,7 @@ def get_footer(prefix):
         '            <div class="grid md:grid-cols-4 gap-8 mb-12">\n'
         '                <div>\n'
         '                    <div class="flex items-center space-x-2 mb-4">\n'
-        '                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">\n'
-        '                            <span class="text-white font-bold text-sm">L</span>\n'
-        '                        </div>\n'
-        '                        <span class="text-xl font-bold text-white">Logopsi <span class="text-primary">Studios</span></span>\n'
+        '                        <img src="' + prefix + 'logo-logopsi.png" alt="Logopsi Studios" class="h-12 w-auto">\n'
         '                    </div>\n'
         '                    <p class="text-gray-400 text-sm">Orthophonie, psychologie et soutien scolaire en ligne. Des professionnels dipl\u00f4m\u00e9s, partout en France.</p>\n'
         '                </div>\n'
@@ -326,6 +321,7 @@ def get_footer(prefix):
         '                        <li><a href="' + prefix + 'soutien-scolaire/mathematiques/" class="text-gray-400 hover:text-primary text-sm transition-colors">Math\u00e9matiques</a></li>\n'
         '                        <li><a href="' + prefix + 'soutien-scolaire/francais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Fran\u00e7ais</a></li>\n'
         '                        <li><a href="' + prefix + 'soutien-scolaire/anglais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Anglais</a></li>\n'
+        '                        <li><a href="' + prefix + 'soutien-scolaire/espagnol/" class="text-gray-400 hover:text-primary text-sm transition-colors">Espagnol</a></li>\n'
         '                        <li><a href="' + prefix + 'soutien-scolaire/physique-chimie/" class="text-gray-400 hover:text-primary text-sm transition-colors">Physique-Chimie</a></li>\n'
         '                        <li><a href="' + prefix + 'soutien-scolaire/aide-aux-devoirs/" class="text-gray-400 hover:text-primary text-sm transition-colors">Aide aux devoirs</a></li>\n'
         '                    </ul>\n'
@@ -367,6 +363,11 @@ def get_cta_section(title, desc):
         '                    <a href="#" class="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-green-50 transition text-lg inline-block shadow-lg">\n'
         '                        R\u00e9server mon bilan\n'
         '                    </a>\n'
+        '                    <div class="mt-6 space-y-1">\n'
+        '                        <p class="text-sm text-green-50"><i data-lucide="check-circle" class="w-4 h-4 inline mr-1"></i>Rappel t\u00e9l\u00e9phonique <strong>offert</strong></p>\n'
+        '                        <p class="text-sm text-green-50"><i data-lucide="check-circle" class="w-4 h-4 inline mr-1"></i>Tests pr\u00e9liminaires <strong>offerts</strong></p>\n'
+        '                        <p class="text-sm text-green-100 mt-2 opacity-90">Le bilan complet est un acte professionnel payant (tarifs sur demande)</p>\n'
+        '                    </div>\n'
         '                </div>\n'
         '            </div>\n'
         '        </div>\n'

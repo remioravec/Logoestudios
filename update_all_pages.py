@@ -33,10 +33,7 @@ def get_navbar(prefix=""):
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <a href="{p}index.html" class="flex items-center space-x-2">
-                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold text-sm">L</span>
-                    </div>
-                    <span class="text-xl font-bold text-dark">Logopsi <span class="text-primary">Studios</span></span>
+                    <img src="{p}logo-logopsi.png" alt="Logopsi Studios" class="h-14 w-auto">
                 </a>
 
                 <div class="hidden lg:flex items-center space-x-8">
@@ -159,6 +156,7 @@ def get_navbar(prefix=""):
                             <li><a href="{p}soutien-scolaire/mathematiques/" class="text-gray-600 hover:text-primary transition-colors text-sm">Mathématiques</a></li>
                             <li><a href="{p}soutien-scolaire/francais/" class="text-gray-600 hover:text-primary transition-colors text-sm">Français</a></li>
                             <li><a href="{p}soutien-scolaire/anglais/" class="text-gray-600 hover:text-primary transition-colors text-sm">Anglais</a></li>
+                            <li><a href="{p}soutien-scolaire/espagnol/" class="text-gray-600 hover:text-primary transition-colors text-sm">Espagnol</a></li>
                             <li><a href="{p}soutien-scolaire/physique-chimie/" class="text-gray-600 hover:text-primary transition-colors text-sm">Physique-Chimie</a></li>
                             <li><a href="{p}soutien-scolaire/aide-aux-devoirs/" class="text-gray-600 hover:text-primary transition-colors text-sm">Aide aux devoirs</a></li>
                         </ul>
@@ -203,10 +201,7 @@ def get_footer(prefix=""):
             <div class="grid md:grid-cols-4 gap-8 mb-12">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                            <span class="text-white font-bold text-sm">L</span>
-                        </div>
-                        <span class="text-xl font-bold text-white">Logopsi <span class="text-primary">Studios</span></span>
+                        <img src="{p}logo-logopsi.png" alt="Logopsi Studios" class="h-12 w-auto">
                     </div>
                     <p class="text-gray-400 text-sm">Orthophonie, psychologie et soutien scolaire en ligne. Des professionnels diplômés, partout en France.</p>
                 </div>
@@ -236,6 +231,7 @@ def get_footer(prefix=""):
                         <li><a href="{p}soutien-scolaire/mathematiques/" class="text-gray-400 hover:text-primary text-sm transition-colors">Mathématiques</a></li>
                         <li><a href="{p}soutien-scolaire/francais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Français</a></li>
                         <li><a href="{p}soutien-scolaire/anglais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Anglais</a></li>
+                        <li><a href="{p}soutien-scolaire/espagnol/" class="text-gray-400 hover:text-primary text-sm transition-colors">Espagnol</a></li>
                         <li><a href="{p}soutien-scolaire/physique-chimie/" class="text-gray-400 hover:text-primary text-sm transition-colors">Physique-Chimie</a></li>
                         <li><a href="{p}soutien-scolaire/aide-aux-devoirs/" class="text-gray-400 hover:text-primary text-sm transition-colors">Aide aux devoirs</a></li>
                     </ul>
@@ -244,9 +240,9 @@ def get_footer(prefix=""):
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-500 text-sm">&copy; 2025 Logopsi Studios. Tous droits réservés.</p>
                 <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="text-gray-500 hover:text-primary text-sm transition-colors">Mentions légales</a>
-                    <a href="#" class="text-gray-500 hover:text-primary text-sm transition-colors">Politique de confidentialité</a>
-                    <a href="#" class="text-gray-500 hover:text-primary text-sm transition-colors">CGV</a>
+                    <a href="{p}mentions-legales.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Mentions légales</a>
+                    <a href="{p}contact.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Contact</a>
+                    <a href="{p}a-propos.html" class="text-gray-500 hover:text-primary text-sm transition-colors">À propos</a>
                 </div>
             </div>
         </div>

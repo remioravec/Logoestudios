@@ -59,6 +59,41 @@ def collect_pages(site_dir):
                 'images': img_urls,
             })
 
+    # Auto-create missing intermediate parent pages
+    existing_slugs = {p['slug'] for p in pages}
+    missing_parents = set()
+    for p in pages:
+        if p['parent_slug'] and p['parent_slug'] not in existing_slugs:
+            missing_parents.add(p['parent_slug'])
+
+    for missing_slug in sorted(missing_parents):
+        parts = missing_slug.split('/')
+        parent_slug = '/'.join(parts[:-1]) if len(parts) > 1 else ''
+        display_name = parts[-1].replace('-', ' ').title()
+        parent_display = parts[0].replace('-', ' ').title() if parts else ''
+        title = f"{display_name} - {parent_display} - Logopsi Studios"
+
+        # Minimal redirect-like HTML (WordPress will serve this as a page)
+        placeholder_html = f'''<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"><title>{title}</title>
+<meta http-equiv="refresh" content="0;url=/{parts[0]}/"></head>
+<body><p>Redirection...</p></body></html>'''
+
+        pages.append({
+            'rel_path': f"(auto-generated: {missing_slug})",
+            'slug': missing_slug,
+            'parent_slug': parent_slug,
+            'title': title,
+            'meta_desc': '',
+            'html': placeholder_html,
+            'images': [],
+        })
+        print(f"  Auto-created missing parent page: {missing_slug}")
+
+    # Sort pages by depth (parents first) to ensure proper hierarchy
+    pages.sort(key=lambda p: p['slug'].count('/'))
+
     return pages
 
 
@@ -236,6 +271,17 @@ function logopsi_apply_image_mapping($html) {{
 }}
 
 // ============================================================
+// FIX LOGO AND STATIC ASSETS
+// ============================================================
+
+function logopsi_fix_assets($html) {{
+    $logo_url = LOGOPSI_PLUGIN_URL . 'admin/logo-logopsi.png';
+    // Replace all relative logo references with absolute plugin URL
+    $html = preg_replace('/src="[^"]*logo-logopsi\\.png"/', 'src="' . $logo_url . '"', $html);
+    return $html;
+}}
+
+// ============================================================
 // FIX INTERNAL LINKS FOR WORDPRESS
 // ============================================================
 
@@ -329,17 +375,27 @@ function logopsi_ajax_deploy() {{
     check_ajax_referer('logopsi_deploy_nonce', 'nonce');
     if (!current_user_can('manage_options')) wp_die('Unauthorized');
 
+    @set_time_limit(300);
+
+    $offset = isset($_POST['offset']) ? intval($_POST['offset']) : 0;
+    $batch_size = 10;
+
     $pages_data = logopsi_get_pages_data();
+
+    // Sort pages by depth (parents first) to ensure hierarchy is built correctly
+    usort($pages_data, function($a, $b) {{
+        return substr_count($a['slug'], '/') - substr_count($b['slug'], '/');
+    }});
+
+    $total = count($pages_data);
+    $batch = array_slice($pages_data, $offset, $batch_size);
+
     $created = 0;
     $updated = 0;
     $errors = [];
 
-    // First pass: create all pages (without parents)
-    $slug_to_id = [];
-
-    foreach ($pages_data as $page) {{
+    foreach ($batch as $page) {{
         $slug = $page['slug'];
-        $wp_slug = str_replace('/', '-', $slug);
 
         // Get HTML content
         $html = logopsi_get_html_content($slug);
@@ -351,18 +407,41 @@ function logopsi_ajax_deploy() {{
         // Apply image mapping
         $html = logopsi_apply_image_mapping($html);
 
-        // Fix internal links for WordPress
+        // Fix internal links and assets for WordPress
         $html = logopsi_fix_links($html, $slug);
+        $html = logopsi_fix_assets($html);
 
-        // Check if page already exists
+        // Check if page already exists (by logopsi slug meta)
         $existing = get_posts([
             'post_type' => 'page',
-            'name' => sanitize_title(basename($slug)),
             'posts_per_page' => 1,
             'post_status' => 'any',
             'meta_key' => '_logopsi_slug',
             'meta_value' => $slug,
+            'fields' => 'ids',
+            'no_found_rows' => true,
+            'update_post_meta_cache' => false,
+            'update_post_term_cache' => false,
         ]);
+
+        // Find parent ID by looking up parent slug directly
+        $parent_id = 0;
+        if (!empty($page['parent_slug'])) {{
+            $parent_posts = get_posts([
+                'post_type' => 'page',
+                'posts_per_page' => 1,
+                'post_status' => 'any',
+                'meta_key' => '_logopsi_slug',
+                'meta_value' => $page['parent_slug'],
+                'fields' => 'ids',
+                'no_found_rows' => true,
+                'update_post_meta_cache' => false,
+                'update_post_term_cache' => false,
+            ]);
+            if (!empty($parent_posts)) {{
+                $parent_id = $parent_posts[0];
+            }}
+        }}
 
         $post_data = [
             'post_title' => wp_strip_all_tags($page['title']),
@@ -370,10 +449,11 @@ function logopsi_ajax_deploy() {{
             'post_content' => '<!-- Logopsi page: ' . esc_html($slug) . ' -->',
             'post_status' => 'publish',
             'post_type' => 'page',
+            'post_parent' => $parent_id,
         ];
 
         if (!empty($existing)) {{
-            $post_data['ID'] = $existing[0]->ID;
+            $post_data['ID'] = $existing[0];
             $post_id = wp_update_post($post_data);
             $updated++;
         }} else {{
@@ -391,43 +471,44 @@ function logopsi_ajax_deploy() {{
         update_post_meta($post_id, '_logopsi_slug', $slug);
         update_post_meta($post_id, '_logopsi_rel_path', $page['rel_path']);
 
-        // Store meta description for SEO
         if (!empty($page['meta_desc'])) {{
             update_post_meta($post_id, '_logopsi_meta_desc', $page['meta_desc']);
         }}
 
-        $slug_to_id[$slug] = $post_id;
+        // Free memory
+        wp_cache_flush();
     }}
 
-    // Second pass: set parent relationships
-    foreach ($pages_data as $page) {{
-        if (empty($page['parent_slug'])) continue;
-        $slug = $page['slug'];
-        $parent_slug = $page['parent_slug'];
+    $next_offset = $offset + $batch_size;
+    $done = $next_offset >= $total;
 
-        if (isset($slug_to_id[$slug]) && isset($slug_to_id[$parent_slug])) {{
-            wp_update_post([
-                'ID' => $slug_to_id[$slug],
-                'post_parent' => $slug_to_id[$parent_slug],
-            ]);
+    // Set homepage and permalinks on last batch
+    if ($done) {{
+        $accueil = get_posts([
+            'post_type' => 'page',
+            'posts_per_page' => 1,
+            'post_status' => 'publish',
+            'meta_key' => '_logopsi_slug',
+            'meta_value' => 'accueil',
+            'fields' => 'ids',
+        ]);
+        if (!empty($accueil)) {{
+            update_option('show_on_front', 'page');
+            update_option('page_on_front', $accueil[0]);
         }}
+        update_option('permalink_structure', '/%postname%/');
+        flush_rewrite_rules();
     }}
-
-    // Set homepage
-    if (isset($slug_to_id['accueil'])) {{
-        update_option('show_on_front', 'page');
-        update_option('page_on_front', $slug_to_id['accueil']);
-    }}
-
-    // Update permalink structure
-    update_option('permalink_structure', '/%postname%/');
-    flush_rewrite_rules();
 
     wp_send_json_success([
         'created' => $created,
         'updated' => $updated,
         'errors' => $errors,
-        'total' => count($pages_data),
+        'total' => $total,
+        'offset' => $offset,
+        'next_offset' => $done ? -1 : $next_offset,
+        'done' => $done,
+        'processed' => min($next_offset, $total),
     ]);
 }}
 
@@ -462,12 +543,28 @@ function logopsi_ajax_deploy_single() {{
         'post_status' => 'any',
     ]);
 
+    // Find parent ID if parent_slug is set
+    $parent_id = 0;
+    if (!empty($page['parent_slug'])) {{
+        $parent_page = get_posts([
+            'post_type' => 'page',
+            'meta_key' => '_logopsi_slug',
+            'meta_value' => $page['parent_slug'],
+            'posts_per_page' => 1,
+            'post_status' => 'any',
+        ]);
+        if (!empty($parent_page)) {{
+            $parent_id = $parent_page[0]->ID;
+        }}
+    }}
+
     $post_data = [
         'post_title' => wp_strip_all_tags($page['title']),
         'post_name' => sanitize_title(basename($slug)),
         'post_content' => '<!-- Logopsi page: ' . esc_html($slug) . ' -->',
         'post_status' => 'publish',
         'post_type' => 'page',
+        'post_parent' => $parent_id,
     ];
 
     if (!empty($existing)) {{
@@ -774,7 +871,7 @@ def generate_admin_js():
     return '''
 jQuery(document).ready(function($) {
 
-    // Deploy all pages
+    // Deploy all pages (batch mode)
     $('#logopsi-deploy-all').on('click', function() {
         if (!confirm('Déployer toutes les pages sur WordPress ?')) return;
 
@@ -783,38 +880,58 @@ jQuery(document).ready(function($) {
         $('#logopsi-progress').show();
         $('#logopsi-result').hide();
 
-        $.ajax({
-            url: logopsiAjax.ajaxurl,
-            type: 'POST',
-            data: {
-                action: 'logopsi_deploy',
-                nonce: logopsiAjax.nonce
-            },
-            success: function(response) {
-                if (response.success) {
-                    var d = response.data;
-                    $('#logopsi-progress-fill').css('width', '100%');
-                    $('#logopsi-progress-text').text('Terminé !');
-                    $('#logopsi-result').show().removeClass('notice-error').addClass('notice-success');
-                    $('#logopsi-result-text').text(
-                        d.created + ' pages créées, ' + d.updated + ' mises à jour. ' +
-                        (d.errors.length ? d.errors.length + ' erreur(s).' : 'Aucune erreur.')
-                    );
-                    if (d.errors.length) {
-                        console.log('Erreurs:', d.errors);
+        var totalCreated = 0;
+        var totalUpdated = 0;
+        var allErrors = [];
+
+        function deployBatch(offset) {
+            $.ajax({
+                url: logopsiAjax.ajaxurl,
+                type: 'POST',
+                timeout: 120000,
+                data: {
+                    action: 'logopsi_deploy',
+                    nonce: logopsiAjax.nonce,
+                    offset: offset
+                },
+                success: function(response) {
+                    if (response.success) {
+                        var d = response.data;
+                        totalCreated += d.created;
+                        totalUpdated += d.updated;
+                        allErrors = allErrors.concat(d.errors);
+
+                        var pct = Math.round((d.processed / d.total) * 100);
+                        $('#logopsi-progress-fill').css('width', pct + '%');
+                        $('#logopsi-progress-text').text('Déploiement : ' + d.processed + ' / ' + d.total + ' pages (' + pct + '%)');
+
+                        if (d.done) {
+                            $('#logopsi-progress-fill').css('width', '100%');
+                            $('#logopsi-progress-text').text('Terminé !');
+                            $('#logopsi-result').show().removeClass('notice-error').addClass('notice-success');
+                            $('#logopsi-result-text').text(
+                                totalCreated + ' pages créées, ' + totalUpdated + ' mises à jour. ' +
+                                (allErrors.length ? allErrors.length + ' erreur(s).' : 'Aucune erreur.')
+                            );
+                            if (allErrors.length) console.log('Erreurs:', allErrors);
+                            $btn.prop('disabled', false).html('<span class="dashicons dashicons-upload"></span> Déployer tout le site');
+                            setTimeout(function() { location.reload(); }, 2000);
+                        } else {
+                            deployBatch(d.next_offset);
+                        }
+                    } else {
+                        alert('Erreur: ' + response.data);
+                        $btn.prop('disabled', false).html('<span class="dashicons dashicons-upload"></span> Déployer tout le site');
                     }
-                    setTimeout(function() { location.reload(); }, 2000);
-                } else {
-                    alert('Erreur: ' + response.data);
+                },
+                error: function(xhr, status) {
+                    alert('Erreur de connexion (batch offset ' + offset + '). Status: ' + status + '. Vous pouvez relancer le déploiement, il reprendra là où il s\\'est arrêté.');
+                    $btn.prop('disabled', false).html('<span class="dashicons dashicons-upload"></span> Déployer tout le site');
                 }
-            },
-            error: function() {
-                alert('Erreur de connexion.');
-            },
-            complete: function() {
-                $btn.prop('disabled', false).html('<span class="dashicons dashicons-upload"></span> Déployer tout le site');
-            }
-        });
+            });
+        }
+
+        deployBatch(0);
     });
 
     // Deploy single page

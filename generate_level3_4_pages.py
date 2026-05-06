@@ -161,6 +161,25 @@ SCOLAIRE_SUBJECTS = {
             "terminale": {"label": "Terminale", "cycle": "Lycée"},
         },
     },
+    "espagnol": {
+        "label": "Espagnol",
+        "icon": "globe",
+        "desc": "Cours d'espagnol en ligne",
+        "levels": {
+            "cp": {"label": "CP", "cycle": "Primaire"},
+            "ce1": {"label": "CE1", "cycle": "Primaire"},
+            "ce2": {"label": "CE2", "cycle": "Primaire"},
+            "cm1": {"label": "CM1", "cycle": "Primaire"},
+            "cm2": {"label": "CM2", "cycle": "Primaire"},
+            "6eme": {"label": "6ème", "cycle": "Collège"},
+            "5eme": {"label": "5ème", "cycle": "Collège"},
+            "4eme": {"label": "4ème", "cycle": "Collège"},
+            "3eme": {"label": "3ème", "cycle": "Collège"},
+            "seconde": {"label": "Seconde", "cycle": "Lycée"},
+            "premiere": {"label": "Première", "cycle": "Lycée"},
+            "terminale": {"label": "Terminale", "cycle": "Lycée"},
+        },
+    },
     "physique-chimie": {
         "label": "Physique-Chimie",
         "icon": "flask-conical",
@@ -710,6 +729,177 @@ ANGLAIS_LEVELS = {
     },
 }
 
+ESPAGNOL_LEVELS = {
+    "cp": {
+        "hero": "L'espagnol au CP éveille la curiosité de votre enfant pour une nouvelle langue. À travers des comptines, des jeux et des mises en situation simples, il découvre les sonorités de l'espagnol et apprend ses premiers mots : les couleurs, les animaux, les salutations.",
+        "topics": [
+            ("Écoute et répétition", "ear", "Comptines, chansons et histoires courtes en espagnol pour familiariser l'oreille."),
+            ("Vocabulaire de base", "book-open", "Les couleurs, les chiffres jusqu'à 10, les animaux, la famille."),
+            ("Salutations et politesse", "message-square", "Hola, adiós, por favor, gracias : les premiers échanges en espagnol."),
+            ("Jeux et activités", "puzzle", "Jeux de mémoire, coloriages, mimes pour apprendre en s'amusant."),
+        ],
+        "method": "Au CP, nos séances d'espagnol sont courtes, ludiques et entièrement orales. L'objectif est de créer un premier contact positif avec la langue à travers le jeu, la musique et la répétition naturelle.",
+        "faq": [
+            ("Mon enfant peut-il apprendre l'espagnol dès le CP ?", "Oui, les jeunes enfants ont une capacité naturelle à absorber de nouvelles sonorités. L'apprentissage précoce de l'espagnol développe l'oreille et la curiosité linguistique sans surcharge."),
+            ("L'espagnol ne risque-t-il pas de le perturber dans son apprentissage du français ?", "Non, au contraire. L'apprentissage d'une langue étrangère renforce les capacités cognitives et la conscience linguistique, ce qui bénéficie aussi au français."),
+        ],
+    },
+    "ce1": {
+        "hero": "L'espagnol au CE1 prolonge la découverte commencée au CP. Votre enfant enrichit son vocabulaire, apprend à formuler des phrases simples et découvre les premières notions culturelles du monde hispanophone à travers des activités ludiques et interactives.",
+        "topics": [
+            ("Vocabulaire élargi", "book-open", "Les vêtements, la nourriture, le corps humain, la maison."),
+            ("Phrases simples", "message-square", "Se présenter, dire son âge, exprimer ses goûts : me gusta / no me gusta."),
+            ("Prononciation", "mic", "Les sons spécifiques de l'espagnol : rr, ñ, ll, j. Exercices d'articulation ludiques."),
+            ("Culture hispanophone", "globe", "Découverte de l'Espagne et de l'Amérique latine : fêtes, traditions, géographie simple."),
+        ],
+        "method": "Au CE1, nos séances d'espagnol restent principalement orales mais introduisent progressivement l'écrit. Les activités sont variées : chansons, petits dialogues, jeux de rôle et premières lectures illustrées.",
+        "faq": [
+            ("Mon enfant n'a pas fait d'espagnol au CP, peut-il commencer au CE1 ?", "Bien sûr. Nos enseignants adaptent le contenu au niveau de chaque enfant. Les bases s'acquièrent rapidement grâce à des activités engageantes et un rythme adapté."),
+            ("Combien de temps par semaine faut-il consacrer à l'espagnol au CE1 ?", "Une à deux séances de 30 minutes par semaine suffisent à cet âge. La régularité est plus importante que la durée : mieux vaut des séances courtes et fréquentes."),
+        ],
+    },
+    "ce2": {
+        "hero": "L'espagnol au CE2 structure les premiers acquis : votre enfant commence à lire et écrire des mots simples en espagnol, construit des phrases courtes et développe sa compréhension orale. Les activités culturelles enrichissent sa découverte du monde hispanophone.",
+        "topics": [
+            ("Lecture et écriture", "pencil", "Lire des mots et des phrases simples, copier du vocabulaire, premiers écrits guidés."),
+            ("Grammaire de base", "list", "Le genre et le nombre, les articles (el, la, los, las), les verbes ser et estar au présent."),
+            ("Compréhension orale", "ear", "Comprendre des consignes, des dialogues simples et de courtes histoires."),
+            ("Vie quotidienne", "home", "Décrire sa journée, parler de ses activités, de son école, de sa famille."),
+        ],
+        "method": "Au CE2, nous introduisons l'écrit de manière progressive tout en maintenant la priorité sur l'oral. Les séances alternent entre exercices structurés et activités créatives pour maintenir la motivation.",
+        "faq": [
+            ("L'espagnol est-il plus facile que l'anglais pour un francophone ?", "L'espagnol partage de nombreuses similitudes avec le français (vocabulaire latin, structure grammaticale). Les enfants francophones progressent souvent rapidement en espagnol, ce qui renforce leur confiance."),
+            ("Mon enfant confond l'espagnol et le français, est-ce normal ?", "C'est tout à fait normal et temporaire. La proximité entre les deux langues peut créer des interférences, mais elles se résorbent naturellement avec la pratique."),
+        ],
+    },
+    "cm1": {
+        "hero": "L'espagnol au CM1 approfondit les compétences linguistiques de votre enfant. Il apprend à conjuguer des verbes réguliers, à construire des phrases plus élaborées et à s'exprimer sur des sujets variés. La culture hispanique enrichit chaque séance.",
+        "topics": [
+            ("Conjugaison", "list", "Verbes réguliers en -ar, -er, -ir au présent de l'indicatif."),
+            ("Expression orale", "mic", "Décrire un lieu, raconter une activité, exprimer ses préférences."),
+            ("Vocabulaire thématique", "book-open", "Les loisirs, le sport, les vacances, la ville et la campagne."),
+            ("Culture et civilisation", "globe", "Les pays hispanophones, leurs capitales, traditions et fêtes (Día de los Muertos, la Tomatina)."),
+        ],
+        "method": "Au CM1, les séances d'espagnol combinent grammaire explicite et mise en pratique immédiate. Votre enfant apprend à construire des phrases correctes et à les utiliser dans des situations de communication concrètes.",
+        "faq": [
+            ("Mon enfant apprend déjà l'anglais à l'école, peut-il aussi faire de l'espagnol ?", "Oui, apprendre deux langues en parallèle est tout à fait possible et même bénéfique. Les compétences linguistiques développées dans une langue renforcent l'apprentissage de l'autre."),
+            ("Comment consolider les acquis en espagnol entre les séances ?", "Nous recommandons de petites activités quotidiennes : écouter des chansons en espagnol, regarder des dessins animés, nommer les objets du quotidien. La répétition régulière ancre les apprentissages."),
+        ],
+    },
+    "cm2": {
+        "hero": "L'espagnol au CM2 prépare le passage au collège : votre enfant consolide ses bases grammaticales, enrichit son vocabulaire et développe son aisance orale. L'objectif est d'atteindre un premier niveau de communication fonctionnelle en espagnol.",
+        "topics": [
+            ("Grammaire", "list", "Verbes irréguliers courants (ir, tener, hacer), les adjectifs possessifs, les prépositions."),
+            ("Vocabulaire étendu", "book-open", "Les professions, les transports, l'alimentation, les nouvelles technologies."),
+            ("Production orale et écrite", "pencil", "Écrire un court texte, se présenter en continu, décrire son environnement."),
+            ("Préparation à la 6ème", "graduation-cap", "Méthodes de travail du collège, autonomie, consolidation des acquis de primaire."),
+        ],
+        "method": "Au CM2, nous préparons votre enfant aux exigences du collège en espagnol. Les séances combinent consolidation des acquis et introduction progressive des attendus de la 6ème : plus d'écrit, plus de grammaire explicite, plus d'autonomie.",
+        "faq": [
+            ("Comment préparer mon enfant à l'espagnol au collège ?", "Nous consolidons les bases : vocabulaire courant, conjugaison des verbes réguliers et irréguliers fréquents, compréhension orale. Un enfant qui aborde le collège avec ces acquis prend une longueur d'avance."),
+            ("L'espagnol sera-t-il LV1 ou LV2 au collège ?", "L'espagnol est généralement proposé en LV2 à partir de la 5ème. Si votre enfant le commence tôt, il aura un avantage considérable et pourra viser un excellent niveau dès le collège."),
+        ],
+    },
+    "6eme": {
+        "hero": "La 6ème est souvent la première année d'espagnol pour de nombreux élèves qui le découvriront en LV2 en 5ème. Pour ceux qui ont déjà commencé, c'est l'année de consolidation des bases avant l'enseignement formel du collège. L'objectif est de préparer un socle solide.",
+        "topics": [
+            ("Bases grammaticales", "list", "Le présent de l'indicatif (réguliers et irréguliers courants), le genre, le nombre, les articles."),
+            ("Compréhension orale", "ear", "Comprendre des dialogues simples, des consignes, des présentations."),
+            ("Expression écrite", "pencil", "Rédiger des textes courts : se présenter, décrire sa famille, son école."),
+            ("Culture hispanophone", "globe", "L'Espagne et l'Amérique latine : géographie, vie quotidienne, traditions."),
+        ],
+        "method": "En 6ème, nous posons les bases solides de l'espagnol pour préparer l'entrée en LV2. Les séances combinent grammaire, vocabulaire et pratique orale dans une approche communicative et motivante.",
+        "faq": [
+            ("Mon enfant n'a jamais fait d'espagnol, peut-il commencer en 6ème ?", "C'est même le moment idéal pour prendre de l'avance. Commencer avant la 5ème (début officiel de la LV2) permet d'aborder l'enseignement formel avec confiance et aisance."),
+            ("La grammaire espagnole est-elle difficile pour un francophone ?", "L'espagnol est l'une des langues les plus accessibles pour un francophone : vocabulaire proche, conjugaison logique, prononciation régulière. Les progrès sont souvent rapides et encourageants."),
+        ],
+    },
+    "5eme": {
+        "hero": "La 5ème marque le début officiel de l'espagnol en LV2 pour la plupart des élèves. Le programme est ambitieux : apprendre les bases de la conjugaison, du vocabulaire courant et de la communication. L'objectif est d'atteindre le niveau A1 du CECRL.",
+        "topics": [
+            ("Conjugaison", "list", "Présent de l'indicatif, verbes à diphtongue et à affaiblissement, estar + gérondif."),
+            ("Vocabulaire courant", "book-open", "La famille, l'école, les loisirs, la description physique et morale."),
+            ("Expression orale", "mic", "Dialogues, présentations, description d'images, jeux de rôle."),
+            ("Compréhension écrite", "book-open", "Textes courts : emails, cartes postales, petits articles, BD."),
+        ],
+        "method": "En 5ème, nous accompagnons la découverte formelle de l'espagnol avec des séances structurées et dynamiques. La priorité est de donner confiance à l'élève et de poser des bases solides dès le début de la LV2.",
+        "faq": [
+            ("Les verbes à diphtongue sont difficiles, comment les retenir ?", "Les verbes à diphtongue (querer → quiero, poder → puedo) suivent des règles régulières. Nos enseignants les expliquent par des moyens mnémotechniques et une pratique répétée qui les rend naturels."),
+            ("Comment aider mon enfant à progresser rapidement en espagnol LV2 ?", "La régularité est la clé. En plus de nos séances, nous recommandons d'écouter de la musique en espagnol, de regarder des séries (sous-titrées) et de pratiquer les conjugaisons quotidiennement."),
+        ],
+    },
+    "4eme": {
+        "hero": "La 4ème approfondit l'espagnol LV2 : la grammaire se complexifie avec les temps du passé, le vocabulaire s'enrichit et les compétences de communication se développent. L'objectif est de progresser vers le niveau A2 du CECRL.",
+        "topics": [
+            ("Grammaire", "list", "Passé simple (pretérito indefinido), imparfait, futur, ser vs estar, por vs para."),
+            ("Expression écrite", "pencil", "Rédiger des textes structurés : narration au passé, description, lettre informelle."),
+            ("Culture et société", "message-square", "La vie quotidienne en Espagne et en Amérique latine, les fêtes, les enjeux de société."),
+            ("Compréhension", "ear", "Comprendre des documents authentiques : extraits audio, vidéos, articles adaptés."),
+        ],
+        "method": "En 4ème, nous insistons sur la maîtrise des temps du passé et la capacité à raconter et décrire en espagnol. Les séances incluent des activités communicatives, des exercices de grammaire ciblés et des découvertes culturelles.",
+        "faq": [
+            ("Mon enfant confond le passé simple et l'imparfait en espagnol, comment l'aider ?", "Cette distinction est un point clé de la 4ème. Nos enseignants l'expliquent avec des repères clairs (action ponctuelle vs description/habitude) et de nombreux exercices en contexte."),
+            ("L'espagnol et le français se ressemblent, mon enfant fait beaucoup de \"faux amis\", est-ce grave ?", "Les faux amis (constipado, embarazada...) sont un piège classique. Nous les travaillons systématiquement pour que votre enfant les identifie et les évite."),
+        ],
+    },
+    "3eme": {
+        "hero": "La 3ème est l'année du Brevet en espagnol LV2. L'épreuve évalue la compréhension orale, la compréhension écrite et l'expression écrite au niveau A2. Notre accompagnement prépare votre enfant à chaque composante de l'épreuve.",
+        "topics": [
+            ("Compréhension orale", "ear", "Écouter et comprendre des documents variés en espagnol, prendre des notes."),
+            ("Compréhension écrite", "book-open", "Analyser des textes authentiques, repérer les informations, comprendre le sens global."),
+            ("Expression écrite", "pencil", "Rédiger des textes structurés de 100-120 mots, répondre à des questions en espagnol."),
+            ("Préparation au Brevet", "award", "Annales corrigées, méthodologie, gestion du temps."),
+        ],
+        "method": "En 3ème, notre priorité est la préparation au Brevet d'espagnol. Nous travaillons chaque compétence évaluée avec des exercices types et des annales. Les séances incluent aussi la conversation pour maintenir l'aisance orale.",
+        "faq": [
+            ("Comment bien préparer l'épreuve d'espagnol du Brevet ?", "Nous entraînons votre enfant sur les trois compétences évaluées : compréhension orale, compréhension écrite et expression écrite. Des annales chronométrées et des stratégies de réponse complètent la préparation."),
+            ("Le niveau A2 est-il atteignable en seulement deux ans de LV2 ?", "Oui, avec un travail régulier. Le programme est conçu pour atteindre le A2 en fin de 3ème. Nos séances de soutien permettent de consolider les acquis et de combler les éventuelles lacunes."),
+        ],
+    },
+    "seconde": {
+        "hero": "La Seconde en espagnol est une année de transition vers le lycée. Le programme approfondit la grammaire, enrichit le vocabulaire et développe les compétences de communication. L'objectif est de progresser vers le niveau B1 du CECRL.",
+        "topics": [
+            ("Grammaire avancée", "list", "Subjonctif présent, conditionnel, concordance des temps, voix passive."),
+            ("Expression orale", "mic", "Débats, présentations, prise de parole en continu sur des sujets variés."),
+            ("Expression écrite", "pencil", "Essai, commentaire de texte, lettre formelle, synthèse."),
+            ("Compréhension de documents", "book-open", "Articles de presse, extraits littéraires, vidéos, podcasts en espagnol."),
+        ],
+        "method": "En Seconde, nous augmentons significativement le temps de pratique en espagnol. Les séances sont menées autant que possible en espagnol, avec des activités de compréhension et de production ambitieuses.",
+        "faq": [
+            ("Le subjonctif espagnol est réputé difficile, comment l'aborder ?", "Le subjonctif est omniprésent en espagnol. Nos enseignants l'introduisent progressivement par des situations de communication courantes (exprimer un souhait, un doute, une émotion) avant de formaliser les règles."),
+            ("Faut-il prendre la spécialité espagnol en Première ?", "La spécialité LLCE espagnol est idéale pour les élèves passionnés par la langue et la culture hispanophone. Un bon niveau B1 en fin de Seconde est recommandé pour y réussir."),
+        ],
+    },
+    "premiere": {
+        "hero": "La Première en espagnol (tronc commun ou spécialité LLCE) approfondit les compétences linguistiques et culturelles. L'objectif est d'atteindre le niveau B1+/B2 et de préparer les épreuves du bac, notamment le Grand Oral pour ceux qui choisissent l'espagnol.",
+        "topics": [
+            ("Expression orale avancée", "mic", "Argumentation, débat, prise de parole structurée, préparation au Grand Oral."),
+            ("Expression écrite", "pencil", "Essai argumenté, commentaire de document, synthèse en espagnol."),
+            ("Littérature et civilisation", "book-open", "Étude d'œuvres et de documents authentiques en lien avec les axes du programme (identités, espaces, mémoires)."),
+            ("Grammaire perfectionnée", "list", "Subjonctif imparfait, concordance des temps avancée, nuances stylistiques."),
+        ],
+        "method": "En Première, nous visons l'aisance et la nuance en espagnol. Les séances sont intégralement en espagnol quand le niveau le permet. Nous travaillons la compréhension fine et l'expression de haut niveau.",
+        "faq": [
+            ("Comment préparer le Grand Oral en espagnol ?", "Nos enseignants accompagnent votre enfant dans le choix du sujet, la structuration de l'exposé et l'entraînement à la prise de parole. Des simulations d'oral sont proposées régulièrement."),
+            ("La spécialité LLCE espagnol est-elle difficile ?", "La spécialité demande un bon niveau en espagnol et un intérêt pour la littérature et la civilisation hispanophone. Nos enseignants accompagnent les élèves dans l'analyse de textes littéraires et la rédaction d'essais en espagnol."),
+        ],
+    },
+    "terminale": {
+        "hero": "La Terminale en espagnol prépare les épreuves du bac et le niveau B2 du CECRL. Les compétences de compréhension et d'expression sont évaluées à un niveau élevé. Pour les élèves en spécialité LLCE, l'épreuve finale est exigeante.",
+        "topics": [
+            ("Préparation aux épreuves", "award", "Compréhension orale et écrite, expression orale et écrite, méthodologie du bac."),
+            ("Expression de haut niveau", "trending-up", "Argumentation nuancée, analyse critique, registre formel en espagnol."),
+            ("Compréhension avancée", "ear", "Documents authentiques complexes : conférences, débats, articles de presse hispanophones."),
+            ("Grand Oral / Spécialité", "mic", "Préparation spécifique selon le parcours de l'élève."),
+        ],
+        "method": "En Terminale, notre accompagnement est centré sur la performance aux épreuves du bac d'espagnol. Les séances simulent les conditions d'examen et ciblent les points d'amélioration pour maximiser les notes.",
+        "faq": [
+            ("Comment obtenir une bonne note en espagnol au bac ?", "Nous travaillons chaque compétence évaluée avec des exercices types et des critères d'évaluation précis. La régularité de la pratique et la maîtrise de la méthodologie sont les clés de la réussite."),
+            ("Mon enfant souhaite poursuivre des études en lien avec l'espagnol, comment le préparer ?", "Au-delà du bac, nous préparons votre enfant aux certifications internationales (DELE) et aux exigences linguistiques des formations en langues, commerce international ou relations internationales."),
+        ],
+    },
+}
+
 AIDE_DEVOIRS_LEVELS = {
     "cp": {
         "hero": "L'aide aux devoirs au CP accompagne votre enfant dans ses premiers apprentissages fondamentaux : lecture, écriture et mathématiques. Nos enseignants l'aident à comprendre ses leçons, à faire ses exercices et à développer de bonnes habitudes de travail dès le début de sa scolarité.",
@@ -854,6 +1044,7 @@ def get_level_data(subject_slug, level_slug):
         "mathematiques": MATHS_LEVELS,
         "francais": FRANCAIS_LEVELS,
         "anglais": ANGLAIS_LEVELS,
+        "espagnol": ESPAGNOL_LEVELS,
         "aide-aux-devoirs": AIDE_DEVOIRS_LEVELS,
     }
     lvls = lookup.get(subject_slug, {})

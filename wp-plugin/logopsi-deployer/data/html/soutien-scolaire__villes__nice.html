@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soutien scolaire à Nice - Tous niveaux en ligne - Logopsi Studios</title>
-    <meta name="description" content="Soutien scolaire en ligne à Nice. Mathématiques, français, anglais, aide aux devoirs et physique-chimie. Tous niveaux du CP à la Terminale.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Soutien scolaire à Nice en ligne - Logopsi Studios</title>
+    <meta name="description" content="Soutien scolaire en ligne à Nice : cours particuliers de mathématiques, français, anglais, physique-chimie et aide aux devoirs. Enseignants qualifiés, premier cours sous 48h.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { primary: '#05C86B', primaryHover: '#04b05e', light: '#FBF9F6', dark: '#111111' },
-                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+                    colors: {
+                        primary: '#05C86B',
+                        primaryHover: '#04b05e',
+                        light: '#FBF9F6',
+                        dark: '#111111'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
                 }
             }
         }
@@ -22,22 +27,21 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         body { font-family: 'Inter', sans-serif; }
+        .mega-menu-enter { animation: fadeInDown 0.2s ease-out forwards; }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        .modal-enter { animation: fadeIn 0.2s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         .mega-menu { display: none; }
         .mega-menu.active { display: block; }
-        .mobile-menu { display: none; }
-        .mobile-menu.active { display: block; }
     </style>
 </head>
-<body class="bg-light text-dark font-sans">
+<body class="font-sans text-gray-900 bg-light min-h-screen">
     <!-- NAVBAR -->
     <nav class="bg-white shadow-sm sticky top-0 z-50 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <a href="../../index.html" class="flex items-center space-x-2">
-                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold text-sm">L</span>
-                    </div>
-                    <span class="text-xl font-bold text-dark">Logopsi <span class="text-primary">Studios</span></span>
+                    <img src="../../logo-logopsi.png" alt="Logopsi Studios" class="h-14 w-auto">
                 </a>
 
                 <div class="hidden lg:flex items-center space-x-8">
@@ -160,6 +164,7 @@
                             <li><a href="../../soutien-scolaire/mathematiques/" class="text-gray-600 hover:text-primary transition-colors text-sm">Mathématiques</a></li>
                             <li><a href="../../soutien-scolaire/francais/" class="text-gray-600 hover:text-primary transition-colors text-sm">Français</a></li>
                             <li><a href="../../soutien-scolaire/anglais/" class="text-gray-600 hover:text-primary transition-colors text-sm">Anglais</a></li>
+                            <li><a href="../../soutien-scolaire/espagnol/" class="text-gray-600 hover:text-primary transition-colors text-sm">Espagnol</a></li>
                             <li><a href="../../soutien-scolaire/physique-chimie/" class="text-gray-600 hover:text-primary transition-colors text-sm">Physique-Chimie</a></li>
                             <li><a href="../../soutien-scolaire/aide-aux-devoirs/" class="text-gray-600 hover:text-primary transition-colors text-sm">Aide aux devoirs</a></li>
                         </ul>
@@ -193,156 +198,228 @@
             </div>
         </div>
     </nav>
-
-    <div class="max-w-6xl mx-auto px-4 py-4">
-        <nav class="text-sm text-gray-500">
-            <a href="/site/" class="hover:text-primary">Accueil</a> <span class="mx-2">></span>
-            <a href="/site/soutien-scolaire/" class="hover:text-primary">Soutien Scolaire</a> <span class="mx-2">></span>
-            <span class="text-dark font-medium">Nice</span>
-        </nav>
-    </div>
-
-    <section class="bg-white py-16">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Soutien scolaire à Nice - Tous niveaux en ligne</h1>
-                <p class="text-lg text-gray-600 mb-8">Vous habitez à Nice ou dans les Alpes-Maritimes et cherchez un soutien scolaire de qualité pour votre enfant ? Logopsi Studios propose des cours particuliers 100 % en ligne, accessibles depuis chez vous. Nos professeurs qualifiés accompagnent les élèves niçois en visio, du CP à la Terminale, dans toutes les matières.</p>
-                <div class="flex flex-col sm:flex-row gap-4 mb-8">
-                    <a href="#cta" class="bg-primary text-white px-8 py-3.5 rounded-lg font-semibold text-lg hover:bg-primaryHover transition text-center">Prendre rendez-vous</a>
-                    <a href="#matieres" class="border-2 border-primary text-primary px-8 py-3.5 rounded-lg font-semibold text-lg hover:bg-primary hover:text-white transition text-center">Voir nos matières</a>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-2 text-sm text-gray-500 mb-4">
+                <a href="../../index.html" class="hover:text-primary transition-colors">Accueil</a>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <a href="../../soutien-scolaire/" class="hover:text-primary transition-colors">Soutien Scolaire</a>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span class="text-gray-900 font-medium">Nice</span>
+            </div>
+    <section class="py-16">
+        <div class="text-center max-w-3xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
+                Soutien scolaire à <span class="text-primary">Nice</span> - Cours en ligne
+            </h1>
+            <p class="text-lg text-gray-600 leading-relaxed mb-8">Cours particuliers en ligne avec des enseignants qualifiés, du primaire au lycée. Sur la Côte d'Azur, les délais de prise en charge sont souvent longs. En ligne, nous garantissons un premier rendez-vous sous 48 heures.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+                <a href="../../contact.html" class="bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primaryHover transition text-lg shadow-lg inline-flex items-center justify-center gap-2">
+                    <i data-lucide="calendar" class="w-5 h-5"></i> Réserver un cours
+                </a>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4"></i> Premier cours sous 48h</span>
+                <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-1.5"><i data-lucide="monitor" class="w-4 h-4"></i> 100% en ligne</span>
+                <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4"></i> Nice et environs</span>
+            </div>
+        </div>
+    </section>
+    <section class="py-16 bg-white rounded-3xl mb-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Pourquoi choisir le soutien scolaire en ligne depuis Nice ?</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-light rounded-2xl p-8 text-center">
+                    <div class="w-14 h-14 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4"><i data-lucide="clock" class="w-7 h-7"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Démarrage rapide</h3>
+                    <p class="text-gray-600 text-sm">Sur la Côte d'Azur, les délais de prise en charge sont souvent longs. En ligne, nous garantissons un premier rendez-vous sous 48 heures.</p>
                 </div>
-                <div class="flex gap-6">
-                    <div class="flex items-center gap-2 text-sm text-gray-600"><i data-lucide="clock" class="w-4 h-4 text-primary"></i> <span>Prise en charge rapide</span></div>
-                    <div class="flex items-center gap-2 text-sm text-gray-600"><i data-lucide="monitor" class="w-4 h-4 text-primary"></i> <span>100% en ligne</span></div>
-                    <div class="flex items-center gap-2 text-sm text-gray-600"><i data-lucide="map-pin" class="w-4 h-4 text-primary"></i> <span>Nice et environs</span></div>
+                <div class="bg-light rounded-2xl p-8 text-center">
+                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4"><i data-lucide="home" class="w-7 h-7"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Depuis chez vous</h3>
+                    <p class="text-gray-600 text-sm">Consultez depuis chez vous à Nice ou ses environs. Plus besoin de se déplacer pour accéder à des spécialistes qualifiés.</p>
+                </div>
+                <div class="bg-light rounded-2xl p-8 text-center">
+                    <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4"><i data-lucide="award" class="w-7 h-7"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Enseignants qualifiés</h3>
+                    <p class="text-gray-600 text-sm">Tous nos enseignants sont diplômés et expérimentés. Ils s'adaptent au programme et au rythme de votre enfant.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="matieres" class="py-20">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-4">Nos matières à Nice</h2>
-            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Retrouvez l'ensemble de nos cours en ligne accessibles depuis Nice, pour tous les niveaux scolaires.</p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center">
-                            <i data-lucide="calculator" class="w-5 h-5 text-primary"></i>
-                        </div>
-                        <h3 class="font-bold text-lg">Mathématiques</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <a href="/site/soutien-scolaire/mathematiques/cp-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">CP</a>
-                        <a href="/site/soutien-scolaire/mathematiques/ce1-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">CE1</a>
-                        <a href="/site/soutien-scolaire/mathematiques/ce2-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">CE2</a>
-                        <a href="/site/soutien-scolaire/mathematiques/cm1-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">CM1</a>
-                        <a href="/site/soutien-scolaire/mathematiques/cm2-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">CM2</a>
-                        <a href="/site/soutien-scolaire/mathematiques/6eme-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">6e</a>
-                        <a href="/site/soutien-scolaire/mathematiques/5eme-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">5e</a>
-                        <a href="/site/soutien-scolaire/mathematiques/4eme-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">4e</a>
-                        <a href="/site/soutien-scolaire/mathematiques/3eme-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">3e</a>
-                        <a href="/site/soutien-scolaire/mathematiques/seconde-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">2nde</a>
-                        <a href="/site/soutien-scolaire/mathematiques/premiere-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">1re</a>
-                        <a href="/site/soutien-scolaire/mathematiques/terminale-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">Terminale</a>
-                    </div>
+    <section class="py-16">
+        <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Nos matières à Nice</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center"><i data-lucide="calculator" class="w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900">Mathématiques</h3>
                 </div>
-
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center">
-                            <i data-lucide="book-open" class="w-5 h-5 text-primary"></i>
-                        </div>
-                        <h3 class="font-bold text-lg">Français</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <a href="/site/soutien-scolaire/francais/cp-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">CP</a>
-                        <a href="/site/soutien-scolaire/francais/ce1-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">CE1</a>
-                        <a href="/site/soutien-scolaire/francais/ce2-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">CE2</a>
-                        <a href="/site/soutien-scolaire/francais/cm1-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">CM1</a>
-                        <a href="/site/soutien-scolaire/francais/cm2-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">CM2</a>
-                        <a href="/site/soutien-scolaire/francais/6eme-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">6e</a>
-                        <a href="/site/soutien-scolaire/francais/5eme-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">5e</a>
-                        <a href="/site/soutien-scolaire/francais/4eme-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">4e</a>
-                        <a href="/site/soutien-scolaire/francais/3eme-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">3e</a>
-                        <a href="/site/soutien-scolaire/francais/seconde-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">2nde</a>
-                        <a href="/site/soutien-scolaire/francais/premiere-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">1re</a>
-                        <a href="/site/soutien-scolaire/francais/terminale-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">Terminale</a>
-                    </div>
+                <p class="text-gray-600 text-sm mb-4">Cours de mathématiques en ligne pour les élèves de Nice.</p>
+                <div class="flex flex-wrap gap-2">
+                    <a href="../../soutien-scolaire/mathematiques/cp-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CP</a>
+                    <a href="../../soutien-scolaire/mathematiques/ce1-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CE1</a>
+                    <a href="../../soutien-scolaire/mathematiques/ce2-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CE2</a>
+                    <a href="../../soutien-scolaire/mathematiques/cm1-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CM1</a>
+                    <a href="../../soutien-scolaire/mathematiques/cm2-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CM2</a>
+                    <a href="../../soutien-scolaire/mathematiques/6eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">6ème</a>
+                    <a href="../../soutien-scolaire/mathematiques/5eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">5ème</a>
+                    <a href="../../soutien-scolaire/mathematiques/4eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">4ème</a>
+                    <a href="../../soutien-scolaire/mathematiques/3eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">3ème</a>
+                    <a href="../../soutien-scolaire/mathematiques/seconde-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">Seconde</a>
+                    <a href="../../soutien-scolaire/mathematiques/premiere-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">Première</a>
+                    <a href="../../soutien-scolaire/mathematiques/terminale-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">Terminale</a>
                 </div>
-
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center">
-                            <i data-lucide="languages" class="w-5 h-5 text-primary"></i>
-                        </div>
-                        <h3 class="font-bold text-lg">Anglais</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <a href="/site/soutien-scolaire/anglais/cp-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">CP</a>
-                        <a href="/site/soutien-scolaire/anglais/ce1-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">CE1</a>
-                        <a href="/site/soutien-scolaire/anglais/ce2-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">CE2</a>
-                        <a href="/site/soutien-scolaire/anglais/cm1-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">CM1</a>
-                        <a href="/site/soutien-scolaire/anglais/cm2-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">CM2</a>
-                        <a href="/site/soutien-scolaire/anglais/6eme-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">6e</a>
-                        <a href="/site/soutien-scolaire/anglais/5eme-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">5e</a>
-                        <a href="/site/soutien-scolaire/anglais/4eme-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">4e</a>
-                        <a href="/site/soutien-scolaire/anglais/3eme-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">3e</a>
-                        <a href="/site/soutien-scolaire/anglais/seconde-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">2nde</a>
-                        <a href="/site/soutien-scolaire/anglais/premiere-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">1re</a>
-                        <a href="/site/soutien-scolaire/anglais/terminale-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">Terminale</a>
-                    </div>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center"><i data-lucide="book-open" class="w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900">Français</h3>
                 </div>
-
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center">
-                            <i data-lucide="notebook-pen" class="w-5 h-5 text-primary"></i>
-                        </div>
-                        <h3 class="font-bold text-lg">Aide aux devoirs</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <a href="/site/soutien-scolaire/aide-aux-devoirs/cp-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">CP</a>
-                        <a href="/site/soutien-scolaire/aide-aux-devoirs/ce1-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">CE1</a>
-                        <a href="/site/soutien-scolaire/aide-aux-devoirs/ce2-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">CE2</a>
-                        <a href="/site/soutien-scolaire/aide-aux-devoirs/cm1-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">CM1</a>
-                        <a href="/site/soutien-scolaire/aide-aux-devoirs/cm2-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">CM2</a>
-                        <a href="/site/soutien-scolaire/aide-aux-devoirs/6eme-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">6e</a>
-                        <a href="/site/soutien-scolaire/aide-aux-devoirs/5eme-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">5e</a>
-                        <a href="/site/soutien-scolaire/aide-aux-devoirs/4eme-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">4e</a>
-                        <a href="/site/soutien-scolaire/aide-aux-devoirs/3eme-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">3e</a>
-                        </div>
+                <p class="text-gray-600 text-sm mb-4">Cours de français en ligne pour les élèves de Nice.</p>
+                <div class="flex flex-wrap gap-2">
+                    <a href="../../soutien-scolaire/francais/cp-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CP</a>
+                    <a href="../../soutien-scolaire/francais/ce1-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CE1</a>
+                    <a href="../../soutien-scolaire/francais/ce2-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CE2</a>
+                    <a href="../../soutien-scolaire/francais/cm1-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CM1</a>
+                    <a href="../../soutien-scolaire/francais/cm2-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CM2</a>
+                    <a href="../../soutien-scolaire/francais/6eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">6ème</a>
+                    <a href="../../soutien-scolaire/francais/5eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">5ème</a>
+                    <a href="../../soutien-scolaire/francais/4eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">4ème</a>
+                    <a href="../../soutien-scolaire/francais/3eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">3ème</a>
+                    <a href="../../soutien-scolaire/francais/seconde-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">Seconde</a>
+                    <a href="../../soutien-scolaire/francais/premiere-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">Première</a>
+                    <a href="../../soutien-scolaire/francais/terminale-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">Terminale</a>
                 </div>
-
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center">
-                            <i data-lucide="flask-conical" class="w-5 h-5 text-primary"></i>
-                        </div>
-                        <h3 class="font-bold text-lg">Physique-Chimie</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <a href="/site/soutien-scolaire/physique-chimie/5eme-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">5e</a>
-                        <a href="/site/soutien-scolaire/physique-chimie/4eme-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">4e</a>
-                        <a href="/site/soutien-scolaire/physique-chimie/3eme-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">3e</a>
-                        <a href="/site/soutien-scolaire/physique-chimie/seconde-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">2nde</a>
-                        <a href="/site/soutien-scolaire/physique-chimie/premiere-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">1re</a>
-                        <a href="/site/soutien-scolaire/physique-chimie/terminale-nice.html" class="text-xs bg-light px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">Terminale</a>
-                    </div>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center"><i data-lucide="globe" class="w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900">Anglais</h3>
                 </div>
-
+                <p class="text-gray-600 text-sm mb-4">Cours d'anglais en ligne pour les élèves de Nice.</p>
+                <div class="flex flex-wrap gap-2">
+                    <a href="../../soutien-scolaire/anglais/cp-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CP</a>
+                    <a href="../../soutien-scolaire/anglais/ce1-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CE1</a>
+                    <a href="../../soutien-scolaire/anglais/ce2-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CE2</a>
+                    <a href="../../soutien-scolaire/anglais/cm1-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CM1</a>
+                    <a href="../../soutien-scolaire/anglais/cm2-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CM2</a>
+                    <a href="../../soutien-scolaire/anglais/6eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">6ème</a>
+                    <a href="../../soutien-scolaire/anglais/5eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">5ème</a>
+                    <a href="../../soutien-scolaire/anglais/4eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">4ème</a>
+                    <a href="../../soutien-scolaire/anglais/3eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">3ème</a>
+                    <a href="../../soutien-scolaire/anglais/seconde-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">Seconde</a>
+                    <a href="../../soutien-scolaire/anglais/premiere-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">Première</a>
+                    <a href="../../soutien-scolaire/anglais/terminale-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">Terminale</a>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center"><i data-lucide="globe" class="w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900">Espagnol</h3>
+                </div>
+                <p class="text-gray-600 text-sm mb-4">Cours d'espagnol en ligne pour les élèves de Nice.</p>
+                <div class="flex flex-wrap gap-2">
+                    <a href="../../soutien-scolaire/espagnol/cp-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CP</a>
+                    <a href="../../soutien-scolaire/espagnol/ce1-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CE1</a>
+                    <a href="../../soutien-scolaire/espagnol/ce2-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CE2</a>
+                    <a href="../../soutien-scolaire/espagnol/cm1-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CM1</a>
+                    <a href="../../soutien-scolaire/espagnol/cm2-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CM2</a>
+                    <a href="../../soutien-scolaire/espagnol/6eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">6ème</a>
+                    <a href="../../soutien-scolaire/espagnol/5eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">5ème</a>
+                    <a href="../../soutien-scolaire/espagnol/4eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">4ème</a>
+                    <a href="../../soutien-scolaire/espagnol/3eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">3ème</a>
+                    <a href="../../soutien-scolaire/espagnol/seconde-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">Seconde</a>
+                    <a href="../../soutien-scolaire/espagnol/premiere-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">Première</a>
+                    <a href="../../soutien-scolaire/espagnol/terminale-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">Terminale</a>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center"><i data-lucide="flask-conical" class="w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900">Physique-Chimie</h3>
+                </div>
+                <p class="text-gray-600 text-sm mb-4">Cours de physique-chimie en ligne pour les élèves de Nice.</p>
+                <div class="flex flex-wrap gap-2">
+                    <a href="../../soutien-scolaire/physique-chimie/5eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">5ème</a>
+                    <a href="../../soutien-scolaire/physique-chimie/4eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">4ème</a>
+                    <a href="../../soutien-scolaire/physique-chimie/3eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">3ème</a>
+                    <a href="../../soutien-scolaire/physique-chimie/seconde-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">Seconde</a>
+                    <a href="../../soutien-scolaire/physique-chimie/premiere-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">Première</a>
+                    <a href="../../soutien-scolaire/physique-chimie/terminale-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">Terminale</a>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center"><i data-lucide="book-open" class="w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900">Aide aux devoirs</h3>
+                </div>
+                <p class="text-gray-600 text-sm mb-4">Aide aux devoirs en ligne pour les élèves de Nice.</p>
+                <div class="flex flex-wrap gap-2">
+                    <a href="../../soutien-scolaire/aide-aux-devoirs/cp-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CP</a>
+                    <a href="../../soutien-scolaire/aide-aux-devoirs/ce1-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CE1</a>
+                    <a href="../../soutien-scolaire/aide-aux-devoirs/ce2-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CE2</a>
+                    <a href="../../soutien-scolaire/aide-aux-devoirs/cm1-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CM1</a>
+                    <a href="../../soutien-scolaire/aide-aux-devoirs/cm2-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">CM2</a>
+                    <a href="../../soutien-scolaire/aide-aux-devoirs/6eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">6ème</a>
+                    <a href="../../soutien-scolaire/aide-aux-devoirs/5eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">5ème</a>
+                    <a href="../../soutien-scolaire/aide-aux-devoirs/4eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">4ème</a>
+                    <a href="../../soutien-scolaire/aide-aux-devoirs/3eme-nice.html" class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary/10 hover:text-primary transition">3ème</a>
+                </div>
             </div>
         </div>
     </section>
-
-    <section id="cta" class="py-20">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="bg-dark rounded-3xl p-12 text-center text-white">
-                <h2 class="text-3xl font-bold mb-4">Soutien scolaire en ligne à Nice</h2>
-                <p class="text-gray-300 mb-8">Nos professeurs qualifiés sont disponibles en visio pour les élèves de Nice et ses environs. Tous niveaux, toutes matières, séances flexibles.</p>
-                <a href="#" class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primaryHover transition">Prendre rendez-vous</a>
+    </main>
+    <!-- ABOUT SECTION -->
+    <section class="py-20 px-6 bg-light border-t border-gray-100">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1 relative">
+                <div class="absolute -inset-4 bg-primary/10 rounded-3xl transform -rotate-3"></div>
+                <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Équipe Logopsi Studios" class="relative rounded-2xl shadow-lg w-full object-cover h-[400px]">
+            </div>
+            <div class="order-1 md:order-2 space-y-6">
+                <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
+                    <i data-lucide="award" class="w-4 h-4"></i> Professionnels diplômés
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Pourquoi choisir Logopsi Studios ?</h2>
+                <p class="text-gray-600 leading-relaxed">Chez Logopsi Studios, nous réunissons des enseignants qualifiés, formés aux dernières avancées scientifiques. Notre plateforme vous connecte avec le bon professionnel en moins de 48h, partout en France.</p>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <div class="mt-1 bg-primary/10 text-primary rounded-full p-1"><i data-lucide="check" class="w-4 h-4"></i></div>
+                        <span class="text-gray-700"><strong>Rendez-vous sous 48h</strong> — Plus de listes d'attente interminables</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="mt-1 bg-primary/10 text-primary rounded-full p-1"><i data-lucide="check" class="w-4 h-4"></i></div>
+                        <span class="text-gray-700"><strong>Séances remboursables</strong> — Éligible Sécurité sociale et mutuelles</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="mt-1 bg-primary/10 text-primary rounded-full p-1"><i data-lucide="check" class="w-4 h-4"></i></div>
+                        <span class="text-gray-700"><strong>100% en ligne</strong> — Depuis chez vous, sans déplacement</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CTA -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="bg-primary rounded-3xl p-12 text-center text-white relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10">
+                    <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="w-full h-full">
+                        <path d="M0,20 Q25,0 50,20 T100,20 V100 H0 Z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-bold mb-4">Soutien scolaire à Nice</h2>
+                    <p class="text-lg mb-8 text-green-50">Réservez le premier cours de votre enfant et bénéficiez d'un accompagnement personnalisé avec nos enseignants qualifiés.</p>
+                    <a href="#" class="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-green-50 transition text-lg inline-block shadow-lg">
+                        Réserver mon bilan
+                    </a>
+                    <div class="mt-6 space-y-1">
+                        <p class="text-sm text-green-50"><i data-lucide="check-circle" class="w-4 h-4 inline mr-1"></i>Rappel téléphonique <strong>offert</strong></p>
+                        <p class="text-sm text-green-50"><i data-lucide="check-circle" class="w-4 h-4 inline mr-1"></i>Tests préliminaires <strong>offerts</strong></p>
+                        <p class="text-sm text-green-100 mt-2 opacity-90">Le bilan complet est un acte professionnel payant (tarifs sur demande)</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -352,10 +429,7 @@
             <div class="grid md:grid-cols-4 gap-8 mb-12">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                            <span class="text-white font-bold text-sm">L</span>
-                        </div>
-                        <span class="text-xl font-bold text-white">Logopsi <span class="text-primary">Studios</span></span>
+                        <img src="../../logo-logopsi.png" alt="Logopsi Studios" class="h-12 w-auto">
                     </div>
                     <p class="text-gray-400 text-sm">Orthophonie, psychologie et soutien scolaire en ligne. Des professionnels diplômés, partout en France.</p>
                 </div>
@@ -385,6 +459,7 @@
                         <li><a href="../../soutien-scolaire/mathematiques/" class="text-gray-400 hover:text-primary text-sm transition-colors">Mathématiques</a></li>
                         <li><a href="../../soutien-scolaire/francais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Français</a></li>
                         <li><a href="../../soutien-scolaire/anglais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Anglais</a></li>
+                        <li><a href="../../soutien-scolaire/espagnol/" class="text-gray-400 hover:text-primary text-sm transition-colors">Espagnol</a></li>
                         <li><a href="../../soutien-scolaire/physique-chimie/" class="text-gray-400 hover:text-primary text-sm transition-colors">Physique-Chimie</a></li>
                         <li><a href="../../soutien-scolaire/aide-aux-devoirs/" class="text-gray-400 hover:text-primary text-sm transition-colors">Aide aux devoirs</a></li>
                     </ul>
@@ -393,119 +468,35 @@
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-500 text-sm">&copy; 2025 Logopsi Studios. Tous droits réservés.</p>
                 <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="text-gray-500 hover:text-primary text-sm transition-colors">Mentions légales</a>
-                    <a href="#" class="text-gray-500 hover:text-primary text-sm transition-colors">Politique de confidentialité</a>
-                    <a href="#" class="text-gray-500 hover:text-primary text-sm transition-colors">CGV</a>
+                    <a href="../../mentions-legales.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Mentions légales</a>
+                    <a href="../../contact.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Contact</a>
+                    <a href="../../a-propos.html" class="text-gray-500 hover:text-primary text-sm transition-colors">À propos</a>
                 </div>
             </div>
         </div>
     </footer>
-
     <script>
         lucide.createIcons();
 
-        function toggleMegaMenu(menu) {
-            const menus = {
-                ortho: document.getElementById('ortho-mega'),
-                psycho: document.getElementById('psycho-mega'),
-                scolaire: document.getElementById('scolaire-mega')
-            };
-            Object.keys(menus).forEach(key => {
-                if (key === menu) {
-                    menus[key].classList.toggle('active');
-                } else {
-                    menus[key].classList.remove('active');
-                }
-            });
-        }
-
-        document.addEventListener('click', function(e) {
-            const triggers = ['ortho-trigger', 'psycho-trigger', 'scolaire-trigger'];
-            const megaMenus = ['ortho-mega', 'psycho-mega', 'scolaire-mega'];
-
-            triggers.forEach((triggerId, i) => {
-                const trigger = document.getElementById(triggerId);
-                const mega = document.getElementById(megaMenus[i]);
-                if (trigger && mega && !trigger.contains(e.target) && !mega.contains(e.target)) {
-                    mega.classList.remove('active');
-                }
-            });
-        });
-
-        function toggleMobileMenu() {
-            document.getElementById('mobile-menu').classList.toggle('active');
-        }
-    </script>
-
-    <script>
-        lucide.createIcons();
-
-        function toggleMegaMenu(menu) {
-            const menus = {
-                ortho: document.getElementById('ortho-mega'),
-                psycho: document.getElementById('psycho-mega'),
-                scolaire: document.getElementById('scolaire-mega')
-            };
-            Object.keys(menus).forEach(key => {
-                if (key === menu) {
-                    menus[key].classList.toggle('active');
-                } else {
-                    menus[key].classList.remove('active');
-                }
-            });
-        }
-
-        document.addEventListener('click', function(e) {
-            const triggers = ['ortho-trigger', 'psycho-trigger', 'scolaire-trigger'];
-            const megaMenus = ['ortho-mega', 'psycho-mega', 'scolaire-mega'];
-
-            triggers.forEach((triggerId, i) => {
-                const trigger = document.getElementById(triggerId);
-                const mega = document.getElementById(megaMenus[i]);
-                if (trigger && mega && !trigger.contains(e.target) && !mega.contains(e.target)) {
-                    mega.classList.remove('active');
-                }
-            });
-        });
-
-        function toggleMobileMenu() {
-            document.getElementById('mobile-menu').classList.toggle('active');
-        }
-    </script>
-
-    <script>
-        lucide.createIcons();
-
+        // Mega Menu
         var megaCloseTimers = { ortho: null, psycho: null, scolaire: null };
-
         function openMegaMenu(menu) {
             cancelMegaClose(menu);
             var menus = { ortho: 'ortho-mega', psycho: 'psycho-mega', scolaire: 'scolaire-mega' };
             Object.keys(menus).forEach(function(key) {
                 var el = document.getElementById(menus[key]);
-                if (key === menu) {
-                    el.classList.add('active');
-                } else {
-                    el.classList.remove('active');
-                    clearTimeout(megaCloseTimers[key]);
-                }
+                if (key === menu) { el.classList.add('active'); }
+                else { el.classList.remove('active'); clearTimeout(megaCloseTimers[key]); }
             });
         }
-
         function scheduleMegaClose(menu) {
+            var menus = { ortho: 'ortho-mega', psycho: 'psycho-mega', scolaire: 'scolaire-mega' };
             megaCloseTimers[menu] = setTimeout(function() {
-                var id = menu === 'ortho' ? 'ortho-mega' : menu === 'psycho' ? 'psycho-mega' : 'scolaire-mega';
-                document.getElementById(id).classList.remove('active');
-            }, 150);
+                document.getElementById(menus[menu]).classList.remove('active');
+            }, 200);
         }
-
-        function cancelMegaClose(menu) {
-            clearTimeout(megaCloseTimers[menu]);
-        }
-
-        function toggleMobileMenu() {
-            document.getElementById('mobile-menu').classList.toggle('active');
-        }
+        function cancelMegaClose(menu) { clearTimeout(megaCloseTimers[menu]); }
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
     </script>
 
     <script>
