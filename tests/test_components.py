@@ -4,7 +4,7 @@ import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from shared_components import get_booking_modal
+from shared_components import get_booking_modal, get_booking_js, get_js
 
 
 def test_modal_has_marker():
@@ -42,6 +42,30 @@ def test_modal_has_member_login_link():
     assert "Se connecter" in html or "Déjà client" in html
 
 
+def test_booking_js_exposes_open_close():
+    js = get_booking_js()
+    assert "function openBookingModal" in js
+    assert "function closeBookingModal" in js
+    assert "function showCallbackForm" in js
+    assert "function showInfoView" in js
+
+
+def test_booking_js_handles_escape():
+    js = get_booking_js()
+    assert "Escape" in js or "27" in js
+
+
+def test_booking_js_handles_rappel_ok():
+    js = get_booking_js()
+    assert "rappel=ok" in js or "rappel" in js
+
+
+def test_get_js_includes_booking_js():
+    js = get_js()
+    assert "openBookingModal" in js
+    assert "closeBookingModal" in js
+
+
 if __name__ == "__main__":
     test_modal_has_marker()
     test_modal_has_price_and_delay()
@@ -49,4 +73,8 @@ if __name__ == "__main__":
     test_modal_has_callback_form()
     test_modal_has_aria_attributes()
     test_modal_has_member_login_link()
+    test_booking_js_exposes_open_close()
+    test_booking_js_handles_escape()
+    test_booking_js_handles_rappel_ok()
+    test_get_js_includes_booking_js()
     print("test_components: OK")

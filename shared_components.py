@@ -474,7 +474,8 @@ def get_js(include_faq=False):
         '        }\n'
         '        function cancelMegaClose(menu) { clearTimeout(megaCloseTimers[menu]); }\n'
         '        function toggleMobileMenu() { document.getElementById(\'mobile-menu\').classList.toggle(\'hidden\'); }\n'
-        + faq_js +
+        + faq_js
+        + get_booking_js() +
         '    </script>\n'
         '</body>\n'
         '</html>\n'
@@ -579,4 +580,67 @@ def get_booking_modal():
         '            </div>\n'
         '        </div>\n'
         '    </div>\n'
+    )
+
+
+def get_booking_js():
+    """Return the booking-modal JS block (without surrounding <script> tags).
+
+    Exposes window.openBookingModal, closeBookingModal, showCallbackForm,
+    showInfoView. Auto-opens success view on URL ?rappel=ok.
+    """
+    return (
+        '\n'
+        '        // ---- Booking modal ----\n'
+        '        function setBookingView(view) {\n'
+        '            var modal = document.getElementById("booking-modal");\n'
+        '            if (!modal) return;\n'
+        '            modal.setAttribute("data-view", view);\n'
+        '            modal.querySelector("[data-view-info]").classList.toggle("hidden", view !== "info");\n'
+        '            modal.querySelector("[data-view-callback]").classList.toggle("hidden", view !== "callback");\n'
+        '            modal.querySelector("[data-view-success]").classList.toggle("hidden", view !== "success");\n'
+        '        }\n'
+        '        function openBookingModal() {\n'
+        '            var modal = document.getElementById("booking-modal");\n'
+        '            if (!modal) return;\n'
+        '            modal.classList.remove("hidden");\n'
+        '            modal.classList.add("flex");\n'
+        '            document.body.style.overflow = "hidden";\n'
+        '            var nextInput = modal.querySelector(\'input[name="_next"]\');\n'
+        '            if (nextInput) {\n'
+        '                var url = new URL(window.location.href);\n'
+        '                url.searchParams.set("rappel", "ok");\n'
+        '                nextInput.value = url.toString();\n'
+        '            }\n'
+        '            setBookingView("info");\n'
+        '            if (window.lucide) { window.lucide.createIcons(); }\n'
+        '        }\n'
+        '        function closeBookingModal() {\n'
+        '            var modal = document.getElementById("booking-modal");\n'
+        '            if (!modal) return;\n'
+        '            modal.classList.add("hidden");\n'
+        '            modal.classList.remove("flex");\n'
+        '            document.body.style.overflow = "";\n'
+        '        }\n'
+        '        function showCallbackForm() { setBookingView("callback"); if (window.lucide) { window.lucide.createIcons(); } }\n'
+        '        function showInfoView() { setBookingView("info"); if (window.lucide) { window.lucide.createIcons(); } }\n'
+        '        document.addEventListener("keydown", function(e) {\n'
+        '            if (e.key === "Escape") { closeBookingModal(); }\n'
+        '        });\n'
+        '        // Generic class hook\n'
+        '        document.addEventListener("click", function(e) {\n'
+        '            var t = e.target.closest(".js-open-booking");\n'
+        '            if (t) { e.preventDefault(); openBookingModal(); }\n'
+        '        });\n'
+        '        // Auto-open success view if ?rappel=ok\n'
+        '        (function() {\n'
+        '            try {\n'
+        '                var p = new URLSearchParams(window.location.search);\n'
+        '                if (p.get("rappel") === "ok") {\n'
+        '                    openBookingModal();\n'
+        '                    setBookingView("success");\n'
+        '                    if (window.lucide) { window.lucide.createIcons(); }\n'
+        '                }\n'
+        '            } catch (err) {}\n'
+        '        })();\n'
     )
