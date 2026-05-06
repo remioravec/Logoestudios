@@ -5,7 +5,7 @@ import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from shared_components import get_booking_modal, get_booking_js, get_js
-from shared_components import get_navbar
+from shared_components import get_navbar, get_footer
 
 
 def test_modal_has_marker():
@@ -86,6 +86,12 @@ def test_navbar_keeps_prefix_for_other_links():
     assert "../orthophonie/" in html
 
 
+def test_footer_has_espace_membre_link():
+    html = get_footer("./")
+    assert "Espace membre" in html
+    assert "app.logopsiestudios.com/fr/login" in html
+
+
 if __name__ == "__main__":
     test_modal_has_marker()
     test_modal_has_price_and_delay()
@@ -100,4 +106,5 @@ if __name__ == "__main__":
     test_navbar_has_connexion_link_desktop()
     test_navbar_cta_opens_popup()
     test_navbar_keeps_prefix_for_other_links()
+    test_footer_has_espace_membre_link()
     print("test_components: OK")
