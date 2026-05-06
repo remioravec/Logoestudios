@@ -510,3 +510,73 @@ def get_breadcrumb(crumbs):
         '                ' + '\n                '.join(parts) + '\n'
         '            </div>\n'
     )
+
+
+# ------------------------------------------------------------------
+# 8. BOOKING MODAL (popup de réservation)
+# ------------------------------------------------------------------
+
+def get_booking_modal():
+    """Return the booking modal HTML (3 states in DOM, hidden by default).
+
+    Visible state controlled by classes 'modal-open' on body and data-view
+    attribute on #booking-modal: 'info' | 'callback' | 'success'.
+    """
+    return (
+        '    <!-- LOGOPSI_BOOKING_MODAL -->\n'
+        '    <div id="booking-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title" data-view="info">\n'
+        '        <div class="absolute inset-0 bg-black/60" onclick="closeBookingModal()"></div>\n'
+        '        <div class="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 z-[110] modal-enter">\n'
+        '            <button onclick="closeBookingModal()" aria-label="Fermer" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors">\n'
+        '                <i data-lucide="x" class="w-5 h-5 text-gray-700"></i>\n'
+        '            </button>\n'
+        '\n'
+        '            <!-- VIEW: INFO -->\n'
+        '            <div data-view-info>\n'
+        '                <h2 id="booking-modal-title" class="text-2xl font-bold text-gray-900 mb-2">Bilan complet en ligne</h2>\n'
+        '                <p class="text-primary font-semibold mb-6">150€ &middot; Sous 48h &middot; 100% en ligne</p>\n'
+        '                <ul class="space-y-3 mb-8">\n'
+        '                    <li class="flex items-start gap-3 text-gray-700"><i data-lucide="check" class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"></i><span>Orthophoniste / psychologue diplômé(e) d’État</span></li>\n'
+        '                    <li class="flex items-start gap-3 text-gray-700"><i data-lucide="check" class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"></i><span>Compte-rendu détaillé fourni</span></li>\n'
+        '                    <li class="flex items-start gap-3 text-gray-700"><i data-lucide="check" class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"></i><span>Éligible Sécurité sociale &amp; mutuelles</span></li>\n'
+        '                </ul>\n'
+        '                <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="block w-full bg-primary hover:bg-primaryHover text-white font-semibold text-center py-3.5 rounded-full transition-colors mb-3">Réserver mon bilan en ligne &rarr;</a>\n'
+        '                <button onclick="showCallbackForm()" class="block w-full border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 rounded-full transition-colors">Être rappelé(e) gratuitement</button>\n'
+        '                <p class="text-center text-sm text-gray-500 mt-6">Déjà client·e ? <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-medium">Se connecter &rarr;</a></p>\n'
+        '            </div>\n'
+        '\n'
+        '            <!-- VIEW: CALLBACK -->\n'
+        '            <div data-view-callback class="hidden">\n'
+        '                <button onclick="showInfoView()" class="text-sm text-gray-500 hover:text-primary mb-4 inline-flex items-center gap-1"><i data-lucide="arrow-left" class="w-4 h-4"></i> Retour</button>\n'
+        '                <h2 class="text-2xl font-bold text-gray-900 mb-2">Être rappelé(e) gratuitement</h2>\n'
+        '                <p class="text-gray-600 mb-6">Renseignez vos coordonnées, nous vous rappelons sous 48h ouvrées.</p>\n'
+        '                <form action="https://formsubmit.co/contact@logopsistudios.com" method="POST" class="space-y-4">\n'
+        '                    <input type="hidden" name="_subject" value="Demande de rappel — Logopsi Studios">\n'
+        '                    <input type="hidden" name="_template" value="table">\n'
+        '                    <input type="hidden" name="_captcha" value="false">\n'
+        '                    <input type="hidden" name="_next" value="">\n'
+        '                    <input type="text" name="name" required placeholder="Nom et prénom" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary">\n'
+        '                    <input type="tel" name="phone" required placeholder="Téléphone" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary">\n'
+        '                    <input type="email" name="email" required placeholder="Email" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary">\n'
+        '                    <select name="creneau" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary bg-white">\n'
+        '                        <option value="indifferent">Créneau préférentiel — indifférent</option>\n'
+        '                        <option value="matin">Matin (9h-12h)</option>\n'
+        '                        <option value="apres-midi">Après-midi (12h-17h)</option>\n'
+        '                        <option value="soir">Soir (17h-19h)</option>\n'
+        '                    </select>\n'
+        '                    <button type="submit" class="w-full bg-primary hover:bg-primaryHover text-white font-semibold py-3.5 rounded-full transition-colors">Envoyer ma demande</button>\n'
+        '                </form>\n'
+        '            </div>\n'
+        '\n'
+        '            <!-- VIEW: SUCCESS -->\n'
+        '            <div data-view-success class="hidden text-center py-6">\n'
+        '                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-5">\n'
+        '                    <i data-lucide="check" class="w-8 h-8 text-primary"></i>\n'
+        '                </div>\n'
+        '                <h2 class="text-2xl font-bold text-gray-900 mb-2">Demande envoyée</h2>\n'
+        '                <p class="text-gray-600 mb-6">Nous vous rappelons sous 48h ouvrées.</p>\n'
+        '                <button onclick="closeBookingModal()" class="bg-primary hover:bg-primaryHover text-white font-semibold px-8 py-3 rounded-full transition-colors">Fermer</button>\n'
+        '            </div>\n'
+        '        </div>\n'
+        '    </div>\n'
+    )
