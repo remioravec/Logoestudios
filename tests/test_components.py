@@ -6,6 +6,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from shared_components import get_booking_modal, get_booking_js, get_js
 from shared_components import get_navbar, get_footer
+from shared_components import get_cta_section
 
 
 def test_modal_has_marker():
@@ -92,6 +93,15 @@ def test_footer_has_espace_membre_link():
     assert "app.logopsiestudios.com/fr/login" in html
 
 
+def test_cta_section_uses_new_wording():
+    html = get_cta_section("Prêt à commencer ?", "Réservez votre bilan en quelques clics.")
+    assert "150" in html
+    assert "48h" in html or "48 h" in html
+    assert "openBookingModal()" in html
+    # Old wording must be gone
+    assert "tarifs sur demande" not in html
+
+
 if __name__ == "__main__":
     test_modal_has_marker()
     test_modal_has_price_and_delay()
@@ -107,4 +117,5 @@ if __name__ == "__main__":
     test_navbar_cta_opens_popup()
     test_navbar_keeps_prefix_for_other_links()
     test_footer_has_espace_membre_link()
+    test_cta_section_uses_new_wording()
     print("test_components: OK")

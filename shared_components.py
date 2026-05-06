@@ -350,7 +350,11 @@ def get_footer(prefix):
 # ------------------------------------------------------------------
 
 def get_cta_section(title, desc):
-    """Return the green CTA banner section."""
+    """Return the green CTA banner section, highlighting the 150\u20ac/48h offer.
+
+    The `title` parameter is accepted for backward compat but the new
+    headline is fixed to "150\u20ac \u00b7 sous 48h".
+    """
 
     return (
         '    <!-- CTA -->\n'
@@ -363,15 +367,16 @@ def get_cta_section(title, desc):
         '                    </svg>\n'
         '                </div>\n'
         '                <div class="relative z-10">\n'
-        '                    <h2 class="text-3xl font-bold mb-4">' + title + '</h2>\n'
-        '                    <p class="text-lg mb-8 text-green-50">' + desc + '</p>\n'
-        '                    <a href="#" class="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-green-50 transition text-lg inline-block shadow-lg">\n'
+        '                    <p class="uppercase tracking-widest text-sm text-green-50 mb-2">Bilan complet en ligne</p>\n'
+        '                    <h2 class="text-4xl md:text-5xl font-bold mb-3">150&euro; &middot; sous 48h</h2>\n'
+        '                    <p class="text-lg mb-8 text-green-50 max-w-xl mx-auto">' + desc + '</p>\n'
+        '                    <button type="button" onclick="openBookingModal()" class="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-green-50 transition text-lg inline-block shadow-lg">\n'
         '                        R\u00e9server mon bilan\n'
-        '                    </a>\n'
-        '                    <div class="mt-6 space-y-1">\n'
-        '                        <p class="text-sm text-green-50"><i data-lucide="check-circle" class="w-4 h-4 inline mr-1"></i>Rappel t\u00e9l\u00e9phonique <strong>offert</strong></p>\n'
-        '                        <p class="text-sm text-green-50"><i data-lucide="check-circle" class="w-4 h-4 inline mr-1"></i>Tests pr\u00e9liminaires <strong>offerts</strong></p>\n'
-        '                        <p class="text-sm text-green-100 mt-2 opacity-90">Le bilan complet est un acte professionnel payant (tarifs sur demande)</p>\n'
+        '                    </button>\n'
+        '                    <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-3 max-w-2xl mx-auto">\n'
+        '                        <p class="text-sm text-green-50"><i data-lucide="check-circle" class="w-4 h-4 inline mr-1"></i>Compte-rendu d\u00e9taill\u00e9</p>\n'
+        '                        <p class="text-sm text-green-50"><i data-lucide="check-circle" class="w-4 h-4 inline mr-1"></i>S\u00e9cu &amp; mutuelles</p>\n'
+        '                        <p class="text-sm text-green-50"><i data-lucide="check-circle" class="w-4 h-4 inline mr-1"></i>Sous 48h</p>\n'
         '                    </div>\n'
         '                </div>\n'
         '            </div>\n'
