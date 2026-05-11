@@ -7,8 +7,8 @@
     "meta_desc": "Decouvrez Logo Études, plateforme d'orthophonie, psychologie et soutien scolaire en ligne pour enfants et adolescents.",
     "images": [
       "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "./logo-logopsi.png"
+      "./logo-logopsi.png",
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     ]
   },
   {
@@ -28,10 +28,10 @@
     "title": "Bilan orthophonie, psychologie & soutien — 150€, 48h | Logo Études",
     "meta_desc": "Orthophonie, psychologie et soutien scolaire en ligne. Bilan complet à 150€, rendez-vous sous 48h, 100% en visio. Professionnels diplômés d'État, partout en France.",
     "images": [
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       "./logo-logopsi.png",
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     ]
   },
   {
@@ -82,9 +82,9 @@
     "title": "Bilan Addictions aux écrans en ligne — Psychologue 150€/48h | Logo Études",
     "meta_desc": "Bilan psychologique pour Addictions aux écrans en ligne — 150€, rendez-vous sous 48h. Psychologues diplômés d'État, partout en France.",
     "images": [
-      "https://images.unsplash.com/photo-1596742578443-7682ef5251cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       "../logo-logopsi.png",
-      "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+      "https://images.unsplash.com/photo-1596742578443-7682ef5251cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     ]
   },
   {
@@ -95,8 +95,8 @@
     "meta_desc": "Bilan psychologique pour Anxiété en ligne — 150€, rendez-vous sous 48h. Psychologues diplômés d'État, partout en France.",
     "images": [
       "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "../logo-logopsi.png"
+      "../logo-logopsi.png",
+      "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     ]
   },
   {
@@ -166,9 +166,9 @@
     "title": "Bilan TCA en ligne — Psychologue 150€/48h | Logo Études",
     "meta_desc": "Bilan psychologique pour TCA en ligne — 150€, rendez-vous sous 48h. Psychologues diplômés d'État, partout en France.",
     "images": [
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      "../logo-logopsi.png",
-      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      "../logo-logopsi.png"
     ]
   },
   {
@@ -190,9 +190,9 @@
     "title": "Bilan Traumatismes et deuil en ligne — Psychologue 150€/48h | Logo Études",
     "meta_desc": "Bilan psychologique pour Traumatismes et deuil en ligne — 150€, rendez-vous sous 48h. Psychologues diplômés d'État, partout en France.",
     "images": [
-      "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1516627145497-ae6968895b74?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "../logo-logopsi.png"
+      "../logo-logopsi.png",
+      "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
     ]
   },
   {
@@ -214,9 +214,9 @@
     "title": "Bilan bégaiement en ligne — Orthophoniste 150€/48h | Logo Études",
     "meta_desc": "Bilan orthophonique pour la bégaiement en ligne — 150€, rendez-vous sous 48h. Orthophonistes diplômés d'État, partout en France.",
     "images": [
+      "https://images.unsplash.com/photo-1491013516836-7db643ee125a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      "../logo-logopsi.png",
-      "https://images.unsplash.com/photo-1491013516836-7db643ee125a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      "../logo-logopsi.png"
     ]
   },
   {
@@ -274,9 +274,9 @@
     "title": "Bilan fente palatine en ligne — Orthophoniste 150€/48h | Logo Études",
     "meta_desc": "Bilan orthophonique pour la fente palatine en ligne — 150€, rendez-vous sous 48h. Orthophonistes diplômés d'État, partout en France.",
     "images": [
+      "https://images.unsplash.com/photo-1565843708714-52ecf69ab81f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      "../logo-logopsi.png",
-      "https://images.unsplash.com/photo-1565843708714-52ecf69ab81f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      "../logo-logopsi.png"
     ]
   },
   {
@@ -310,9 +310,9 @@
     "title": "Bilan surdité en ligne — Orthophoniste 150€/48h | Logo Études",
     "meta_desc": "Bilan orthophonique pour la surdité en ligne — 150€, rendez-vous sous 48h. Orthophonistes diplômés d'État, partout en France.",
     "images": [
-      "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1516627145497-ae6968895b74?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "../logo-logopsi.png"
+      "../logo-logopsi.png",
+      "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
     ]
   },
   {
@@ -334,9 +334,9 @@
     "title": "Bilan tsa en ligne — Orthophoniste 150€/48h | Logo Études",
     "meta_desc": "Bilan orthophonique pour la tsa en ligne — 150€, rendez-vous sous 48h. Orthophonistes diplômés d'État, partout en France.",
     "images": [
-      "https://images.unsplash.com/photo-1587654780291-39c9404d7dd0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       "../logo-logopsi.png",
-      "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+      "https://images.unsplash.com/photo-1587654780291-39c9404d7dd0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     ]
   },
   {
@@ -354,7 +354,7 @@
     "slug": "soutien-scolaire/physique-chimie",
     "parent_slug": "soutien-scolaire",
     "title": "Bilan physique-chimie en ligne — 150€, sous 48h | Logo Études",
-    "meta_desc": "Bilan pédagogique de physique-chimie en ligne — 150€, sous 48h. De la 5ème à la Terminale, enseignants qualifiés, cours particuliers 100% en visio.",
+    "meta_desc": "Bilan pédagogique en physique-chimie en ligne — 150€, sous 48h. Enseignants qualifiés, cours particuliers 100% en visio.",
     "images": [
       "../../logo-logopsi.png"
     ]

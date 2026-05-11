@@ -557,47 +557,38 @@
         }
     </script>
     <!-- LOGOPSI_BOOKING_MODAL -->
-    <div id="booking-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title" data-view="info">
+    <div id="booking-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title" data-view="callback">
         <div class="absolute inset-0 bg-black/60" onclick="closeBookingModal()"></div>
-        <div class="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 z-[110] modal-enter">
+        <div class="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 z-[110] modal-enter max-h-[92vh] overflow-y-auto">
             <button onclick="closeBookingModal()" aria-label="Fermer" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors">
                 <i data-lucide="x" class="w-5 h-5 text-gray-700"></i>
             </button>
 
-            <!-- VIEW: INFO -->
-            <div data-view-info>
-                <h2 id="booking-modal-title" class="text-2xl font-bold text-gray-900 mb-2">Bilan complet en ligne</h2>
-                <p class="text-primary font-semibold mb-6">150€ &middot; Sous 48h &middot; 100% en ligne</p>
-                <ul class="space-y-3 mb-8">
-                    <li class="flex items-start gap-3 text-gray-700"><i data-lucide="check" class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"></i><span>Orthophoniste / psychologue diplômé(e) d’État</span></li>
-                    <li class="flex items-start gap-3 text-gray-700"><i data-lucide="check" class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"></i><span>Compte-rendu détaillé fourni</span></li>
-                    <li class="flex items-start gap-3 text-gray-700"><i data-lucide="check" class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"></i><span>Éligible Sécurité sociale &amp; mutuelles</span></li>
-                </ul>
-                <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="block w-full bg-primary hover:bg-primaryHover text-white font-semibold text-center py-3.5 rounded-full transition-colors mb-3">Réserver mon bilan en ligne &rarr;</a>
-                <button onclick="showCallbackForm()" class="block w-full border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 rounded-full transition-colors">Être rappelé(e) gratuitement</button>
-                <p class="text-center text-sm text-gray-500 mt-6">Déjà client·e ? <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-medium">Se connecter &rarr;</a></p>
-            </div>
+            <div data-view-info class="hidden"></div>
 
-            <!-- VIEW: CALLBACK -->
-            <div data-view-callback class="hidden">
-                <button onclick="showInfoView()" class="text-sm text-gray-500 hover:text-primary mb-4 inline-flex items-center gap-1"><i data-lucide="arrow-left" class="w-4 h-4"></i> Retour</button>
-                <h2 class="text-2xl font-bold text-gray-900 mb-2">Être rappelé(e) gratuitement</h2>
-                <p class="text-gray-600 mb-6">Renseignez vos coordonnées, nous vous rappelons sous 48h ouvrées.</p>
-                <form action="https://formsubmit.co/contact@logopsistudios.com" method="POST" class="space-y-4">
-                    <input type="hidden" name="_subject" value="Demande de rappel — Logo Études">
+            <!-- VIEW: CONTACT FORM (default) -->
+            <div data-view-callback>
+                <h2 id="booking-modal-title" class="text-2xl font-bold text-gray-900 mb-1">Réserver mon bilan</h2>
+                <p class="text-primary font-semibold mb-1">150€ &middot; Sous 48h &middot; 100% en ligne</p>
+                <p class="text-gray-600 text-sm mb-6">Laissez-nous vos coordonnées, nous vous recontactons sous 48h ouvrées.</p>
+                <form action="https://formsubmit.co/contact@logopsistudios.com" method="POST" class="space-y-3">
+                    <input type="hidden" name="_subject" value="Demande de bilan — Logo Études">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="">
                     <input type="text" name="name" required placeholder="Nom et prénom" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary">
-                    <input type="tel" name="phone" required placeholder="Téléphone" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary">
                     <input type="email" name="email" required placeholder="Email" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary">
-                    <select name="creneau" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary bg-white">
-                        <option value="indifferent">Créneau préférentiel — indifférent</option>
-                        <option value="matin">Matin (9h-12h)</option>
-                        <option value="apres-midi">Après-midi (12h-17h)</option>
-                        <option value="soir">Soir (17h-19h)</option>
+                    <input type="tel" name="phone" required placeholder="Téléphone" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary">
+                    <select name="sujet" required class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary bg-white">
+                        <option value="" disabled selected>Type de bilan</option>
+                        <option value="orthophonie">Orthophonie</option>
+                        <option value="psychologie">Psychologie</option>
+                        <option value="soutien-scolaire">Soutien scolaire</option>
+                        <option value="autre">Je ne sais pas / autre</option>
                     </select>
+                    <textarea name="message" rows="3" placeholder="Décrivez brièvement votre besoin (optionnel)" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary resize-none"></textarea>
                     <button type="submit" class="w-full bg-primary hover:bg-primaryHover text-white font-semibold py-3.5 rounded-full transition-colors">Envoyer ma demande</button>
+                    <p class="text-xs text-gray-500 text-center">Données traitées pour vous recontacter. RGPD respecté.</p>
                 </form>
             </div>
 
@@ -607,7 +598,7 @@
                     <i data-lucide="check" class="w-8 h-8 text-primary"></i>
                 </div>
                 <h2 class="text-2xl font-bold text-gray-900 mb-2">Demande envoyée</h2>
-                <p class="text-gray-600 mb-6">Nous vous rappelons sous 48h ouvrées.</p>
+                <p class="text-gray-600 mb-6">Nous vous recontactons sous 48h ouvrées.</p>
                 <button onclick="closeBookingModal()" class="bg-primary hover:bg-primaryHover text-white font-semibold px-8 py-3 rounded-full transition-colors">Fermer</button>
             </div>
         </div>
@@ -635,7 +626,7 @@
                 url.searchParams.set("rappel", "ok");
                 nextInput.value = url.toString();
             }
-            setBookingView("info");
+            setBookingView("callback");
             if (window.lucide) { window.lucide.createIcons(); }
         }
         function closeBookingModal() {
