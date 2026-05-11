@@ -22,22 +22,21 @@ def is_internal_link(href):
     return True
 
 def resolve_link(source_file, href):
-    """Resolve a relative or root-relative href to an absolute filesystem path."""
+    """Resolve a relative or root-relative href to an absolute filesystem path.
+    Directory hrefs (e.g. './orthophonie/') resolve to the directory's index.html."""
     href = href.split("#")[0].split("?")[0]  # strip fragment/query
     href = unquote(href)
     if not href:
         return None
     if href.startswith("/"):
-        # Absolute from repo root -- try interpreting relative to SITE_ROOT parent
-        # e.g. /site/orthophonie/foo.html
         candidate = Path("/workspaces/Logoestudios") / href.lstrip("/")
-        if candidate.exists():
-            return candidate
-        # Also try relative to site root itself
-        candidate2 = SITE_ROOT / href.lstrip("/")
-        return candidate2 if candidate2.exists() else candidate
+        if not candidate.exists():
+            candidate = SITE_ROOT / href.lstrip("/")
     else:
-        return (source_file.parent / href).resolve()
+        candidate = (source_file.parent / href).resolve()
+    if candidate.is_dir():
+        candidate = candidate / "index.html"
+    return candidate
 
 def main():
     html_files = find_html_files()
