@@ -3,6 +3,13 @@
 
 import os
 
+from seo_titles import (
+    title_for_scolaire_n2, meta_desc_for_scolaire_n2,
+    title_for_scolaire_n4, meta_desc_for_scolaire_n4,
+    SUFFIX as _SEO_SUFFIX,
+)
+from shared_components import get_booking_modal, get_booking_js
+
 SITE_DIR = "/workspaces/Logoestudios/site/soutien-scolaire/physique-chimie"
 CITIES = ["Paris", "Marseille", "Lyon", "Toulouse", "Nice"]
 
@@ -131,7 +138,7 @@ def head(title, description):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title} - Logopsi Studios</title>
+    <title>{title}</title>
     <meta name="description" content="{description}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -157,7 +164,7 @@ def nav():
             <div class="flex items-center gap-6">
                 <a href="/site/soutien-scolaire/" class="text-dark hover:text-primary transition">Soutien Scolaire</a>
                 <a href="/site/soutien-scolaire/physique-chimie/" class="text-primary font-semibold">Physique-Chimie</a>
-                <a href="#cta" class="bg-primary text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-primaryHover transition">Prendre rendez-vous</a>
+                <a href="#" onclick="openBookingModal(); return false;" class="bg-primary text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-primaryHover transition">Prendre rendez-vous</a>
             </div>
         </div>
     </nav>'''
@@ -196,6 +203,7 @@ def footer():
     </footer>
 
     <script>lucide.createIcons();</script>
+''' + get_booking_modal() + get_booking_js() + '''
 </body>
 </html>'''
 
@@ -204,8 +212,9 @@ def cta_section(title, subtitle):
     <section id="cta" class="py-20 bg-primary">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">{title}</h2>
-            <p class="text-green-100 text-lg mb-8">{subtitle}</p>
-            <a href="#" class="inline-block bg-white text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition">Réserver un cours d\'essai gratuit</a>
+            <p class="text-green-100 text-lg mb-2">{subtitle}</p>
+            <p class="text-white/90 text-base mb-8">Bilan complet à <strong>150€</strong> &middot; Rendez-vous sous <strong>48h</strong> &middot; 100% en visio</p>
+            <button type="button" onclick="openBookingModal()" class="inline-block bg-white text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition">Obtenir mon bilan</button>
         </div>
     </section>'''
 
@@ -225,7 +234,7 @@ def generate_index():
                     <span class="inline-flex items-center gap-1 text-primary font-semibold text-sm mt-4">Découvrir <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
                 </a>'''
 
-    html = f'''{head("Soutien scolaire Physique-Chimie en ligne", "Soutien scolaire en physique-chimie en ligne pour tous les niveaux : de la 5ème à la Terminale. Enseignants qualifiés, pédagogie adaptée, cours en visio.")}
+    html = f'''{head("Bilan physique-chimie en ligne — 150€, sous 48h" + _SEO_SUFFIX, "Bilan pédagogique de physique-chimie en ligne — 150€, sous 48h. De la 5ème à la Terminale, enseignants qualifiés, cours particuliers 100% en visio.")}
 <body class="bg-light text-dark font-sans">
 {nav()}
 
@@ -247,7 +256,7 @@ def generate_index():
                 <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Soutien scolaire Physique-Chimie en ligne</h1>
                 <p class="text-lg text-gray-600 mb-8">De la 5ème à la Terminale, nos enseignants qualifiés accompagnent votre enfant en physique-chimie avec une pédagogie personnalisée, 100% en ligne. Que ce soit pour comprendre les lois fondamentales, réussir les expériences ou préparer le Brevet et le Bac, nous proposons un suivi adapté à chaque niveau et à chaque profil d'élève.</p>
                 <div class="flex gap-4 flex-wrap">
-                    <a href="#cta" class="bg-primary text-white px-8 py-3.5 rounded-lg font-semibold text-lg hover:bg-primaryHover transition">Prendre rendez-vous</a>
+                    <a href="#" onclick="openBookingModal(); return false;" class="bg-primary text-white px-8 py-3.5 rounded-lg font-semibold text-lg hover:bg-primaryHover transition">Prendre rendez-vous</a>
                     <a href="#niveaux" class="border-2 border-primary text-primary px-8 py-3.5 rounded-lg font-semibold text-lg hover:bg-primary hover:text-white transition">Voir tous les niveaux</a>
                 </div>
             </div>
@@ -334,8 +343,8 @@ def generate_level(slug, data):
                 </div>'''
 
     topic_names = ", ".join([t[0] for t in data["topics"][:2]])
-    title = f"Soutien scolaire physique-chimie {data['label']} en ligne"
-    meta_desc = f"Soutien scolaire en physique-chimie niveau {data['label']} en ligne. Programme adapté, enseignants qualifiés, cours en visio. {topic_names} et plus."
+    title = title_for_scolaire_n2("physique-chimie", slug)
+    meta_desc = meta_desc_for_scolaire_n2("physique-chimie", slug)
 
     html = f'''{head(title, meta_desc)}
 <body class="bg-light text-dark font-sans">
@@ -445,8 +454,8 @@ def generate_level(slug, data):
 
 def generate_level_city(slug, data, city):
     city_slug = city.lower()
-    title = f"Soutien scolaire physique-chimie {data['label']} à {city}"
-    meta_desc = f"Soutien scolaire en physique-chimie niveau {data['label']} à {city}. Cours en ligne avec enseignants qualifiés. {data['topics'][0][0]}, {data['topics'][1][0]}."
+    title = title_for_scolaire_n4("physique-chimie", slug, city_slug)
+    meta_desc = meta_desc_for_scolaire_n4("physique-chimie", slug, city_slug)
 
     topics_checklist = ""
     for t_name, _, _ in data["topics"]:

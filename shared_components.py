@@ -29,7 +29,7 @@ def get_head(title, meta_desc, include_faq_css=True):
         '<head>\n'
         '    <meta charset="UTF-8">\n'
         '    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n'
-        '    <title>' + title + ' - Logopsi Studios</title>\n'
+        '    <title>' + title + '</title>\n'
         '    <meta name="description" content="' + meta_desc + '">\n'
         '    <script src="https://cdn.tailwindcss.com"></script>\n'
         '    <script>\n'
