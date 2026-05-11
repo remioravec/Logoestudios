@@ -4,6 +4,12 @@
 import os
 import json
 
+from seo_titles import (
+    title_for_ortho_n2, meta_desc_for_ortho_n2,
+    title_for_psycho_n2, meta_desc_for_psycho_n2,
+)
+from shared_components import get_booking_modal, get_booking_js
+
 # ============================================================
 # DATA DEFINITIONS
 # ============================================================
@@ -798,6 +804,13 @@ def generate_page(slug, data, category):
     is_psycho = category == "psychologie"
     practitioner = "orthophoniste" if is_ortho else "psychologue"
 
+    if is_ortho:
+        page_title = title_for_ortho_n2(slug)
+        page_meta_desc = meta_desc_for_ortho_n2(slug)
+    else:
+        page_title = title_for_psycho_n2(slug)
+        page_meta_desc = meta_desc_for_psycho_n2(slug)
+
     # Build quiz JS
     quiz_js = "var quizData = [\n"
     for i, q in enumerate(data["quiz"]):
@@ -856,13 +869,16 @@ def generate_page(slug, data, category):
 
     card_color = data.get("hero_card_color", "blue")
 
+    booking_modal_html = get_booking_modal()
+    booking_modal_js = get_booking_js()
+
     html = f"""<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{data["title"]} - Logopsi Studios</title>
-    <meta name="description" content="{data["meta_desc"]}">
+    <title>{page_title}</title>
+    <meta name="description" content="{page_meta_desc}">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {{
@@ -923,9 +939,9 @@ def generate_page(slug, data, category):
                 </div>
 
                 <div class="hidden lg:flex items-center gap-4">
-                    <button class="bg-primary text-white font-semibold px-6 py-2.5 rounded-full hover:bg-primaryHover transition-colors shadow-md text-[15px]">
+                    <a href="#" onclick="openBookingModal(); return false;" class="bg-primary text-white font-semibold px-6 py-2.5 rounded-full hover:bg-primaryHover transition-colors shadow-md text-[15px]">
                         Prendre rendez-vous
-                    </button>
+                    </a>
                 </div>
 
                 <button class="lg:hidden p-2 text-gray-900 z-50" onclick="toggleMobileMenu()">
@@ -1012,7 +1028,7 @@ def generate_page(slug, data, category):
                 <a href="../orthophonie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Orthophonie</a>
                 <a href="../psychologie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Psychologie</a>
                 <a href="../soutien-scolaire/" class="block text-gray-900 hover:text-primary font-semibold py-2">Soutien Scolaire</a>
-                <button class="w-full bg-primary text-white font-semibold py-3 rounded-full shadow-md mt-4">Prendre rendez-vous</button>
+                <a href="#" onclick="openBookingModal(); return false;" class="w-full bg-primary text-white font-semibold py-3 rounded-full shadow-md mt-4 block text-center">Prendre rendez-vous</a>
             </div>
         </div>
     </nav>
@@ -1091,7 +1107,7 @@ def generate_page(slug, data, category):
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Test terminé</h3>
                     <p id="result-text" class="text-gray-600 mb-8"></p>
-                    <button class="w-full bg-primary text-white font-bold py-4 rounded-xl hover:bg-primaryHover transition-colors shadow-lg">
+                    <button type="button" onclick="closeModal(); openBookingModal();" class="w-full bg-primary text-white font-bold py-4 rounded-xl hover:bg-primaryHover transition-colors shadow-lg">
                         Prendre rendez-vous avec un expert
                     </button>
                     <button onclick="closeModal()" class="w-full mt-4 text-gray-500 font-medium hover:text-gray-800">Fermer</button>
@@ -1337,6 +1353,7 @@ def generate_page(slug, data, category):
             if (e.target === this) closeModal();
         }});
     </script>
+{booking_modal_html}{booking_modal_js}
 </body>
 </html>"""
     return html
