@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilan Addictions aux écrans en ligne — Psychologue 150€ | Logopsi Studios</title>
+    <title>Bilan Addictions aux écrans en ligne — Psychologue 150€/48h | Logopsi Studios</title>
     <meta name="description" content="Bilan psychologique pour Addictions aux écrans en ligne — 150€, rendez-vous sous 48h. Psychologues diplômés d'État, partout en France.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -58,10 +58,17 @@
                             Psychologie <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </button>
                     </div>
-                    <a href="../soutien-scolaire/" class="px-4 py-2 font-semibold text-[15px] text-gray-800 hover:text-primary transition-colors">Soutien Scolaire</a>
+                    <div class="relative" id="scolaire-trigger" onmouseenter="openMegaMenu('scolaire')" onmouseleave="scheduleMegaClose('scolaire')">
+                        <button class="px-4 py-2 flex items-center gap-1 font-semibold text-[15px] text-gray-800 hover:text-primary transition-colors">
+                            Soutien Scolaire <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="hidden lg:flex items-center gap-4">
+                    <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="text-[15px] font-semibold text-gray-700 hover:text-primary transition-colors">
+                        Connexion
+                    </a>
                     <a href="#" onclick="openBookingModal(); return false;" class="bg-primary text-white font-semibold px-6 py-2.5 rounded-full hover:bg-primaryHover transition-colors shadow-md text-[15px]">
                         Prendre rendez-vous
                     </a>
@@ -145,16 +152,49 @@
             </div>
         </div>
 
+        <!-- Soutien Scolaire Mega Menu -->
+        <div id="scolaire-mega" class="mega-menu absolute left-0 w-full bg-white shadow-xl border-t border-gray-100 z-50 mega-menu-enter" onmouseenter="cancelMegaClose('scolaire')" onmouseleave="scheduleMegaClose('scolaire')">
+            <div class="max-w-7xl mx-auto px-6 py-8 grid grid-cols-12 gap-8">
+                <div class="col-span-3 border-r border-gray-100 pr-6">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Soutien scolaire en ligne</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Cours particuliers et aide aux devoirs avec des enseignants qualifiés, du primaire au lycée.</p>
+                </div>
+                <div class="col-span-6 pr-6">
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Explorer par matière</h4>
+                    <ul class="grid grid-cols-2 gap-x-6 gap-y-2.5">
+                        <li><a href="../soutien-scolaire/mathematiques/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Mathématiques</a></li>
+                        <li><a href="../soutien-scolaire/francais/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Français</a></li>
+                        <li><a href="../soutien-scolaire/anglais/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Anglais</a></li>
+                        <li><a href="../soutien-scolaire/espagnol/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Espagnol</a></li>
+                        <li><a href="../soutien-scolaire/physique-chimie/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Physique-Chimie</a></li>
+                        <li><a href="../soutien-scolaire/aide-aux-devoirs/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Aide aux devoirs</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-3 bg-light rounded-2xl p-5 border border-gray-100">
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Par ville</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="../soutien-scolaire/villes/paris.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Paris</a></li>
+                        <li><a href="../soutien-scolaire/villes/marseille.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Marseille</a></li>
+                        <li><a href="../soutien-scolaire/villes/lyon.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Lyon</a></li>
+                        <li><a href="../soutien-scolaire/villes/toulouse.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Toulouse</a></li>
+                        <li><a href="../soutien-scolaire/villes/nice.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Nice</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100">
             <div class="px-6 py-6 space-y-4">
                 <a href="../orthophonie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Orthophonie</a>
                 <a href="../psychologie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Psychologie</a>
                 <a href="../soutien-scolaire/" class="block text-gray-900 hover:text-primary font-semibold py-2">Soutien Scolaire</a>
+                <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="block text-center font-semibold py-2 text-gray-700 hover:text-primary border-b border-gray-100">Connexion</a>
                 <a href="#" onclick="openBookingModal(); return false;" class="w-full bg-primary text-white font-semibold py-3 rounded-full shadow-md mt-4 block text-center">Prendre rendez-vous</a>
             </div>
         </div>
     </nav>
+
 
     <!-- HERO SECTION -->
     <section class="pt-16 pb-20 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">

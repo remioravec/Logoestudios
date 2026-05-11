@@ -8,7 +8,7 @@ from seo_titles import (
     title_for_ortho_n2, meta_desc_for_ortho_n2,
     title_for_psycho_n2, meta_desc_for_psycho_n2,
 )
-from shared_components import get_booking_modal, get_booking_js
+from shared_components import get_booking_modal, get_booking_js, get_navbar
 
 # ============================================================
 # DATA DEFINITIONS
@@ -871,6 +871,7 @@ def generate_page(slug, data, category):
 
     booking_modal_html = get_booking_modal()
     booking_modal_js = get_booking_js()
+    navbar_html = get_navbar("../")
 
     html = f"""<!DOCTYPE html>
 <html lang="fr">
@@ -913,122 +914,7 @@ def generate_page(slug, data, category):
 </head>
 <body class="font-sans text-gray-900 bg-light min-h-screen">
 
-    <!-- NAVBAR -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="../index.html" class="flex items-center space-x-2 z-50">
-                    <img src="../logo-logopsi.png" alt="Logopsi Studios" class="h-14 w-auto">
-                </a>
-
-                <div class="hidden lg:flex items-center space-x-1">
-                    <div class="relative" id="ortho-trigger" onmouseenter="openMegaMenu('ortho')" onmouseleave="scheduleMegaClose('ortho')">
-                        <button class="px-4 py-2 flex items-center gap-1 font-semibold text-[15px] text-gray-800 hover:text-primary transition-colors">
-                            Orthophonie <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                    </div>
-                    <div class="relative" id="psycho-trigger" onmouseenter="openMegaMenu('psycho')" onmouseleave="scheduleMegaClose('psycho')">
-                        <button class="px-4 py-2 flex items-center gap-1 font-semibold text-[15px] text-gray-800 hover:text-primary transition-colors">
-                            Psychologie <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                    </div>
-                    <a href="../soutien-scolaire/" class="px-4 py-2 font-semibold text-[15px] text-gray-800 hover:text-primary transition-colors">Soutien Scolaire</a>
-                </div>
-
-                <div class="hidden lg:flex items-center gap-4">
-                    <a href="#" onclick="openBookingModal(); return false;" class="bg-primary text-white font-semibold px-6 py-2.5 rounded-full hover:bg-primaryHover transition-colors shadow-md text-[15px]">
-                        Prendre rendez-vous
-                    </a>
-                </div>
-
-                <button class="lg:hidden p-2 text-gray-900 z-50" onclick="toggleMobileMenu()">
-                    <i data-lucide="menu" class="w-7 h-7"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Orthophonie Mega Menu -->
-        <div id="ortho-mega" class="mega-menu absolute left-0 w-full bg-white shadow-xl border-t border-gray-100 z-50 mega-menu-enter" onmouseenter="cancelMegaClose('ortho')" onmouseleave="scheduleMegaClose('ortho')">
-            <div class="max-w-7xl mx-auto px-6 py-8 grid grid-cols-12 gap-8">
-                <div class="col-span-3 border-r border-gray-100 pr-6">
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">Orthophonie en ligne</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed">Rééducation des troubles du langage, de la communication et des apprentissages.</p>
-                </div>
-                <div class="col-span-6 pr-6">
-                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Explorer par besoin</h4>
-                    <ul class="grid grid-cols-2 gap-x-6 gap-y-2.5">
-                        <li><a href="../orthophonie/dyslexie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dyslexie</a></li>
-                        <li><a href="../orthophonie/dysorthographie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dysorthographie</a></li>
-                        <li><a href="../orthophonie/dyscalculie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dyscalculie</a></li>
-                        <li><a href="../orthophonie/dysphasie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dysphasie</a></li>
-                        <li><a href="../orthophonie/begaiement.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Bégaiement</a></li>
-                        <li><a href="../orthophonie/tsa.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">TSA</a></li>
-                        <li><a href="../orthophonie/oralite.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Troubles de l'oralité</a></li>
-                        <li><a href="../orthophonie/surdite.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Surdité</a></li>
-                        <li><a href="../orthophonie/paralysie-cerebrale.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Paralysie cérébrale</a></li>
-                        <li><a href="../orthophonie/fente-palatine.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Fente palatine</a></li>
-                        <li><a href="../orthophonie/trisomie-21.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Trisomie 21</a></li>
-                    </ul>
-                </div>
-                <div class="col-span-3 bg-light rounded-2xl p-5 border border-gray-100">
-                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Par ville</h4>
-                    <ul class="space-y-2.5">
-                        <li><a href="../orthophonie/villes/paris.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Paris</a></li>
-                        <li><a href="../orthophonie/villes/marseille.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Marseille</a></li>
-                        <li><a href="../orthophonie/villes/lyon.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Lyon</a></li>
-                        <li><a href="../orthophonie/villes/toulouse.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Toulouse</a></li>
-                        <li><a href="../orthophonie/villes/nice.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Nice</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Psychologie Mega Menu -->
-        <div id="psycho-mega" class="mega-menu absolute left-0 w-full bg-white shadow-xl border-t border-gray-100 z-50 mega-menu-enter" onmouseenter="cancelMegaClose('psycho')" onmouseleave="scheduleMegaClose('psycho')">
-            <div class="max-w-7xl mx-auto px-6 py-8 grid grid-cols-12 gap-8">
-                <div class="col-span-3 border-r border-gray-100 pr-6">
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">Psychologie en ligne</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed">Accompagnement psychologique des enfants et adolescents, partout en France.</p>
-                </div>
-                <div class="col-span-6 pr-6">
-                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Explorer par besoin</h4>
-                    <ul class="grid grid-cols-2 gap-x-6 gap-y-2.5">
-                        <li><a href="../psychologie/anxiete.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Anxiété</a></li>
-                        <li><a href="../psychologie/depression.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dépression</a></li>
-                        <li><a href="../psychologie/tdah.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">TDAH</a></li>
-                        <li><a href="../psychologie/hpi.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Haut Potentiel (HPI)</a></li>
-                        <li><a href="../psychologie/phobie-scolaire.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Phobie scolaire</a></li>
-                        <li><a href="../psychologie/harcelement-scolaire.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Harcèlement scolaire</a></li>
-                        <li><a href="../psychologie/tca.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">TCA</a></li>
-                        <li><a href="../psychologie/addictions-ecrans.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Addictions aux écrans</a></li>
-                        <li><a href="../psychologie/troubles-sommeil.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Troubles du sommeil</a></li>
-                        <li><a href="../psychologie/enuresie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Énurésie</a></li>
-                        <li><a href="../psychologie/traumatismes-deuil.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Traumatismes & deuil</a></li>
-                    </ul>
-                </div>
-                <div class="col-span-3 bg-light rounded-2xl p-5 border border-gray-100">
-                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Par ville</h4>
-                    <ul class="space-y-2.5">
-                        <li><a href="../psychologie/villes/paris.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Paris</a></li>
-                        <li><a href="../psychologie/villes/marseille.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Marseille</a></li>
-                        <li><a href="../psychologie/villes/lyon.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Lyon</a></li>
-                        <li><a href="../psychologie/villes/toulouse.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Toulouse</a></li>
-                        <li><a href="../psychologie/villes/nice.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Nice</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100">
-            <div class="px-6 py-6 space-y-4">
-                <a href="../orthophonie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Orthophonie</a>
-                <a href="../psychologie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Psychologie</a>
-                <a href="../soutien-scolaire/" class="block text-gray-900 hover:text-primary font-semibold py-2">Soutien Scolaire</a>
-                <a href="#" onclick="openBookingModal(); return false;" class="w-full bg-primary text-white font-semibold py-3 rounded-full shadow-md mt-4 block text-center">Prendre rendez-vous</a>
-            </div>
-        </div>
-    </nav>
+{navbar_html}
 
     <!-- HERO SECTION -->
     <section class="pt-16 pb-20 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">

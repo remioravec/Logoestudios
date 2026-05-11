@@ -48,15 +48,15 @@ LEVEL_LABELS = {
 # Overrides for slugs whose display name is long enough that adding "en ligne"
 # would push the title past ~65 chars.
 _ORTHO_N2_TITLE_OVERRIDES = {
-    "oralite": "Bilan troubles de l'oralité — Orthophoniste 150€" + " | Logopsi Studios",
-    "paralysie-cerebrale": "Bilan paralysie cérébrale — Orthophoniste en ligne 150€" + " | Logopsi Studios",
+    "oralite": "Bilan troubles de l'oralité — Orthophoniste 150€/48h" + SUFFIX,
+    "paralysie-cerebrale": "Bilan paralysie cérébrale — Orthophoniste 150€/48h" + SUFFIX,
 }
 
 
 def title_for_ortho_n2(slug):
     if slug in _ORTHO_N2_TITLE_OVERRIDES:
         return _ORTHO_N2_TITLE_OVERRIDES[slug]
-    return "Bilan " + _display_name(slug).lower() + " en ligne — Orthophoniste 150€" + SUFFIX
+    return "Bilan " + _display_name(slug).lower() + " en ligne — Orthophoniste 150€/48h" + SUFFIX
 
 
 def title_for_ortho_n3(city_slug):
@@ -66,7 +66,7 @@ def title_for_ortho_n3(city_slug):
 
 def title_for_ortho_n4(trouble_slug, city_slug):
     city = CITY_NAMES.get(city_slug, city_slug.title())
-    return "Bilan " + _display_name(trouble_slug).lower() + " à " + city + " — Orthophoniste en ligne 150€" + SUFFIX
+    return "Bilan " + _display_name(trouble_slug).lower() + " à " + city + " — Orthophoniste 150€/48h" + SUFFIX
 
 
 def meta_desc_for_ortho_n2(slug):
@@ -91,7 +91,7 @@ def meta_desc_for_ortho_n4(trouble_slug, city_slug):
 # ---- PSYCHOLOGIE ----
 
 def title_for_psycho_n2(slug):
-    return "Bilan " + _display_name(slug) + " en ligne — Psychologue 150€" + SUFFIX
+    return "Bilan " + _display_name(slug) + " en ligne — Psychologue 150€/48h" + SUFFIX
 
 
 def title_for_psycho_n3(city_slug):
@@ -101,7 +101,7 @@ def title_for_psycho_n3(city_slug):
 
 def title_for_psycho_n4(trouble_slug, city_slug):
     city = CITY_NAMES.get(city_slug, city_slug.title())
-    return "Bilan " + _display_name(trouble_slug) + " à " + city + " — Psychologue en ligne 150€" + SUFFIX
+    return "Bilan " + _display_name(trouble_slug) + " à " + city + " — Psychologue 150€/48h" + SUFFIX
 
 
 def meta_desc_for_psycho_n2(slug):
@@ -128,19 +128,19 @@ def meta_desc_for_psycho_n4(trouble_slug, city_slug):
 def title_for_scolaire_n2(subject_slug, level_slug):
     subj = SUBJECT_LABELS.get(subject_slug, subject_slug)
     lvl = LEVEL_LABELS.get(level_slug, level_slug)
-    return "Bilan " + subj + " " + lvl + " en ligne — 150€" + SUFFIX
+    return "Bilan " + subj + " " + lvl + " en ligne — 150€/48h" + SUFFIX
 
 
 def title_for_scolaire_n3(city_slug):
     city = CITY_NAMES.get(city_slug, city_slug.title())
-    return "Soutien scolaire à " + city + " — Bilan 150€" + SUFFIX
+    return "Soutien scolaire à " + city + " — Bilan 150€/48h" + SUFFIX
 
 
 def title_for_scolaire_n4(subject_slug, level_slug, city_slug):
     subj = SUBJECT_LABELS.get(subject_slug, subject_slug)
     lvl = LEVEL_LABELS.get(level_slug, level_slug)
     city = CITY_NAMES.get(city_slug, city_slug.title())
-    return "Bilan " + subj + " " + lvl + " à " + city + " — 150€" + SUFFIX
+    return "Bilan " + subj + " " + lvl + " à " + city + " — 150€/48h" + SUFFIX
 
 
 def meta_desc_for_scolaire_n2(subject_slug, level_slug):
@@ -172,9 +172,9 @@ HANDWRITTEN_TITLES = {
     "site/orthophonie/index.html": "Bilan orthophonique en ligne — 150€, sous 48h | Logopsi Studios",
     "site/psychologie/index.html": "Bilan psychologique en ligne — 150€, sous 48h | Logopsi Studios",
     "site/soutien-scolaire/index.html": "Bilan pédagogique en ligne — 150€, sous 48h | Logopsi Studios",
-    "site/contact.html": None,
-    "site/a-propos.html": None,
-    "site/mentions-legales.html": None,
+    "site/contact.html": "Contact — Bilan 150€/48h | Logopsi Studios",
+    "site/a-propos.html": "À propos — Bilan 150€/48h | Logopsi Studios",
+    "site/mentions-legales.html": "Mentions légales — Bilan 150€/48h | Logopsi Studios",
 }
 
 

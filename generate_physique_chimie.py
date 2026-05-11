@@ -8,7 +8,7 @@ from seo_titles import (
     title_for_scolaire_n4, meta_desc_for_scolaire_n4,
     SUFFIX as _SEO_SUFFIX,
 )
-from shared_components import get_booking_modal, get_booking_js
+from shared_components import get_booking_modal, get_booking_js, get_navbar
 
 SITE_DIR = "/workspaces/Logoestudios/site/soutien-scolaire/physique-chimie"
 CITIES = ["Paris", "Marseille", "Lyon", "Toulouse", "Nice"]
@@ -157,17 +157,10 @@ def head(title, description):
 </head>'''
 
 def nav():
-    return '''
-    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-            <a href="/site/" class="flex items-center"><img src="/site/logo-logopsi.png" alt="Logopsi Studios" class="h-12 w-auto"></a>
-            <div class="flex items-center gap-6">
-                <a href="/site/soutien-scolaire/" class="text-dark hover:text-primary transition">Soutien Scolaire</a>
-                <a href="/site/soutien-scolaire/physique-chimie/" class="text-primary font-semibold">Physique-Chimie</a>
-                <a href="#" onclick="openBookingModal(); return false;" class="bg-primary text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-primaryHover transition">Prendre rendez-vous</a>
-            </div>
-        </div>
-    </nav>'''
+    # Unified site-wide navbar (3 mega menus, logo, popup CTA, mobile menu).
+    # Pages live at site/soutien-scolaire/physique-chimie/<file>.html so the
+    # prefix to reach the site root is two levels up.
+    return get_navbar("../../")
 
 def footer():
     return '''
