@@ -8,7 +8,7 @@ from seo_titles import (
     title_for_scolaire_n4, meta_desc_for_scolaire_n4,
     SUFFIX as _SEO_SUFFIX,
 )
-from shared_components import get_booking_modal, get_booking_js, get_navbar, get_js
+from shared_components import get_booking_modal, get_booking_js, get_navbar, get_js, get_footer
 
 SITE_DIR = "/workspaces/Logoestudios/site/soutien-scolaire/physique-chimie"
 CITIES = ["Paris", "Marseille", "Lyon", "Toulouse", "Nice"]
@@ -163,39 +163,9 @@ def nav():
     return get_navbar("../../")
 
 def footer():
-    return '''
-    <footer class="bg-dark text-white py-12">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold text-primary mb-4">Logo Études</h3>
-                    <p class="text-gray-400">Soutien scolaire et accompagnement en ligne pour tous les niveaux.</p>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Matières</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="/site/soutien-scolaire/mathematiques/" class="hover:text-primary transition">Mathématiques</a></li>
-                        <li><a href="/site/soutien-scolaire/francais/" class="hover:text-primary transition">Français</a></li>
-                        <li><a href="/site/soutien-scolaire/anglais/" class="hover:text-primary transition">Anglais</a></li>
-                        <li><a href="/site/soutien-scolaire/physique-chimie/" class="hover:text-primary transition">Physique-Chimie</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Contact</h4>
-                    <p class="text-gray-400">contact@logopsistudios.fr</p>
-                    <div class="flex gap-4 mt-4">
-                        <a href="#" class="text-gray-400 hover:text-primary transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-primary transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
-                <p>&copy; 2025 Logo Études. Tous droits réservés.</p>
-            </div>
-        </div>
-    </footer>
-
-''' + get_booking_modal() + get_js(include_faq=True)
+    # Unified site-wide footer + booking modal + shared JS bundle
+    # (lucide, mega menus, mobile menu, FAQ, booking).
+    return get_footer("../../") + get_booking_modal() + get_js(include_faq=True)
 
 def cta_section(title, subtitle):
     return f'''

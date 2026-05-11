@@ -276,38 +276,59 @@
             <button type="button" onclick="openBookingModal()" class="inline-block bg-white text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition">Obtenir mon bilan</button>
         </div>
     </section>
-
-    <footer class="bg-dark text-white py-12">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- FOOTER -->
+    <footer class="bg-dark py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
                 <div>
-                    <h3 class="text-xl font-bold text-primary mb-4">Logo Études</h3>
-                    <p class="text-gray-400">Soutien scolaire et accompagnement en ligne pour tous les niveaux.</p>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="../../logo-logopsi.png" alt="Logo Études" class="h-12 w-auto">
+                    </div>
+                    <p class="text-gray-400 text-sm">Orthophonie, psychologie et soutien scolaire en ligne. Des professionnels diplômés, partout en France.</p>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Matières</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="/site/soutien-scolaire/mathematiques/" class="hover:text-primary transition">Mathématiques</a></li>
-                        <li><a href="/site/soutien-scolaire/francais/" class="hover:text-primary transition">Français</a></li>
-                        <li><a href="/site/soutien-scolaire/anglais/" class="hover:text-primary transition">Anglais</a></li>
-                        <li><a href="/site/soutien-scolaire/physique-chimie/" class="hover:text-primary transition">Physique-Chimie</a></li>
+                    <h4 class="text-white font-semibold mb-4">Orthophonie</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../../orthophonie/dyslexie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dyslexie</a></li>
+                        <li><a href="../../orthophonie/dysorthographie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dysorthographie</a></li>
+                        <li><a href="../../orthophonie/dyscalculie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dyscalculie</a></li>
+                        <li><a href="../../orthophonie/begaiement.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Bégaiement</a></li>
+                        <li><a href="../../orthophonie/tsa.html" class="text-gray-400 hover:text-primary text-sm transition-colors">TSA</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Contact</h4>
-                    <p class="text-gray-400">contact@logopsistudios.fr</p>
-                    <div class="flex gap-4 mt-4">
-                        <a href="#" class="text-gray-400 hover:text-primary transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-primary transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                    </div>
+                    <h4 class="text-white font-semibold mb-4">Psychologie</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../../psychologie/tdah.html" class="text-gray-400 hover:text-primary text-sm transition-colors">TDAH</a></li>
+                        <li><a href="../../psychologie/hpi.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Haut Potentiel</a></li>
+                        <li><a href="../../psychologie/phobie-scolaire.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Phobie scolaire</a></li>
+                        <li><a href="../../psychologie/anxiete.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Anxiété</a></li>
+                        <li><a href="../../psychologie/depression.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dépression</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Soutien Scolaire</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../../soutien-scolaire/mathematiques/" class="text-gray-400 hover:text-primary text-sm transition-colors">Mathématiques</a></li>
+                        <li><a href="../../soutien-scolaire/francais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Français</a></li>
+                        <li><a href="../../soutien-scolaire/anglais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Anglais</a></li>
+                        <li><a href="../../soutien-scolaire/espagnol/" class="text-gray-400 hover:text-primary text-sm transition-colors">Espagnol</a></li>
+                        <li><a href="../../soutien-scolaire/physique-chimie/" class="text-gray-400 hover:text-primary text-sm transition-colors">Physique-Chimie</a></li>
+                        <li><a href="../../soutien-scolaire/aide-aux-devoirs/" class="text-gray-400 hover:text-primary text-sm transition-colors">Aide aux devoirs</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
-                <p>&copy; 2025 Logo Études. Tous droits réservés.</p>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">&copy; 2025 Logo Études. Tous droits réservés.</p>
+                <div class="flex flex-wrap gap-x-6 gap-y-2 mt-4 md:mt-0">
+                    <a href="../../mentions-legales.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Mentions légales</a>
+                    <a href="../../contact.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Contact</a>
+                    <a href="../../a-propos.html" class="text-gray-500 hover:text-primary text-sm transition-colors">À propos</a>
+                    <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-primary text-sm transition-colors">Espace membre</a>
+                </div>
             </div>
         </div>
     </footer>
-
     <!-- LOGOPSI_BOOKING_MODAL -->
     <div id="booking-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title" data-view="info">
         <div class="absolute inset-0 bg-black/60" onclick="closeBookingModal()"></div>
