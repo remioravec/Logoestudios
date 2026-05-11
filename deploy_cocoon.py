@@ -108,7 +108,7 @@ ORTHO_TROUBLES = {
             ("Vocabulaire limité", "Le stock lexical est nettement inférieur à celui des enfants du même âge, l'enfant « cherche ses mots » fréquemment."),
             ("Compréhension altérée", "Les consignes complexes ou les phrases longues ne sont pas bien comprises, l'enfant a besoin de reformulations constantes."),
         ],
-        "approach": "La prise en charge de la dysphasie chez Logopsi Studios combine stimulation langagière intensive, supports visuels type pictogrammes et renforcement de la syntaxe par des exercices structurés. La régularité des séances en ligne facilite un suivi soutenu essentiel pour ce trouble.",
+        "approach": "La prise en charge de la dysphasie chez Logo Études combine stimulation langagière intensive, supports visuels type pictogrammes et renforcement de la syntaxe par des exercices structurés. La régularité des séances en ligne facilite un suivi soutenu essentiel pour ce trouble.",
         "faq": [
             ("Quelle différence entre retard de langage et dysphasie ?", "Le retard de langage se rattrape avec le temps, tandis que la dysphasie est un trouble structurel durable qui nécessite une rééducation spécifique et prolongée."),
             ("La dysphasie affecte-t-elle l'intelligence ?", "Non, la dysphasie n'est pas liée à un déficit intellectuel. Les enfants dysphasiques ont une intelligence normale mais un langage qui ne se développe pas selon les étapes attendues."),
@@ -500,7 +500,7 @@ def create_wp_page(
 # ---------------------------------------------------------------------------
 # Content generation
 # ---------------------------------------------------------------------------
-SITE_NAME = "Logopsi Studios"
+SITE_NAME = "Logo Études"
 BOOKING_URL = "https://logopsiestudios.com/prendre-rendez-vous"
 
 
@@ -570,7 +570,7 @@ def generate_pillar_content(discipline: str, troubles: dict, slug_prefix: str) -
     if discipline == "Orthophonie":
         pro = "orthophoniste"
         intro = (
-            "L'orthophonie en ligne chez Logopsi Studios, c'est un accès rapide à des "
+            "L'orthophonie en ligne chez Logo Études, c'est un accès rapide à des "
             "orthophonistes diplômés, depuis chez vous. Nos professionnels accompagnent votre "
             "enfant dans la prise en charge de tous les troubles du langage, de la parole et de "
             "la communication, grâce à la télé-orthophonie."
@@ -579,7 +579,7 @@ def generate_pillar_content(discipline: str, troubles: dict, slug_prefix: str) -
     else:
         pro = "psychologue"
         intro = (
-            "La psychologie en ligne chez Logopsi Studios offre un accompagnement psychologique "
+            "La psychologie en ligne chez Logo Études offre un accompagnement psychologique "
             "adapté aux enfants et adolescents, accessible partout en France. Nos psychologues "
             "diplômés prennent en charge les troubles émotionnels, comportementaux et relationnels "
             "via des séances de visioconférence interactives."
@@ -952,7 +952,7 @@ def deploy(dry_run: bool = False) -> dict:
         title="Orthophonie en ligne",
         slug="orthophonie-en-ligne",
         content=ortho_content,
-        excerpt="Orthophonie en ligne pour enfants : bilan et rééducation avec des orthophonistes diplômés. Séances en visioconférence, sans liste d'attente. Logopsi Studios.",
+        excerpt="Orthophonie en ligne pour enfants : bilan et rééducation avec des orthophonistes diplômés. Séances en visioconférence, sans liste d'attente. Logo Études.",
         dry_run=dry_run,
     )
     mapping["orthophonie-en-ligne"] = ortho_pillar_id
@@ -963,7 +963,7 @@ def deploy(dry_run: bool = False) -> dict:
         title="Psychologie en ligne",
         slug="psychologie-en-ligne",
         content=psy_content,
-        excerpt="Psychologue en ligne pour enfants et adolescents : accompagnement psychologique adapté en visioconférence. Professionnels diplômés, sans liste d'attente. Logopsi Studios.",
+        excerpt="Psychologue en ligne pour enfants et adolescents : accompagnement psychologique adapté en visioconférence. Professionnels diplômés, sans liste d'attente. Logo Études.",
         dry_run=dry_run,
     )
     mapping["psychologie-en-ligne"] = psy_pillar_id
@@ -981,7 +981,7 @@ def deploy(dry_run: bool = False) -> dict:
             title=f"Orthophoniste à {city}",
             slug=slug,
             content=content,
-            excerpt=f"Orthophoniste à {city} en ligne : bilan et rééducation orthophonique en visioconférence depuis {city}. Sans liste d'attente. Logopsi Studios.",
+            excerpt=f"Orthophoniste à {city} en ligne : bilan et rééducation orthophonique en visioconférence depuis {city}. Sans liste d'attente. Logo Études.",
             parent=ortho_pillar_id or 0,
             dry_run=dry_run,
         )
@@ -996,7 +996,7 @@ def deploy(dry_run: bool = False) -> dict:
             title=f"Psychologue enfant à {city}",
             slug=slug,
             content=content,
-            excerpt=f"Psychologue enfant à {city} en ligne : accompagnement psychologique en visioconférence depuis {city}. Professionnels diplômés. Logopsi Studios.",
+            excerpt=f"Psychologue enfant à {city} en ligne : accompagnement psychologique en visioconférence depuis {city}. Professionnels diplômés. Logo Études.",
             parent=psy_pillar_id or 0,
             dry_run=dry_run,
         )
@@ -1016,7 +1016,7 @@ def deploy(dry_run: bool = False) -> dict:
             title=f"Orthophoniste spécialisé {data['full_name']}",
             slug=slug,
             content=content,
-            excerpt=f"Orthophoniste spécialisé en {data['full_name']} en ligne. {data['definition'][:100]} Séances en visioconférence chez Logopsi Studios.",
+            excerpt=f"Orthophoniste spécialisé en {data['full_name']} en ligne. {data['definition'][:100]} Séances en visioconférence chez Logo Études.",
             parent=ortho_pillar_id or 0,
             dry_run=dry_run,
         )
@@ -1031,7 +1031,7 @@ def deploy(dry_run: bool = False) -> dict:
             title=f"Psychologue spécialisé {data['full_name']}",
             slug=slug,
             content=content,
-            excerpt=f"Psychologue spécialisé en {data['full_name']} en ligne pour enfants. {data['definition'][:100]} Séances en visioconférence chez Logopsi Studios.",
+            excerpt=f"Psychologue spécialisé en {data['full_name']} en ligne pour enfants. {data['definition'][:100]} Séances en visioconférence chez Logo Études.",
             parent=psy_pillar_id or 0,
             dry_run=dry_run,
         )
@@ -1051,7 +1051,7 @@ def deploy(dry_run: bool = False) -> dict:
                 title=f"Orthophoniste {data['name']} à {city}",
                 slug=slug,
                 content=content,
-                excerpt=f"Orthophoniste spécialisé {data['name']} à {city} en ligne. Bilan et rééducation en visioconférence. Logopsi Studios.",
+                excerpt=f"Orthophoniste spécialisé {data['name']} à {city} en ligne. Bilan et rééducation en visioconférence. Logo Études.",
                 parent=ortho_trouble_ids.get(key) or 0,
                 dry_run=dry_run,
             )
@@ -1067,7 +1067,7 @@ def deploy(dry_run: bool = False) -> dict:
                 title=f"Psychologue {data['name']} à {city}",
                 slug=slug,
                 content=content,
-                excerpt=f"Psychologue spécialisé {data['name']} à {city} en ligne pour enfants. Séances en visioconférence. Logopsi Studios.",
+                excerpt=f"Psychologue spécialisé {data['name']} à {city} en ligne pour enfants. Séances en visioconférence. Logo Études.",
                 parent=psy_trouble_ids.get(key) or 0,
                 dry_run=dry_run,
             )

@@ -8,7 +8,7 @@
 
 ## 1. Objectif
 
-Augmenter la conversion du site `Logopsi Studios` en :
+Augmenter la conversion du site `Logo Études` en :
 
 1. **Remplaçant** la redirection actuelle des CTAs (`href="contact.html"` ou `#contact`) par une **popup de réservation** unifiée qui met explicitement en avant l'offre **Bilan 150€ / 48h / 100% en ligne**.
 2. **Reformulant** le wording des sections CTA et des hero des pages-hubs pour mettre cette offre en avant partout.
@@ -70,7 +70,7 @@ Champs :
 - Bouton "← Retour" + Bouton "Envoyer"
 
 **Soumission** : POST vers `https://formsubmit.co/contact@logopsistudios.com`.
-- Champs cachés : `_subject = "Demande de rappel — Logopsi Studios"`, `_template = "table"`, `_captcha = "false"`, `_next = <URL de la page courante>?rappel=ok` pour redirection après envoi.
+- Champs cachés : `_subject = "Demande de rappel — Logo Études"`, `_template = "table"`, `_captcha = "false"`, `_next = <URL de la page courante>?rappel=ok` pour redirection après envoi.
 - À la première soumission, Formsubmit envoie un email de confirmation à `contact@logopsistudios.com` que l'admin doit valider une fois.
 
 **État 3 — Confirmation** (côté client) :
@@ -129,31 +129,31 @@ Sur `site/index.html`, `site/orthophonie/index.html`, `site/psychologie/index.ht
 
 ### 3.6. Meta titres
 
-Pattern : **"Bilan [sujet] en ligne — [Pro] 150€ / 48h | Logopsi Studios"** (cible ≤ 65 caractères, dépassement toléré jusqu'à 75 pour les pages villes).
+Pattern : **"Bilan [sujet] en ligne — [Pro] 150€ / 48h | Logo Études"** (cible ≤ 65 caractères, dépassement toléré jusqu'à 75 pour les pages villes).
 
 | Page | Nouveau titre |
 |---|---|
-| `site/index.html` | Bilan orthophonie, psychologie & soutien — 150€, 48h \| Logopsi Studios |
-| `site/orthophonie/index.html` | Bilan orthophonique en ligne — 150€, sous 48h \| Logopsi Studios |
-| `site/orthophonie/dyslexie.html` | Bilan dyslexie en ligne — Orthophoniste 150€ \| Logopsi Studios |
-| `site/orthophonie/dysorthographie.html` | Bilan dysorthographie en ligne — Orthophoniste 150€ \| Logopsi Studios |
-| `site/orthophonie/dyscalculie.html` | Bilan dyscalculie en ligne — Orthophoniste 150€ \| Logopsi Studios |
-| `site/orthophonie/dysphasie.html` | Bilan dysphasie en ligne — Orthophoniste 150€ \| Logopsi Studios |
-| `site/orthophonie/begaiement.html` | Bilan bégaiement en ligne — Orthophoniste 150€ \| Logopsi Studios |
-| `site/orthophonie/tsa.html` | Bilan TSA en ligne — Orthophoniste 150€ \| Logopsi Studios |
-| `site/orthophonie/oralite.html` | Bilan troubles de l'oralité — Orthophoniste 150€ \| Logopsi Studios |
-| `site/orthophonie/surdite.html` | Bilan surdité en ligne — Orthophoniste 150€ \| Logopsi Studios |
-| `site/orthophonie/paralysie-cerebrale.html` | Bilan paralysie cérébrale — Orthophoniste 150€ \| Logopsi Studios |
-| `site/orthophonie/fente-palatine.html` | Bilan fente palatine — Orthophoniste 150€ \| Logopsi Studios |
-| `site/orthophonie/trisomie-21.html` | Bilan trisomie 21 — Orthophoniste 150€ \| Logopsi Studios |
-| `site/orthophonie/villes/<trouble>-<ville>.html` | Bilan [trouble] à [Ville] — Orthophoniste en ligne 150€ \| Logopsi Studios |
-| `site/psychologie/index.html` | Bilan psychologique en ligne — 150€, sous 48h \| Logopsi Studios |
-| `site/psychologie/<trouble>.html` | Bilan [trouble] en ligne — Psychologue 150€ \| Logopsi Studios |
-| `site/psychologie/villes/<trouble>-<ville>.html` | Bilan [trouble] à [Ville] — Psychologue en ligne 150€ \| Logopsi Studios |
-| `site/soutien-scolaire/index.html` | Bilan pédagogique en ligne — 150€, sous 48h \| Logopsi Studios |
-| `site/soutien-scolaire/<matière>/<niveau>.html` (ex: `mathematiques/3eme.html`) | Bilan [matière] [niveau] en ligne — 150€ \| Logopsi Studios |
-| `site/soutien-scolaire/<matière>/<niveau>-<ville>.html` (ex: `mathematiques/3eme-paris.html`) | Bilan [matière] [niveau] à [Ville] — 150€ \| Logopsi Studios |
-| `site/soutien-scolaire/villes/<ville>.html` (ex: `villes/paris.html`) | Soutien scolaire à [Ville] — Bilan 150€ \| Logopsi Studios |
+| `site/index.html` | Bilan orthophonie, psychologie & soutien — 150€, 48h \| Logo Études |
+| `site/orthophonie/index.html` | Bilan orthophonique en ligne — 150€, sous 48h \| Logo Études |
+| `site/orthophonie/dyslexie.html` | Bilan dyslexie en ligne — Orthophoniste 150€ \| Logo Études |
+| `site/orthophonie/dysorthographie.html` | Bilan dysorthographie en ligne — Orthophoniste 150€ \| Logo Études |
+| `site/orthophonie/dyscalculie.html` | Bilan dyscalculie en ligne — Orthophoniste 150€ \| Logo Études |
+| `site/orthophonie/dysphasie.html` | Bilan dysphasie en ligne — Orthophoniste 150€ \| Logo Études |
+| `site/orthophonie/begaiement.html` | Bilan bégaiement en ligne — Orthophoniste 150€ \| Logo Études |
+| `site/orthophonie/tsa.html` | Bilan TSA en ligne — Orthophoniste 150€ \| Logo Études |
+| `site/orthophonie/oralite.html` | Bilan troubles de l'oralité — Orthophoniste 150€ \| Logo Études |
+| `site/orthophonie/surdite.html` | Bilan surdité en ligne — Orthophoniste 150€ \| Logo Études |
+| `site/orthophonie/paralysie-cerebrale.html` | Bilan paralysie cérébrale — Orthophoniste 150€ \| Logo Études |
+| `site/orthophonie/fente-palatine.html` | Bilan fente palatine — Orthophoniste 150€ \| Logo Études |
+| `site/orthophonie/trisomie-21.html` | Bilan trisomie 21 — Orthophoniste 150€ \| Logo Études |
+| `site/orthophonie/villes/<trouble>-<ville>.html` | Bilan [trouble] à [Ville] — Orthophoniste en ligne 150€ \| Logo Études |
+| `site/psychologie/index.html` | Bilan psychologique en ligne — 150€, sous 48h \| Logo Études |
+| `site/psychologie/<trouble>.html` | Bilan [trouble] en ligne — Psychologue 150€ \| Logo Études |
+| `site/psychologie/villes/<trouble>-<ville>.html` | Bilan [trouble] à [Ville] — Psychologue en ligne 150€ \| Logo Études |
+| `site/soutien-scolaire/index.html` | Bilan pédagogique en ligne — 150€, sous 48h \| Logo Études |
+| `site/soutien-scolaire/<matière>/<niveau>.html` (ex: `mathematiques/3eme.html`) | Bilan [matière] [niveau] en ligne — 150€ \| Logo Études |
+| `site/soutien-scolaire/<matière>/<niveau>-<ville>.html` (ex: `mathematiques/3eme-paris.html`) | Bilan [matière] [niveau] à [Ville] — 150€ \| Logo Études |
+| `site/soutien-scolaire/villes/<ville>.html` (ex: `villes/paris.html`) | Soutien scolaire à [Ville] — Bilan 150€ \| Logo Études |
 | `site/contact.html`, `site/a-propos.html`, `site/mentions-legales.html` | **inchangés** |
 
 ### 3.7. Meta descriptions
@@ -255,8 +255,8 @@ Pas de framework de test automatisé en place. Vérifications manuelles à exéc
 5. Cliquer sur "← Retour" → revient en État 1.
 6. Soumettre le formulaire → POST vers Formsubmit (vérifier dans le DevTools Network).
 7. Cliquer sur le backdrop / appuyer sur Échap → la popup se ferme.
-8. Vérifier `site/orthophonie/dyslexie.html` : titre = "Bilan dyslexie en ligne — Orthophoniste 150€ | Logopsi Studios".
-9. Vérifier `site/orthophonie/villes/dyslexie-paris.html` : titre = "Bilan dyslexie à Paris — Orthophoniste en ligne 150€ | Logopsi Studios".
+8. Vérifier `site/orthophonie/dyslexie.html` : titre = "Bilan dyslexie en ligne — Orthophoniste 150€ | Logo Études".
+9. Vérifier `site/orthophonie/villes/dyslexie-paris.html` : titre = "Bilan dyslexie à Paris — Orthophoniste en ligne 150€ | Logo Études".
 10. Vérifier `site/contact.html` : pas de popup, lien Espace membre présent dans navbar et footer.
 11. Vérifier le navigateur **mobile** (devtools responsive) : menu mobile contient "Connexion" et la popup s'ouvre correctement.
 12. Vérifier l'**accessibilité** : focus visible, navigation clavier dans la popup, fermeture Échap, lecteur d'écran annonce le rôle dialog.

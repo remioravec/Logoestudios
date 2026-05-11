@@ -1,4 +1,4 @@
-"""Centralised SEO titles and meta descriptions for the Logopsi Studios site.
+"""Centralised SEO titles and meta descriptions for the Logo Études site.
 
 Used by:
   - generate_level2_pages.py  (trouble pages)
@@ -7,7 +7,7 @@ Used by:
   - patch_handwritten_pages.py (index, hubs N2, etc.)
 """
 
-SUFFIX = " | Logopsi Studios"
+SUFFIX = " | Logo Études"
 
 
 def _display_name(slug):
@@ -168,13 +168,13 @@ def meta_desc_for_scolaire_n4(subject_slug, level_slug, city_slug):
 
 # None means: do not modify the title.
 HANDWRITTEN_TITLES = {
-    "site/index.html": "Bilan orthophonie, psychologie & soutien — 150€, 48h | Logopsi Studios",
-    "site/orthophonie/index.html": "Bilan orthophonique en ligne — 150€, sous 48h | Logopsi Studios",
-    "site/psychologie/index.html": "Bilan psychologique en ligne — 150€, sous 48h | Logopsi Studios",
-    "site/soutien-scolaire/index.html": "Bilan pédagogique en ligne — 150€, sous 48h | Logopsi Studios",
-    "site/contact.html": "Contact — Bilan 150€/48h | Logopsi Studios",
-    "site/a-propos.html": "À propos — Bilan 150€/48h | Logopsi Studios",
-    "site/mentions-legales.html": "Mentions légales — Bilan 150€/48h | Logopsi Studios",
+    "site/index.html": "Bilan orthophonie, psychologie & soutien — 150€, 48h | Logo Études",
+    "site/orthophonie/index.html": "Bilan orthophonique en ligne — 150€, sous 48h | Logo Études",
+    "site/psychologie/index.html": "Bilan psychologique en ligne — 150€, sous 48h | Logo Études",
+    "site/soutien-scolaire/index.html": "Bilan pédagogique en ligne — 150€, sous 48h | Logo Études",
+    "site/contact.html": "Contact — Bilan 150€/48h | Logo Études",
+    "site/a-propos.html": "À propos — Bilan 150€/48h | Logo Études",
+    "site/mentions-legales.html": "Mentions légales — Bilan 150€/48h | Logo Études",
 }
 
 

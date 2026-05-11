@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilan physique-chimie 3ème à Nice — 150€/48h | Logopsi Studios</title>
+    <title>Bilan physique-chimie 3ème à Nice — 150€/48h | Logo Études</title>
     <meta name="description" content="Bilan pédagogique de physique-chimie 3ème à Nice — 150€, sous 48h. Cours particuliers 100% en visio depuis Nice.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <a href="../../index.html" class="flex items-center space-x-2 z-50">
-                    <img src="../../logo-logopsi.png" alt="Logopsi Studios" class="h-14 w-auto">
+                    <img src="../../logo-logopsi.png" alt="Logo Études" class="h-14 w-auto">
                 </a>
 
                 <div class="hidden lg:flex items-center space-x-1">
@@ -201,7 +201,7 @@
                     <span class="inline-block bg-green-50 text-primary font-semibold px-4 py-1.5 rounded-full text-sm">Collège - 3ème</span>
                     <span class="inline-flex items-center gap-1 bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full text-sm"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Nice</span>
                 </div>
-                <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Bilan physique-chimie 3ème à Nice — 150€/48h | Logopsi Studios</h1>
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Bilan physique-chimie 3ème à Nice — 150€/48h | Logo Études</h1>
                 <p class="text-lg text-gray-600 mb-8">Vous habitez à Nice et recherchez un soutien scolaire en physique-chimie niveau 3ème ? Nos enseignants qualifiés proposent des cours en ligne accessibles depuis Nice et ses environs. Grâce à notre plateforme de visioconférence, votre enfant bénéficie d'un accompagnement personnalisé sans perdre de temps dans les transports.</p>
                 <a href="#cta" class="inline-block bg-primary text-white px-8 py-3.5 rounded-lg font-semibold text-lg hover:bg-primaryHover transition">Réserver un cours d'essai gratuit</a>
             </div>
@@ -281,7 +281,7 @@
         <div class="max-w-6xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold text-primary mb-4">Logopsi Studios</h3>
+                    <h3 class="text-xl font-bold text-primary mb-4">Logo Études</h3>
                     <p class="text-gray-400">Soutien scolaire et accompagnement en ligne pour tous les niveaux.</p>
                 </div>
                 <div>
@@ -303,12 +303,11 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
-                <p>&copy; 2025 Logopsi Studios. Tous droits réservés.</p>
+                <p>&copy; 2025 Logo Études. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
-    <script>lucide.createIcons();</script>
     <!-- LOGOPSI_BOOKING_MODAL -->
     <div id="booking-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title" data-view="info">
         <div class="absolute inset-0 bg-black/60" onclick="closeBookingModal()"></div>
@@ -337,7 +336,7 @@
                 <h2 class="text-2xl font-bold text-gray-900 mb-2">Être rappelé(e) gratuitement</h2>
                 <p class="text-gray-600 mb-6">Renseignez vos coordonnées, nous vous rappelons sous 48h ouvrées.</p>
                 <form action="https://formsubmit.co/contact@logopsistudios.com" method="POST" class="space-y-4">
-                    <input type="hidden" name="_subject" value="Demande de rappel — Logopsi Studios">
+                    <input type="hidden" name="_subject" value="Demande de rappel — Logo Études">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="">
@@ -365,6 +364,41 @@
             </div>
         </div>
     </div>
+    <script>
+        lucide.createIcons();
+
+        // Mega Menu
+        var megaCloseTimers = { ortho: null, psycho: null, scolaire: null };
+        function openMegaMenu(menu) {
+            cancelMegaClose(menu);
+            var menus = { ortho: 'ortho-mega', psycho: 'psycho-mega', scolaire: 'scolaire-mega' };
+            Object.keys(menus).forEach(function(key) {
+                var el = document.getElementById(menus[key]);
+                if (key === menu) { el.classList.add('active'); }
+                else { el.classList.remove('active'); clearTimeout(megaCloseTimers[key]); }
+            });
+        }
+        function scheduleMegaClose(menu) {
+            var menus = { ortho: 'ortho-mega', psycho: 'psycho-mega', scolaire: 'scolaire-mega' };
+            megaCloseTimers[menu] = setTimeout(function() {
+                document.getElementById(menus[menu]).classList.remove('active');
+            }, 200);
+        }
+        function cancelMegaClose(menu) { clearTimeout(megaCloseTimers[menu]); }
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
+
+        // FAQ
+        function toggleFaq(btn) {
+            var content = btn.nextElementSibling;
+            var icon = btn.querySelector('.faq-icon');
+            var isOpen = content.classList.contains('open');
+            document.querySelectorAll('.faq-content').forEach(function(c) { c.classList.remove('open'); });
+            document.querySelectorAll('.faq-icon').forEach(function(i) { i.style.transform = ''; });
+            if (!isOpen) {
+                content.classList.add('open');
+                if (icon) icon.style.transform = 'rotate(45deg)';
+            }
+        }
 
         // ---- Booking modal ----
         function setBookingView(view) {
@@ -418,6 +452,6 @@
                 }
             } catch (err) {}
         })();
-
+    </script>
 </body>
 </html>

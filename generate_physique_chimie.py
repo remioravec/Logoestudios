@@ -8,7 +8,7 @@ from seo_titles import (
     title_for_scolaire_n4, meta_desc_for_scolaire_n4,
     SUFFIX as _SEO_SUFFIX,
 )
-from shared_components import get_booking_modal, get_booking_js, get_navbar
+from shared_components import get_booking_modal, get_booking_js, get_navbar, get_js
 
 SITE_DIR = "/workspaces/Logoestudios/site/soutien-scolaire/physique-chimie"
 CITIES = ["Paris", "Marseille", "Lyon", "Toulouse", "Nice"]
@@ -168,7 +168,7 @@ def footer():
         <div class="max-w-6xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold text-primary mb-4">Logopsi Studios</h3>
+                    <h3 class="text-xl font-bold text-primary mb-4">Logo Études</h3>
                     <p class="text-gray-400">Soutien scolaire et accompagnement en ligne pour tous les niveaux.</p>
                 </div>
                 <div>
@@ -190,15 +190,12 @@ def footer():
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
-                <p>&copy; 2025 Logopsi Studios. Tous droits réservés.</p>
+                <p>&copy; 2025 Logo Études. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
-    <script>lucide.createIcons();</script>
-''' + get_booking_modal() + get_booking_js() + '''
-</body>
-</html>'''
+''' + get_booking_modal() + get_js(include_faq=True)
 
 def cta_section(title, subtitle):
     return f'''
@@ -259,7 +256,7 @@ def generate_index():
     <!-- WHY SECTION -->
     <section class="py-20">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-12 text-center">Pourquoi choisir Logopsi Studios pour la physique-chimie ?</h2>
+            <h2 class="text-3xl font-bold mb-12 text-center">Pourquoi choisir Logo Études pour la physique-chimie ?</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white rounded-2xl p-8 shadow-sm text-center">
                     <div class="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center mx-auto mb-6">

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reusable HTML component functions for the Logopsi Studios site generator.
+"""Reusable HTML component functions for the Logo Études site generator.
 
 Every function returns a plain Python string containing final HTML.
 The `prefix` parameter handles relative paths for pages at different depths:
@@ -165,7 +165,7 @@ def get_navbar(prefix):
         '        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">\n'
         '            <div class="flex justify-between items-center h-20">\n'
         '                <a href="' + prefix + 'index.html" class="flex items-center space-x-2 z-50">\n'
-        '                    <img src="' + prefix + 'logo-logopsi.png" alt="Logopsi Studios" class="h-14 w-auto">\n'
+        '                    <img src="' + prefix + 'logo-logopsi.png" alt="Logo Études" class="h-14 w-auto">\n'
         '                </a>\n'
         '\n'
         '                <div class="hidden lg:flex items-center space-x-1">\n'
@@ -295,7 +295,7 @@ def get_footer(prefix):
         '            <div class="grid md:grid-cols-4 gap-8 mb-12">\n'
         '                <div>\n'
         '                    <div class="flex items-center space-x-2 mb-4">\n'
-        '                        <img src="' + prefix + 'logo-logopsi.png" alt="Logopsi Studios" class="h-12 w-auto">\n'
+        '                        <img src="' + prefix + 'logo-logopsi.png" alt="Logo Études" class="h-12 w-auto">\n'
         '                    </div>\n'
         '                    <p class="text-gray-400 text-sm">Orthophonie, psychologie et soutien scolaire en ligne. Des professionnels dipl\u00f4m\u00e9s, partout en France.</p>\n'
         '                </div>\n'
@@ -332,7 +332,7 @@ def get_footer(prefix):
         '                </div>\n'
         '            </div>\n'
         '            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">\n'
-        '                <p class="text-gray-500 text-sm">&copy; 2025 Logopsi Studios. Tous droits r\u00e9serv\u00e9s.</p>\n'
+        '                <p class="text-gray-500 text-sm">&copy; 2025 Logo Études. Tous droits r\u00e9serv\u00e9s.</p>\n'
         '                <div class="flex flex-wrap gap-x-6 gap-y-2 mt-4 md:mt-0">\n'
         '                    <a href="' + prefix + 'mentions-legales.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Mentions l\u00e9gales</a>\n'
         '                    <a href="' + prefix + 'contact.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Contact</a>\n'
@@ -390,7 +390,7 @@ def get_cta_section(title, desc):
 # ------------------------------------------------------------------
 
 def get_about_section(practitioner, prefix):
-    """Return the 'Pourquoi choisir Logopsi Studios' section.
+    """Return the 'Pourquoi choisir Logo Études' section.
 
     practitioner: "orthophoniste", "psychologue", or "enseignant"
     """
@@ -408,14 +408,14 @@ def get_about_section(practitioner, prefix):
         '        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">\n'
         '            <div class="order-2 md:order-1 relative">\n'
         '                <div class="absolute -inset-4 bg-primary/10 rounded-3xl transform -rotate-3"></div>\n'
-        '                <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="\u00c9quipe Logopsi Studios" class="relative rounded-2xl shadow-lg w-full object-cover h-[400px]">\n'
+        '                <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="\u00c9quipe Logo Études" class="relative rounded-2xl shadow-lg w-full object-cover h-[400px]">\n'
         '            </div>\n'
         '            <div class="order-1 md:order-2 space-y-6">\n'
         '                <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold">\n'
         '                    <i data-lucide="award" class="w-4 h-4"></i> Professionnels dipl\u00f4m\u00e9s\n'
         '                </div>\n'
-        '                <h2 class="text-3xl font-bold text-gray-900">Pourquoi choisir Logopsi Studios ?</h2>\n'
-        '                <p class="text-gray-600 leading-relaxed">Chez Logopsi Studios, nous r\u00e9unissons des ' + pro_label + ', form\u00e9s aux derni\u00e8res avanc\u00e9es scientifiques. Notre plateforme vous connecte avec le bon professionnel en moins de 48h, partout en France.</p>\n'
+        '                <h2 class="text-3xl font-bold text-gray-900">Pourquoi choisir Logo Études ?</h2>\n'
+        '                <p class="text-gray-600 leading-relaxed">Chez Logo Études, nous r\u00e9unissons des ' + pro_label + ', form\u00e9s aux derni\u00e8res avanc\u00e9es scientifiques. Notre plateforme vous connecte avec le bon professionnel en moins de 48h, partout en France.</p>\n'
         '                <div class="space-y-4">\n'
         '                    <div class="flex items-start gap-3">\n'
         '                        <div class="mt-1 bg-primary/10 text-primary rounded-full p-1"><i data-lucide="check" class="w-4 h-4"></i></div>\n'
@@ -562,7 +562,7 @@ def get_booking_modal():
         '                <h2 class="text-2xl font-bold text-gray-900 mb-2">Être rappelé(e) gratuitement</h2>\n'
         '                <p class="text-gray-600 mb-6">Renseignez vos coordonnées, nous vous rappelons sous 48h ouvrées.</p>\n'
         '                <form action="https://formsubmit.co/contact@logopsistudios.com" method="POST" class="space-y-4">\n'
-        '                    <input type="hidden" name="_subject" value="Demande de rappel — Logopsi Studios">\n'
+        '                    <input type="hidden" name="_subject" value="Demande de rappel — Logo Études">\n'
         '                    <input type="hidden" name="_template" value="table">\n'
         '                    <input type="hidden" name="_captcha" value="false">\n'
         '                    <input type="hidden" name="_next" value="">\n'

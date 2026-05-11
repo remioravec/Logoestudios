@@ -86,11 +86,12 @@ def patch_title_meta(html, new_title, new_meta):
 
 
 def inject_booking(html):
-    """Inject booking modal HTML+JS right before </body>. Idempotent."""
+    """Inject booking modal HTML+JS right before </body>. Idempotent.
+    get_booking_js() returns raw JS without script tags, so wrap it here."""
     if 'id="booking-modal"' in html:
         return html
-    insertion = get_booking_modal() + get_booking_js()
-    return html.replace("</body>", insertion + "\n</body>", 1)
+    insertion = get_booking_modal() + "<script>\n" + get_booking_js() + "\n</script>\n"
+    return html.replace("</body>", insertion + "</body>", 1)
 
 
 def patch_file(path):

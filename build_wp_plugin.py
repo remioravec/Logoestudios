@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Build a WordPress plugin that deploys the entire Logopsi Studios static site
+Build a WordPress plugin that deploys the entire Logo Études static site
 into a blank WordPress installation.
 """
 
@@ -14,7 +14,7 @@ from html import escape
 SITE_DIR = "/workspaces/Logoestudios/site"
 OUTPUT_DIR = "/workspaces/Logoestudios/wp-plugin"
 PLUGIN_SLUG = "logopsi-deployer"
-PLUGIN_NAME = "Logopsi Studios Deployer"
+PLUGIN_NAME = "Logo Études Deployer"
 
 def collect_pages(site_dir):
     """Collect all HTML pages and their metadata."""
@@ -71,7 +71,7 @@ def collect_pages(site_dir):
         parent_slug = '/'.join(parts[:-1]) if len(parts) > 1 else ''
         display_name = parts[-1].replace('-', ' ').title()
         parent_display = parts[0].replace('-', ' ').title() if parts else ''
-        title = f"{display_name} - {parent_display} - Logopsi Studios"
+        title = f"{display_name} - {parent_display} - Logo Études"
 
         # Minimal redirect-like HTML (WordPress will serve this as a page)
         placeholder_html = f'''<!DOCTYPE html>
@@ -130,9 +130,9 @@ def generate_main_plugin_php(pages):
     return f'''<?php
 /**
  * Plugin Name: {PLUGIN_NAME}
- * Description: Déploie le site complet Logopsi Studios sur WordPress. Interface d'admin pour mapper les images et pousser toutes les pages.
+ * Description: Déploie le site complet Logo Études sur WordPress. Interface d'admin pour mapper les images et pousser toutes les pages.
  * Version: 1.0.0
- * Author: Logopsi Studios
+ * Author: Logo Études
  * Text Domain: logopsi-deployer
  */
 
@@ -680,7 +680,7 @@ function logopsi_admin_page() {{
 
     ?>
     <div class="wrap logopsi-wrap">
-        <h1><span class="dashicons dashicons-upload" style="font-size:30px;margin-right:10px;color:#05C86B;"></span> Logopsi Studios Deployer</h1>
+        <h1><span class="dashicons dashicons-upload" style="font-size:30px;margin-right:10px;color:#05C86B;"></span> Logo Études Deployer</h1>
 
         <div class="logopsi-stats">
             <div class="logopsi-stat-card">

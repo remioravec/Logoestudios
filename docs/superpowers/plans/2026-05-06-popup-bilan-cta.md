@@ -167,7 +167,7 @@ def get_booking_modal():
         '                <h2 class="text-2xl font-bold text-gray-900 mb-2">Être rappelé(e) gratuitement</h2>\n'
         '                <p class="text-gray-600 mb-6">Renseignez vos coordonnées, nous vous rappelons sous 48h ouvrées.</p>\n'
         '                <form action="https://formsubmit.co/contact@logopsistudios.com" method="POST" class="space-y-4">\n'
-        '                    <input type="hidden" name="_subject" value="Demande de rappel — Logopsi Studios">\n'
+        '                    <input type="hidden" name="_subject" value="Demande de rappel — Logo Études">\n'
         '                    <input type="hidden" name="_template" value="table">\n'
         '                    <input type="hidden" name="_captcha" value="false">\n'
         '                    <input type="hidden" name="_next" value="">\n'
@@ -646,31 +646,31 @@ from seo_titles import (
 
 
 def test_ortho_n2_dyslexie():
-    assert title_for_ortho_n2("dyslexie") == "Bilan dyslexie en ligne — Orthophoniste 150€ | Logopsi Studios"
+    assert title_for_ortho_n2("dyslexie") == "Bilan dyslexie en ligne — Orthophoniste 150€ | Logo Études"
 
 
 def test_ortho_n2_oralite():
-    assert title_for_ortho_n2("oralite") == "Bilan troubles de l'oralité — Orthophoniste 150€ | Logopsi Studios"
+    assert title_for_ortho_n2("oralite") == "Bilan troubles de l'oralité — Orthophoniste 150€ | Logo Études"
 
 
 def test_ortho_n3_paris():
-    assert title_for_ortho_n3("paris") == "Bilan orthophonique à Paris — 150€, sous 48h | Logopsi Studios"
+    assert title_for_ortho_n3("paris") == "Bilan orthophonique à Paris — 150€, sous 48h | Logo Études"
 
 
 def test_ortho_n4_dyslexie_paris():
-    assert title_for_ortho_n4("dyslexie", "paris") == "Bilan dyslexie à Paris — Orthophoniste en ligne 150€ | Logopsi Studios"
+    assert title_for_ortho_n4("dyslexie", "paris") == "Bilan dyslexie à Paris — Orthophoniste en ligne 150€ | Logo Études"
 
 
 def test_psycho_n2_tdah():
-    assert title_for_psycho_n2("tdah") == "Bilan TDAH en ligne — Psychologue 150€ | Logopsi Studios"
+    assert title_for_psycho_n2("tdah") == "Bilan TDAH en ligne — Psychologue 150€ | Logo Études"
 
 
 def test_scolaire_n4():
-    assert title_for_scolaire_n4("mathematiques", "3eme", "paris") == "Bilan mathématiques 3ème à Paris — 150€ | Logopsi Studios"
+    assert title_for_scolaire_n4("mathematiques", "3eme", "paris") == "Bilan mathématiques 3ème à Paris — 150€ | Logo Études"
 
 
 def test_handwritten_index():
-    assert title_for_handwritten("site/index.html") == "Bilan orthophonie, psychologie & soutien — 150€, 48h | Logopsi Studios"
+    assert title_for_handwritten("site/index.html") == "Bilan orthophonie, psychologie & soutien — 150€, 48h | Logo Études"
 
 
 def test_handwritten_contact_unchanged():
@@ -706,7 +706,7 @@ Expected: `ModuleNotFoundError: No module named 'seo_titles'`
 Créer `/workspaces/Logoestudios/seo_titles.py` :
 
 ```python
-"""Centralised SEO titles and meta descriptions for the Logopsi Studios site.
+"""Centralised SEO titles and meta descriptions for the Logo Études site.
 
 Used by:
   - generate_level2_pages.py  (trouble pages)
@@ -718,7 +718,7 @@ Used by:
 from generate_level3_4_pages import display_name as _display_name
 
 
-SUFFIX = " | Logopsi Studios"
+SUFFIX = " | Logo Études"
 
 
 CITY_NAMES = {
@@ -862,10 +862,10 @@ def meta_desc_for_scolaire_n4(subject_slug, level_slug, city_slug):
 
 # None means: do not modify the title.
 HANDWRITTEN_TITLES = {
-    "site/index.html": "Bilan orthophonie, psychologie & soutien — 150€, 48h | Logopsi Studios",
-    "site/orthophonie/index.html": "Bilan orthophonique en ligne — 150€, sous 48h | Logopsi Studios",
-    "site/psychologie/index.html": "Bilan psychologique en ligne — 150€, sous 48h | Logopsi Studios",
-    "site/soutien-scolaire/index.html": "Bilan pédagogique en ligne — 150€, sous 48h | Logopsi Studios",
+    "site/index.html": "Bilan orthophonie, psychologie & soutien — 150€, 48h | Logo Études",
+    "site/orthophonie/index.html": "Bilan orthophonique en ligne — 150€, sous 48h | Logo Études",
+    "site/psychologie/index.html": "Bilan psychologique en ligne — 150€, sous 48h | Logo Études",
+    "site/soutien-scolaire/index.html": "Bilan pédagogique en ligne — 150€, sous 48h | Logo Études",
     "site/contact.html": None,
     "site/a-propos.html": None,
     "site/mentions-legales.html": None,
@@ -1051,7 +1051,7 @@ from seo_titles import title_for_ortho_n2, title_for_psycho_n2
 Repérer (vers la ligne 864) dans le f-string HTML :
 
 ```python
-    <title>{data["title"]} - Logopsi Studios</title>
+    <title>{data["title"]} - Logo Études</title>
     <meta name="description" content="{data["meta_desc"]}">
 ```
 
@@ -1063,7 +1063,7 @@ Modifier en amont du f-string (juste avant `html = f"""<!DOCTYPE html>`) pour ca
     elif is_psycho:
         page_title = title_for_psycho_n2(slug)
     else:
-        page_title = data["title"] + " - Logopsi Studios"
+        page_title = data["title"] + " - Logo Études"
 ```
 
 Et dans le f-string remplacer les deux lignes ci-dessus par :
@@ -1229,10 +1229,10 @@ grep -H "<title>" /workspaces/Logoestudios/site/orthophonie/dyslexie.html /works
 ```
 Expected:
 ```
-.../orthophonie/dyslexie.html:    <title>Bilan dyslexie en ligne — Orthophoniste 150€ | Logopsi Studios</title>
-.../orthophonie/villes/dyslexie-paris.html:    <title>Bilan dyslexie à Paris — Orthophoniste en ligne 150€ | Logopsi Studios</title>
-.../psychologie/tdah.html:    <title>Bilan TDAH en ligne — Psychologue 150€ | Logopsi Studios</title>
-.../soutien-scolaire/mathematiques/3eme.html:    <title>Bilan mathématiques 3ème en ligne — 150€ | Logopsi Studios</title>
+.../orthophonie/dyslexie.html:    <title>Bilan dyslexie en ligne — Orthophoniste 150€ | Logo Études</title>
+.../orthophonie/villes/dyslexie-paris.html:    <title>Bilan dyslexie à Paris — Orthophoniste en ligne 150€ | Logo Études</title>
+.../psychologie/tdah.html:    <title>Bilan TDAH en ligne — Psychologue 150€ | Logo Études</title>
+.../soutien-scolaire/mathematiques/3eme.html:    <title>Bilan mathématiques 3ème en ligne — 150€ | Logo Études</title>
 ```
 
 - [ ] **Step 10.5 : Vérifier que la popup est bien injectée**
@@ -1270,7 +1270,7 @@ Créer `tests/fixtures/sample_handwritten.html` :
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Sample - Logopsi Studios</title>
+    <title>Sample - Logo Études</title>
     <meta name="description" content="Sample meta">
 </head>
 <body class="bg-light">
@@ -1728,7 +1728,7 @@ Créer `tests/fixtures/sample_hub.html` :
 ```html
 <!DOCTYPE html>
 <html lang="fr">
-<head><title>Hub - Logopsi Studios</title></head>
+<head><title>Hub - Logo Études</title></head>
 <body>
     <section class="hero">
         <h1 class="text-5xl">Orthophonie en ligne</h1>
@@ -1883,7 +1883,7 @@ Run :
 ```bash
 grep -H "<title>" /workspaces/Logoestudios/site/index.html /workspaces/Logoestudios/site/orthophonie/index.html /workspaces/Logoestudios/site/psychologie/index.html /workspaces/Logoestudios/site/soutien-scolaire/index.html
 ```
-Expected: les 4 lignes contiennent "Bilan ... 150€" et "| Logopsi Studios".
+Expected: les 4 lignes contiennent "Bilan ... 150€" et "| Logo Études".
 
 - [ ] **Step 15.4 : Vérifier que `contact.html` n'a PAS de modal mais a Espace membre**
 
@@ -1976,7 +1976,7 @@ Ouvrir `http://localhost:8765/index.html` dans un navigateur (ou via le forward�
 Créer `/workspaces/Logoestudios/OPS.md` :
 
 ```markdown
-# Logopsi Studios — Notes opérationnelles
+# Logo Études — Notes opérationnelles
 
 ## Activation Formsubmit (formulaire "Être rappelé")
 
