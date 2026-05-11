@@ -14,7 +14,7 @@ import os
 
 from shared_components import (
     get_head, get_navbar, get_footer, get_cta_section,
-    get_about_section, get_js, get_breadcrumb,
+    get_about_section, get_js, get_breadcrumb, get_booking_modal,
 )
 from generate_level2_pages import ORTHO_PAGES, PSYCHO_PAGES, VILLES
 from seo_titles import (
@@ -1199,6 +1199,7 @@ def generate_ortho_psycho_n3(category, pages_dict, city, base):
         "Nos " + practitioner + "s diplômés sont disponibles sous 48h pour accompagner votre enfant depuis " + city + ".",
     )
     html += get_footer(prefix)
+    html += get_booking_modal()
     html += get_js(include_faq=False)
 
     with open(filepath, "w", encoding="utf-8") as f:
@@ -1427,6 +1428,7 @@ def generate_ortho_psycho_n4(category, slug, data, city, base):
         data.get("cta_desc", "Réservez votre bilan en ligne et bénéficiez d'un accompagnement personnalisé."),
     )
     html += get_footer(prefix)
+    html += get_booking_modal()
     html += get_js(include_faq=bool(faq_items))
 
     with open(filepath, "w", encoding="utf-8") as f:
@@ -1553,6 +1555,7 @@ def generate_scolaire_n3(city, base):
         "Réservez le premier cours de votre enfant et bénéficiez d'un accompagnement personnalisé avec nos enseignants qualifiés.",
     )
     html += get_footer(prefix)
+    html += get_booking_modal()
     html += get_js(include_faq=False)
 
     with open(filepath, "w", encoding="utf-8") as f:
@@ -1728,6 +1731,7 @@ def generate_scolaire_n4(subject_slug, subject_data, level_slug, level_info, cit
         "Réservez le premier cours de votre enfant et bénéficiez d'un accompagnement personnalisé avec nos enseignants qualifiés.",
     )
     html += get_footer(prefix)
+    html += get_booking_modal()
     html += get_js(include_faq=has_faq)
 
     with open(filepath, "w", encoding="utf-8") as f:
