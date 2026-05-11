@@ -918,10 +918,7 @@ def generate_page(slug, data, category):
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <a href="../index.html" class="flex items-center space-x-2 z-50">
-                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold text-sm">L</span>
-                    </div>
-                    <span class="text-xl font-bold text-dark">Logopsi <span class="text-primary">Studios</span></span>
+                    <img src="../logo-logopsi.png" alt="Logopsi Studios" class="h-14 w-auto">
                 </a>
 
                 <div class="hidden lg:flex items-center space-x-1">

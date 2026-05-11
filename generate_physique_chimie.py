@@ -160,7 +160,7 @@ def nav():
     return '''
     <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-            <a href="/site/" class="text-2xl font-bold text-primary">Logopsi Studios</a>
+            <a href="/site/" class="flex items-center"><img src="/site/logo-logopsi.png" alt="Logopsi Studios" class="h-12 w-auto"></a>
             <div class="flex items-center gap-6">
                 <a href="/site/soutien-scolaire/" class="text-dark hover:text-primary transition">Soutien Scolaire</a>
                 <a href="/site/soutien-scolaire/physique-chimie/" class="text-primary font-semibold">Physique-Chimie</a>
