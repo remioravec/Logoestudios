@@ -17,6 +17,14 @@ from shared_components import (
     get_about_section, get_js, get_breadcrumb,
 )
 from generate_level2_pages import ORTHO_PAGES, PSYCHO_PAGES, VILLES
+from seo_titles import (
+    title_for_ortho_n3, meta_desc_for_ortho_n3,
+    title_for_ortho_n4, meta_desc_for_ortho_n4,
+    title_for_psycho_n3, meta_desc_for_psycho_n3,
+    title_for_psycho_n4, meta_desc_for_psycho_n4,
+    title_for_scolaire_n3, meta_desc_for_scolaire_n3,
+    title_for_scolaire_n4, meta_desc_for_scolaire_n4,
+)
 
 try:
     from generate_physique_chimie import LEVELS as PC_LEVELS
@@ -1080,12 +1088,12 @@ def generate_ortho_psycho_n3(category, pages_dict, city, base):
         practitioner_label = "Psychologue"
         cat_label = "Psychologie"
 
-    title = practitioner_label + " enfant à " + city + " en ligne"
-    meta_desc = (
-        practitioner_label + " pour enfant à " + city + " en ligne. "
-        "Consultation sous 48h avec un " + practitioner + " diplômé. "
-        "Prise en charge rapide, 100% en visio depuis " + city + "."
-    )
+    if category == "orthophonie":
+        title = title_for_ortho_n3(cslug)
+        meta_desc = meta_desc_for_ortho_n3(cslug)
+    else:
+        title = title_for_psycho_n3(cslug)
+        meta_desc = meta_desc_for_psycho_n3(cslug)
 
     out_dir = os.path.join(base, category, "villes")
     os.makedirs(out_dir, exist_ok=True)
@@ -1219,12 +1227,12 @@ def generate_ortho_psycho_n4(category, slug, data, city, base):
         practitioner_label = "Psychologue"
         cat_label = "Psychologie"
 
-    title = practitioner_label + " " + dname + " à " + city + " en ligne"
-    meta_desc = (
-        practitioner_label + " spécialisé en " + dname.lower() + " pour enfant à " + city
-        + ". Consultation en ligne sous 48h avec un " + practitioner
-        + " diplômé. Accompagnement personnalisé depuis " + city + "."
-    )
+    if category == "orthophonie":
+        title = title_for_ortho_n4(slug, cslug)
+        meta_desc = meta_desc_for_ortho_n4(slug, cslug)
+    else:
+        title = title_for_psycho_n4(slug, cslug)
+        meta_desc = meta_desc_for_psycho_n4(slug, cslug)
 
     out_dir = os.path.join(base, category, "villes")
     os.makedirs(out_dir, exist_ok=True)
@@ -1437,12 +1445,8 @@ def generate_scolaire_n3(city, base):
     cslug = city_slug(city)
     cdata = CITY_DATA[city]
 
-    title = "Soutien scolaire à " + city + " en ligne"
-    meta_desc = (
-        "Soutien scolaire en ligne à " + city + " : cours particuliers de mathématiques, "
-        "français, anglais, physique-chimie et aide aux devoirs. Enseignants qualifiés, "
-        "premier cours sous 48h."
-    )
+    title = title_for_scolaire_n3(cslug)
+    meta_desc = meta_desc_for_scolaire_n3(cslug)
 
     out_dir = os.path.join(base, "soutien-scolaire", "villes")
     os.makedirs(out_dir, exist_ok=True)
@@ -1570,12 +1574,8 @@ def generate_scolaire_n4(subject_slug, subject_data, level_slug, level_info, cit
     cycle = level_info["cycle"]
     subj_label = subject_data["label"]
 
-    title = subj_label + " " + level_label + " à " + city + " - Cours en ligne"
-    meta_desc = (
-        "Cours de " + subj_label.lower() + " " + level_label + " en ligne à " + city
-        + ". Soutien scolaire avec un enseignant qualifié. Premier cours sous 48h. "
-        + cycle + ", programme officiel."
-    )
+    title = title_for_scolaire_n4(subject_slug, level_slug, cslug)
+    meta_desc = meta_desc_for_scolaire_n4(subject_slug, level_slug, cslug)
 
     out_dir = os.path.join(base, "soutien-scolaire", subject_slug)
     os.makedirs(out_dir, exist_ok=True)

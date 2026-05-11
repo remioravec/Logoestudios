@@ -7,10 +7,14 @@ Used by:
   - patch_handwritten_pages.py (index, hubs N2, etc.)
 """
 
-from generate_level3_4_pages import display_name as _display_name
-
-
 SUFFIX = " | Logopsi Studios"
+
+
+def _display_name(slug):
+    # Lazy import to avoid circular dependency: generate_level3_4_pages
+    # itself imports from seo_titles.
+    from generate_level3_4_pages import display_name
+    return display_name(slug)
 
 
 CITY_NAMES = {
