@@ -62,6 +62,7 @@
                             Soutien Scolaire <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </button>
                     </div>
+                    <a href="../../tarifs.html" class="px-4 py-2 font-semibold text-[15px] text-gray-800 hover:text-primary transition-colors">Tarifs</a>
                 </div>
 
                 <div class="hidden lg:flex items-center gap-4">
@@ -188,6 +189,7 @@
                 <a href="../../orthophonie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Orthophonie</a>
                 <a href="../../psychologie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Psychologie</a>
                 <a href="../../soutien-scolaire/" class="block text-gray-900 hover:text-primary font-semibold py-2">Soutien Scolaire</a>
+                <a href="../../tarifs.html" class="block text-gray-900 hover:text-primary font-semibold py-2">Tarifs</a>
                 <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="block text-center font-semibold py-2 text-gray-700 hover:text-primary border-b border-gray-100">Connexion</a>
                 <a href="#" onclick="openBookingModal(); return false;" class="w-full bg-primary text-white font-semibold py-3 rounded-full shadow-md mt-4 block text-center">Prendre rendez-vous</a>
             </div>
@@ -216,7 +218,7 @@
             </h1>
             <p class="text-lg text-gray-600 leading-relaxed mb-8">La 6ème est souvent la première année d'espagnol pour de nombreux élèves qui le découvriront en LV2 en 5ème. Pour ceux qui ont déjà commencé, c'est l'année de consolidation des bases avant l'enseignement formel du collège. L'objectif est de préparer un socle solide.</p>
             <a href="../../contact.html" class="bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primaryHover transition text-lg shadow-lg inline-flex items-center gap-2">
-                <i data-lucide="calendar" class="w-5 h-5"></i> Réserver un cours
+                <i data-lucide="calendar" class="w-5 h-5"></i> Réserver un cours d'essai
             </a>
         </div>
     </section>
@@ -392,12 +394,80 @@
                     <a href="../../mentions-legales.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Mentions légales</a>
                     <a href="../../contact.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Contact</a>
                     <a href="../../a-propos.html" class="text-gray-500 hover:text-primary text-sm transition-colors">À propos</a>
+                    <a href="../../tarifs.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Tarifs</a>
                     <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-primary text-sm transition-colors">Espace membre</a>
                 </div>
             </div>
         </div>
     </footer>
-            <!-- LOGOPSI_BOOKING_MODAL -->
+            <!-- LOGOPSI_NAV_JS -->
+    <script>
+        if (window.lucide) { lucide.createIcons(); }
+
+        // Mega Menu (ortho / psycho / scolaire)
+        if (typeof megaCloseTimers === "undefined") {
+            var megaCloseTimers = { ortho: null, psycho: null, scolaire: null };
+        }
+        if (typeof openMegaMenu !== "function") {
+            window.openMegaMenu = function(menu) {
+                cancelMegaClose(menu);
+                var menus = { ortho: 'ortho-mega', psycho: 'psycho-mega', scolaire: 'scolaire-mega' };
+                Object.keys(menus).forEach(function(key) {
+                    var el = document.getElementById(menus[key]);
+                    if (!el) return;
+                    if (key === menu) { el.classList.add('active'); }
+                    else { el.classList.remove('active'); clearTimeout(megaCloseTimers[key]); }
+                });
+            };
+        }
+        if (typeof scheduleMegaClose !== "function") {
+            window.scheduleMegaClose = function(menu) {
+                var menus = { ortho: 'ortho-mega', psycho: 'psycho-mega', scolaire: 'scolaire-mega' };
+                megaCloseTimers[menu] = setTimeout(function() {
+                    var el = document.getElementById(menus[menu]);
+                    if (el) el.classList.remove('active');
+                }, 200);
+            };
+        }
+        if (typeof cancelMegaClose !== "function") {
+            window.cancelMegaClose = function(menu) { clearTimeout(megaCloseTimers[menu]); };
+        }
+        if (typeof toggleMobileMenu !== "function") {
+            window.toggleMobileMenu = function() {
+                var m = document.getElementById('mobile-menu');
+                if (m) m.classList.toggle('hidden');
+            };
+        }
+
+        // FAQ accordion - handles both .faq-content/.faq-icon variant and the
+        // simpler "answer is the next sibling, toggle hidden" variant.
+        if (typeof toggleFaq !== "function") {
+            window.toggleFaq = function(btn) {
+                var answer = btn.nextElementSibling;
+                if (!answer) return;
+                if (answer.classList.contains('faq-content')) {
+                    var icon = btn.querySelector('.faq-icon');
+                    var isOpen = answer.classList.contains('open');
+                    document.querySelectorAll('.faq-content').forEach(function(c) { c.classList.remove('open'); });
+                    document.querySelectorAll('.faq-icon').forEach(function(i) { i.style.transform = ''; });
+                    if (!isOpen) {
+                        answer.classList.add('open');
+                        if (icon) icon.style.transform = 'rotate(45deg)';
+                    }
+                } else {
+                    answer.classList.toggle('hidden');
+                    var icon2 = btn.querySelector('[data-lucide]');
+                    if (icon2) {
+                        var isHidden = answer.classList.contains('hidden');
+                        icon2.setAttribute('data-lucide', isHidden ? 'plus' : 'minus');
+                        if (window.lucide) { window.lucide.createIcons(); }
+                    }
+                }
+            };
+        }
+    </script>
+    <!-- /LOGOPSI_NAV_JS -->
+    <!-- LOGOPSI_BOOKING_MODAL -->
     <div id="booking-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title" data-view="callback">
         <div class="absolute inset-0 bg-black/60" onclick="closeBookingModal()"></div>
         <div class="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 z-[110] modal-enter max-h-[92vh] overflow-y-auto">

@@ -63,6 +63,7 @@
                             Soutien Scolaire <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </button>
                     </div>
+                    <a href="../tarifs.html" class="px-4 py-2 font-semibold text-[15px] text-gray-800 hover:text-primary transition-colors">Tarifs</a>
                 </div>
 
                 <div class="hidden lg:flex items-center gap-4">
@@ -189,6 +190,7 @@
                 <a href="../orthophonie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Orthophonie</a>
                 <a href="../psychologie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Psychologie</a>
                 <a href="../soutien-scolaire/" class="block text-gray-900 hover:text-primary font-semibold py-2">Soutien Scolaire</a>
+                <a href="../tarifs.html" class="block text-gray-900 hover:text-primary font-semibold py-2">Tarifs</a>
                 <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="block text-center font-semibold py-2 text-gray-700 hover:text-primary border-b border-gray-100">Connexion</a>
                 <a href="#" onclick="openBookingModal(); return false;" class="w-full bg-primary text-white font-semibold py-3 rounded-full shadow-md mt-4 block text-center">Prendre rendez-vous</a>
             </div>
@@ -215,7 +217,7 @@
             </p>
             <div class="flex flex-col sm:flex-row gap-4 pt-4">
                 <button class="bg-primary text-white font-semibold px-8 py-4 rounded-full hover:bg-primaryHover transition-colors shadow-lg flex items-center justify-center gap-2">
-                    Réserver un bilan <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    Réserver mon bilan <i data-lucide="arrow-right" class="w-5 h-5"></i>
                 </button>
                 <button onclick="openModal()" class="bg-white text-gray-900 border-2 border-gray-200 font-semibold px-8 py-4 rounded-full hover:border-primary hover:text-primary transition-colors flex items-center justify-center">
                     Faire le test gratuit
@@ -271,7 +273,7 @@
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Test terminé</h3>
                     <p id="result-text" class="text-gray-600 mb-8"></p>
                     <button type="button" onclick="closeModal(); openBookingModal();" class="w-full bg-primary text-white font-bold py-4 rounded-xl hover:bg-primaryHover transition-colors shadow-lg">
-                        Prendre rendez-vous avec un expert
+                        Prendre rendez-vous
                     </button>
                     <button onclick="closeModal()" class="w-full mt-4 text-gray-500 font-medium hover:text-gray-800">Fermer</button>
                 </div>
@@ -491,6 +493,7 @@
                 <div class="flex space-x-6 mt-4 md:mt-0">
                     <a href="../mentions-legales.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Mentions légales</a>
                     <a href="../a-propos.html" class="text-gray-500 hover:text-primary text-sm transition-colors">À propos</a>
+                    <a href="../tarifs.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Tarifs</a>
                     <a href="../contact.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Contact</a>
                 </div>
             </div>
@@ -501,10 +504,10 @@
         lucide.createIcons();
 
         // Mega Menu
-        var megaCloseTimers = { ortho: null, psycho: null };
+        var megaCloseTimers = { ortho: null, psycho: null , scolaire: null };
         function openMegaMenu(menu) {
             cancelMegaClose(menu);
-            var menus = { ortho: 'ortho-mega', psycho: 'psycho-mega' };
+            var menus = { ortho: 'ortho-mega', psycho: 'psycho-mega' , scolaire: 'scolaire-mega' };
             Object.keys(menus).forEach(function(key) {
                 var el = document.getElementById(menus[key]);
                 if (key === menu) { el.classList.add('active'); }
@@ -512,8 +515,10 @@
             });
         }
         function scheduleMegaClose(menu) {
+            var menus = { ortho: 'ortho-mega', psycho: 'psycho-mega', scolaire: 'scolaire-mega' };
             megaCloseTimers[menu] = setTimeout(function() {
-                document.getElementById(menu === 'ortho' ? 'ortho-mega' : 'psycho-mega').classList.remove('active');
+                var el = document.getElementById(menus[menu]);
+                if (el) el.classList.remove('active');
             }, 200);
         }
         function cancelMegaClose(menu) { clearTimeout(megaCloseTimers[menu]); }
@@ -589,7 +594,7 @@
             if (e.target === this) closeModal();
         });
     </script>
-        <!-- LOGOPSI_BOOKING_MODAL -->
+                <!-- LOGOPSI_BOOKING_MODAL -->
     <div id="booking-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title" data-view="callback">
         <div class="absolute inset-0 bg-black/60" onclick="closeBookingModal()"></div>
         <div class="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 z-[110] modal-enter max-h-[92vh] overflow-y-auto">
