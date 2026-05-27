@@ -14,12 +14,10 @@
                         primary: '#05C86B',
                         primaryHover: '#04b05e',
                         light: '#FBF9F6',
-                        dark: '#111111',
-                        pandaBg: '#B7F569'
+                        dark: '#111111'
                     },
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                        display: ['"Caveat"', '"Inter"', 'system-ui', 'sans-serif']
+                        sans: ['Inter', 'system-ui', 'sans-serif']
                     }
                 }
             }
@@ -27,19 +25,36 @@
     </script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         body { font-family: 'Inter', sans-serif; }
         .mega-menu-enter { animation: fadeInDown 0.2s ease-out forwards; }
         @keyframes fadeInDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
         .mega-menu { display: none; }
         .mega-menu.active { display: block; }
-        .panda-card {
-            background: linear-gradient(180deg, #C8FA7C 0%, #A5E84F 100%);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+        .tier-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+        .tier-card:hover { transform: translateY(-6px); box-shadow: 0 25px 50px -12px rgba(5, 200, 107, 0.25); }
+
+        .tier-badge {
+            width: 72px; height: 72px; border-radius: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 8px 24px -8px rgba(0,0,0,0.25);
+            position: relative;
+            flex-shrink: 0;
         }
-        .panda-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -10px rgba(5, 200, 107, 0.35); }
-        .panda-emoji { font-size: 64px; line-height: 1; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); }
-        .script-title { font-family: 'Caveat', cursive; font-weight: 700; }
+        .tier-badge::after {
+            content: ""; position: absolute; inset: 5px;
+            border-radius: 16px; border: 2px solid rgba(255,255,255,0.45);
+            pointer-events: none;
+        }
+        .tier-badge svg { color: white; width: 34px; height: 34px; stroke-width: 2.2; }
+
+        .tier-saphir   { background: linear-gradient(135deg, #4F7DFF 0%, #1E3A8A 100%); }
+        .tier-or       { background: linear-gradient(135deg, #FFC960 0%, #E8950E 100%); }
+        .tier-diamant  { background: linear-gradient(135deg, #A5F3FC 0%, #06B6D4 100%); }
+        .tier-etoile   { background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 100%); }
+        .tier-reussite { background: linear-gradient(135deg, #86EFAC 0%, #059669 100%); }
+        .tier-super    { background: linear-gradient(135deg, #FCA5A5 0%, #DC2626 100%); }
     </style>
 </head>
 <body class="font-sans text-gray-900 bg-light min-h-screen">
@@ -199,9 +214,9 @@
     </nav>
 
     <!-- HERO -->
-    <section class="pt-16 pb-12 px-6 max-w-7xl mx-auto">
-        <div class="space-y-6">
-            <div class="flex items-center gap-2 text-sm text-gray-500 mb-4">
+    <section class="pt-12 pb-10 px-6 max-w-7xl mx-auto">
+        <div class="space-y-5">
+            <div class="flex items-center gap-2 text-sm text-gray-500">
                 <a href="./index.html" class="hover:text-primary transition-colors">Accueil</a>
                 <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
                 <span class="text-gray-900 font-medium">Tarifs &amp; abonnements</span>
@@ -211,94 +226,101 @@
                 <i data-lucide="sparkles" class="w-4 h-4"></i> Formules mensuelles sans engagement
             </div>
 
-            <h1 class="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-gray-900">
-                Nos formules <span class="text-primary">Panda</span>
+            <h1 class="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-gray-900 max-w-3xl">
+                Trouvez le parcours <span class="text-primary">qui fait grandir</span> votre enfant
             </h1>
             <p class="text-lg text-gray-700 leading-relaxed max-w-2xl">
-                Choisissez le parcours qui correspond aux besoins de votre enfant. Toutes nos formules sont mensuelles, sans engagement, et incluent un suivi personnalisé par un conseiller pédagogique dédié.
+                Toutes nos formules sont mensuelles, sans engagement, et incluent un suivi personnalisé par un conseiller pédagogique dédié.
             </p>
+
+            <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-600 pt-2">
+                <span class="flex items-center gap-1.5"><i data-lucide="check-circle" class="w-4 h-4 text-primary"></i> Sans engagement</span>
+                <span class="flex items-center gap-1.5"><i data-lucide="check-circle" class="w-4 h-4 text-primary"></i> Résiliation à tout moment</span>
+                <span class="flex items-center gap-1.5"><i data-lucide="check-circle" class="w-4 h-4 text-primary"></i> 100% en ligne</span>
+            </div>
         </div>
     </section>
 
     <!-- ORTHO SECTION -->
-    <section class="py-16 px-6">
+    <section class="pt-8 pb-16 px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-                <div>
-                    <p class="script-title text-3xl text-primary mb-1">Mensuel</p>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Parcours <span class="script-title text-primary text-4xl md:text-5xl">Ortho</span></h2>
-                    <p class="text-gray-600 mt-2 max-w-xl">Séances visio avec une orthophoniste agréée, supports adaptés et progressifs.</p>
-                </div>
-                <div class="text-sm text-gray-500 flex items-center gap-2">
-                    <i data-lucide="info" class="w-4 h-4"></i> Sans engagement &middot; Résiliation à tout moment
-                </div>
+            <div class="mb-10">
+                <p class="text-xs font-bold text-primary uppercase tracking-[0.2em] mb-2">Formules mensuelles</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Parcours <span class="text-primary">Orthophonie</span></h2>
+                <p class="text-gray-600 mt-3 max-w-2xl">Séances visio avec une orthophoniste agréée, supports adaptés et progressifs.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-3 gap-6 items-stretch">
 
                 <!-- Panda Saphir -->
-                <div class="panda-card rounded-3xl p-7 flex flex-col">
-                    <div class="flex justify-center mb-4">
-                        <div class="panda-emoji">🐼</div>
+                <div class="tier-card bg-white rounded-3xl p-8 border border-gray-200 flex flex-col shadow-sm">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="tier-badge tier-saphir"><i data-lucide="gem"></i></div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Panda Saphir</h3>
+                            <p class="text-sm text-gray-500">Pour démarrer en douceur</p>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-1">Parcours Panda Saphir</h3>
-                    <p class="text-center text-gray-700 text-sm mb-5">Pour démarrer en douceur</p>
-                    <div class="text-center mb-6">
+                    <div class="mb-6 pb-6 border-b border-gray-100">
                         <span class="text-5xl font-extrabold text-gray-900">88€</span>
-                        <span class="text-gray-700 ml-1">/mois</span>
+                        <span class="text-gray-500 ml-1">/mois</span>
                     </div>
-                    <ul class="space-y-3 mb-7 text-gray-800 text-[15px]">
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span><strong>2 Séances visio</strong> de 25 min avec une orthophoniste agréée</span></li>
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Support adapté et progressif</span></li>
+                    <ul class="space-y-3 mb-7 text-gray-700 text-[15px]">
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span><strong class="text-gray-900">2 séances visio</strong> de 25 min avec une orthophoniste agréée</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Support adapté et progressif</span></li>
                     </ul>
-                    <button type="button" onclick="openBookingModal()" class="mt-auto w-full bg-white text-primary hover:bg-gray-50 font-semibold py-3 rounded-full transition-colors shadow-sm border border-white">
-                        Choisir ce parcours
+                    <button type="button" onclick="openBookingModal()" class="mt-auto w-full bg-gray-900 hover:bg-black text-white font-semibold py-3 rounded-full transition-colors">
+                        Choisir Panda Saphir
                     </button>
                 </div>
 
                 <!-- Panda Or (featured) -->
-                <div class="panda-card rounded-3xl p-7 flex flex-col relative ring-4 ring-primary/30 transform md:-translate-y-2">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md">
+                <div class="tier-card relative bg-gradient-to-b from-primary to-primaryHover rounded-3xl p-8 flex flex-col shadow-2xl shadow-primary/30 md:scale-[1.03]">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-gray-900 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md">
                         Le plus choisi
                     </div>
-                    <div class="flex justify-center mb-4">
-                        <div class="panda-emoji">🐻</div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="tier-badge tier-or"><i data-lucide="trophy"></i></div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Panda Or</h3>
+                            <p class="text-sm text-green-50/90">Le combo orthophonie + soutien</p>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-1">Parcours Panda Or</h3>
-                    <p class="text-center text-gray-700 text-sm mb-5">Le combo orthophonie + soutien</p>
-                    <div class="text-center mb-6">
-                        <span class="text-5xl font-extrabold text-gray-900">137€</span>
-                        <span class="text-gray-700 ml-1">/mois</span>
+                    <div class="mb-6 pb-6 border-b border-white/20">
+                        <span class="text-5xl font-extrabold text-white">137€</span>
+                        <span class="text-green-50/90 ml-1">/mois</span>
                     </div>
-                    <ul class="space-y-3 mb-7 text-gray-800 text-[15px]">
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span><strong>4 Séances visio</strong> de 25 min avec une orthophoniste agréée</span></li>
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span><strong>1h de soutien scolaire</strong> — matières à choisir</span></li>
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Supports adaptés et progressifs</span></li>
+                    <ul class="space-y-3 mb-7 text-white/95 text-[15px]">
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 mt-0.5 flex-shrink-0"></i><span><strong>4 séances visio</strong> de 25 min avec une orthophoniste agréée</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 mt-0.5 flex-shrink-0"></i><span><strong>1h de soutien scolaire</strong> — matières à choisir</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 mt-0.5 flex-shrink-0"></i><span>Supports adaptés et progressifs</span></li>
                     </ul>
-                    <button type="button" onclick="openBookingModal()" class="mt-auto w-full bg-primary text-white hover:bg-primaryHover font-semibold py-3 rounded-full transition-colors shadow-md">
-                        Choisir ce parcours
+                    <button type="button" onclick="openBookingModal()" class="mt-auto w-full bg-white text-primary hover:bg-gray-50 font-bold py-3 rounded-full transition-colors shadow-md">
+                        Choisir Panda Or
                     </button>
                 </div>
 
                 <!-- Panda Diamant -->
-                <div class="panda-card rounded-3xl p-7 flex flex-col">
-                    <div class="flex justify-center mb-4">
-                        <div class="panda-emoji">💎</div>
+                <div class="tier-card bg-white rounded-3xl p-8 border border-gray-200 flex flex-col shadow-sm">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="tier-badge tier-diamant"><i data-lucide="diamond"></i></div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Panda Diamant</h3>
+                            <p class="text-sm text-gray-500">Pour évoluer encore plus vite</p>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-1">Parcours Panda Diamant</h3>
-                    <p class="text-center text-gray-700 text-sm mb-5">Pour évoluer encore plus vite</p>
-                    <div class="text-center mb-6">
+                    <div class="mb-6 pb-6 border-b border-gray-100">
                         <span class="text-5xl font-extrabold text-gray-900">256€</span>
-                        <span class="text-gray-700 ml-1">/mois</span>
+                        <span class="text-gray-500 ml-1">/mois</span>
                     </div>
-                    <ul class="space-y-3 mb-7 text-gray-800 text-[15px]">
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span><strong>8 Séances visio</strong> de 30 min avec une orthophoniste agréée</span></li>
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span><strong>3h de soutien scolaire</strong> — matières à choisir</span></li>
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Adaptation continue des supports</span></li>
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Suivi sur mesure pour l'enfant</span></li>
+                    <ul class="space-y-3 mb-7 text-gray-700 text-[15px]">
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span><strong class="text-gray-900">8 séances visio</strong> de 30 min avec une orthophoniste agréée</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span><strong class="text-gray-900">3h de soutien scolaire</strong> — matières à choisir</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Adaptation continue des supports</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Suivi sur mesure pour l'enfant</span></li>
                     </ul>
-                    <button type="button" onclick="openBookingModal()" class="mt-auto w-full bg-white text-primary hover:bg-gray-50 font-semibold py-3 rounded-full transition-colors shadow-sm border border-white">
-                        Choisir ce parcours
+                    <button type="button" onclick="openBookingModal()" class="mt-auto w-full bg-gray-900 hover:bg-black text-white font-semibold py-3 rounded-full transition-colors">
+                        Choisir Panda Diamant
                     </button>
                 </div>
 
@@ -307,93 +329,93 @@
     </section>
 
     <!-- SOUTIEN SCOLAIRE SECTION -->
-    <section class="py-16 px-6 bg-white">
+    <section class="py-16 px-6 bg-white border-y border-gray-100">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-                <div>
-                    <p class="script-title text-3xl text-primary mb-1">Mensuel</p>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Parcours <span class="text-primary">Soutien Scolaire</span></h2>
-                    <p class="text-gray-600 mt-2 max-w-xl">Cours particuliers en ligne avec des enseignants qualifiés, du primaire au lycée.</p>
-                </div>
-                <div class="text-sm text-gray-500 flex items-center gap-2">
-                    <i data-lucide="info" class="w-4 h-4"></i> Horaires flexibles &middot; 7j/7
-                </div>
+            <div class="mb-10">
+                <p class="text-xs font-bold text-primary uppercase tracking-[0.2em] mb-2">Formules mensuelles</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Parcours <span class="text-primary">Soutien Scolaire</span></h2>
+                <p class="text-gray-600 mt-3 max-w-2xl">Cours particuliers en ligne avec des enseignants qualifiés, du primaire au lycée. Horaires flexibles 7j/7.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-3 gap-6 items-stretch">
 
                 <!-- Panda Étoile -->
-                <div class="panda-card rounded-3xl p-7 flex flex-col">
-                    <div class="flex justify-center mb-4">
-                        <div class="panda-emoji">⭐</div>
+                <div class="tier-card bg-light rounded-3xl p-8 border border-gray-200 flex flex-col">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="tier-badge tier-etoile"><i data-lucide="star"></i></div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Panda Étoile</h3>
+                            <p class="text-sm text-gray-500">Pour démarrer en douceur</p>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-1">Parcours Panda Étoile</h3>
-                    <p class="text-center text-gray-700 text-sm mb-5">Pour démarrer en douceur</p>
-                    <div class="text-center mb-6">
+                    <div class="mb-6 pb-6 border-b border-gray-200">
                         <span class="text-5xl font-extrabold text-gray-900">99€</span>
-                        <span class="text-gray-700 ml-1">/mois</span>
+                        <span class="text-gray-500 ml-1">/mois</span>
                     </div>
-                    <ul class="space-y-3 mb-7 text-gray-800 text-[15px]">
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span><strong>4h/mois</strong> de cours</span></li>
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Horaires flexibles et suivi sur mesure</span></li>
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Conseiller pédagogique disponible 7j/7</span></li>
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Matières à choisir</span></li>
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Ajustements réguliers</span></li>
+                    <ul class="space-y-3 mb-7 text-gray-700 text-[15px]">
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span><strong class="text-gray-900">4h/mois</strong> de cours</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Horaires flexibles et suivi sur mesure</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Conseiller pédagogique disponible 7j/7</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Matières à choisir</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Ajustements réguliers</span></li>
                     </ul>
-                    <button type="button" onclick="openBookingModal()" class="mt-auto w-full bg-white text-primary hover:bg-gray-50 font-semibold py-3 rounded-full transition-colors shadow-sm border border-white">
-                        Choisir ce parcours
+                    <button type="button" onclick="openBookingModal()" class="mt-auto w-full bg-gray-900 hover:bg-black text-white font-semibold py-3 rounded-full transition-colors">
+                        Choisir Panda Étoile
                     </button>
                 </div>
 
                 <!-- Panda Réussite (featured) -->
-                <div class="panda-card rounded-3xl p-7 flex flex-col relative ring-4 ring-primary/30 transform md:-translate-y-2">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md">
+                <div class="tier-card relative bg-gradient-to-b from-primary to-primaryHover rounded-3xl p-8 flex flex-col shadow-2xl shadow-primary/30 md:scale-[1.03]">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-gray-900 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md">
                         Recommandé
                     </div>
-                    <div class="flex justify-center mb-4">
-                        <div class="panda-emoji">🎓</div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="tier-badge tier-reussite"><i data-lucide="graduation-cap"></i></div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Panda Réussite</h3>
+                            <p class="text-sm text-green-50/90">L'équilibre parfait</p>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-1">Parcours Panda Réussite</h3>
-                    <p class="text-center text-gray-700 text-sm mb-5">L'équilibre parfait</p>
-                    <div class="text-center mb-6">
-                        <span class="text-5xl font-extrabold text-gray-900">149€</span>
-                        <span class="text-gray-700 ml-1">/mois</span>
+                    <div class="mb-6 pb-6 border-b border-white/20">
+                        <span class="text-5xl font-extrabold text-white">149€</span>
+                        <span class="text-green-50/90 ml-1">/mois</span>
                     </div>
-                    <ul class="space-y-3 mb-7 text-gray-800 text-[15px]">
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span><strong>6h/mois</strong> de cours</span></li>
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Horaires flexibles et suivi sur mesure</span></li>
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Conseiller pédagogique disponible 7j/7</span></li>
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Matières à choisir</span></li>
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Aide aux devoirs et à l'organisation</span></li>
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Suivi pédagogique continu</span></li>
+                    <ul class="space-y-3 mb-7 text-white/95 text-[15px]">
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 mt-0.5 flex-shrink-0"></i><span><strong>6h/mois</strong> de cours</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 mt-0.5 flex-shrink-0"></i><span>Horaires flexibles et suivi sur mesure</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 mt-0.5 flex-shrink-0"></i><span>Conseiller pédagogique disponible 7j/7</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 mt-0.5 flex-shrink-0"></i><span>Matières à choisir</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 mt-0.5 flex-shrink-0"></i><span>Aide aux devoirs et à l'organisation</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 mt-0.5 flex-shrink-0"></i><span>Suivi pédagogique continu</span></li>
                     </ul>
-                    <button type="button" onclick="openBookingModal()" class="mt-auto w-full bg-primary text-white hover:bg-primaryHover font-semibold py-3 rounded-full transition-colors shadow-md">
-                        Choisir ce parcours
+                    <button type="button" onclick="openBookingModal()" class="mt-auto w-full bg-white text-primary hover:bg-gray-50 font-bold py-3 rounded-full transition-colors shadow-md">
+                        Choisir Panda Réussite
                     </button>
                 </div>
 
                 <!-- Super Panda -->
-                <div class="panda-card rounded-3xl p-7 flex flex-col">
-                    <div class="flex justify-center mb-4">
-                        <div class="panda-emoji">🦸</div>
+                <div class="tier-card bg-light rounded-3xl p-8 border border-gray-200 flex flex-col">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="tier-badge tier-super"><i data-lucide="shield"></i></div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Super Panda</h3>
+                            <p class="text-sm text-gray-500">Le programme intensif</p>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-1">Parcours Super Panda</h3>
-                    <p class="text-center text-gray-700 text-sm mb-5">Le programme intensif</p>
-                    <div class="text-center mb-6">
+                    <div class="mb-6 pb-6 border-b border-gray-200">
                         <span class="text-5xl font-extrabold text-gray-900">210€</span>
-                        <span class="text-gray-700 ml-1">/mois</span>
+                        <span class="text-gray-500 ml-1">/mois</span>
                     </div>
-                    <ul class="space-y-3 mb-7 text-gray-800 text-[15px]">
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span><strong>8h/mois</strong> de cours</span></li>
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Horaires flexibles et suivi sur mesure</span></li>
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Conseiller pédagogique disponible 7j/7</span></li>
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Matières à choisir</span></li>
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Aide aux devoirs et à l'organisation</span></li>
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Suivi pédagogique continu</span></li>
-                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Travail ciblé sur les difficultés spécifiques</span></li>
+                    <ul class="space-y-3 mb-7 text-gray-700 text-[15px]">
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span><strong class="text-gray-900">8h/mois</strong> de cours</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Horaires flexibles et suivi sur mesure</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Conseiller pédagogique disponible 7j/7</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Matières à choisir</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Aide aux devoirs et à l'organisation</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Travail ciblé sur les difficultés spécifiques</span></li>
                     </ul>
-                    <button type="button" onclick="openBookingModal()" class="mt-auto w-full bg-white text-primary hover:bg-gray-50 font-semibold py-3 rounded-full transition-colors shadow-sm border border-white">
-                        Choisir ce parcours
+                    <button type="button" onclick="openBookingModal()" class="mt-auto w-full bg-gray-900 hover:bg-black text-white font-semibold py-3 rounded-full transition-colors">
+                        Choisir Super Panda
                     </button>
                 </div>
 
@@ -419,11 +441,11 @@
             <div>
                 <p class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Nous adaptons avec vous</p>
                 <ul class="space-y-3 text-gray-800">
-                    <li class="flex items-start gap-3"><span class="text-primary font-bold mt-0.5">•</span><span>Besoin d'une <strong>orthophoniste</strong> ou d'une <strong>psychologue</strong></span></li>
-                    <li class="flex items-start gap-3"><span class="text-primary font-bold mt-0.5">•</span><span>Sélection des professeurs</span></li>
-                    <li class="flex items-start gap-3"><span class="text-primary font-bold mt-0.5">•</span><span>Fréquence des cours</span></li>
-                    <li class="flex items-start gap-3"><span class="text-primary font-bold mt-0.5">•</span><span>Durée de votre abonnement</span></li>
-                    <li class="flex items-start gap-3"><span class="text-primary font-bold mt-0.5">•</span><span>Besoin et soutien spécifique de votre enfant</span></li>
+                    <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Besoin d'une <strong>orthophoniste</strong> ou d'une <strong>psychologue</strong></span></li>
+                    <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Sélection des professeurs</span></li>
+                    <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Fréquence des cours</span></li>
+                    <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Durée de votre abonnement</span></li>
+                    <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Besoin et soutien spécifique de votre enfant</span></li>
                 </ul>
             </div>
         </div>
