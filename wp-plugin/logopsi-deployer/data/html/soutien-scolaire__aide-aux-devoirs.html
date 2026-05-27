@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilan aide aux devoirs en ligne — 150€, sous 48h | Logo Études</title>
+    <title>Bilan aide aux devoirs en ligne — 150€, sous 48h | Logopsi Études</title>
     <meta name="description" content="Bilan pédagogique en aide aux devoirs en ligne — 150€, sous 48h. Enseignants qualifiés, cours particuliers 100% en visio.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <a href="../../index.html" class="flex items-center space-x-2">
-                    <img src="../../logo-logopsi.png" alt="Logo Études" class="h-14 w-auto">
+                    <img src="../../logo-logopsi.png" alt="Logopsi Études" class="h-14 w-auto">
                 </a>
 
                 <div class="hidden lg:flex items-center space-x-8">
@@ -206,7 +206,7 @@
         <div class="max-w-6xl mx-auto px-4">
             <div class="max-w-3xl">
                 <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Aide aux devoirs en ligne</h1>
-                <p class="text-lg text-gray-600 mb-8">Les devoirs sont un moment clé de la scolarité de votre enfant. Ils permettent de consolider les apprentissages, de développer l'autonomie et de préparer les évaluations. Pourtant, ils sont souvent source de stress et de conflits à la maison. Chez Logo Études, nos enseignants qualifiés accompagnent votre enfant du CP à la 3ème pour transformer les devoirs en un moment productif et serein.</p>
+                <p class="text-lg text-gray-600 mb-8">Les devoirs sont un moment clé de la scolarité de votre enfant. Ils permettent de consolider les apprentissages, de développer l'autonomie et de préparer les évaluations. Pourtant, ils sont souvent source de stress et de conflits à la maison. Chez Logopsi Études, nos enseignants qualifiés accompagnent votre enfant du CP à la 3ème pour transformer les devoirs en un moment productif et serein.</p>
                 <div class="flex flex-col sm:flex-row gap-4 mb-8">
                     <a href="#" onclick="openBookingModal(); return false;" class="bg-primary text-white px-8 py-3.5 rounded-lg font-semibold text-lg hover:bg-primaryHover transition text-center">Prendre rendez-vous</a>
                     <a href="#niveaux" class="border-2 border-primary text-primary px-8 py-3.5 rounded-lg font-semibold text-lg hover:bg-primary hover:text-white transition text-center">Choisir un niveau</a>
@@ -378,7 +378,7 @@
             <div class="grid md:grid-cols-4 gap-8 mb-12">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
-                        <img src="../../logo-logopsi.png" alt="Logo Études" class="h-12 w-auto">
+                        <img src="../../logo-logopsi.png" alt="Logopsi Études" class="h-12 w-auto">
                     </div>
                     <p class="text-gray-400 text-sm">Orthophonie, psychologie et soutien scolaire en ligne. Des professionnels diplômés, partout en France.</p>
                 </div>
@@ -415,7 +415,7 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-500 text-sm">&copy; 2025 Logo Études. Tous droits réservés.</p>
+                <p class="text-gray-500 text-sm">&copy; 2025 Logopsi Études. Tous droits réservés.</p>
                 <div class="flex space-x-6 mt-4 md:mt-0">
                     <a href="../../mentions-legales.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Mentions légales</a>
                     <a href="../../contact.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Contact</a>
@@ -600,7 +600,7 @@
             document.getElementById('mobile-menu').classList.toggle('active');
         }
     </script>
-    <!-- LOGOPSI_BOOKING_MODAL -->
+        <!-- LOGOPSI_BOOKING_MODAL -->
     <div id="booking-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title" data-view="callback">
         <div class="absolute inset-0 bg-black/60" onclick="closeBookingModal()"></div>
         <div class="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 z-[110] modal-enter max-h-[92vh] overflow-y-auto">
@@ -615,11 +615,8 @@
                 <h2 id="booking-modal-title" class="text-2xl font-bold text-gray-900 mb-1">Réserver mon bilan</h2>
                 <p class="text-primary font-semibold mb-1">150€ &middot; Sous 48h &middot; 100% en ligne</p>
                 <p class="text-gray-600 text-sm mb-6">Laissez-nous vos coordonnées, nous vous recontactons sous 48h ouvrées.</p>
-                <form action="https://formsubmit.co/contact@logopsistudios.com" method="POST" class="space-y-3">
-                    <input type="hidden" name="_subject" value="Demande de bilan — Logo Études">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="">
+                <form class="logopsi-contact-form space-y-3" data-source="booking" novalidate>
+                    <input type="text" name="_hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true">
                     <input type="text" name="name" required placeholder="Nom et prénom" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary">
                     <input type="email" name="email" required placeholder="Email" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary">
                     <input type="tel" name="phone" required placeholder="Téléphone" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary">
@@ -631,7 +628,8 @@
                         <option value="autre">Je ne sais pas / autre</option>
                     </select>
                     <textarea name="message" rows="3" placeholder="Décrivez brièvement votre besoin (optionnel)" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary resize-none"></textarea>
-                    <button type="submit" class="w-full bg-primary hover:bg-primaryHover text-white font-semibold py-3.5 rounded-full transition-colors">Envoyer ma demande</button>
+                    <div class="logopsi-form-error hidden text-sm text-red-600 bg-red-50 border border-red-100 rounded-xl px-4 py-2"></div>
+                    <button type="submit" class="logopsi-form-submit w-full bg-primary hover:bg-primaryHover text-white font-semibold py-3.5 rounded-full transition-colors disabled:opacity-60 disabled:cursor-not-allowed">Envoyer ma demande</button>
                     <p class="text-xs text-gray-500 text-center">Données traitées pour vous recontacter. RGPD respecté.</p>
                 </form>
             </div>
@@ -664,12 +662,6 @@
             modal.classList.remove("hidden");
             modal.classList.add("flex");
             document.body.style.overflow = "hidden";
-            var nextInput = modal.querySelector('input[name="_next"]');
-            if (nextInput) {
-                var url = new URL(window.location.href);
-                url.searchParams.set("rappel", "ok");
-                nextInput.value = url.toString();
-            }
             setBookingView("callback");
             if (window.lucide) { window.lucide.createIcons(); }
         }
@@ -685,21 +677,69 @@
         document.addEventListener("keydown", function(e) {
             if (e.key === "Escape") { closeBookingModal(); }
         });
-        // Generic class hook
         document.addEventListener("click", function(e) {
             var t = e.target.closest(".js-open-booking");
             if (t) { e.preventDefault(); openBookingModal(); }
         });
-        // Auto-open success view if ?rappel=ok
+
+        // ---- Contact-form AJAX interceptor (no formsubmit, server: WP plugin) ----
         (function() {
-            try {
-                var p = new URLSearchParams(window.location.search);
-                if (p.get("rappel") === "ok") {
-                    openBookingModal();
+            var AJAX_URL = (window.logopsiAjaxUrl || "/wp-admin/admin-ajax.php");
+            function showThankYou(form, message) {
+                var inModal = form.closest("[data-view-callback]");
+                if (inModal) {
                     setBookingView("success");
                     if (window.lucide) { window.lucide.createIcons(); }
+                    return;
                 }
-            } catch (err) {}
+                // Inline: replace the form with a thank-you block
+                var box = document.createElement("div");
+                box.className = "logopsi-thankyou bg-primary/5 border border-primary/20 rounded-2xl p-8 text-center";
+                box.innerHTML =
+                    '<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">' +
+                        '<i data-lucide="check" class="w-8 h-8 text-primary"></i>' +
+                    '</div>' +
+                    '<h3 class="text-2xl font-bold text-gray-900 mb-2">Merci !</h3>' +
+                    '<p class="text-gray-700">' + (message || "Demande envoyée — nous vous recontactons sous 48h ouvrées.") + '</p>';
+                form.parentNode.replaceChild(box, form);
+                if (window.lucide) { window.lucide.createIcons(); }
+            }
+            function showError(form, msg) {
+                var box = form.querySelector(".logopsi-form-error");
+                if (box) { box.textContent = msg; box.classList.remove("hidden"); }
+                else { alert(msg); }
+            }
+            document.addEventListener("submit", function(e) {
+                var form = e.target.closest("form.logopsi-contact-form");
+                if (!form) return;
+                e.preventDefault();
+
+                var errBox = form.querySelector(".logopsi-form-error");
+                if (errBox) errBox.classList.add("hidden");
+                var submitBtn = form.querySelector(".logopsi-form-submit") || form.querySelector('button[type="submit"]');
+                var originalLabel = submitBtn ? submitBtn.textContent : null;
+                if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Envoi en cours..."; }
+
+                var fd = new FormData(form);
+                fd.append("action", "logopsi_contact");
+                if (!fd.get("source")) fd.append("source", form.dataset.source || "site");
+
+                fetch(AJAX_URL, { method: "POST", body: fd, credentials: "same-origin" })
+                    .then(function(r) { return r.json().catch(function() { return { success: false, data: { message: "Réponse invalide du serveur." } }; }); })
+                    .then(function(json) {
+                        if (json && json.success) {
+                            showThankYou(form, (json.data && json.data.message) || null);
+                        } else {
+                            var msg = (json && json.data && json.data.message) || "Erreur lors de l\'envoi. Veuillez réessayer.";
+                            showError(form, msg);
+                            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+                        }
+                    })
+                    .catch(function(err) {
+                        showError(form, "Impossible d\'envoyer pour le moment. Vérifiez votre connexion.");
+                        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+                    });
+            }, false);
         })();
 
 </script>

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifs & Abonnements — Bilan 150€/48h | Logopsi Études</title>
+    <meta name="description" content="Découvrez nos formules d'abonnement : Parcours Panda Or, Saphir, Diamant pour l'orthophonie et Réussite, Étoile, Super Panda pour le soutien scolaire. Sans engagement.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#05C86B',
+                        primaryHover: '#04b05e',
+                        light: '#FBF9F6',
+                        dark: '#111111',
+                        pandaBg: '#B7F569'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['"Caveat"', '"Inter"', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@500;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .mega-menu-enter { animation: fadeInDown 0.2s ease-out forwards; }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        .mega-menu { display: none; }
+        .mega-menu.active { display: block; }
+        .panda-card {
+            background: linear-gradient(180deg, #C8FA7C 0%, #A5E84F 100%);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .panda-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -10px rgba(5, 200, 107, 0.35); }
+        .panda-emoji { font-size: 64px; line-height: 1; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); }
+        .script-title { font-family: 'Caveat', cursive; font-weight: 700; }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-light min-h-screen">
+    <!-- NAVBAR -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="./index.html" class="flex items-center space-x-2">
+                    <img src="./logo-logopsi.png" alt="Logopsi Études" class="h-14 w-auto">
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-8">
+                    <div class="relative" id="ortho-trigger" onmouseenter="openMegaMenu('ortho')" onmouseleave="scheduleMegaClose('ortho')">
+                        <button class="flex items-center space-x-1 text-dark hover:text-primary font-medium transition-colors py-5">
+                            <span>Orthophonie</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                    <div class="relative" id="psycho-trigger" onmouseenter="openMegaMenu('psycho')" onmouseleave="scheduleMegaClose('psycho')">
+                        <button class="flex items-center space-x-1 text-dark hover:text-primary font-medium transition-colors py-5">
+                            <span>Psychologie</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                    <div class="relative" id="scolaire-trigger" onmouseenter="openMegaMenu('scolaire')" onmouseleave="scheduleMegaClose('scolaire')">
+                        <button class="flex items-center space-x-1 text-dark hover:text-primary font-medium transition-colors py-5">
+                            <span>Soutien Scolaire</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                    <a href="./tarifs.html" class="text-primary hover:text-primaryHover font-semibold transition-colors py-5" aria-current="page">Tarifs</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <a href="#" onclick="openBookingModal(); return false;" class="hidden sm:inline-flex bg-primary hover:bg-primaryHover text-white font-semibold px-5 py-2.5 rounded-full transition-colors">
+                        Prendre RDV
+                    </a>
+                    <button class="lg:hidden" onclick="toggleMobileMenu()">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orthophonie Mega Menu -->
+        <div id="ortho-mega" class="mega-menu absolute left-1/2 -translate-x-1/2 w-full max-w-4xl bg-white shadow-xl rounded-b-2xl border border-gray-100 z-50 mt-0" onmouseenter="cancelMegaClose('ortho')" onmouseleave="scheduleMegaClose('ortho')">
+            <div class="p-8">
+                <div class="grid grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="font-bold text-dark mb-4 flex items-center"><i data-lucide="book-open" class="w-5 h-5 mr-2 text-primary"></i>Troubles pris en charge</h3>
+                        <ul class="space-y-2">
+                            <li><a href="./orthophonie/dyslexie.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Dyslexie</a></li>
+                            <li><a href="./orthophonie/dysorthographie.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Dysorthographie</a></li>
+                            <li><a href="./orthophonie/dyscalculie.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Dyscalculie</a></li>
+                            <li><a href="./orthophonie/dysphasie.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Dysphasie</a></li>
+                            <li><a href="./orthophonie/begaiement.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Bégaiement</a></li>
+                            <li><a href="./orthophonie/tsa.html" class="text-gray-600 hover:text-primary transition-colors text-sm">TSA</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-dark mb-4 flex items-center"><i data-lucide="map-pin" class="w-5 h-5 mr-2 text-primary"></i>Par ville</h3>
+                        <ul class="space-y-2">
+                            <li><a href="./orthophonie/villes/paris.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Paris</a></li>
+                            <li><a href="./orthophonie/villes/marseille.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Marseille</a></li>
+                            <li><a href="./orthophonie/villes/lyon.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Lyon</a></li>
+                            <li><a href="./orthophonie/villes/toulouse.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Toulouse</a></li>
+                            <li><a href="./orthophonie/villes/nice.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Nice</a></li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 rounded-2xl p-6 flex flex-col justify-center">
+                        <h3 class="font-bold text-dark text-lg mb-2">Besoin d'un orthophoniste ?</h3>
+                        <p class="text-gray-600 text-sm mb-4">Nos orthophonistes diplômés sont disponibles en ligne, partout en France.</p>
+                        <a href="#" onclick="openBookingModal(); return false;" class="bg-primary hover:bg-primaryHover text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-center text-sm">Prendre rendez-vous</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Psychologie Mega Menu -->
+        <div id="psycho-mega" class="mega-menu absolute left-1/2 -translate-x-1/2 w-full max-w-4xl bg-white shadow-xl rounded-b-2xl border border-gray-100 z-50 mt-0" onmouseenter="cancelMegaClose('psycho')" onmouseleave="scheduleMegaClose('psycho')">
+            <div class="p-8">
+                <div class="grid grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="font-bold text-dark mb-4 flex items-center"><i data-lucide="brain" class="w-5 h-5 mr-2 text-primary"></i>Troubles pris en charge</h3>
+                        <ul class="space-y-2">
+                            <li><a href="./psychologie/tdah.html" class="text-gray-600 hover:text-primary transition-colors text-sm">TDAH</a></li>
+                            <li><a href="./psychologie/hpi.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Haut Potentiel (HPI)</a></li>
+                            <li><a href="./psychologie/phobie-scolaire.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Phobie scolaire</a></li>
+                            <li><a href="./psychologie/harcelement-scolaire.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Harcèlement scolaire</a></li>
+                            <li><a href="./psychologie/anxiete.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Anxiété</a></li>
+                            <li><a href="./psychologie/depression.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Dépression</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-dark mb-4 flex items-center"><i data-lucide="map-pin" class="w-5 h-5 mr-2 text-primary"></i>Par ville</h3>
+                        <ul class="space-y-2">
+                            <li><a href="./psychologie/villes/paris.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Paris</a></li>
+                            <li><a href="./psychologie/villes/marseille.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Marseille</a></li>
+                            <li><a href="./psychologie/villes/lyon.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Lyon</a></li>
+                            <li><a href="./psychologie/villes/toulouse.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Toulouse</a></li>
+                            <li><a href="./psychologie/villes/nice.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Nice</a></li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 rounded-2xl p-6 flex flex-col justify-center">
+                        <h3 class="font-bold text-dark text-lg mb-2">Besoin d'un psychologue ?</h3>
+                        <p class="text-gray-600 text-sm mb-4">Nos psychologues diplômés accompagnent votre enfant en ligne.</p>
+                        <a href="#" onclick="openBookingModal(); return false;" class="bg-primary hover:bg-primaryHover text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-center text-sm">Prendre rendez-vous</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Soutien Scolaire Mega Menu -->
+        <div id="scolaire-mega" class="mega-menu absolute left-1/2 -translate-x-1/2 w-full max-w-4xl bg-white shadow-xl rounded-b-2xl border border-gray-100 z-50 mt-0" onmouseenter="cancelMegaClose('scolaire')" onmouseleave="scheduleMegaClose('scolaire')">
+            <div class="p-8">
+                <div class="grid grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="font-bold text-dark mb-4 flex items-center"><i data-lucide="graduation-cap" class="w-5 h-5 mr-2 text-primary"></i>Matières</h3>
+                        <ul class="space-y-2">
+                            <li><a href="./soutien-scolaire/mathematiques/" class="text-gray-600 hover:text-primary transition-colors text-sm">Mathématiques</a></li>
+                            <li><a href="./soutien-scolaire/francais/" class="text-gray-600 hover:text-primary transition-colors text-sm">Français</a></li>
+                            <li><a href="./soutien-scolaire/anglais/" class="text-gray-600 hover:text-primary transition-colors text-sm">Anglais</a></li>
+                            <li><a href="./soutien-scolaire/espagnol/" class="text-gray-600 hover:text-primary transition-colors text-sm">Espagnol</a></li>
+                            <li><a href="./soutien-scolaire/physique-chimie/" class="text-gray-600 hover:text-primary transition-colors text-sm">Physique-Chimie</a></li>
+                            <li><a href="./soutien-scolaire/aide-aux-devoirs/" class="text-gray-600 hover:text-primary transition-colors text-sm">Aide aux devoirs</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-dark mb-4 flex items-center"><i data-lucide="map-pin" class="w-5 h-5 mr-2 text-primary"></i>Par ville</h3>
+                        <ul class="space-y-2">
+                            <li><a href="./soutien-scolaire/villes/paris.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Paris</a></li>
+                            <li><a href="./soutien-scolaire/villes/marseille.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Marseille</a></li>
+                            <li><a href="./soutien-scolaire/villes/lyon.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Lyon</a></li>
+                            <li><a href="./soutien-scolaire/villes/toulouse.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Toulouse</a></li>
+                            <li><a href="./soutien-scolaire/villes/nice.html" class="text-gray-600 hover:text-primary transition-colors text-sm">Nice</a></li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 rounded-2xl p-6 flex flex-col justify-center">
+                        <h3 class="font-bold text-dark text-lg mb-2">Besoin de soutien scolaire ?</h3>
+                        <p class="text-gray-600 text-sm mb-4">Enseignants qualifiés, cours en ligne du CP à la Terminale.</p>
+                        <a href="#" onclick="openBookingModal(); return false;" class="bg-primary hover:bg-primaryHover text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-center text-sm">Prendre rendez-vous</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu hidden lg:hidden bg-white border-t">
+            <div class="px-4 py-4 space-y-3">
+                <a href="./orthophonie/" class="block text-dark hover:text-primary font-medium py-2">Orthophonie</a>
+                <a href="./psychologie/" class="block text-dark hover:text-primary font-medium py-2">Psychologie</a>
+                <a href="./soutien-scolaire/" class="block text-dark hover:text-primary font-medium py-2">Soutien Scolaire</a>
+                <a href="./tarifs.html" class="block text-primary font-semibold py-2">Tarifs</a>
+                <a href="#" onclick="openBookingModal(); return false;" class="block bg-primary hover:bg-primaryHover text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-center">Prendre RDV</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="pt-16 pb-12 px-6 max-w-7xl mx-auto">
+        <div class="space-y-6">
+            <div class="flex items-center gap-2 text-sm text-gray-500 mb-4">
+                <a href="./index.html" class="hover:text-primary transition-colors">Accueil</a>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span class="text-gray-900 font-medium">Tarifs &amp; abonnements</span>
+            </div>
+
+            <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
+                <i data-lucide="sparkles" class="w-4 h-4"></i> Formules mensuelles sans engagement
+            </div>
+
+            <h1 class="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-gray-900">
+                Nos formules <span class="text-primary">Panda</span>
+            </h1>
+            <p class="text-lg text-gray-700 leading-relaxed max-w-2xl">
+                Choisissez le parcours qui correspond aux besoins de votre enfant. Toutes nos formules sont mensuelles, sans engagement, et incluent un suivi personnalisé par un conseiller pédagogique dédié.
+            </p>
+        </div>
+    </section>
+
+    <!-- ORTHO SECTION -->
+    <section class="py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <p class="script-title text-3xl text-primary mb-1">Mensuel</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Parcours <span class="script-title text-primary text-4xl md:text-5xl">Ortho</span></h2>
+                    <p class="text-gray-600 mt-2 max-w-xl">Séances visio avec une orthophoniste agréée, supports adaptés et progressifs.</p>
+                </div>
+                <div class="text-sm text-gray-500 flex items-center gap-2">
+                    <i data-lucide="info" class="w-4 h-4"></i> Sans engagement &middot; Résiliation à tout moment
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <!-- Panda Saphir -->
+                <div class="panda-card rounded-3xl p-7 flex flex-col">
+                    <div class="flex justify-center mb-4">
+                        <div class="panda-emoji">🐼</div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-1">Parcours Panda Saphir</h3>
+                    <p class="text-center text-gray-700 text-sm mb-5">Pour démarrer en douceur</p>
+                    <div class="text-center mb-6">
+                        <span class="text-5xl font-extrabold text-gray-900">88€</span>
+                        <span class="text-gray-700 ml-1">/mois</span>
+                    </div>
+                    <ul class="space-y-3 mb-7 text-gray-800 text-[15px]">
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span><strong>2 Séances visio</strong> de 25 min avec une orthophoniste agréée</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Support adapté et progressif</span></li>
+                    </ul>
+                    <button type="button" onclick="openBookingModal()" class="mt-auto w-full bg-white text-primary hover:bg-gray-50 font-semibold py-3 rounded-full transition-colors shadow-sm border border-white">
+                        Choisir ce parcours
+                    </button>
+                </div>
+
+                <!-- Panda Or (featured) -->
+                <div class="panda-card rounded-3xl p-7 flex flex-col relative ring-4 ring-primary/30 transform md:-translate-y-2">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md">
+                        Le plus choisi
+                    </div>
+                    <div class="flex justify-center mb-4">
+                        <div class="panda-emoji">🐻</div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-1">Parcours Panda Or</h3>
+                    <p class="text-center text-gray-700 text-sm mb-5">Le combo orthophonie + soutien</p>
+                    <div class="text-center mb-6">
+                        <span class="text-5xl font-extrabold text-gray-900">137€</span>
+                        <span class="text-gray-700 ml-1">/mois</span>
+                    </div>
+                    <ul class="space-y-3 mb-7 text-gray-800 text-[15px]">
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span><strong>4 Séances visio</strong> de 25 min avec une orthophoniste agréée</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span><strong>1h de soutien scolaire</strong> — matières à choisir</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Supports adaptés et progressifs</span></li>
+                    </ul>
+                    <button type="button" onclick="openBookingModal()" class="mt-auto w-full bg-primary text-white hover:bg-primaryHover font-semibold py-3 rounded-full transition-colors shadow-md">
+                        Choisir ce parcours
+                    </button>
+                </div>
+
+                <!-- Panda Diamant -->
+                <div class="panda-card rounded-3xl p-7 flex flex-col">
+                    <div class="flex justify-center mb-4">
+                        <div class="panda-emoji">💎</div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-1">Parcours Panda Diamant</h3>
+                    <p class="text-center text-gray-700 text-sm mb-5">Pour évoluer encore plus vite</p>
+                    <div class="text-center mb-6">
+                        <span class="text-5xl font-extrabold text-gray-900">256€</span>
+                        <span class="text-gray-700 ml-1">/mois</span>
+                    </div>
+                    <ul class="space-y-3 mb-7 text-gray-800 text-[15px]">
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span><strong>8 Séances visio</strong> de 30 min avec une orthophoniste agréée</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span><strong>3h de soutien scolaire</strong> — matières à choisir</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Adaptation continue des supports</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Suivi sur mesure pour l'enfant</span></li>
+                    </ul>
+                    <button type="button" onclick="openBookingModal()" class="mt-auto w-full bg-white text-primary hover:bg-gray-50 font-semibold py-3 rounded-full transition-colors shadow-sm border border-white">
+                        Choisir ce parcours
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SOUTIEN SCOLAIRE SECTION -->
+    <section class="py-16 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <p class="script-title text-3xl text-primary mb-1">Mensuel</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Parcours <span class="text-primary">Soutien Scolaire</span></h2>
+                    <p class="text-gray-600 mt-2 max-w-xl">Cours particuliers en ligne avec des enseignants qualifiés, du primaire au lycée.</p>
+                </div>
+                <div class="text-sm text-gray-500 flex items-center gap-2">
+                    <i data-lucide="info" class="w-4 h-4"></i> Horaires flexibles &middot; 7j/7
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <!-- Panda Étoile -->
+                <div class="panda-card rounded-3xl p-7 flex flex-col">
+                    <div class="flex justify-center mb-4">
+                        <div class="panda-emoji">⭐</div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-1">Parcours Panda Étoile</h3>
+                    <p class="text-center text-gray-700 text-sm mb-5">Pour démarrer en douceur</p>
+                    <div class="text-center mb-6">
+                        <span class="text-5xl font-extrabold text-gray-900">99€</span>
+                        <span class="text-gray-700 ml-1">/mois</span>
+                    </div>
+                    <ul class="space-y-3 mb-7 text-gray-800 text-[15px]">
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span><strong>4h/mois</strong> de cours</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Horaires flexibles et suivi sur mesure</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Conseiller pédagogique disponible 7j/7</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Matières à choisir</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Ajustements réguliers</span></li>
+                    </ul>
+                    <button type="button" onclick="openBookingModal()" class="mt-auto w-full bg-white text-primary hover:bg-gray-50 font-semibold py-3 rounded-full transition-colors shadow-sm border border-white">
+                        Choisir ce parcours
+                    </button>
+                </div>
+
+                <!-- Panda Réussite (featured) -->
+                <div class="panda-card rounded-3xl p-7 flex flex-col relative ring-4 ring-primary/30 transform md:-translate-y-2">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md">
+                        Recommandé
+                    </div>
+                    <div class="flex justify-center mb-4">
+                        <div class="panda-emoji">🎓</div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-1">Parcours Panda Réussite</h3>
+                    <p class="text-center text-gray-700 text-sm mb-5">L'équilibre parfait</p>
+                    <div class="text-center mb-6">
+                        <span class="text-5xl font-extrabold text-gray-900">149€</span>
+                        <span class="text-gray-700 ml-1">/mois</span>
+                    </div>
+                    <ul class="space-y-3 mb-7 text-gray-800 text-[15px]">
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span><strong>6h/mois</strong> de cours</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Horaires flexibles et suivi sur mesure</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Conseiller pédagogique disponible 7j/7</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Matières à choisir</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Aide aux devoirs et à l'organisation</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Suivi pédagogique continu</span></li>
+                    </ul>
+                    <button type="button" onclick="openBookingModal()" class="mt-auto w-full bg-primary text-white hover:bg-primaryHover font-semibold py-3 rounded-full transition-colors shadow-md">
+                        Choisir ce parcours
+                    </button>
+                </div>
+
+                <!-- Super Panda -->
+                <div class="panda-card rounded-3xl p-7 flex flex-col">
+                    <div class="flex justify-center mb-4">
+                        <div class="panda-emoji">🦸</div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-1">Parcours Super Panda</h3>
+                    <p class="text-center text-gray-700 text-sm mb-5">Le programme intensif</p>
+                    <div class="text-center mb-6">
+                        <span class="text-5xl font-extrabold text-gray-900">210€</span>
+                        <span class="text-gray-700 ml-1">/mois</span>
+                    </div>
+                    <ul class="space-y-3 mb-7 text-gray-800 text-[15px]">
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span><strong>8h/mois</strong> de cours</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Horaires flexibles et suivi sur mesure</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Conseiller pédagogique disponible 7j/7</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Matières à choisir</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Aide aux devoirs et à l'organisation</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Suivi pédagogique continu</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Travail ciblé sur les difficultés spécifiques</span></li>
+                    </ul>
+                    <button type="button" onclick="openBookingModal()" class="mt-auto w-full bg-white text-primary hover:bg-gray-50 font-semibold py-3 rounded-full transition-colors shadow-sm border border-white">
+                        Choisir ce parcours
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PERSONNALISÉ / TARGET BLOCK -->
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto bg-white rounded-3xl p-10 md:p-14 border border-gray-200 shadow-sm grid md:grid-cols-2 gap-10 items-center">
+            <div class="space-y-5">
+                <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center">
+                    <i data-lucide="target" class="w-8 h-8 text-primary"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Aucune formule ne vous convient&nbsp;?</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Vous recherchez une formule plus précise&nbsp;? <strong>Personnalisez la vôtre.</strong> Un conseiller pédagogique vous accompagne tout au long du parcours d'apprentissage.
+                </p>
+                <button type="button" onclick="openBookingModal()" class="bg-primary hover:bg-primaryHover text-white font-semibold px-8 py-3.5 rounded-full transition-colors shadow-md inline-flex items-center gap-2">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i> Contactez-nous
+                </button>
+            </div>
+            <div>
+                <p class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Nous adaptons avec vous</p>
+                <ul class="space-y-3 text-gray-800">
+                    <li class="flex items-start gap-3"><span class="text-primary font-bold mt-0.5">•</span><span>Besoin d'une <strong>orthophoniste</strong> ou d'une <strong>psychologue</strong></span></li>
+                    <li class="flex items-start gap-3"><span class="text-primary font-bold mt-0.5">•</span><span>Sélection des professeurs</span></li>
+                    <li class="flex items-start gap-3"><span class="text-primary font-bold mt-0.5">•</span><span>Fréquence des cours</span></li>
+                    <li class="flex items-start gap-3"><span class="text-primary font-bold mt-0.5">•</span><span>Durée de votre abonnement</span></li>
+                    <li class="flex items-start gap-3"><span class="text-primary font-bold mt-0.5">•</span><span>Besoin et soutien spécifique de votre enfant</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="./logo-logopsi.png" alt="Logopsi Études" class="h-12 w-auto">
+                    </div>
+                    <p class="text-gray-400 text-sm">Orthophonie, psychologie et soutien scolaire en ligne. Des professionnels diplômés, partout en France.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Orthophonie</h4>
+                    <ul class="space-y-2">
+                        <li><a href="./orthophonie/dyslexie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dyslexie</a></li>
+                        <li><a href="./orthophonie/dysorthographie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dysorthographie</a></li>
+                        <li><a href="./orthophonie/dyscalculie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dyscalculie</a></li>
+                        <li><a href="./orthophonie/begaiement.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Bégaiement</a></li>
+                        <li><a href="./orthophonie/tsa.html" class="text-gray-400 hover:text-primary text-sm transition-colors">TSA</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Psychologie</h4>
+                    <ul class="space-y-2">
+                        <li><a href="./psychologie/tdah.html" class="text-gray-400 hover:text-primary text-sm transition-colors">TDAH</a></li>
+                        <li><a href="./psychologie/hpi.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Haut Potentiel</a></li>
+                        <li><a href="./psychologie/phobie-scolaire.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Phobie scolaire</a></li>
+                        <li><a href="./psychologie/anxiete.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Anxiété</a></li>
+                        <li><a href="./psychologie/depression.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dépression</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Soutien Scolaire</h4>
+                    <ul class="space-y-2">
+                        <li><a href="./soutien-scolaire/mathematiques/" class="text-gray-400 hover:text-primary text-sm transition-colors">Mathématiques</a></li>
+                        <li><a href="./soutien-scolaire/francais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Français</a></li>
+                        <li><a href="./soutien-scolaire/anglais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Anglais</a></li>
+                        <li><a href="./soutien-scolaire/espagnol/" class="text-gray-400 hover:text-primary text-sm transition-colors">Espagnol</a></li>
+                        <li><a href="./soutien-scolaire/physique-chimie/" class="text-gray-400 hover:text-primary text-sm transition-colors">Physique-Chimie</a></li>
+                        <li><a href="./soutien-scolaire/aide-aux-devoirs/" class="text-gray-400 hover:text-primary text-sm transition-colors">Aide aux devoirs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">&copy; 2025 Logopsi Études. Tous droits réservés.</p>
+                <div class="flex flex-wrap gap-x-6 gap-y-2 mt-4 md:mt-0">
+                    <a href="./mentions-legales.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Mentions légales</a>
+                    <a href="./contact.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Contact</a>
+                    <a href="./a-propos.html" class="text-gray-500 hover:text-primary text-sm transition-colors">À propos</a>
+                    <a href="./tarifs.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Tarifs</a>
+                    <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-primary text-sm transition-colors">Espace membre</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Mega Menu
+        var megaCloseTimers = { ortho: null, psycho: null, scolaire: null };
+        function openMegaMenu(menu) {
+            cancelMegaClose(menu);
+            var menus = { ortho: 'ortho-mega', psycho: 'psycho-mega', scolaire: 'scolaire-mega' };
+            Object.keys(menus).forEach(function(key) {
+                var el = document.getElementById(menus[key]);
+                if (key === menu) { el.classList.add('active'); }
+                else { el.classList.remove('active'); clearTimeout(megaCloseTimers[key]); }
+            });
+        }
+        function scheduleMegaClose(menu) {
+            var menus = { ortho: 'ortho-mega', psycho: 'psycho-mega', scolaire: 'scolaire-mega' };
+            megaCloseTimers[menu] = setTimeout(function() {
+                document.getElementById(menus[menu]).classList.remove('active');
+            }, 200);
+        }
+        function cancelMegaClose(menu) { clearTimeout(megaCloseTimers[menu]); }
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
+    </script>
+    <!-- LOGOPSI_BOOKING_MODAL -->
+    <div id="booking-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title" data-view="callback">
+        <div class="absolute inset-0 bg-black/60" onclick="closeBookingModal()"></div>
+        <div class="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 z-[110] modal-enter max-h-[92vh] overflow-y-auto">
+            <button onclick="closeBookingModal()" aria-label="Fermer" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors">
+                <i data-lucide="x" class="w-5 h-5 text-gray-700"></i>
+            </button>
+
+            <div data-view-info class="hidden"></div>
+
+            <!-- VIEW: CONTACT FORM (default) -->
+            <div data-view-callback>
+                <h2 id="booking-modal-title" class="text-2xl font-bold text-gray-900 mb-1">Réserver mon bilan</h2>
+                <p class="text-primary font-semibold mb-1">150€ &middot; Sous 48h &middot; 100% en ligne</p>
+                <p class="text-gray-600 text-sm mb-6">Laissez-nous vos coordonnées, nous vous recontactons sous 48h ouvrées.</p>
+                <form class="logopsi-contact-form space-y-3" data-source="booking" novalidate>
+                    <input type="text" name="_hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true">
+                    <input type="text" name="name" required placeholder="Nom et prénom" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary">
+                    <input type="email" name="email" required placeholder="Email" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary">
+                    <input type="tel" name="phone" required placeholder="Téléphone" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary">
+                    <select name="sujet" required class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary bg-white">
+                        <option value="" disabled selected>Type de bilan</option>
+                        <option value="orthophonie">Orthophonie</option>
+                        <option value="psychologie">Psychologie</option>
+                        <option value="soutien-scolaire">Soutien scolaire</option>
+                        <option value="autre">Je ne sais pas / autre</option>
+                    </select>
+                    <textarea name="message" rows="3" placeholder="Décrivez brièvement votre besoin (optionnel)" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary resize-none"></textarea>
+                    <div class="logopsi-form-error hidden text-sm text-red-600 bg-red-50 border border-red-100 rounded-xl px-4 py-2"></div>
+                    <button type="submit" class="logopsi-form-submit w-full bg-primary hover:bg-primaryHover text-white font-semibold py-3.5 rounded-full transition-colors disabled:opacity-60 disabled:cursor-not-allowed">Envoyer ma demande</button>
+                    <p class="text-xs text-gray-500 text-center">Données traitées pour vous recontacter. RGPD respecté.</p>
+                </form>
+            </div>
+
+            <!-- VIEW: SUCCESS -->
+            <div data-view-success class="hidden text-center py-6">
+                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-5">
+                    <i data-lucide="check" class="w-8 h-8 text-primary"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">Demande envoyée</h2>
+                <p class="text-gray-600 mb-6">Nous vous recontactons sous 48h ouvrées.</p>
+                <button onclick="closeBookingModal()" class="bg-primary hover:bg-primaryHover text-white font-semibold px-8 py-3 rounded-full transition-colors">Fermer</button>
+            </div>
+        </div>
+    </div>
+<script>
+
+        // ---- Booking modal ----
+        function setBookingView(view) {
+            var modal = document.getElementById("booking-modal");
+            if (!modal) return;
+            modal.setAttribute("data-view", view);
+            modal.querySelector("[data-view-info]").classList.toggle("hidden", view !== "info");
+            modal.querySelector("[data-view-callback]").classList.toggle("hidden", view !== "callback");
+            modal.querySelector("[data-view-success]").classList.toggle("hidden", view !== "success");
+        }
+        function openBookingModal() {
+            var modal = document.getElementById("booking-modal");
+            if (!modal) return;
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+            document.body.style.overflow = "hidden";
+            setBookingView("callback");
+            if (window.lucide) { window.lucide.createIcons(); }
+        }
+        function closeBookingModal() {
+            var modal = document.getElementById("booking-modal");
+            if (!modal) return;
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+            document.body.style.overflow = "";
+        }
+        function showCallbackForm() { setBookingView("callback"); if (window.lucide) { window.lucide.createIcons(); } }
+        function showInfoView() { setBookingView("info"); if (window.lucide) { window.lucide.createIcons(); } }
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape") { closeBookingModal(); }
+        });
+        document.addEventListener("click", function(e) {
+            var t = e.target.closest(".js-open-booking");
+            if (t) { e.preventDefault(); openBookingModal(); }
+        });
+
+        // ---- Contact-form AJAX interceptor (no formsubmit, server: WP plugin) ----
+        (function() {
+            var AJAX_URL = (window.logopsiAjaxUrl || "/wp-admin/admin-ajax.php");
+            function showThankYou(form, message) {
+                var inModal = form.closest("[data-view-callback]");
+                if (inModal) {
+                    setBookingView("success");
+                    if (window.lucide) { window.lucide.createIcons(); }
+                    return;
+                }
+                // Inline: replace the form with a thank-you block
+                var box = document.createElement("div");
+                box.className = "logopsi-thankyou bg-primary/5 border border-primary/20 rounded-2xl p-8 text-center";
+                box.innerHTML =
+                    '<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">' +
+                        '<i data-lucide="check" class="w-8 h-8 text-primary"></i>' +
+                    '</div>' +
+                    '<h3 class="text-2xl font-bold text-gray-900 mb-2">Merci !</h3>' +
+                    '<p class="text-gray-700">' + (message || "Demande envoyée — nous vous recontactons sous 48h ouvrées.") + '</p>';
+                form.parentNode.replaceChild(box, form);
+                if (window.lucide) { window.lucide.createIcons(); }
+            }
+            function showError(form, msg) {
+                var box = form.querySelector(".logopsi-form-error");
+                if (box) { box.textContent = msg; box.classList.remove("hidden"); }
+                else { alert(msg); }
+            }
+            document.addEventListener("submit", function(e) {
+                var form = e.target.closest("form.logopsi-contact-form");
+                if (!form) return;
+                e.preventDefault();
+
+                var errBox = form.querySelector(".logopsi-form-error");
+                if (errBox) errBox.classList.add("hidden");
+                var submitBtn = form.querySelector(".logopsi-form-submit") || form.querySelector('button[type="submit"]');
+                var originalLabel = submitBtn ? submitBtn.textContent : null;
+                if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Envoi en cours..."; }
+
+                var fd = new FormData(form);
+                fd.append("action", "logopsi_contact");
+                if (!fd.get("source")) fd.append("source", form.dataset.source || "site");
+
+                fetch(AJAX_URL, { method: "POST", body: fd, credentials: "same-origin" })
+                    .then(function(r) { return r.json().catch(function() { return { success: false, data: { message: "Réponse invalide du serveur." } }; }); })
+                    .then(function(json) {
+                        if (json && json.success) {
+                            showThankYou(form, (json.data && json.data.message) || null);
+                        } else {
+                            var msg = (json && json.data && json.data.message) || "Erreur lors de l\'envoi. Veuillez réessayer.";
+                            showError(form, msg);
+                            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+                        }
+                    })
+                    .catch(function(err) {
+                        showError(form, "Impossible d\'envoyer pour le moment. Vérifiez votre connexion.");
+                        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+                    });
+            }, false);
+        })();
+
+</script>
+</body>
+</html>

@@ -14,27 +14,27 @@ from seo_titles import (
 
 
 def test_ortho_n2_dyslexie():
-    assert title_for_ortho_n2("dyslexie") == "Bilan dyslexie en ligne — Orthophoniste 150€/48h | Logo Études"
+    assert title_for_ortho_n2("dyslexie") == "Bilan dyslexie en ligne — Orthophoniste 150€/48h | Logopsi Études"
 
 
 def test_ortho_n2_oralite():
-    assert title_for_ortho_n2("oralite") == "Bilan troubles de l'oralité — Orthophoniste 150€/48h | Logo Études"
+    assert title_for_ortho_n2("oralite") == "Bilan troubles de l'oralité — Orthophoniste 150€/48h | Logopsi Études"
 
 
 def test_ortho_n3_paris():
-    assert title_for_ortho_n3("paris") == "Bilan orthophonique à Paris — 150€, sous 48h | Logo Études"
+    assert title_for_ortho_n3("paris") == "Bilan orthophonique à Paris — 150€, sous 48h | Logopsi Études"
 
 
 def test_ortho_n4_dyslexie_paris():
-    assert title_for_ortho_n4("dyslexie", "paris") == "Bilan dyslexie à Paris — Orthophoniste 150€/48h | Logo Études"
+    assert title_for_ortho_n4("dyslexie", "paris") == "Bilan dyslexie à Paris — Orthophoniste 150€/48h | Logopsi Études"
 
 
 def test_psycho_n2_tdah():
-    assert title_for_psycho_n2("tdah") == "Bilan TDAH en ligne — Psychologue 150€/48h | Logo Études"
+    assert title_for_psycho_n2("tdah") == "Bilan TDAH en ligne — Psychologue 150€/48h | Logopsi Études"
 
 
 def test_scolaire_n4():
-    assert title_for_scolaire_n4("mathematiques", "3eme", "paris") == "Bilan mathématiques 3ème à Paris — 150€/48h | Logo Études"
+    assert title_for_scolaire_n4("mathematiques", "3eme", "paris") == "Bilan mathématiques 3ème à Paris — 150€/48h | Logopsi Études"
 
 
 def test_all_titles_include_48h():
@@ -49,14 +49,14 @@ def test_all_titles_include_48h():
 
 
 def test_handwritten_index():
-    assert title_for_handwritten("site/index.html") == "Bilan orthophonie, psychologie & soutien — 150€, 48h | Logo Études"
+    assert title_for_handwritten("site/index.html") == "Bilan orthophonie, psychologie & soutien — 150€, 48h | Logopsi Études"
 
 
 def test_handwritten_contact_carries_brand():
     # Even admin pages now carry the 150€/48h positioning in the title.
     t = title_for_handwritten("site/contact.html")
     assert t is not None
-    assert "150€/48h" in t and "Logo Études" in t
+    assert "150€/48h" in t and "Logopsi Études" in t
 
 
 def test_meta_desc_ortho_n2():

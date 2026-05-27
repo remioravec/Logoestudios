@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate all Level 2 pages for Logo Études with new template design."""
+"""Generate all Level 2 pages for Logopsi Études with new template design."""
 
 import os
 import json
@@ -1023,14 +1023,14 @@ def generate_page(slug, data, category):
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <div class="order-2 md:order-1 relative">
                 <div class="absolute -inset-4 bg-primary/10 rounded-3xl transform -rotate-3"></div>
-                <img src="{data["about_img"]}" alt="Équipe Logo Études" class="relative rounded-2xl shadow-lg w-full object-cover h-[400px]">
+                <img src="{data["about_img"]}" alt="Équipe Logopsi Études" class="relative rounded-2xl shadow-lg w-full object-cover h-[400px]">
             </div>
             <div class="order-1 md:order-2 space-y-6">
                 <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
                     <i data-lucide="award" class="w-4 h-4"></i> Professionnels diplômés
                 </div>
-                <h2 class="text-3xl font-bold text-gray-900">Pourquoi choisir Logo Études ?</h2>
-                <p class="text-gray-600 leading-relaxed">Chez Logo Études, nous réunissons des {practitioner}s diplômés d'État, formés aux dernières avancées scientifiques. Notre plateforme vous connecte avec le bon professionnel en moins de 48h, partout en France.</p>
+                <h2 class="text-3xl font-bold text-gray-900">Pourquoi choisir Logopsi Études ?</h2>
+                <p class="text-gray-600 leading-relaxed">Chez Logopsi Études, nous réunissons des {practitioner}s diplômés d'État, formés aux dernières avancées scientifiques. Notre plateforme vous connecte avec le bon professionnel en moins de 48h, partout en France.</p>
                 <div class="space-y-4">
                     <div class="flex items-start gap-3">
                         <div class="mt-1 bg-primary/10 text-primary rounded-full p-1"><i data-lucide="check" class="w-4 h-4"></i></div>
@@ -1102,7 +1102,7 @@ def generate_page(slug, data, category):
                         <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                             <span class="text-white font-bold text-sm">L</span>
                         </div>
-                        <span class="text-xl font-bold text-white">Logo Études</span>
+                        <span class="text-xl font-bold text-white">Logopsi Études</span>
                     </div>
                     <p class="text-gray-400 text-sm">Orthophonie, psychologie et soutien scolaire en ligne. Des professionnels diplômés, partout en France.</p>
                 </div>
@@ -1138,7 +1138,7 @@ def generate_page(slug, data, category):
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-500 text-sm">&copy; 2025 Logo Études. Tous droits réservés.</p>
+                <p class="text-gray-500 text-sm">&copy; 2025 Logopsi Études. Tous droits réservés.</p>
                 <div class="flex space-x-6 mt-4 md:mt-0">
                     <a href="../mentions-legales.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Mentions légales</a>
                     <a href="../a-propos.html" class="text-gray-500 hover:text-primary text-sm transition-colors">À propos</a>

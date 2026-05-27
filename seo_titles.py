@@ -1,4 +1,4 @@
-"""Centralised SEO titles and meta descriptions for the Logo Études site.
+"""Centralised SEO titles and meta descriptions for the Logopsi Études site.
 
 Used by:
   - generate_level2_pages.py  (trouble pages)
@@ -7,7 +7,7 @@ Used by:
   - patch_handwritten_pages.py (index, hubs N2, etc.)
 """
 
-SUFFIX = " | Logo Études"
+SUFFIX = " | Logopsi Études"
 
 
 def _display_name(slug):
@@ -168,13 +168,14 @@ def meta_desc_for_scolaire_n4(subject_slug, level_slug, city_slug):
 
 # None means: do not modify the title.
 HANDWRITTEN_TITLES = {
-    "site/index.html": "Bilan orthophonie, psychologie & soutien — 150€, 48h | Logo Études",
-    "site/orthophonie/index.html": "Bilan orthophonique en ligne — 150€, sous 48h | Logo Études",
-    "site/psychologie/index.html": "Bilan psychologique en ligne — 150€, sous 48h | Logo Études",
-    "site/soutien-scolaire/index.html": "Bilan pédagogique en ligne — 150€, sous 48h | Logo Études",
-    "site/contact.html": "Contact — Bilan 150€/48h | Logo Études",
-    "site/a-propos.html": "À propos — Bilan 150€/48h | Logo Études",
-    "site/mentions-legales.html": "Mentions légales — Bilan 150€/48h | Logo Études",
+    "site/index.html": "Bilan orthophonie, psychologie & soutien — 150€, 48h | Logopsi Études",
+    "site/orthophonie/index.html": "Bilan orthophonique en ligne — 150€, sous 48h | Logopsi Études",
+    "site/psychologie/index.html": "Bilan psychologique en ligne — 150€, sous 48h | Logopsi Études",
+    "site/soutien-scolaire/index.html": "Bilan pédagogique en ligne — 150€, sous 48h | Logopsi Études",
+    "site/contact.html": "Contact — Bilan 150€/48h | Logopsi Études",
+    "site/a-propos.html": "À propos — Bilan 150€/48h | Logopsi Études",
+    "site/mentions-legales.html": "Mentions légales — Bilan 150€/48h | Logopsi Études",
+    "site/tarifs.html": "Tarifs & Abonnements — Bilan 150€/48h | Logopsi Études",
 }
 
 
@@ -183,6 +184,7 @@ HANDWRITTEN_META_DESCS = {
     "site/orthophonie/index.html": "Bilan orthophonique en ligne pour enfants et adolescents — 150€, sous 48h. Orthophonistes diplômés d'État. Tous troubles du langage et des apprentissages.",
     "site/psychologie/index.html": "Bilan psychologique en ligne pour enfants et adolescents — 150€, sous 48h. Psychologues diplômés d'État, accompagnement personnalisé.",
     "site/soutien-scolaire/index.html": "Soutien scolaire en ligne du primaire au lycée. Bilan pédagogique à 150€, sous 48h. Enseignants qualifiés, cours particuliers 100% en visio.",
+    "site/tarifs.html": "Découvrez nos formules d'abonnement : Parcours Panda Or, Saphir, Diamant pour l'orthophonie et Réussite, Étoile, Super Panda pour le soutien scolaire. Sans engagement.",
 }
 
 

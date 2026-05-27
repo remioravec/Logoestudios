@@ -95,6 +95,57 @@ jQuery(document).ready(function($) {
         });
     });
 
+    // Find & Replace bulk across all deployed pages
+    $('#logopsi-fr-run').on('click', function() {
+        var $btn = $(this);
+        var find = $('#logopsi-fr-find').val();
+        var replace = $('#logopsi-fr-replace').val();
+
+        if (!find) {
+            alert('Le champ "Chercher" est vide.');
+            return;
+        }
+
+        var msg = 'Remplacer "' + find + '" par "' + replace + '" sur TOUTES les pages déployées ?';
+        if (!confirm(msg)) return;
+
+        $btn.prop('disabled', true).html('<span class="dashicons dashicons-update logopsi-spin"></span> En cours...');
+        $('#logopsi-fr-result').hide();
+
+        $.ajax({
+            url: logopsiAjax.ajaxurl,
+            type: 'POST',
+            timeout: 300000,
+            data: {
+                action: 'logopsi_find_replace',
+                nonce: logopsiAjax.nonce,
+                find: find,
+                replace: replace
+            },
+            success: function(response) {
+                if (response.success) {
+                    var d = response.data;
+                    $('#logopsi-fr-result').show().removeClass('notice-error').addClass('notice-success');
+                    $('#logopsi-fr-result-text').text(
+                        d.modified_pages + ' page(s) modifiée(s) — ' +
+                        d.total_occurrences + ' occurrence(s) remplacée(s) sur ' +
+                        d.pages_scanned + ' page(s) scannée(s).'
+                    );
+                } else {
+                    $('#logopsi-fr-result').show().removeClass('notice-success').addClass('notice-error');
+                    $('#logopsi-fr-result-text').text('Erreur : ' + response.data);
+                }
+            },
+            error: function(xhr, status) {
+                $('#logopsi-fr-result').show().removeClass('notice-success').addClass('notice-error');
+                $('#logopsi-fr-result-text').text('Erreur de connexion (' + status + ').');
+            },
+            complete: function() {
+                $btn.prop('disabled', false).html('<span class="dashicons dashicons-update"></span> Remplacer partout');
+            }
+        });
+    });
+
     // Reset all
     $('#logopsi-reset-all').on('click', function() {
         if (!confirm('ATTENTION: Supprimer toutes les pages Logopsi de WordPress ?')) return;

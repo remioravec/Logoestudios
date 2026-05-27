@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Logo Études Deployer
- * Description: Déploie le site complet Logo Études sur WordPress. Interface d'admin pour mapper les images et pousser toutes les pages.
+ * Plugin Name: Logopsi Études Deployer
+ * Description: Déploie le site complet Logopsi Études sur WordPress. Interface d'admin pour mapper les images et pousser toutes les pages.
  * Version: 1.0.0
- * Author: Logo Études
+ * Author: Logopsi Études
  * Text Domain: logopsi-deployer
  */
 
@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) exit;
 
 define('LOGOPSI_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('LOGOPSI_PLUGIN_URL', plugin_dir_url(__FILE__));
-define('LOGOPSI_TOTAL_PAGES', 541);
+define('LOGOPSI_TOTAL_PAGES', 542);
 
 // ============================================================
 // ACTIVATION / DEACTIVATION
@@ -496,6 +496,151 @@ function logopsi_ajax_reset() {
 }
 
 // ============================================================
+// AJAX: CONTACT FORM (public — used by site visitors)
+// ============================================================
+
+add_action('wp_ajax_logopsi_contact', 'logopsi_ajax_contact');
+add_action('wp_ajax_nopriv_logopsi_contact', 'logopsi_ajax_contact');
+function logopsi_ajax_contact() {
+    // Honeypot: bots fill hidden fields
+    if (!empty($_POST['_hp'])) {
+        wp_send_json_success(['ok' => true]); // silent accept, no email sent
+        return;
+    }
+
+    $name    = isset($_POST['name'])    ? sanitize_text_field(wp_unslash($_POST['name']))    : '';
+    $email   = isset($_POST['email'])   ? sanitize_email(wp_unslash($_POST['email']))        : '';
+    $phone   = isset($_POST['phone'])   ? sanitize_text_field(wp_unslash($_POST['phone']))   : '';
+    $sujet   = isset($_POST['sujet'])   ? sanitize_text_field(wp_unslash($_POST['sujet']))   : '';
+    $message = isset($_POST['message']) ? sanitize_textarea_field(wp_unslash($_POST['message'])) : '';
+    $source  = isset($_POST['source'])  ? sanitize_text_field(wp_unslash($_POST['source']))  : 'site';
+
+    if (empty($name) || empty($email) || !is_email($email)) {
+        wp_send_json_error(['message' => 'Nom et email valides requis.'], 400);
+    }
+
+    // Subject: differentiate booking vs contact
+    $subject_label = ($source === 'booking') ? 'Demande de bilan' : 'Nouveau message contact';
+    $subject = '[Logopsi Études] ' . $subject_label . ' — ' . $name;
+
+    // Body — plain text, easy to read in any client
+    $lines = [];
+    $lines[] = 'Nouvelle soumission depuis le site Logopsi Études';
+    $lines[] = '----------------------------------------';
+    $lines[] = 'Source         : ' . $source;
+    $lines[] = 'Nom            : ' . $name;
+    $lines[] = 'Email          : ' . $email;
+    if ($phone)   $lines[] = 'Téléphone      : ' . $phone;
+    if ($sujet)   $lines[] = 'Type / Sujet   : ' . $sujet;
+    $lines[] = '';
+    $lines[] = 'Message :';
+    $lines[] = ($message !== '' ? $message : '(aucun message)');
+    $lines[] = '';
+    $lines[] = '----------------------------------------';
+    $lines[] = 'Date           : ' . current_time('mysql');
+    $lines[] = 'IP             : ' . ($_SERVER['REMOTE_ADDR'] ?? 'inconnue');
+    $body = implode("\n", $lines);
+
+    $to       = get_option('admin_email');
+    $headers  = [
+        'Content-Type: text/plain; charset=UTF-8',
+        'Reply-To: ' . $name . ' <' . $email . '>',
+    ];
+
+    $sent = wp_mail($to, $subject, $body, $headers);
+
+    // Also store as a custom post type entry for backup (so user never loses a lead even if mail fails)
+    $entry_id = wp_insert_post([
+        'post_type'    => 'logopsi_lead',
+        'post_status'  => 'publish',
+        'post_title'   => $subject_label . ' — ' . $name,
+        'post_content' => $body,
+    ], true);
+    if (!is_wp_error($entry_id)) {
+        update_post_meta($entry_id, '_logopsi_lead_email', $email);
+        update_post_meta($entry_id, '_logopsi_lead_phone', $phone);
+        update_post_meta($entry_id, '_logopsi_lead_sujet', $sujet);
+        update_post_meta($entry_id, '_logopsi_lead_source', $source);
+    }
+
+    if ($sent) {
+        wp_send_json_success(['message' => 'Demande envoyée — nous vous recontactons sous 48h ouvrées.']);
+    } else {
+        // mail failed but we kept the lead — still return success to user, log internally
+        error_log('[logopsi_contact] wp_mail failed for ' . $email);
+        wp_send_json_success(['message' => 'Demande enregistrée — nous vous recontactons sous 48h ouvrées.']);
+    }
+}
+
+// Register the leads post type so submissions are visible in WP admin under "Demandes"
+add_action('init', 'logopsi_register_lead_cpt');
+function logopsi_register_lead_cpt() {
+    register_post_type('logopsi_lead', [
+        'label'         => 'Demandes',
+        'labels'        => [
+            'name'          => 'Demandes',
+            'singular_name' => 'Demande',
+            'menu_name'     => 'Demandes',
+        ],
+        'public'        => false,
+        'show_ui'       => true,
+        'show_in_menu'  => true,
+        'menu_position' => 31,
+        'menu_icon'     => 'dashicons-email-alt',
+        'supports'      => ['title', 'editor', 'custom-fields'],
+        'capability_type' => 'page',
+    ]);
+}
+
+// ============================================================
+// AJAX: FIND & REPLACE BULK (rewrites _logopsi_full_html on all pages)
+// ============================================================
+
+add_action('wp_ajax_logopsi_find_replace', 'logopsi_ajax_find_replace');
+function logopsi_ajax_find_replace() {
+    check_ajax_referer('logopsi_deploy_nonce', 'nonce');
+    if (!current_user_can('manage_options')) wp_die('Unauthorized');
+
+    @set_time_limit(300);
+
+    $find    = isset($_POST['find'])    ? wp_unslash($_POST['find'])    : '';
+    $replace = isset($_POST['replace']) ? wp_unslash($_POST['replace']) : '';
+
+    if ($find === '') {
+        wp_send_json_error('Texte à chercher vide');
+    }
+
+    $page_ids = get_posts([
+        'post_type'      => 'page',
+        'meta_key'       => '_logopsi_slug',
+        'posts_per_page' => -1,
+        'post_status'    => 'any',
+        'fields'         => 'ids',
+    ]);
+
+    $modified_pages    = 0;
+    $total_occurrences = 0;
+
+    foreach ($page_ids as $pid) {
+        $html = get_post_meta($pid, '_logopsi_full_html', true);
+        if (empty($html) || strpos($html, $find) === false) continue;
+
+        $count    = substr_count($html, $find);
+        $new_html = str_replace($find, $replace, $html);
+
+        update_post_meta($pid, '_logopsi_full_html', $new_html);
+        $modified_pages++;
+        $total_occurrences += $count;
+    }
+
+    wp_send_json_success([
+        'modified_pages'    => $modified_pages,
+        'total_occurrences' => $total_occurrences,
+        'pages_scanned'     => count($page_ids),
+    ]);
+}
+
+// ============================================================
 // AJAX: GET DEPLOY STATUS
 // ============================================================
 
@@ -551,7 +696,7 @@ function logopsi_admin_page() {
 
     ?>
     <div class="wrap logopsi-wrap">
-        <h1><span class="dashicons dashicons-upload" style="font-size:30px;margin-right:10px;color:#05C86B;"></span> Logo Études Deployer</h1>
+        <h1><span class="dashicons dashicons-upload" style="font-size:30px;margin-right:10px;color:#05C86B;"></span> Logopsi Études Deployer</h1>
 
         <div class="logopsi-stats">
             <div class="logopsi-stat-card">
@@ -586,6 +731,27 @@ function logopsi_admin_page() {
 
         <div id="logopsi-result" style="display:none;" class="notice notice-success">
             <p id="logopsi-result-text"></p>
+        </div>
+
+        <div class="logopsi-find-replace-box">
+            <h2 style="margin-top:0;"><span class="dashicons dashicons-search"></span> Rechercher &amp; remplacer sur toutes les pages</h2>
+            <p style="color:#666;margin:4px 0 14px;">
+                Modifie en bloc le HTML déployé de toutes les pages Logopsi (méta <code>_logopsi_full_html</code>). Sensible à la casse. Pas de regex — remplacement littéral.
+            </p>
+            <div class="logopsi-fr-row">
+                <label>
+                    <span class="logopsi-fr-label">Chercher</span>
+                    <input type="text" id="logopsi-fr-find" class="regular-text" placeholder="ex: Logo Études" autocomplete="off">
+                </label>
+                <label>
+                    <span class="logopsi-fr-label">Remplacer par</span>
+                    <input type="text" id="logopsi-fr-replace" class="regular-text" placeholder="ex: Logopsi Études" autocomplete="off">
+                </label>
+                <button id="logopsi-fr-run" class="button button-primary">
+                    <span class="dashicons dashicons-update" style="vertical-align:middle;"></span> Remplacer partout
+                </button>
+            </div>
+            <div id="logopsi-fr-result" style="display:none;margin-top:10px;" class="notice notice-success"><p id="logopsi-fr-result-text"></p></div>
         </div>
 
         <?php foreach ($groups as $group_name => $group_pages): ?>

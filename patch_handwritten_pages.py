@@ -86,11 +86,28 @@ def patch_title_meta(html, new_title, new_meta):
 
 
 def inject_booking(html):
-    """Inject booking modal HTML+JS right before </body>. Idempotent.
-    get_booking_js() returns raw JS without script tags, so wrap it here."""
-    if 'id="booking-modal"' in html:
-        return html
+    """Inject (or refresh) booking modal HTML+JS right before </body>.
+
+    Replaces stale modals (e.g. ones with formsubmit.co or old JS) with the current
+    version. Idempotent when up-to-date.
+    """
     insertion = get_booking_modal() + "<script>\n" + get_booking_js() + "\n</script>\n"
+
+    # Strip any existing modal block — the marker comment is always at its start
+    if "<!-- LOGOPSI_BOOKING_MODAL -->" in html:
+        pattern = re.compile(
+            r'<!-- LOGOPSI_BOOKING_MODAL -->.*?</script>\s*',
+            re.DOTALL,
+        )
+        html = pattern.sub("", html, count=1)
+    elif 'id="booking-modal"' in html:
+        # Fallback: no marker but an old modal exists — remove from the div up to the script close
+        pattern = re.compile(
+            r'<div id="booking-modal".*?</script>\s*',
+            re.DOTALL,
+        )
+        html = pattern.sub("", html, count=1)
+
     return html.replace("</body>", insertion + "</body>", 1)
 
 

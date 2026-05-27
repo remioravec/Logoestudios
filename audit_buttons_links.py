@@ -133,7 +133,7 @@ def audit():
 
     # ---- Report ----
     print("=" * 70)
-    print("BUTTON & LINK AUDIT — Logo Études")
+    print("BUTTON & LINK AUDIT — Logopsi Études")
     print("=" * 70)
 
     def section(title, items, fmt):

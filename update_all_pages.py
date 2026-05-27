@@ -33,7 +33,7 @@ def get_navbar(prefix=""):
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <a href="{p}index.html" class="flex items-center space-x-2">
-                    <img src="{p}logo-logopsi.png" alt="Logo Études" class="h-14 w-auto">
+                    <img src="{p}logo-logopsi.png" alt="Logopsi Études" class="h-14 w-auto">
                 </a>
 
                 <div class="hidden lg:flex items-center space-x-8">
@@ -201,7 +201,7 @@ def get_footer(prefix=""):
             <div class="grid md:grid-cols-4 gap-8 mb-12">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
-                        <img src="{p}logo-logopsi.png" alt="Logo Études" class="h-12 w-auto">
+                        <img src="{p}logo-logopsi.png" alt="Logopsi Études" class="h-12 w-auto">
                     </div>
                     <p class="text-gray-400 text-sm">Orthophonie, psychologie et soutien scolaire en ligne. Des professionnels diplômés, partout en France.</p>
                 </div>
@@ -238,7 +238,7 @@ def get_footer(prefix=""):
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-500 text-sm">&copy; 2025 Logo Études. Tous droits réservés.</p>
+                <p class="text-gray-500 text-sm">&copy; 2025 Logopsi Études. Tous droits réservés.</p>
                 <div class="flex space-x-6 mt-4 md:mt-0">
                     <a href="{p}mentions-legales.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Mentions légales</a>
                     <a href="{p}contact.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Contact</a>

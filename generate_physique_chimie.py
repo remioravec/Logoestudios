@@ -226,7 +226,7 @@ def generate_index():
     <!-- WHY SECTION -->
     <section class="py-20">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-12 text-center">Pourquoi choisir Logo Études pour la physique-chimie ?</h2>
+            <h2 class="text-3xl font-bold mb-12 text-center">Pourquoi choisir Logopsi Études pour la physique-chimie ?</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white rounded-2xl p-8 shadow-sm text-center">
                     <div class="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center mx-auto mb-6">

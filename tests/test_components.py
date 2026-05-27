@@ -19,29 +19,27 @@ def test_modal_has_price_and_delay():
     assert "48h" in html or "48 h" in html
 
 
-def test_modal_has_two_primary_ctas():
+def test_modal_form_uses_ajax_class():
     html = get_booking_modal()
-    assert "app.logopsiestudios.com/fr/login" in html
-    assert "showCallbackForm" in html
+    # Modal form is intercepted via class hook (no third-party action attribute)
+    assert "logopsi-contact-form" in html
+    assert 'data-source="booking"' in html
+    assert "formsubmit.co" not in html
 
 
 def test_modal_has_callback_form():
     html = get_booking_modal()
-    assert 'action="https://formsubmit.co/contact@logopsistudios.com"' in html
     assert 'name="phone"' in html or 'type="tel"' in html
     assert 'name="email"' in html
     assert 'name="name"' in html
+    # Honeypot for bots
+    assert 'name="_hp"' in html
 
 
 def test_modal_has_aria_attributes():
     html = get_booking_modal()
     assert 'role="dialog"' in html
     assert 'aria-modal="true"' in html
-
-
-def test_modal_has_member_login_link():
-    html = get_booking_modal()
-    assert "Se connecter" in html or "Déjà client" in html
 
 
 def test_booking_js_exposes_open_close():
@@ -57,9 +55,13 @@ def test_booking_js_handles_escape():
     assert "Escape" in js or "27" in js
 
 
-def test_booking_js_handles_rappel_ok():
+def test_booking_js_intercepts_form_ajax():
     js = get_booking_js()
-    assert "rappel=ok" in js or "rappel" in js
+    # AJAX interceptor — replaces formsubmit + ?rappel=ok mechanism
+    assert "logopsi-contact-form" in js
+    assert "logopsi_contact" in js  # AJAX action name
+    assert "fetch(" in js
+    assert "Merci" in js  # thank-you message rendered inline
 
 
 def test_get_js_includes_booking_js():
@@ -105,13 +107,12 @@ def test_cta_section_uses_new_wording():
 if __name__ == "__main__":
     test_modal_has_marker()
     test_modal_has_price_and_delay()
-    test_modal_has_two_primary_ctas()
+    test_modal_form_uses_ajax_class()
     test_modal_has_callback_form()
     test_modal_has_aria_attributes()
-    test_modal_has_member_login_link()
     test_booking_js_exposes_open_close()
     test_booking_js_handles_escape()
-    test_booking_js_handles_rappel_ok()
+    test_booking_js_intercepts_form_ajax()
     test_get_js_includes_booking_js()
     test_navbar_has_connexion_link_desktop()
     test_navbar_cta_opens_popup()
