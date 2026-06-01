@@ -57,6 +57,7 @@
                 </div>
 
                 <div class="hidden lg:flex items-center gap-4">
+                    <button type="button" onclick="logopsiToggleLang()" id="lang-toggle" aria-label="Changer de langue (Français / Español)" class="inline-flex items-center gap-1.5 text-[15px] font-semibold text-gray-700 hover:text-primary transition-colors mr-2"><i data-lucide="languages" class="w-4 h-4"></i><span id="lang-toggle-label">ES</span></button>
                     <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="text-[15px] font-semibold text-gray-700 hover:text-primary transition-colors">
                         Connexion
                     </a>
@@ -741,5 +742,24 @@
         })();
 
 </script>
+
+<!-- logopsi-lang-toggle -->
+<div id="google_translate_element" style="display:none"></div>
+<style>
+.goog-te-banner-frame,.skiptranslate{display:none!important}
+body{top:0!important}
+#goog-gt-tt,.goog-te-balloon-frame{display:none!important}
+.goog-text-highlight{background:none!important;box-shadow:none!important}
+</style>
+<script>
+function logopsiGoogleInit(){new google.translate.TranslateElement({pageLanguage:'fr',includedLanguages:'es',autoDisplay:false},'google_translate_element');}
+function logopsiGetCookie(n){var m=document.cookie.match('(^|; )'+n+'=([^;]*)');return m?m[2]:'';}
+function logopsiSetLang(lang){var v=(lang==='es')?'/fr/es':'/fr/fr';var h=location.hostname;document.cookie='googtrans='+v+';path=/';document.cookie='googtrans='+v+';path=/;domain=.'+h;location.reload();}
+function logopsiToggleLang(){var c=logopsiGetCookie('googtrans');if(c&&c.indexOf('/es')>-1){logopsiSetLang('fr');}else{logopsiSetLang('es');}}
+function logopsiUpdateLangLabel(){var c=logopsiGetCookie('googtrans');var es=c&&c.indexOf('/es')>-1;var el=document.getElementById('lang-toggle-label');if(el)el.textContent=es?'FR':'ES';}
+document.addEventListener('DOMContentLoaded',logopsiUpdateLangLabel);
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=logopsiGoogleInit"></script>
+<!-- /logopsi-lang-toggle -->
 </body>
 </html>
