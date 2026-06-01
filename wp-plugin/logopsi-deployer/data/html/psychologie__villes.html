@@ -1,5 +1,631 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head><meta charset="UTF-8"><title>Villes - Psychologie - Logopsi Études</title>
-<meta http-equiv="refresh" content="0;url=/psychologie/"></head>
-<body><p>Redirection...</p></body></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychologie en ligne par ville — Bilan sous 48h | Logopsi Études</title>
+    <meta name="description" content="Psychologie à distance à Paris, Marseille, Lyon, Toulouse et Nice. Premier bilan sous 48h avec nos professionnels diplômés. Logopsi Études.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#05C86B', primaryHover: '#04b05e', light: '#FBF9F6', dark: '#111111' },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .mega-menu { display: none; }
+        .mega-menu.active { display: block; }
+        .mobile-menu { display: none; }
+        .mobile-menu.active { display: block; }
+    </style>
+</head>
+<body class="bg-light text-dark font-sans">
+    <!-- NAVBAR -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="../../index.html" class="flex items-center space-x-2 z-50">
+                    <img src="../../logo-logopsi.png" alt="Logopsi Études" class="h-14 w-auto">
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-1">
+                    <div class="relative" id="ortho-trigger" onmouseenter="openMegaMenu('ortho')" onmouseleave="scheduleMegaClose('ortho')">
+                        <button class="px-4 py-2 flex items-center gap-1 font-semibold text-[15px] text-gray-800 hover:text-primary transition-colors">
+                            Orthophonie <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                    <div class="relative" id="psycho-trigger" onmouseenter="openMegaMenu('psycho')" onmouseleave="scheduleMegaClose('psycho')">
+                        <button class="px-4 py-2 flex items-center gap-1 font-semibold text-[15px] text-gray-800 hover:text-primary transition-colors">
+                            Psychologie <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                    <div class="relative" id="scolaire-trigger" onmouseenter="openMegaMenu('scolaire')" onmouseleave="scheduleMegaClose('scolaire')">
+                        <button class="px-4 py-2 flex items-center gap-1 font-semibold text-[15px] text-gray-800 hover:text-primary transition-colors">
+                            Soutien Scolaire <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                    <a href="../../tarifs.html" class="px-4 py-2 font-semibold text-[15px] text-gray-800 hover:text-primary transition-colors">Tarifs</a>
+                </div>
+
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="text-[15px] font-semibold text-gray-700 hover:text-primary transition-colors">
+                        Connexion
+                    </a>
+                    <a href="#" onclick="openBookingModal(); return false;" class="bg-primary text-white font-semibold px-6 py-2.5 rounded-full hover:bg-primaryHover transition-colors shadow-md text-[15px]">
+                        Prendre rendez-vous
+                    </a>
+                </div>
+
+                <button class="lg:hidden p-2 text-gray-900 z-50" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Orthophonie Mega Menu -->
+        <div id="ortho-mega" class="mega-menu absolute left-0 w-full bg-white shadow-xl border-t border-gray-100 z-50 mega-menu-enter" onmouseenter="cancelMegaClose('ortho')" onmouseleave="scheduleMegaClose('ortho')">
+            <div class="max-w-7xl mx-auto px-6 py-8 grid grid-cols-12 gap-8">
+                <div class="col-span-3 border-r border-gray-100 pr-6">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Orthophonie en ligne</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Rééducation des troubles du langage, de la communication et des apprentissages.</p>
+                </div>
+                <div class="col-span-6 pr-6">
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Explorer par besoin</h4>
+                    <ul class="grid grid-cols-2 gap-x-6 gap-y-2.5">
+                        <li><a href="../../orthophonie/dyslexie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dyslexie</a></li>
+                        <li><a href="../../orthophonie/dysorthographie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dysorthographie</a></li>
+                        <li><a href="../../orthophonie/dyscalculie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dyscalculie</a></li>
+                        <li><a href="../../orthophonie/dysphasie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dysphasie</a></li>
+                        <li><a href="../../orthophonie/begaiement.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Bégaiement</a></li>
+                        <li><a href="../../orthophonie/tsa.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">TSA</a></li>
+                        <li><a href="../../orthophonie/oralite.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Troubles de l'oralité</a></li>
+                        <li><a href="../../orthophonie/surdite.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Surdité</a></li>
+                        <li><a href="../../orthophonie/paralysie-cerebrale.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Paralysie cérébrale</a></li>
+                        <li><a href="../../orthophonie/fente-palatine.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Fente palatine</a></li>
+                        <li><a href="../../orthophonie/trisomie-21.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Trisomie 21</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-3 bg-light rounded-2xl p-5 border border-gray-100">
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Par ville</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="../../orthophonie/villes/paris.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Paris</a></li>
+                        <li><a href="../../orthophonie/villes/marseille.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Marseille</a></li>
+                        <li><a href="../../orthophonie/villes/lyon.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Lyon</a></li>
+                        <li><a href="../../orthophonie/villes/toulouse.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Toulouse</a></li>
+                        <li><a href="../../orthophonie/villes/nice.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Nice</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Psychologie Mega Menu -->
+        <div id="psycho-mega" class="mega-menu absolute left-0 w-full bg-white shadow-xl border-t border-gray-100 z-50 mega-menu-enter" onmouseenter="cancelMegaClose('psycho')" onmouseleave="scheduleMegaClose('psycho')">
+            <div class="max-w-7xl mx-auto px-6 py-8 grid grid-cols-12 gap-8">
+                <div class="col-span-3 border-r border-gray-100 pr-6">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Psychologie en ligne</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Accompagnement psychologique des enfants et adolescents, partout en France.</p>
+                </div>
+                <div class="col-span-6 pr-6">
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Explorer par besoin</h4>
+                    <ul class="grid grid-cols-2 gap-x-6 gap-y-2.5">
+                        <li><a href="../../psychologie/anxiete.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Anxiété</a></li>
+                        <li><a href="../../psychologie/depression.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dépression</a></li>
+                        <li><a href="../../psychologie/tdah.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">TDAH</a></li>
+                        <li><a href="../../psychologie/hpi.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Haut Potentiel (HPI)</a></li>
+                        <li><a href="../../psychologie/phobie-scolaire.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Phobie scolaire</a></li>
+                        <li><a href="../../psychologie/harcelement-scolaire.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Harcèlement scolaire</a></li>
+                        <li><a href="../../psychologie/tca.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">TCA</a></li>
+                        <li><a href="../../psychologie/addictions-ecrans.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Addictions aux écrans</a></li>
+                        <li><a href="../../psychologie/troubles-sommeil.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Troubles du sommeil</a></li>
+                        <li><a href="../../psychologie/enuresie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Énurésie</a></li>
+                        <li><a href="../../psychologie/traumatismes-deuil.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Traumatismes & deuil</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-3 bg-light rounded-2xl p-5 border border-gray-100">
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Par ville</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="../../psychologie/villes/paris.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Paris</a></li>
+                        <li><a href="../../psychologie/villes/marseille.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Marseille</a></li>
+                        <li><a href="../../psychologie/villes/lyon.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Lyon</a></li>
+                        <li><a href="../../psychologie/villes/toulouse.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Toulouse</a></li>
+                        <li><a href="../../psychologie/villes/nice.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Nice</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Soutien Scolaire Mega Menu -->
+        <div id="scolaire-mega" class="mega-menu absolute left-0 w-full bg-white shadow-xl border-t border-gray-100 z-50 mega-menu-enter" onmouseenter="cancelMegaClose('scolaire')" onmouseleave="scheduleMegaClose('scolaire')">
+            <div class="max-w-7xl mx-auto px-6 py-8 grid grid-cols-12 gap-8">
+                <div class="col-span-3 border-r border-gray-100 pr-6">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Soutien scolaire en ligne</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Cours particuliers et aide aux devoirs avec des enseignants qualifiés, du primaire au lycée.</p>
+                </div>
+                <div class="col-span-6 pr-6">
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Explorer par matière</h4>
+                    <ul class="grid grid-cols-2 gap-x-6 gap-y-2.5">
+                        <li><a href="../../soutien-scolaire/mathematiques/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Mathématiques</a></li>
+                        <li><a href="../../soutien-scolaire/francais/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Français</a></li>
+                        <li><a href="../../soutien-scolaire/anglais/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Anglais</a></li>
+                        <li><a href="../../soutien-scolaire/espagnol/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Espagnol</a></li>
+                        <li><a href="../../soutien-scolaire/physique-chimie/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Physique-Chimie</a></li>
+                        <li><a href="../../soutien-scolaire/aide-aux-devoirs/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Aide aux devoirs</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-3 bg-light rounded-2xl p-5 border border-gray-100">
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Par ville</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="../../soutien-scolaire/villes/paris.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Paris</a></li>
+                        <li><a href="../../soutien-scolaire/villes/marseille.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Marseille</a></li>
+                        <li><a href="../../soutien-scolaire/villes/lyon.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Lyon</a></li>
+                        <li><a href="../../soutien-scolaire/villes/toulouse.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Toulouse</a></li>
+                        <li><a href="../../soutien-scolaire/villes/nice.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Nice</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100">
+            <div class="px-6 py-6 space-y-4">
+                <a href="../../orthophonie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Orthophonie</a>
+                <a href="../../psychologie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Psychologie</a>
+                <a href="../../soutien-scolaire/" class="block text-gray-900 hover:text-primary font-semibold py-2">Soutien Scolaire</a>
+                <a href="../../tarifs.html" class="block text-gray-900 hover:text-primary font-semibold py-2">Tarifs</a>
+                <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="block text-center font-semibold py-2 text-gray-700 hover:text-primary border-b border-gray-100">Connexion</a>
+                <a href="#" onclick="openBookingModal(); return false;" class="w-full bg-primary text-white font-semibold py-3 rounded-full shadow-md mt-4 block text-center">Prendre rendez-vous</a>
+            </div>
+        </div>
+    </nav>
+    <section class="bg-gradient-to-b from-indigo-50 to-white py-20">
+      <div class="max-w-5xl mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Psychologie en ligne dans votre ville</h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Nos psychologues cliniciens accompagnent enfants et adultes partout en France. Choisissez votre ville pour découvrir notre offre de bilan psychologique à distance, avec un premier bilan sous 48h.</p>
+      </div>
+    </section>
+    <section class="py-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a href="https://logopsietudes.com/psychologie/villes/paris/" class="group block bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-8 transition-all">
+          <div class="flex items-center gap-4 mb-3">
+            <div class="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600">
+              <i data-lucide="map-pin"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 group-hover:text-indigo-600">Psychologie à Paris</h3>
+          </div>
+          <p class="text-gray-600">Bilan psychologique en ligne à Paris avec nos psychologues cliniciens. Prise en charge sous 48h.</p>
+          <span class="inline-flex items-center gap-1 mt-4 text-indigo-600 font-semibold">Découvrir <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+        </a>
+
+        <a href="https://logopsietudes.com/psychologie/villes/marseille/" class="group block bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-8 transition-all">
+          <div class="flex items-center gap-4 mb-3">
+            <div class="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600">
+              <i data-lucide="map-pin"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 group-hover:text-indigo-600">Psychologie à Marseille</h3>
+          </div>
+          <p class="text-gray-600">Bilan psychologique en ligne à Marseille avec nos psychologues cliniciens. Prise en charge sous 48h.</p>
+          <span class="inline-flex items-center gap-1 mt-4 text-indigo-600 font-semibold">Découvrir <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+        </a>
+
+        <a href="https://logopsietudes.com/psychologie/villes/lyon/" class="group block bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-8 transition-all">
+          <div class="flex items-center gap-4 mb-3">
+            <div class="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600">
+              <i data-lucide="map-pin"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 group-hover:text-indigo-600">Psychologie à Lyon</h3>
+          </div>
+          <p class="text-gray-600">Bilan psychologique en ligne à Lyon avec nos psychologues cliniciens. Prise en charge sous 48h.</p>
+          <span class="inline-flex items-center gap-1 mt-4 text-indigo-600 font-semibold">Découvrir <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+        </a>
+
+        <a href="https://logopsietudes.com/psychologie/villes/toulouse/" class="group block bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-8 transition-all">
+          <div class="flex items-center gap-4 mb-3">
+            <div class="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600">
+              <i data-lucide="map-pin"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 group-hover:text-indigo-600">Psychologie à Toulouse</h3>
+          </div>
+          <p class="text-gray-600">Bilan psychologique en ligne à Toulouse avec nos psychologues cliniciens. Prise en charge sous 48h.</p>
+          <span class="inline-flex items-center gap-1 mt-4 text-indigo-600 font-semibold">Découvrir <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+        </a>
+
+        <a href="https://logopsietudes.com/psychologie/villes/nice/" class="group block bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-8 transition-all">
+          <div class="flex items-center gap-4 mb-3">
+            <div class="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600">
+              <i data-lucide="map-pin"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 group-hover:text-indigo-600">Psychologie à Nice</h3>
+          </div>
+          <p class="text-gray-600">Bilan psychologique en ligne à Nice avec nos psychologues cliniciens. Prise en charge sous 48h.</p>
+          <span class="inline-flex items-center gap-1 mt-4 text-indigo-600 font-semibold">Découvrir <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+        </a>
+        </div>
+        <div class="text-center mt-12">
+          <a href="https://logopsietudes.com/psychologie/" class="inline-flex items-center gap-2 text-indigo-600 font-semibold hover:underline">Voir toute l'offre Psychologie <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </section>
+<footer class="bg-dark py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="../../logo-logopsi.png" alt="Logopsi Études" class="h-12 w-auto">
+                    </div>
+                    <p class="text-gray-400 text-sm">Orthophonie, psychologie et soutien scolaire en ligne. Des professionnels diplômés, partout en France.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Orthophonie</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../../orthophonie/dyslexie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dyslexie</a></li>
+                        <li><a href="../../orthophonie/dysorthographie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dysorthographie</a></li>
+                        <li><a href="../../orthophonie/dyscalculie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dyscalculie</a></li>
+                        <li><a href="../../orthophonie/begaiement.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Bégaiement</a></li>
+                        <li><a href="../../orthophonie/tsa.html" class="text-gray-400 hover:text-primary text-sm transition-colors">TSA</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Psychologie</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../../psychologie/tdah.html" class="text-gray-400 hover:text-primary text-sm transition-colors">TDAH</a></li>
+                        <li><a href="../../psychologie/hpi.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Haut Potentiel</a></li>
+                        <li><a href="../../psychologie/phobie-scolaire.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Phobie scolaire</a></li>
+                        <li><a href="../../psychologie/anxiete.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Anxiété</a></li>
+                        <li><a href="../../psychologie/depression.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dépression</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Soutien Scolaire</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../../soutien-scolaire/mathematiques/" class="text-gray-400 hover:text-primary text-sm transition-colors">Mathématiques</a></li>
+                        <li><a href="../../soutien-scolaire/francais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Français</a></li>
+                        <li><a href="../../soutien-scolaire/anglais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Anglais</a></li>
+                        <li><a href="../../soutien-scolaire/espagnol/" class="text-gray-400 hover:text-primary text-sm transition-colors">Espagnol</a></li>
+                        <li><a href="../../soutien-scolaire/physique-chimie/" class="text-gray-400 hover:text-primary text-sm transition-colors">Physique-Chimie</a></li>
+                        <li><a href="../../soutien-scolaire/aide-aux-devoirs/" class="text-gray-400 hover:text-primary text-sm transition-colors">Aide aux devoirs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">&copy; 2025 Logopsi Études. Tous droits réservés.</p>
+                <div class="flex flex-wrap gap-x-6 gap-y-2 mt-4 md:mt-0">
+                    <a href="../../mentions-legales.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Mentions légales</a>
+                    <a href="../../contact.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Contact</a>
+                    <a href="../../a-propos.html" class="text-gray-500 hover:text-primary text-sm transition-colors">À propos</a>
+                    <a href="../../tarifs.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Tarifs</a>
+                    <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-primary text-sm transition-colors">Espace membre</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function toggleMegaMenu(menu) {
+            const menus = {
+                ortho: document.getElementById('ortho-mega'),
+                psycho: document.getElementById('psycho-mega'),
+                scolaire: document.getElementById('scolaire-mega')
+            };
+            Object.keys(menus).forEach(key => {
+                if (key === menu) {
+                    menus[key].classList.toggle('active');
+                } else {
+                    menus[key].classList.remove('active');
+                }
+            });
+        }
+
+        document.addEventListener('click', function(e) {
+            const triggers = ['ortho-trigger', 'psycho-trigger', 'scolaire-trigger'];
+            const megaMenus = ['ortho-mega', 'psycho-mega', 'scolaire-mega'];
+
+            triggers.forEach((triggerId, i) => {
+                const trigger = document.getElementById(triggerId);
+                const mega = document.getElementById(megaMenus[i]);
+                if (trigger && mega && !trigger.contains(e.target) && !mega.contains(e.target)) {
+                    mega.classList.remove('active');
+                }
+            });
+        });
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        }
+    </script>
+
+    <script>
+        lucide.createIcons();
+
+        var megaCloseTimers = { ortho: null, psycho: null, scolaire: null };
+
+        function openMegaMenu(menu) {
+            cancelMegaClose(menu);
+            var menus = { ortho: 'ortho-mega', psycho: 'psycho-mega', scolaire: 'scolaire-mega' };
+            Object.keys(menus).forEach(function(key) {
+                var el = document.getElementById(menus[key]);
+                if (key === menu) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                    clearTimeout(megaCloseTimers[key]);
+                }
+            });
+        }
+
+        function scheduleMegaClose(menu) {
+            megaCloseTimers[menu] = setTimeout(function() {
+                var id = menu === 'ortho' ? 'ortho-mega' : menu === 'psycho' ? 'psycho-mega' : 'scolaire-mega';
+                document.getElementById(id).classList.remove('active');
+            }, 150);
+        }
+
+        function cancelMegaClose(menu) {
+            clearTimeout(megaCloseTimers[menu]);
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        }
+    </script>
+
+    <script>
+        lucide.createIcons();
+
+        var megaCloseTimers = { ortho: null, psycho: null, scolaire: null };
+
+        function openMegaMenu(menu) {
+            cancelMegaClose(menu);
+            var menus = { ortho: 'ortho-mega', psycho: 'psycho-mega', scolaire: 'scolaire-mega' };
+            Object.keys(menus).forEach(function(key) {
+                var el = document.getElementById(menus[key]);
+                if (key === menu) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                    clearTimeout(megaCloseTimers[key]);
+                }
+            });
+        }
+
+        function scheduleMegaClose(menu) {
+            megaCloseTimers[menu] = setTimeout(function() {
+                var id = menu === 'ortho' ? 'ortho-mega' : menu === 'psycho' ? 'psycho-mega' : 'scolaire-mega';
+                document.getElementById(id).classList.remove('active');
+            }, 150);
+        }
+
+        function cancelMegaClose(menu) {
+            clearTimeout(megaCloseTimers[menu]);
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        }
+    </script>
+
+    <script>
+        lucide.createIcons();
+
+        var megaCloseTimers = { ortho: null, psycho: null, scolaire: null };
+
+        function openMegaMenu(menu) {
+            cancelMegaClose(menu);
+            var menus = { ortho: 'ortho-mega', psycho: 'psycho-mega', scolaire: 'scolaire-mega' };
+            Object.keys(menus).forEach(function(key) {
+                var el = document.getElementById(menus[key]);
+                if (key === menu) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                    clearTimeout(megaCloseTimers[key]);
+                }
+            });
+        }
+
+        function scheduleMegaClose(menu) {
+            megaCloseTimers[menu] = setTimeout(function() {
+                var id = menu === 'ortho' ? 'ortho-mega' : menu === 'psycho' ? 'psycho-mega' : 'scolaire-mega';
+                document.getElementById(id).classList.remove('active');
+            }, 150);
+        }
+
+        function cancelMegaClose(menu) {
+            clearTimeout(megaCloseTimers[menu]);
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        }
+    </script>
+
+    <script>
+        lucide.createIcons();
+
+        var megaCloseTimers = { ortho: null, psycho: null, scolaire: null };
+
+        function openMegaMenu(menu) {
+            cancelMegaClose(menu);
+            var menus = { ortho: 'ortho-mega', psycho: 'psycho-mega', scolaire: 'scolaire-mega' };
+            Object.keys(menus).forEach(function(key) {
+                var el = document.getElementById(menus[key]);
+                if (key === menu) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                    clearTimeout(megaCloseTimers[key]);
+                }
+            });
+        }
+
+        function scheduleMegaClose(menu) {
+            megaCloseTimers[menu] = setTimeout(function() {
+                var id = menu === 'ortho' ? 'ortho-mega' : menu === 'psycho' ? 'psycho-mega' : 'scolaire-mega';
+                document.getElementById(id).classList.remove('active');
+            }, 150);
+        }
+
+        function cancelMegaClose(menu) {
+            clearTimeout(megaCloseTimers[menu]);
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        }
+    </script>
+                <!-- LOGOPSI_BOOKING_MODAL -->
+    <div id="booking-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title" data-view="callback">
+        <div class="absolute inset-0 bg-black/60" onclick="closeBookingModal()"></div>
+        <div class="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 z-[110] modal-enter max-h-[92vh] overflow-y-auto">
+            <button onclick="closeBookingModal()" aria-label="Fermer" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors">
+                <i data-lucide="x" class="w-5 h-5 text-gray-700"></i>
+            </button>
+
+            <div data-view-info class="hidden"></div>
+
+            <!-- VIEW: CONTACT FORM (default) -->
+            <div data-view-callback>
+                <h2 id="booking-modal-title" class="text-2xl font-bold text-gray-900 mb-1">Réserver mon bilan</h2>
+                <p class="text-primary font-semibold mb-1">150€ &middot; Sous 48h &middot; 100% en ligne</p>
+                <p class="text-gray-600 text-sm mb-6">Laissez-nous vos coordonnées, nous vous recontactons sous 48h ouvrées.</p>
+                <form class="logopsi-contact-form space-y-3" data-source="booking" novalidate>
+                    <input type="text" name="_hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true">
+                    <input type="text" name="name" required placeholder="Nom et prénom" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary">
+                    <input type="email" name="email" required placeholder="Email" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary">
+                    <input type="tel" name="phone" required placeholder="Téléphone" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary">
+                    <select name="sujet" required class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary bg-white">
+                        <option value="" disabled selected>Type de bilan</option>
+                        <option value="orthophonie">Orthophonie</option>
+                        <option value="psychologie">Psychologie</option>
+                        <option value="soutien-scolaire">Soutien scolaire</option>
+                        <option value="autre">Je ne sais pas / autre</option>
+                    </select>
+                    <textarea name="message" rows="3" placeholder="Décrivez brièvement votre besoin (optionnel)" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-primary resize-none"></textarea>
+                    <div class="logopsi-form-error hidden text-sm text-red-600 bg-red-50 border border-red-100 rounded-xl px-4 py-2"></div>
+                    <button type="submit" class="logopsi-form-submit w-full bg-primary hover:bg-primaryHover text-white font-semibold py-3.5 rounded-full transition-colors disabled:opacity-60 disabled:cursor-not-allowed">Envoyer ma demande</button>
+                    <p class="text-xs text-gray-500 text-center">Données traitées pour vous recontacter. RGPD respecté.</p>
+                </form>
+            </div>
+
+            <!-- VIEW: SUCCESS -->
+            <div data-view-success class="hidden text-center py-6">
+                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-5">
+                    <i data-lucide="check" class="w-8 h-8 text-primary"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">Demande envoyée</h2>
+                <p class="text-gray-600 mb-6">Nous vous recontactons sous 48h ouvrées.</p>
+                <button onclick="closeBookingModal()" class="bg-primary hover:bg-primaryHover text-white font-semibold px-8 py-3 rounded-full transition-colors">Fermer</button>
+            </div>
+        </div>
+    </div>
+<script>
+
+        // ---- Booking modal ----
+        function setBookingView(view) {
+            var modal = document.getElementById("booking-modal");
+            if (!modal) return;
+            modal.setAttribute("data-view", view);
+            modal.querySelector("[data-view-info]").classList.toggle("hidden", view !== "info");
+            modal.querySelector("[data-view-callback]").classList.toggle("hidden", view !== "callback");
+            modal.querySelector("[data-view-success]").classList.toggle("hidden", view !== "success");
+        }
+        function openBookingModal() {
+            var modal = document.getElementById("booking-modal");
+            if (!modal) return;
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+            document.body.style.overflow = "hidden";
+            setBookingView("callback");
+            if (window.lucide) { window.lucide.createIcons(); }
+        }
+        function closeBookingModal() {
+            var modal = document.getElementById("booking-modal");
+            if (!modal) return;
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+            document.body.style.overflow = "";
+        }
+        function showCallbackForm() { setBookingView("callback"); if (window.lucide) { window.lucide.createIcons(); } }
+        function showInfoView() { setBookingView("info"); if (window.lucide) { window.lucide.createIcons(); } }
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape") { closeBookingModal(); }
+        });
+        document.addEventListener("click", function(e) {
+            var t = e.target.closest(".js-open-booking");
+            if (t) { e.preventDefault(); openBookingModal(); }
+        });
+
+        // ---- Contact-form AJAX interceptor (no formsubmit, server: WP plugin) ----
+        (function() {
+            var AJAX_URL = (window.logopsiAjaxUrl || "/wp-admin/admin-ajax.php");
+            function showThankYou(form, message) {
+                var inModal = form.closest("[data-view-callback]");
+                if (inModal) {
+                    setBookingView("success");
+                    if (window.lucide) { window.lucide.createIcons(); }
+                    return;
+                }
+                // Inline: replace the form with a thank-you block
+                var box = document.createElement("div");
+                box.className = "logopsi-thankyou bg-primary/5 border border-primary/20 rounded-2xl p-8 text-center";
+                box.innerHTML =
+                    '<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">' +
+                        '<i data-lucide="check" class="w-8 h-8 text-primary"></i>' +
+                    '</div>' +
+                    '<h3 class="text-2xl font-bold text-gray-900 mb-2">Merci !</h3>' +
+                    '<p class="text-gray-700">' + (message || "Demande envoyée — nous vous recontactons sous 48h ouvrées.") + '</p>';
+                form.parentNode.replaceChild(box, form);
+                if (window.lucide) { window.lucide.createIcons(); }
+            }
+            function showError(form, msg) {
+                var box = form.querySelector(".logopsi-form-error");
+                if (box) { box.textContent = msg; box.classList.remove("hidden"); }
+                else { alert(msg); }
+            }
+            document.addEventListener("submit", function(e) {
+                var form = e.target.closest("form.logopsi-contact-form");
+                if (!form) return;
+                e.preventDefault();
+
+                var errBox = form.querySelector(".logopsi-form-error");
+                if (errBox) errBox.classList.add("hidden");
+                var submitBtn = form.querySelector(".logopsi-form-submit") || form.querySelector('button[type="submit"]');
+                var originalLabel = submitBtn ? submitBtn.textContent : null;
+                if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Envoi en cours..."; }
+
+                var fd = new FormData(form);
+                fd.append("action", "logopsi_contact");
+                if (!fd.get("source")) fd.append("source", form.dataset.source || "site");
+
+                fetch(AJAX_URL, { method: "POST", body: fd, credentials: "same-origin" })
+                    .then(function(r) { return r.json().catch(function() { return { success: false, data: { message: "Réponse invalide du serveur." } }; }); })
+                    .then(function(json) {
+                        if (json && json.success) {
+                            showThankYou(form, (json.data && json.data.message) || null);
+                        } else {
+                            var msg = (json && json.data && json.data.message) || "Erreur lors de l\'envoi. Veuillez réessayer.";
+                            showError(form, msg);
+                            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+                        }
+                    })
+                    .catch(function(err) {
+                        showError(form, "Impossible d\'envoyer pour le moment. Vérifiez votre connexion.");
+                        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+                    });
+            }, false);
+        })();
+
+</script>
+</body>
+</html>

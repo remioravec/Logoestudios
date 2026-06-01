@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Logopsi Études Deployer
  * Description: Déploie le site complet Logopsi Études sur WordPress. Interface d'admin pour mapper les images et pousser toutes les pages.
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: Logopsi Études
  * Text Domain: logopsi-deployer
  */
@@ -163,6 +163,12 @@ function logopsi_fix_links($html, $current_slug) {
     // Replace href="villes/dyslexie-paris.html" with proper path
 
     $site_url = home_url();
+
+    // Defensive cleanup: neutralise des liens hérités qui cassaient en prod
+    //  - préfixe de dev "/site/" laissé dans certains fil d'Ariane
+    //  - ancre legacy "...index.html#contact" -> page /contact/
+    $html = str_replace('href="/site/', 'href="/', $html);
+    $html = preg_replace('~href="[^"]*index\.html#contact"~', 'href="' . $site_url . '/contact/"', $html);
 
     // Determine base path for relative resolution
     $parts = explode('/', $current_slug);
