@@ -102,6 +102,25 @@ function logopsi_homepage_redirect() {
 }
 
 // ============================================================
+// REDIRECTIONS 301 (pages obsolètes / doublons)
+// ============================================================
+
+add_action('template_redirect', 'logopsi_legacy_redirects', 1);
+function logopsi_legacy_redirects() {
+    // slug source  =>  URL cible (relative à home_url)
+    $map = [
+        'tarifs-2' => '/tarifs/',
+    ];
+    if (is_page()) {
+        $slug = get_post_field('post_name', get_queried_object_id());
+        if (isset($map[$slug])) {
+            wp_redirect(home_url($map[$slug]), 301);
+            exit;
+        }
+    }
+}
+
+// ============================================================
 // LOAD PAGE DATA
 // ============================================================
 
