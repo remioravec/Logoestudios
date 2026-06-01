@@ -57,7 +57,7 @@
                 </div>
 
                 <div class="hidden lg:flex items-center gap-4">
-                    <button type="button" onclick="logopsiToggleLang()" id="lang-toggle" aria-label="Changer de langue (Français / Español)" class="inline-flex items-center gap-1.5 text-[15px] font-semibold text-gray-700 hover:text-primary transition-colors mr-2"><i data-lucide="languages" class="w-4 h-4"></i><span id="lang-toggle-label">ES</span></button>
+                    <button type="button" onclick="logopsiToggleLang()" id="lang-toggle" aria-label="Changer de langue (Français / Español)" class="inline-flex items-center gap-1.5 text-[15px] font-semibold text-gray-700 hover:text-primary transition-colors mr-2"><i data-lucide="languages" class="w-4 h-4"></i><span id="lang-toggle-label" class="lang-toggle-label">ES</span></button>
                     <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="text-[15px] font-semibold text-gray-700 hover:text-primary transition-colors">
                         Connexion
                     </a>
@@ -182,7 +182,7 @@
                 <a href="../../psychologie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Psychologie</a>
                 <a href="../../soutien-scolaire/" class="block text-gray-900 hover:text-primary font-semibold py-2">Soutien Scolaire</a>
                 <a href="../../tarifs.html" class="block text-gray-900 hover:text-primary font-semibold py-2">Tarifs</a>
-                <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="block text-center font-semibold py-2 text-gray-700 hover:text-primary border-b border-gray-100">Connexion</a>
+                <button type="button" onclick="logopsiToggleLang()" id="lang-toggle-m" class="flex items-center justify-center gap-1.5 w-full text-center font-semibold py-2 text-gray-700 hover:text-primary border-b border-gray-100"><i data-lucide="languages" class="w-4 h-4"></i><span class="lang-toggle-label">ES</span></button><a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="block text-center font-semibold py-2 text-gray-700 hover:text-primary border-b border-gray-100">Connexion</a>
                 <a href="#" onclick="openBookingModal(); return false;" class="w-full bg-primary text-white font-semibold py-3 rounded-full shadow-md mt-4 block text-center">Prendre rendez-vous</a>
             </div>
         </div>
@@ -756,7 +756,7 @@ function logopsiGoogleInit(){new google.translate.TranslateElement({pageLanguage
 function logopsiGetCookie(n){var m=document.cookie.match('(^|; )'+n+'=([^;]*)');return m?m[2]:'';}
 function logopsiSetLang(lang){var v=(lang==='es')?'/fr/es':'/fr/fr';var h=location.hostname;document.cookie='googtrans='+v+';path=/';document.cookie='googtrans='+v+';path=/;domain=.'+h;location.reload();}
 function logopsiToggleLang(){var c=logopsiGetCookie('googtrans');if(c&&c.indexOf('/es')>-1){logopsiSetLang('fr');}else{logopsiSetLang('es');}}
-function logopsiUpdateLangLabel(){var c=logopsiGetCookie('googtrans');var es=c&&c.indexOf('/es')>-1;var el=document.getElementById('lang-toggle-label');if(el)el.textContent=es?'FR':'ES';}
+function logopsiUpdateLangLabel(){var c=logopsiGetCookie('googtrans');var es=c&&c.indexOf('/es')>-1;document.querySelectorAll('.lang-toggle-label').forEach(function(el){el.textContent=es?'FR':'ES';});}
 document.addEventListener('DOMContentLoaded',logopsiUpdateLangLabel);
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=logopsiGoogleInit"></script>
