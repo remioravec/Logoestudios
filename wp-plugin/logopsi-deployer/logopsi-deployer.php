@@ -76,7 +76,26 @@ function logopsi_admin_assets($hook) {
 add_filter('template_include', 'logopsi_custom_template');
 function logopsi_custom_template($template) {
     if (is_page()) {
-        $custom_html = get_post_meta(get_the_ID(), '_logopsi_full_html', true);
+        $pid = get_the_ID();
+        $custom_html = get_post_meta($pid, '_logopsi_full_html', true);
+
+        // Fallback robuste : si la meta a été vidée (ex: page ouverte dans
+        // l'éditeur Gutenberg), on recharge le HTML depuis le fichier source
+        // pour que la page ne retombe pas sur le thème par défaut (page blanche).
+        if (empty($custom_html)) {
+            $slug = get_post_meta($pid, '_logopsi_slug', true);
+            if (empty($slug)) {
+                $slug = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+            }
+            $file_html = logopsi_get_html_content($slug);
+            if (!empty($file_html)) {
+                $file_html = logopsi_apply_image_mapping($file_html);
+                $file_html = logopsi_fix_links($file_html, $slug);
+                $file_html = logopsi_fix_assets($file_html);
+                $custom_html = $file_html;
+            }
+        }
+
         if (!empty($custom_html)) {
             // Serve the raw HTML directly
             echo $custom_html;
