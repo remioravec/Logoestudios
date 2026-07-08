@@ -76,46 +76,56 @@ function logopsi_admin_assets($hook) {
 add_filter('template_include', 'logopsi_custom_template');
 function logopsi_custom_template($template) {
     if (is_page()) {
-        $pid = get_the_ID();
-        $custom_html = get_post_meta($pid, '_logopsi_full_html', true);
-
-        // Fallback robuste : si la meta a été vidée (ex: page ouverte dans
-        // l'éditeur Gutenberg), on recharge le HTML depuis le fichier source
-        // pour que la page ne retombe pas sur le thème par défaut (page blanche).
-        if (empty($custom_html)) {
-            $slug = get_post_meta($pid, '_logopsi_slug', true);
-            if (empty($slug)) {
-                $slug = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
-            }
-            $file_html = logopsi_get_html_content($slug);
-            if (!empty($file_html)) {
-                $file_html = logopsi_apply_image_mapping($file_html);
-                $file_html = logopsi_fix_links($file_html, $slug);
-                $file_html = logopsi_fix_assets($file_html);
-                $custom_html = $file_html;
-            }
+        // PRIORITÉ AU FICHIER SOURCE : le contenu est servi directement depuis
+        // data/html/*.html. Un simple téléversement du plugin met tout à jour,
+        // sans étape "Deploy". La méta _logopsi_full_html sert de repli.
+        $slug = logopsi_current_slug(get_the_ID());
+        $html = logopsi_render_slug($slug);
+        if (empty($html)) {
+            $html = get_post_meta(get_the_ID(), '_logopsi_full_html', true);
         }
-
-        if (!empty($custom_html)) {
-            // Serve the raw HTML directly
-            echo $custom_html;
+        if (!empty($html)) {
+            echo $html;
             exit;
         }
     }
     return $template;
 }
 
+// Slug logopsi d'une page (méta, sinon dérivé de l'URL)
+function logopsi_current_slug($pid) {
+    $slug = get_post_meta($pid, '_logopsi_slug', true);
+    if (empty($slug)) {
+        $slug = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+    }
+    return $slug;
+}
+
+// Charge le fichier HTML d'un slug et applique les transformations à la volée.
+function logopsi_render_slug($slug) {
+    if ($slug === '' || $slug === false) $slug = 'accueil';
+    $html = logopsi_get_html_content($slug);
+    if (empty($html)) return '';
+    $html = logopsi_apply_image_mapping($html);
+    $html = logopsi_fix_links($html, $slug);
+    $html = logopsi_fix_assets($html);
+    return $html;
+}
+
 // Make the homepage work too
 add_action('template_redirect', 'logopsi_homepage_redirect');
 function logopsi_homepage_redirect() {
     if (is_front_page()) {
-        $front_page_id = get_option('page_on_front');
-        if ($front_page_id) {
-            $custom_html = get_post_meta($front_page_id, '_logopsi_full_html', true);
-            if (!empty($custom_html)) {
-                echo $custom_html;
-                exit;
+        $html = logopsi_render_slug('accueil');   // priorité au fichier
+        if (empty($html)) {
+            $front_page_id = get_option('page_on_front');
+            if ($front_page_id) {
+                $html = get_post_meta($front_page_id, '_logopsi_full_html', true);
             }
+        }
+        if (!empty($html)) {
+            echo $html;
+            exit;
         }
     }
 }
@@ -187,6 +197,13 @@ function logopsi_fix_assets($html) {
     $logo_url = LOGOPSI_PLUGIN_URL . 'admin/logo-logopsi.png';
     // Replace all relative logo references with absolute plugin URL
     $html = preg_replace('/src="[^"]*logo-logopsi\.png"/', 'src="' . $logo_url . '"', $html);
+    // Fix défensif du menu mobile (certaines pages basculaient 'active' au lieu
+    // de la classe Tailwind 'hidden').
+    $html = str_replace(
+        "getElementById('mobile-menu').classList.toggle('active')",
+        "getElementById('mobile-menu').classList.toggle('hidden')",
+        $html
+    );
     return $html;
 }
 
@@ -585,7 +602,10 @@ function logopsi_ajax_contact() {
     $lines[] = 'IP             : ' . ($_SERVER['REMOTE_ADDR'] ?? 'inconnue');
     $body = implode("\n", $lines);
 
-    $to       = get_option('admin_email');
+    $to       = array_values(array_unique(array_filter([
+        get_option('admin_email'),
+        'logopsietudes@gmail.com',
+    ])));
     $headers  = [
         'Content-Type: text/plain; charset=UTF-8',
         'Reply-To: ' . $name . ' <' . $email . '>',
