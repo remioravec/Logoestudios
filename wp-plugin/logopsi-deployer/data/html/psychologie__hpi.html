@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilan HPI en ligne — Psychologue 150€/48h | Logopsi Études</title>
-    <meta name="description" content="Bilan psychologique pour HPI en ligne — 150€, rendez-vous sous 48h. Psychologues diplômés d'État, partout en France.">
+    <title>Bilan HPI : test de QI, diagnostic et accompagnement | Logopsi Études</title>
+    <meta name="description" content="Bilan HPI (haut potentiel) en ligne : test de QI WISC, diagnostic et accompagnement par un psychologue. Signes, déroulé, aide. RDV sous 48h.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -41,6 +41,7 @@
 <link rel="icon" type="image/png" href="/wp-content/plugins/logopsi-deployer/admin/favicon.png">
 <link rel="shortcut icon" href="/wp-content/plugins/logopsi-deployer/admin/favicon.ico">
 <link rel="apple-touch-icon" href="/wp-content/plugins/logopsi-deployer/admin/favicon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "À partir de quel âge faire un bilan HPI ?", "acceptedAnswer": {"@type": "Answer", "text": "Un bilan est possible dès 6 ans avec le WISC-V. Avant, des outils adaptés existent, mais le test de QI est plus fiable une fois l'enfant scolarisé."}}, {"@type": "Question", "name": "HPI et QI : quel score définit le haut potentiel ?", "acceptedAnswer": {"@type": "Answer", "text": "On parle de haut potentiel à partir d'un QI total d'environ 130 (les 2 % les plus élevés). Le score n'est qu'un repère : l'analyse qualitative du profil compte tout autant."}}, {"@type": "Question", "name": "Un enfant HPI peut-il être en échec scolaire ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, c'est fréquent : ennui, perte de sens, perfectionnisme paralysant ou troubles associés peuvent conduire à un décrochage malgré de grandes capacités."}}, {"@type": "Question", "name": "HPI, TDAH, autisme : quels liens ?", "acceptedAnswer": {"@type": "Answer", "text": "Le haut potentiel peut coexister avec un TDAH ou un trouble du spectre de l'autisme (Asperger). Un bilan complet permet de démêler ces profils et d'éviter les confusions."}}, {"@type": "Question", "name": "Combien coûte un bilan HPI et sous quel délai ?", "acceptedAnswer": {"@type": "Answer", "text": "Le bilan est proposé à un tarif clair avec un premier rendez-vous sous 48h, 100 % en ligne et partout en France — sans les longues listes d'attente."}}]}</script>
 </head>
 <body class="font-sans text-gray-900 bg-light min-h-screen">
 
@@ -215,12 +216,8 @@
                 <span class="text-gray-900 font-medium">HPI</span>
             </div>
 
-            <h1 class="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-gray-900">
-                Psychologue spécialisé dans le <span class="text-primary">Haut Potentiel (HPI)</span> en ligne
-            </h1>
-            <p class="text-lg text-gray-700 leading-relaxed">
-                Votre enfant est intellectuellement précoce, s'ennuie en classe ou a des difficultés relationnelles ? Le haut potentiel est une richesse qui nécessite parfois un accompagnement adapté. Nos psychologues experts l'aident à s'épanouir.
-            </p>
+            <h1 class="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-gray-900">Bilan HPI : test de QI, diagnostic et accompagnement du haut potentiel</h1>
+            <p class="text-lg text-gray-700 leading-relaxed">Un bilan complet pour identifier le haut potentiel intellectuel (HPI) de votre enfant : test de QI (WISC), entretien clinique et préconisations. En ligne, rendez-vous sous 48h.</p>
             <div class="flex flex-col sm:flex-row gap-4 pt-4">
                 <button class="bg-primary text-white font-semibold px-8 py-4 rounded-full hover:bg-primaryHover transition-colors shadow-lg flex items-center justify-center gap-2" onclick="openBookingModal()">
                     Réserver mon bilan <i data-lucide="arrow-right" class="w-5 h-5"></i>
@@ -288,149 +285,13 @@
     </div>
 
     <!-- SYMPTOMES SECTION -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div class="space-y-8">
-                <h2 class="text-3xl font-bold text-gray-900">Comment identifier un enfant à haut potentiel ?</h2>
-                <p class="text-gray-600 leading-relaxed">Le haut potentiel intellectuel (QI ≥ 130) concerne environ 2,3% de la population. Ces enfants ont des besoins spécifiques qui, s'ils ne sont pas compris, peuvent générer de la souffrance :</p>
-                <ul class="space-y-4">
-                    <li class="flex items-start gap-3">
-                        <div class="mt-1 bg-red-100 text-red-500 rounded-full p-1"><i data-lucide="brain" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>Pensée en arborescence :</strong> L'enfant HPI pense différemment, fait des liens inattendus, pose beaucoup de questions et a une curiosité insatiable.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <div class="mt-1 bg-orange-100 text-orange-500 rounded-full p-1"><i data-lucide="heart" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>Hypersensibilité émotionnelle :</strong> Émotions intenses, grande empathie, sensibilité aux injustices, réactions émotionnelles parfois disproportionnées.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <div class="mt-1 bg-purple-100 text-purple-500 rounded-full p-1"><i data-lucide="users" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>Décalage avec les pairs :</strong> Sentiment de différence, difficultés à trouver des amis du même âge, préférence pour les adultes ou les enfants plus âgés.</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="bg-light p-8 md:p-12 rounded-3xl border border-gray-200">
-                <h3 class="text-2xl font-bold mb-6 text-gray-900">Notre approche thérapeutique</h3>
-                <p class="text-gray-600 mb-6 text-sm leading-relaxed">Notre accompagnement vise à aider l'enfant HPI à comprendre son fonctionnement, à gérer ses émotions intenses et à développer ses compétences sociales. Nous travaillons aussi avec les parents et l'école pour adapter l'environnement. L'objectif est que le haut potentiel soit vécu comme une force, pas comme un handicap.</p>
-                <button type="button" onclick="openSeanceModal()" class="w-full bg-white border-2 border-primary text-primary font-bold py-3 rounded-full hover:bg-primary hover:text-white transition-colors">
-                    Découvrir le déroulement d'une séance
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- A PROPOS SECTION -->
-    <section class="py-20 px-6 bg-light border-t border-gray-100">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div class="order-2 md:order-1 relative">
-                <div class="absolute -inset-4 bg-primary/10 rounded-3xl transform -rotate-3"></div>
-                <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Équipe Logopsi Études" class="relative rounded-2xl shadow-lg w-full object-cover h-[400px]">
-            </div>
-            <div class="order-1 md:order-2 space-y-6">
-                <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
-                    <i data-lucide="award" class="w-4 h-4"></i> Professionnels diplômés
-                </div>
-                <h2 class="text-3xl font-bold text-gray-900">Pourquoi choisir Logopsi Études ?</h2>
-                <p class="text-gray-600 leading-relaxed">Chez Logopsi Études, nous réunissons des psychologues diplômés d'État, formés aux dernières avancées scientifiques. Notre plateforme vous connecte avec le bon professionnel en moins de 48h, partout en France.</p>
-                <div class="space-y-4">
-                    <div class="flex items-start gap-3">
-                        <div class="mt-1 bg-primary/10 text-primary rounded-full p-1"><i data-lucide="check" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>Rendez-vous sous 48h</strong> — Plus de listes d'attente interminables</span>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <div class="mt-1 bg-primary/10 text-primary rounded-full p-1"><i data-lucide="check" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>Séances remboursables</strong> — Éligible Sécurité sociale et mutuelles</span>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <div class="mt-1 bg-primary/10 text-primary rounded-full p-1"><i data-lucide="check" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>100% en ligne</strong> — Depuis chez vous, sans déplacement</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CITY LINKS -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">Consultez un psychologue près de chez vous</h2>
-                <p class="text-gray-600 mt-3">Nos psychologues sont disponibles en ligne, partout en France.</p>
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-                    <a href="villes/hpi-paris.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
-                        </div>
-                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Paris</span>
-                    </a>
-                    <a href="villes/hpi-marseille.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
-                        </div>
-                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Marseille</span>
-                    </a>
-                    <a href="villes/hpi-lyon.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
-                        </div>
-                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Lyon</span>
-                    </a>
-                    <a href="villes/hpi-toulouse.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
-                        </div>
-                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Toulouse</span>
-                    </a>
-                    <a href="villes/hpi-nice.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
-                        </div>
-                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Nice</span>
-                    </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="py-20 bg-light">
-        <div class="max-w-3xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">Questions fréquentes</h2>
-                <p class="text-gray-600 mt-3">Tout ce que vous devez savoir.</p>
-            </div>
-            <div class="space-y-4">
-                <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
-                        <span class="font-semibold text-gray-900 pr-4">Comment diagnostiquer le HPI ?</span>
-                        <i data-lucide="plus" class="w-5 h-5 text-primary flex-shrink-0 faq-icon transition-transform"></i>
-                    </button>
-                    <div class="faq-content px-6 pb-0">
-                        <p class="text-gray-600 leading-relaxed pb-6">Le diagnostic repose sur un bilan psychométrique (test WISC-V pour les enfants) réalisé par un psychologue. Un QI total ≥ 130 confirme le haut potentiel. Le bilan évalue aussi le profil cognitif, émotionnel et comportemental de l'enfant.</p>
-                    </div>
-                </div>
-                <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
-                        <span class="font-semibold text-gray-900 pr-4">Un enfant HPI a-t-il forcément des difficultés ?</span>
-                        <i data-lucide="plus" class="w-5 h-5 text-primary flex-shrink-0 faq-icon transition-transform"></i>
-                    </button>
-                    <div class="faq-content px-6 pb-0">
-                        <p class="text-gray-600 leading-relaxed pb-6">Non. Beaucoup d'enfants HPI s'épanouissent parfaitement. Environ un tiers rencontre des difficultés (ennui scolaire, anxiété, difficultés relationnelles). L'accompagnement est utile quand le décalage génère de la souffrance.</p>
-                    </div>
-                </div>
-                <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
-                        <span class="font-semibold text-gray-900 pr-4">Faut-il sauter une classe ?</span>
-                        <i data-lucide="plus" class="w-5 h-5 text-primary flex-shrink-0 faq-icon transition-transform"></i>
-                    </button>
-                    <div class="faq-content px-6 pb-0">
-                        <p class="text-gray-600 leading-relaxed pb-6">Le saut de classe peut être bénéfique pour certains enfants HPI, mais ce n'est pas systématique. La décision dépend de la maturité émotionnelle, sociale et physique de l'enfant. Le psychologue peut aider à évaluer la pertinence de cette option.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
+    <section class="py-14 px-6 bg-white border-t border-gray-100"><div class="max-w-4xl mx-auto text-gray-600 leading-relaxed text-lg"><p>Le <strong>bilan HPI</strong> (haut potentiel intellectuel) permet d'identifier le fonctionnement d'un <strong>enfant</strong> ou d'un adolescent «&nbsp;surdoué&nbsp;». Réalisé par un <strong>psychologue</strong>, il repose sur un <strong>test de QI</strong> étalonné (WISC) et un entretien clinique, pour comprendre le <strong>profil</strong> cognitif et affectif. Notre suivi s'inscrit dans un <a href="https://logopsietudes.com/" class="text-primary font-semibold hover:underline">écosystème global d'accompagnement</a>.</p></div></section>
+<section class="py-16 px-6 bg-light border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Qu'est-ce que le haut potentiel intellectuel (HPI) ?</h2><div class="space-y-4 text-gray-600 leading-relaxed text-lg"><p>Le <strong>haut potentiel intellectuel</strong> (HPI), aussi appelé précocité ou douance, désigne un fonctionnement cognitif intense, avec un <strong>QI</strong> généralement supérieur à 130. Il s'accompagne souvent d'une grande sensibilité, d'une pensée en arborescence et d'un fort besoin de sens. Le HPI n'est pas un trouble&nbsp;: c'est une <strong>différence</strong> qui, mal comprise, peut générer ennui, anxiété ou décrochage.</p></div></div></section>
+<section class="py-16 px-6 bg-white border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Quels sont les signes d'un enfant à haut potentiel ?</h2><div class="space-y-4 text-gray-600 leading-relaxed text-lg"><p>Parmi les <strong>signes</strong>&nbsp;: curiosité insatiable, vocabulaire riche et précoce, hypersensibilité émotionnelle, sens aigu de la justice, perfectionnisme, décalage avec les camarades. Attention&nbsp;: un enfant HPI peut aussi être en <strong>échec scolaire</strong> (ennui, faux-self), d'où l'intérêt d'un <strong>bilan</strong>.</p></div></div></section>
+<section class="py-16 px-6 bg-light border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Comment se déroule un bilan HPI (test de QI) ?</h2><div class="space-y-4 text-gray-600 leading-relaxed text-lg"><p>Le <strong>bilan HPI</strong> comprend un entretien, la passation d'un <strong>test psychométrique</strong> de référence (<strong>WISC-V</strong> pour l'enfant, WAIS pour l'adulte), parfois complété par un <strong>bilan neuropsychologique</strong> (attention, mémoire, fonctions exécutives). Un <strong>compte rendu</strong> détaillé est remis, avec des préconisations concrètes.</p><p>Beaucoup de familles cherchent un «&nbsp;<strong>bilan HPI</strong>&nbsp;» ou un «&nbsp;<strong>bilan neuropsychologique enfant HPI</strong>&nbsp;» près de chez elles&nbsp;: nous recevons en ligne, partout en France — <a href="https://logopsietudes.com/psychologie/villes/hpi-nice/" class="text-primary font-semibold hover:underline">bilan HPI à Nice</a>, <a href="https://logopsietudes.com/psychologie/villes/hpi-lyon/" class="text-primary font-semibold hover:underline">à Lyon</a>, <a href="https://logopsietudes.com/psychologie/villes/hpi-paris/" class="text-primary font-semibold hover:underline">à Paris</a>.</p></div></div></section>
+<section class="py-16 px-6 bg-white border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Pourquoi faire diagnostiquer le haut potentiel ?</h2><div class="space-y-4 text-gray-600 leading-relaxed text-lg"><p>Poser un <strong>diagnostic HPI</strong> aide à comprendre l'enfant, à adapter sa scolarité (aménagements, saut de classe) et à prévenir les difficultés associées&nbsp;: <strong>anxiété</strong>, faible estime de soi, troubles du sommeil. Le bilan met des mots sur le fonctionnement et rassure toute la famille.</p></div></div></section>
+<section class="py-16 px-6 bg-light border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Comment accompagner un enfant HPI ?</h2><div class="space-y-4 text-gray-600 leading-relaxed text-lg"><p>L'accompagnement combine un <strong>suivi psychologique</strong> (gestion des émotions, confiance en soi), des aménagements scolaires et, si besoin, du <strong>soutien scolaire</strong> pour raccrocher au sens. Lorsque l'anxiété domine, notre <a href="https://logopsietudes.com/psychologie/anxiete/" class="text-primary font-semibold hover:underline">prise en charge de l'anxiété</a> est indiquée&nbsp;; le HPI coexiste parfois avec un <a href="https://logopsietudes.com/psychologie/tdah/" class="text-primary font-semibold hover:underline">TDAH</a>.</p></div></div></section>
+<section class="py-16 px-6 bg-light border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Questions fréquentes sur le bilan HPI (FAQ)</h2><div class="space-y-4"><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">À partir de quel âge faire un bilan HPI ?</h3><p class="text-gray-600 leading-relaxed">Un bilan est possible dès 6 ans avec le WISC-V. Avant, des outils adaptés existent, mais le test de QI est plus fiable une fois l'enfant scolarisé.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">HPI et QI : quel score définit le haut potentiel ?</h3><p class="text-gray-600 leading-relaxed">On parle de haut potentiel à partir d'un QI total d'environ 130 (les 2&nbsp;% les plus élevés). Le score n'est qu'un repère&nbsp;: l'analyse qualitative du profil compte tout autant.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">Un enfant HPI peut-il être en échec scolaire ?</h3><p class="text-gray-600 leading-relaxed">Oui, c'est fréquent&nbsp;: ennui, perte de sens, perfectionnisme paralysant ou troubles associés peuvent conduire à un décrochage malgré de grandes capacités.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">HPI, TDAH, autisme : quels liens ?</h3><p class="text-gray-600 leading-relaxed">Le haut potentiel peut coexister avec un TDAH ou un trouble du spectre de l'autisme (Asperger). Un bilan complet permet de démêler ces profils et d'éviter les confusions.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">Combien coûte un bilan HPI et sous quel délai ?</h3><p class="text-gray-600 leading-relaxed">Le bilan est proposé à un tarif clair avec un premier rendez-vous sous 48h, 100&nbsp;% en ligne et partout en France — sans les longues listes d'attente.</p></div></div></div></section>
     <section class="py-20">
         <div class="max-w-4xl mx-auto px-6">
             <div class="bg-primary rounded-3xl p-12 text-center text-white relative overflow-hidden">
