@@ -606,8 +606,11 @@ function logopsi_ajax_contact() {
         get_option('admin_email'),
         'logopsietudes@gmail.com',
     ])));
+    // From = adresse du domaine (meilleure délivrabilité / SPF) ; Reply-To = visiteur
+    $domain   = preg_replace('#^www\.#', '', parse_url(home_url(), PHP_URL_HOST));
     $headers  = [
         'Content-Type: text/plain; charset=UTF-8',
+        'From: Logopsi Études <no-reply@' . $domain . '>',
         'Reply-To: ' . $name . ' <' . $email . '>',
     ];
 
@@ -649,11 +652,20 @@ function logopsi_register_lead_cpt() {
         'public'        => false,
         'show_ui'       => true,
         'show_in_menu'  => true,
+        'show_in_rest'  => true,            // exposé en REST (récupération fiable des leads)
+        'rest_base'     => 'logopsi_lead',
         'menu_position' => 31,
         'menu_icon'     => 'dashicons-email-alt',
         'supports'      => ['title', 'editor', 'custom-fields'],
         'capability_type' => 'page',
     ]);
+    // Champs du lead exposés en REST (context edit, admin uniquement)
+    foreach (['email', 'phone', 'sujet', 'source'] as $k) {
+        register_post_meta('logopsi_lead', '_logopsi_lead_' . $k, [
+            'type' => 'string', 'single' => true, 'show_in_rest' => true,
+            'auth_callback' => function () { return current_user_can('manage_options'); },
+        ]);
+    }
 }
 
 // ============================================================
