@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilan dysphasie en ligne — Orthophoniste 150€/48h | Logopsi Études</title>
-    <meta name="description" content="Bilan orthophonique pour la dysphasie en ligne — 150€, rendez-vous sous 48h. Orthophonistes diplômés d'État, partout en France.">
+    <title>Dysphasie Enfant – Bilan &amp; Rééducation Orthophonique</title>
+    <meta name="description" content="Votre enfant présente un trouble du langage oral ? Découvrez les symptômes de la dysphasie (TDL), le diagnostic et l&#x27;accompagnement orthophonique en ligne.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -41,6 +41,7 @@
 <link rel="icon" type="image/png" href="/wp-content/plugins/logopsi-deployer/admin/favicon.png">
 <link rel="shortcut icon" href="/wp-content/plugins/logopsi-deployer/admin/favicon.ico">
 <link rel="apple-touch-icon" href="/wp-content/plugins/logopsi-deployer/admin/favicon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quelle est la différence exacte entre un retard de langage et une dysphasie ?", "acceptedAnswer": {"@type": "Answer", "text": "Un retard de langage simple se résorbe généralement avec le temps et une stimulation adaptée, sans intervention spécialisée prolongée. La dysphasie, elle, est un trouble structurel et durable qui ne se rattrape pas spontanément et nécessite une rééducation orthophonique soutenue."}}, {"@type": "Question", "name": "L'utilisation des écrans peut-elle être une cause du trouble ?", "acceptedAnswer": {"@type": "Answer", "text": "Une exposition excessive aux écrans peut appauvrir l'environnement langagier et retarder l'apprentissage du langage, mais elle n'est pas reconnue comme une cause de la dysphasie elle-même, qui reste un trouble neurodéveloppemental indépendant des habitudes d'écran."}}, {"@type": "Question", "name": "Existe-t-il une composante génétique ou héréditaire démontrée ?", "acceptedAnswer": {"@type": "Answer", "text": "Une composante génétique est aujourd'hui documentée par la recherche : l'origine du trouble est en partie héréditaire, et il n'est pas rare de retrouver des antécédents de troubles du langage dans la famille d'un enfant dysphasique."}}, {"@type": "Question", "name": "Comment se déroule la scolarisation en école maternelle pour ces élèves ?", "acceptedAnswer": {"@type": "Answer", "text": "La scolarisation en maternelle peut nécessiter des adaptations dès le repérage des premiers signes, notamment en cas de situation de handicap reconnue, avec un accompagnement renforcé pour soutenir la compréhension des consignes et les interactions avec les autres enfants."}}, {"@type": "Question", "name": "Quel est le rôle de l'association Avenir Dysphasie France (AAD) ?", "acceptedAnswer": {"@type": "Answer", "text": "L'association Avenir Dysphasie France (AAD France) accompagne les familles concernées en diffusant de l'information fiable sur le trouble, en créant du lien entre parents et en relayant les avancées de la recherche sur la dysphasie."}}, {"@type": "Question", "name": "Peut-on observer des signes du spectre de l'autisme associés ?", "acceptedAnswer": {"@type": "Answer", "text": "Certains enfants présentent des signes qui interrogent un possible trouble du spectre de l'autisme en parallèle du trouble du langage, ce qui nécessite un diagnostic différentiel rigoureux. Notre page dédiée au [bilan TSA en ligne](https://logopsietudes.com/orthophonie/tsa/) détaille le protocole d'évaluation dans ce cas de figure."}}, {"@type": "Question", "name": "Quels aménagements spécifiques demander pour l'apprentissage de la lecture ?", "acceptedAnswer": {"@type": "Answer", "text": "Pour soutenir l'apprentissage de la lecture, il est possible de demander un temps supplémentaire, des supports adaptés et un renforcement du lien entre lecture et langage oral, en lien avec l'équipe pédagogique de l'école. Pour un accompagnement global, retrouvez l'ensemble de nos prestations sur la [page d'accueil](https://logopsietudes.com/)."}}]}</script>
 </head>
 <body class="font-sans text-gray-900 bg-light min-h-screen">
 
@@ -215,9 +216,7 @@
                 <span class="text-gray-900 font-medium">Dysphasie</span>
             </div>
 
-            <h1 class="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-gray-900">
-                Orthophoniste spécialisé dans la <span class="text-primary">Dysphasie</span> en ligne
-            </h1>
+            <h1 class="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-gray-900">Le trouble développemental du langage ou dysphasie chez l'enfant</h1>
             <p class="text-lg text-gray-700 leading-relaxed">
                 Votre enfant a du mal à construire des phrases, à trouver ses mots ou à comprendre les consignes ? La dysphasie est un trouble sévère du langage oral. Nos orthophonistes experts l'accompagnent en ligne avec des méthodes éprouvées.
             </p>
@@ -254,183 +253,30 @@
             </div>
         </div>
     </section>
-
-    <!-- SIMULATOR MODAL -->
-    <div id="simulator-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm modal-enter">
-        <div class="bg-white rounded-3xl w-full max-w-lg shadow-2xl overflow-hidden relative">
-            <button onclick="closeModal()" class="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-800 hover:bg-gray-100 rounded-full transition-colors">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-            <div class="p-8">
-                <div id="quiz-container">
-                    <div class="mb-8">
-                        <span id="quiz-step-text" class="text-sm font-bold text-primary uppercase tracking-wider">Question 1 sur 3</span>
-                        <div class="w-full bg-gray-100 h-2 rounded-full mt-3">
-                            <div id="quiz-progress-bar" class="bg-primary h-2 rounded-full transition-all duration-300" style="width: 0%;"></div>
-                        </div>
-                    </div>
-                    <h3 id="quiz-question-text" class="text-2xl font-bold text-gray-900 mb-8 leading-tight">Question...</h3>
-                    <div id="quiz-options-container" class="space-y-3"></div>
-                </div>
-                <div id="result-container" class="hidden text-center py-6">
-                    <div class="w-16 h-16 bg-primary/20 text-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i data-lucide="check-circle-2" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Test terminé</h3>
-                    <p id="result-text" class="text-gray-600 mb-8"></p>
-                    <button type="button" onclick="closeModal(); openBookingModal();" class="w-full bg-primary text-white font-bold py-4 rounded-xl hover:bg-primaryHover transition-colors shadow-lg">
-                        Prendre rendez-vous
-                    </button>
-                    <button onclick="closeModal()" class="w-full mt-4 text-gray-500 font-medium hover:text-gray-800">Fermer</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SYMPTOMES SECTION -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div class="space-y-8">
-                <h2 class="text-3xl font-bold text-gray-900">Comment reconnaître les signes de la dysphasie ?</h2>
-                <p class="text-gray-600 leading-relaxed">La dysphasie est un trouble structurel et durable du développement du langage oral. Elle affecte l'expression, la compréhension ou les deux. Voici les signes qui doivent alerter :</p>
-                <ul class="space-y-4">
-                    <li class="flex items-start gap-3">
-                        <div class="mt-1 bg-red-100 text-red-500 rounded-full p-1"><i data-lucide="message-circle" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>Retard de langage sévère :</strong> L'enfant parle tard, utilise peu de mots et ses phrases restent très courtes ou agrammatiques au-delà de 4 ans.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <div class="mt-1 bg-orange-100 text-orange-500 rounded-full p-1"><i data-lucide="ear" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>Difficultés de compréhension :</strong> L'enfant ne comprend pas les consignes complexes, confond les mots ou a du mal à suivre une conversation.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <div class="mt-1 bg-purple-100 text-purple-500 rounded-full p-1"><i data-lucide="users" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>Impact sur la socialisation :</strong> Les difficultés de communication entraînent un repli sur soi, des frustrations ou des comportements de substitution.</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="bg-light p-8 md:p-12 rounded-3xl border border-gray-200">
-                <h3 class="text-2xl font-bold mb-6 text-gray-900">Notre approche de rééducation</h3>
-                <p class="text-gray-600 mb-6 text-sm leading-relaxed">Nous utilisons une approche multimodale combinant supports visuels (pictogrammes, images), gestes de communication (Makaton) et stimulation langagière intensive. Chaque séance est structurée pour développer le vocabulaire, la syntaxe et la pragmatique du langage, en s'appuyant sur les centres d'intérêt de l'enfant.</p>
-                <button type="button" onclick="openSeanceModal()" class="w-full bg-white border-2 border-primary text-primary font-bold py-3 rounded-full hover:bg-primary hover:text-white transition-colors">
-                    Découvrir le déroulement d'une séance
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- A PROPOS SECTION -->
-    <section class="py-20 px-6 bg-light border-t border-gray-100">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div class="order-2 md:order-1 relative">
-                <div class="absolute -inset-4 bg-primary/10 rounded-3xl transform -rotate-3"></div>
-                <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Équipe Logopsi Études" class="relative rounded-2xl shadow-lg w-full object-cover h-[400px]">
-            </div>
-            <div class="order-1 md:order-2 space-y-6">
-                <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
-                    <i data-lucide="award" class="w-4 h-4"></i> Professionnels diplômés
-                </div>
-                <h2 class="text-3xl font-bold text-gray-900">Pourquoi choisir Logopsi Études ?</h2>
-                <p class="text-gray-600 leading-relaxed">Chez Logopsi Études, nous réunissons des orthophonistes diplômés d'État, formés aux dernières avancées scientifiques. Notre plateforme vous connecte avec le bon professionnel en moins de 48h, partout en France.</p>
-                <div class="space-y-4">
-                    <div class="flex items-start gap-3">
-                        <div class="mt-1 bg-primary/10 text-primary rounded-full p-1"><i data-lucide="check" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>Rendez-vous sous 48h</strong> — Plus de listes d'attente interminables</span>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <div class="mt-1 bg-primary/10 text-primary rounded-full p-1"><i data-lucide="check" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>Séances remboursables</strong> — Éligible Sécurité sociale et mutuelles</span>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <div class="mt-1 bg-primary/10 text-primary rounded-full p-1"><i data-lucide="check" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>100% en ligne</strong> — Depuis chez vous, sans déplacement</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CITY LINKS -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">Consultez un orthophoniste près de chez vous</h2>
-                <p class="text-gray-600 mt-3">Nos orthophonistes sont disponibles en ligne, partout en France.</p>
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-                    <a href="villes/dysphasie-paris.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
-                        </div>
-                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Paris</span>
-                    </a>
-                    <a href="villes/dysphasie-marseille.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
-                        </div>
-                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Marseille</span>
-                    </a>
-                    <a href="villes/dysphasie-lyon.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
-                        </div>
-                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Lyon</span>
-                    </a>
-                    <a href="villes/dysphasie-toulouse.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
-                        </div>
-                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Toulouse</span>
-                    </a>
-                    <a href="villes/dysphasie-nice.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
-                        </div>
-                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Nice</span>
-                    </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="py-20 bg-light">
-        <div class="max-w-3xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">Questions fréquentes</h2>
-                <p class="text-gray-600 mt-3">Tout ce que vous devez savoir.</p>
-            </div>
-            <div class="space-y-4">
-                <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
-                        <span class="font-semibold text-gray-900 pr-4">Quelle est la différence entre retard de langage et dysphasie ?</span>
-                        <i data-lucide="plus" class="w-5 h-5 text-primary flex-shrink-0 faq-icon transition-transform"></i>
-                    </button>
-                    <div class="faq-content px-6 pb-0">
-                        <p class="text-gray-600 leading-relaxed pb-6">Le retard de langage est un décalage temporel qui se rattrape avec le temps, tandis que la dysphasie est un trouble structurel et durable du langage. La dysphasie nécessite une rééducation orthophonique intensive et prolongée.</p>
-                    </div>
-                </div>
-                <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
-                        <span class="font-semibold text-gray-900 pr-4">La dysphasie affecte-t-elle l'intelligence ?</span>
-                        <i data-lucide="plus" class="w-5 h-5 text-primary flex-shrink-0 faq-icon transition-transform"></i>
-                    </button>
-                    <div class="faq-content px-6 pb-0">
-                        <p class="text-gray-600 leading-relaxed pb-6">Non. La dysphasie est un trouble spécifique du langage qui n'affecte pas les capacités intellectuelles. L'enfant dysphasique peut avoir un QI normal voire supérieur, mais ses difficultés langagières peuvent masquer ses compétences.</p>
-                    </div>
-                </div>
-                <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
-                        <span class="font-semibold text-gray-900 pr-4">Combien de temps dure la rééducation ?</span>
-                        <i data-lucide="plus" class="w-5 h-5 text-primary flex-shrink-0 faq-icon transition-transform"></i>
-                    </button>
-                    <div class="faq-content px-6 pb-0">
-                        <p class="text-gray-600 leading-relaxed pb-6">La rééducation de la dysphasie est généralement longue (plusieurs années) car c'est un trouble structurel. L'intensité et la fréquence des séances sont adaptées à chaque enfant. Les progrès sont réels mais graduels.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
+<section class="py-14 px-6 bg-white border-t border-gray-100"><div class="max-w-4xl mx-auto text-gray-600 leading-relaxed text-lg space-y-4"><p>Lorsqu'un enfant accumule un retard important dans l'acquisition du langage, sans que cela s'explique par un simple manque de stimulation, on parle de dysphasie, ou trouble développemental du langage. Ce trouble touche la construction même de la parole et retentit directement sur les apprentissages scolaires. Comme pour toute suspicion de difficulté durable, la première étape reste un <a href="https://logopsietudes.com/orthophonie/" class="text-primary font-semibold hover:underline">bilan orthophonique en ligne</a>, qui permet de poser un diagnostic fiable et d'orienter l'enfant vers une prise en charge adaptée à son profil.</p></div></section>
+<section class="py-16 px-6 bg-light border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Qu'est-ce que la dysphasie ?</h2><div class="text-gray-600 leading-relaxed text-lg space-y-4"><p>La dysphasie est un trouble primaire du langage, c'est-à-dire un trouble spécifique du langage qui n'est la conséquence ni d'une déficience auditive, ni d'un déficit intellectuel, ni d'une carence éducative. Les orthophonistes et chercheurs privilégient aujourd'hui le terme scientifique de TDL (trouble développemental du langage), qui souligne mieux l'origine développementale du trouble. Chez l'enfant dysphasique, la construction du mot, de la phrase et du discours se heurte à une restriction durable des capacités langagières, bien au-delà d'un simple retard qui se rattraperait spontanément avec le temps.</p>
+<p><strong>Définition.</strong> Le trouble développemental du langage (dysphasie) est une atteinte durable et spécifique du développement du langage oral, qui touche l'expression et/ou la compréhension, et dont la manifestation persiste au-delà de l'âge où l'on attend normalement une acquisition langagière stabilisée.</p></div></div></section>
+<section class="py-16 px-6 bg-white border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Comment se manifeste la dysphasie chez l'enfant ?</h2><div class="text-gray-600 leading-relaxed text-lg space-y-4"><p>La dysphasie chez l'enfant se manifeste différemment selon que le trouble touche la production de la parole ou sa compréhension. Le tableau clinique ci-dessous distingue ces deux composantes.</p>
+<div class="overflow-x-auto my-6"><table class="w-full text-sm border border-gray-100 rounded-xl bg-white"><thead class="bg-light"><th class="text-left font-semibold text-gray-900 px-4 py-3 border-b border-gray-200">Composante</th><th class="text-left font-semibold text-gray-900 px-4 py-3 border-b border-gray-200">Manifestations observées</th></thead><tbody><tr class="border-b border-gray-100 align-top"><td class="px-4 py-3 text-gray-600">Composante expressive</td><td class="px-4 py-3 text-gray-600">Manque du mot fréquent, paroles indistinctes, phrases courtes et à l'expression simpliste, troubles phonologiques et syntaxiques marqués, difficulté à organiser un discours suivi</td></tr><tr class="border-b border-gray-100 align-top"><td class="px-4 py-3 text-gray-600">Composante réceptive</td><td class="px-4 py-3 text-gray-600">Compréhension altérée des consignes complexes, difficulté à suivre une conversation à plusieurs interlocuteurs, besoin de reformulation ou de répétition fréquent</td></tr></tbody></table></div>
+<p>Ces deux composantes, expressive et réceptive, peuvent être associées ou toucher l'enfant de façon isolée, ce qui explique la grande variabilité des tableaux cliniques d'un enfant à l'autre.</p></div></div></section>
+<section class="py-16 px-6 bg-light border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Quels sont les symptômes de la dysphasie ?</h2><div class="text-gray-600 leading-relaxed text-lg space-y-4"><p>Les symptômes de la dysphasie touchent aussi bien l'expression orale que la compréhension du langage. Voici les principaux signes qui doivent alerter les parents :</p>
+<ul class="space-y-2 my-4 text-gray-700"><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Retard de langage important par rapport aux enfants du même âge</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Trouble phonologique syntaxique persistant (déformation ou substitution répétée des sons)</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Parole indistincte, difficile à comprendre pour un interlocuteur non familier</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Vocabulaire pauvre et phrases très courtes pour l'âge de l'enfant</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Difficultés de compréhension des consignes orales, même simples</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Dysphasie expressive marquée : l'enfant sait ce qu'il veut dire mais n'arrive pas à le formuler</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Troubles du langage qui persistent malgré une stimulation régulière à la maison</span></li></ul>
+<p>Ces difficultés langagières s'accompagnent parfois de troubles associés touchant la lecture : le lien entre lecture et langage est en effet étroit, et une vigilance particulière doit être portée à l'entrée dans l'apprentissage de l'écrit.</p></div></div></section>
+<section class="py-16 px-6 bg-white border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Quelles sont les causes de la dysphasie ?</h2><div class="text-gray-600 leading-relaxed text-lg space-y-4"><p>La dysphasie est aujourd'hui reconnue comme un trouble neurodéveloppemental, c'est-à-dire lié à un fonctionnement particulier du cerveau dans le traitement du langage. Plusieurs facteurs sont évoqués par la recherche neuropsychologique : une composante génétique, des particularités du développement cognitif précoce, ou encore des variations dans l'organisation cérébrale des zones dédiées au langage. L'origine du trouble reste multifactorielle et propre à chaque enfant.</p>
+<p>Il est aujourd'hui clairement établi que la dysphasie n'est ni la conséquence d'un manque d'exposition au langage, ni le résultat d'un environnement familial ou éducatif insuffisant. Aucun élément ne permet de rattacher ce trouble neurodéveloppemental à un facteur purement éducatif.</p></div></div></section>
+<section class="py-16 px-6 bg-light border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Comment diagnostiquer la dysphasie ?</h2><div class="text-gray-600 leading-relaxed text-lg space-y-4"><p>Le diagnostic de la dysphasie repose sur un dépistage précoce suivi d'un bilan orthophonique approfondi. Voici les étapes de ce protocole d'évaluation :</p>
+<ol class="list-decimal list-inside space-y-2 my-4 text-gray-700 marker:text-primary marker:font-bold"><li>Repérage initial par la famille, la crèche ou l'école, souvent déclenché par un retard de langage manifeste chez l'enfant.</li><li>Consultation médicale pour écarter un trouble auditif ou toute autre cause organique aux symptômes observés.</li><li>Bilan orthophonique complet, comprenant une évaluation des compétences en expression et en compréhension du langage oral.</li><li>Bilan neuropsychologique complémentaire, si nécessaire, pour affiner le diagnostic différentiel avec d'autres troubles du développement.</li><li>Rédaction du compte rendu final, synthétisant les résultats et les préconisations de rééducation.</li></ol>
+<p>Une fois le diagnostic posé, la prise de rendez-vous pour la rééducation peut se faire localement : consultez nos pages dédiées au <a href="https://logopsietudes.com/orthophonie/villes/dysphasie-lyon/" class="text-primary font-semibold hover:underline">bilan dysphasie à Lyon</a> ou au <a href="https://logopsietudes.com/orthophonie/villes/dysphasie-nice/" class="text-primary font-semibold hover:underline">bilan dysphasie à Nice</a> pour trouver un accompagnement proche de chez vous.</p></div></div></section>
+<section class="py-16 px-6 bg-white border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Quel est le traitement de la dysphasie ?</h2><div class="text-gray-600 leading-relaxed text-lg space-y-4"><p>Le traitement de la dysphasie repose sur une rééducation orthophonique intensive et régulière, adaptée au domaine du langage le plus touché chez l'enfant. La méthode combine des exercices ciblés sur la phonologie, le vocabulaire et la syntaxe, ainsi que des activités de mise en situation de communication concrète. La fréquence des séances et leur durée sont ajustées par l'orthophoniste selon la sévérité du trouble et l'évolution de l'enfant.</p>
+<p>Ce trouble du langage étant fréquemment associé à des difficultés dans d'autres domaines cognitifs, notamment le calcul, il est utile de consulter également notre page consacrée à la <a href="https://logopsietudes.com/orthophonie/dyscalculie/" class="text-primary font-semibold hover:underline">prise en charge de la dyscalculie</a>, souvent comorbide chez ces enfants.</p></div></div></section>
+<section class="py-16 px-6 bg-light border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Comment aider un enfant dysphasique ?</h2><div class="text-gray-600 leading-relaxed text-lg space-y-4"><p>Aider un enfant dysphasique au quotidien passe par des ajustements simples dans la vie de famille, en complément de la rééducation orthophonique suivie en cabinet. Ce soutien à la maison est un vrai levier pour renforcer les progrès observés en séance.</p>
+<ul class="space-y-2 my-4 text-gray-700"><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Utiliser des supports visuels (pictogrammes, images séquentielles) pour appuyer la communication orale</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Privilégier des phrases courtes et un débit de parole ralenti lorsque l'on s'adresse à l'enfant</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Proposer des jeux d'association et de catégorisation pour enrichir le vocabulaire de façon ludique</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Laisser à l'enfant le temps de formuler sa pensée sans compléter systématiquement ses phrases à sa place</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Valoriser chaque tentative de communication, même imparfaite, pour encourager la prise de parole</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Maintenir un lien régulier avec l'orthophoniste pour adapter le soutien apporté à la maison</span></li></ul></div></div></section>
+<section class="py-16 px-6 bg-white border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Dysphasie et scolarité, quel impact ?</h2><div class="text-gray-600 leading-relaxed text-lg space-y-4"><p>La dysphasie a un impact direct sur la scolarisation de l'enfant, dès l'école maternelle. Les difficultés de compréhension et d'expression orale peuvent freiner l'entrée dans les apprentissages, en particulier la lecture, et isoler l'élève au sein de la classe si aucun aménagement n'est mis en place.</p>
+<p><strong>Aménagements possibles.</strong> Lorsque le trouble du langage a un retentissement significatif sur la scolarité, un Plan d'Accompagnement Personnalisé (PAP) peut être mis en place avec l'équipe pédagogique. Dans les situations les plus marquées, un dossier de compensation peut être déposé pour faire reconnaître une situation de handicap et bénéficier d'un accompagnement renforcé en classe.</p>
+<p>Au-delà du langage oral, certains enfants dysphasiques bénéficient également d'un accompagnement pédagogique ciblé sur des matières spécifiques ; voir par exemple notre <a href="https://logopsietudes.com/soutien-scolaire/anglais/" class="text-primary font-semibold hover:underline">soutien en anglais</a> pour un accompagnement personnalisé adapté à ces élèves.</p></div></div></section>
+<section class="py-16 px-6 bg-light border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Dysphasie et estime de soi, quel lien ?</h2><div class="text-gray-600 leading-relaxed text-lg space-y-4"><p>Le lien entre dysphasie et estime de soi est fort : ne pas parvenir à se faire comprendre génère une frustration importante chez l'enfant dysphasique, qui peut se replier sur lui-même ou développer une appréhension de la relation sociale. La communication étant au cœur des interactions quotidiennes, ce trouble touche aussi bien la vie scolaire que la vie familiale et amicale, avec un impact qui peut se prolonger sur l'avenir si aucun accompagnement n'est proposé.</p>
+<p>Cette charge émotionnelle peut également retentir sur le sommeil de l'enfant ; un <a href="https://logopsietudes.com/psychologie/troubles-sommeil/" class="text-primary font-semibold hover:underline">bilan Troubles du sommeil en ligne</a> permet, si nécessaire, d'objectiver ce lien entre difficultés de communication et repos perturbé.</p></div></div></section>
+<section class="py-16 px-6 bg-light border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Questions fréquentes sur le trouble développemental du langage (FAQ)</h2><div class="space-y-4"><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">Quelle est la différence exacte entre un retard de langage et une dysphasie ?</h3><p class="text-gray-600 leading-relaxed">Un retard de langage simple se résorbe généralement avec le temps et une stimulation adaptée, sans intervention spécialisée prolongée. La dysphasie, elle, est un trouble structurel et durable qui ne se rattrape pas spontanément et nécessite une rééducation orthophonique soutenue.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">L'utilisation des écrans peut-elle être une cause du trouble ?</h3><p class="text-gray-600 leading-relaxed">Une exposition excessive aux écrans peut appauvrir l'environnement langagier et retarder l'apprentissage du langage, mais elle n'est pas reconnue comme une cause de la dysphasie elle-même, qui reste un trouble neurodéveloppemental indépendant des habitudes d'écran.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">Existe-t-il une composante génétique ou héréditaire démontrée ?</h3><p class="text-gray-600 leading-relaxed">Une composante génétique est aujourd'hui documentée par la recherche : l'origine du trouble est en partie héréditaire, et il n'est pas rare de retrouver des antécédents de troubles du langage dans la famille d'un enfant dysphasique.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">Comment se déroule la scolarisation en école maternelle pour ces élèves ?</h3><p class="text-gray-600 leading-relaxed">La scolarisation en maternelle peut nécessiter des adaptations dès le repérage des premiers signes, notamment en cas de situation de handicap reconnue, avec un accompagnement renforcé pour soutenir la compréhension des consignes et les interactions avec les autres enfants.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">Quel est le rôle de l'association Avenir Dysphasie France (AAD) ?</h3><p class="text-gray-600 leading-relaxed">L'association Avenir Dysphasie France (AAD France) accompagne les familles concernées en diffusant de l'information fiable sur le trouble, en créant du lien entre parents et en relayant les avancées de la recherche sur la dysphasie.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">Peut-on observer des signes du spectre de l'autisme associés ?</h3><p class="text-gray-600 leading-relaxed">Certains enfants présentent des signes qui interrogent un possible trouble du spectre de l'autisme en parallèle du trouble du langage, ce qui nécessite un diagnostic différentiel rigoureux. Notre page dédiée au <a href="https://logopsietudes.com/orthophonie/tsa/" class="text-primary font-semibold hover:underline">bilan TSA en ligne</a> détaille le protocole d'évaluation dans ce cas de figure.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">Quels aménagements spécifiques demander pour l'apprentissage de la lecture ?</h3><p class="text-gray-600 leading-relaxed">Pour soutenir l'apprentissage de la lecture, il est possible de demander un temps supplémentaire, des supports adaptés et un renforcement du lien entre lecture et langage oral, en lien avec l'équipe pédagogique de l'école. Pour un accompagnement global, retrouvez l'ensemble de nos prestations sur la <a href="https://logopsietudes.com/" class="text-primary font-semibold hover:underline">page d'accueil</a>.</p></div></div></div></section>
     <section class="py-20">
         <div class="max-w-4xl mx-auto px-6">
             <div class="bg-primary rounded-3xl p-12 text-center text-white relative overflow-hidden">
