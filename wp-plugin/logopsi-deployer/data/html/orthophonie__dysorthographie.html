@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilan dysorthographie en ligne — Orthophoniste 150€/48h | Logopsi Études</title>
-    <meta name="description" content="Bilan orthophonique pour la dysorthographie en ligne — 150€, rendez-vous sous 48h. Orthophonistes diplômés d'État, partout en France.">
+    <title>Bilan dysorthographie : évaluation, test et diagnostic | Logopsi Études</title>
+    <meta name="description" content="Bilan dysorthographie en ligne : évaluation, test et diagnostic. Signes, tests, étapes et accompagnement. RDV sous 48h — 150€.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -36,6 +36,12 @@
         .mega-menu { display: none; }
         .mega-menu.active { display: block; }
     </style>
+
+<!-- logopsi-favicon -->
+<link rel="icon" type="image/png" href="/wp-content/plugins/logopsi-deployer/admin/favicon.png">
+<link rel="shortcut icon" href="/wp-content/plugins/logopsi-deployer/admin/favicon.ico">
+<link rel="apple-touch-icon" href="/wp-content/plugins/logopsi-deployer/admin/favicon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quelle est la différence entre un simple retard et un trouble dys ?", "acceptedAnswer": {"@type": "Answer", "text": "Un simple retard se résorbe avec le temps ; la dysorthographie est un trouble durable, comme la dyslexie, avec une composante en partie génétique confirmée par la recherche."}}, {"@type": "Question", "name": "Comment fonctionne le remboursement par l'Assurance Maladie ?", "acceptedAnswer": {"@type": "Answer", "text": "Les séances d'orthophonie sur ordonnance sont prises en charge par l'Assurance Maladie (suivi sur votre compte Ameli). Le bilan en ligne Logopsi est un service privé : vérifiez un éventuel forfait auprès de votre mutuelle."}}, {"@type": "Question", "name": "Un enfant dyslexique est-il toujours dysorthographique ?", "acceptedAnswer": {"@type": "Answer", "text": "Pas systématiquement, mais les deux sont très souvent associés car ils partagent la même base phonologique : un enfant qui déchiffre difficilement, syllabe par syllabe, à voix haute, présente souvent aussi des difficultés d'orthographe."}}, {"@type": "Question", "name": "Quels sont les liens avec le haut potentiel ou le syndrome d'Asperger ?", "acceptedAnswer": {"@type": "Answer", "text": "Un haut potentiel intellectuel ou un trouble du spectre (syndrome d'Asperger) peuvent coexister avec une dysorthographie ; la précocité masque parfois le trouble selon la personnalité de l'enfant."}}, {"@type": "Question", "name": "Où trouver des structures d'aide comme la PMI ?", "acceptedAnswer": {"@type": "Answer", "text": "La Protection Maternelle et Infantile (PMI), les CMPP et les centres de référence accompagnent gratuitement ; le site internet de votre département les recense, dès la maternelle."}}, {"@type": "Question", "name": "Quel est l'apport des travaux de l'Inserm (2007) ?", "acceptedAnswer": {"@type": "Answer", "text": "L'expertise collective de l'Inserm (2007) a synthétisé les données universitaires et publié des recommandations reprises par la HAS ; les fédérations de patients en diffusent l'article."}}, {"@type": "Question", "name": "Comment gérer l'impact affectif au quotidien ?", "acceptedAnswer": {"@type": "Answer", "text": "L'impact affectif est réel : au quotidien, valorisez les efforts, dédramatisez (ce n'est pas une maladie) et maintenez des activités de réussite. L'attention des proches est essentielle."}}]}</script>
 </head>
 <body class="font-sans text-gray-900 bg-light min-h-screen">
 
@@ -43,8 +49,8 @@
     <nav class="bg-white shadow-sm sticky top-0 z-50 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="../index.html" class="flex items-center space-x-2 z-50">
-                    <img src="../logo-logopsi.png" alt="Logopsi Études" class="h-14 w-auto">
+                <a href="../../index.html" class="flex items-center space-x-2 z-50">
+                    <img src="../../logo-logopsi.png" alt="Logopsi Études" class="h-14 w-auto">
                 </a>
 
                 <div class="hidden lg:flex items-center space-x-1">
@@ -63,10 +69,11 @@
                             Soutien Scolaire <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </button>
                     </div>
-                    <a href="../tarifs.html" class="px-4 py-2 font-semibold text-[15px] text-gray-800 hover:text-primary transition-colors">Tarifs</a>
+                    <a href="../../tarifs.html" class="px-4 py-2 font-semibold text-[15px] text-gray-800 hover:text-primary transition-colors">Tarifs</a>
                 </div>
 
                 <div class="hidden lg:flex items-center gap-4">
+                    <button type="button" onclick="logopsiToggleLang()" id="lang-toggle" aria-label="Changer de langue (Français / Español)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gray-200 bg-white text-gray-700 text-sm font-semibold hover:bg-primary hover:text-white hover:border-primary shadow-sm transition-all mr-2"><i data-lucide="globe" class="w-4 h-4"></i><span id="lang-toggle-label" class="lang-toggle-label">ES</span></button>
                     <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="text-[15px] font-semibold text-gray-700 hover:text-primary transition-colors">
                         Connexion
                     </a>
@@ -91,27 +98,27 @@
                 <div class="col-span-6 pr-6">
                     <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Explorer par besoin</h4>
                     <ul class="grid grid-cols-2 gap-x-6 gap-y-2.5">
-                        <li><a href="../orthophonie/dyslexie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dyslexie</a></li>
-                        <li><a href="../orthophonie/dysorthographie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dysorthographie</a></li>
-                        <li><a href="../orthophonie/dyscalculie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dyscalculie</a></li>
-                        <li><a href="../orthophonie/dysphasie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dysphasie</a></li>
-                        <li><a href="../orthophonie/begaiement.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Bégaiement</a></li>
-                        <li><a href="../orthophonie/tsa.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">TSA</a></li>
-                        <li><a href="../orthophonie/oralite.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Troubles de l'oralité</a></li>
-                        <li><a href="../orthophonie/surdite.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Surdité</a></li>
-                        <li><a href="../orthophonie/paralysie-cerebrale.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Paralysie cérébrale</a></li>
-                        <li><a href="../orthophonie/fente-palatine.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Fente palatine</a></li>
-                        <li><a href="../orthophonie/trisomie-21.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Trisomie 21</a></li>
+                        <li><a href="../../orthophonie/dyslexie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dyslexie</a></li>
+                        <li><a href="../../orthophonie/dysorthographie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dysorthographie</a></li>
+                        <li><a href="../../orthophonie/dyscalculie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dyscalculie</a></li>
+                        <li><a href="../../orthophonie/dysphasie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dysphasie</a></li>
+                        <li><a href="../../orthophonie/begaiement.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Bégaiement</a></li>
+                        <li><a href="../../orthophonie/tsa.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">TSA</a></li>
+                        <li><a href="../../orthophonie/oralite.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Troubles de l'oralité</a></li>
+                        <li><a href="../../orthophonie/surdite.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Surdité</a></li>
+                        <li><a href="../../orthophonie/paralysie-cerebrale.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Paralysie cérébrale</a></li>
+                        <li><a href="../../orthophonie/fente-palatine.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Fente palatine</a></li>
+                        <li><a href="../../orthophonie/trisomie-21.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Trisomie 21</a></li>
                     </ul>
                 </div>
                 <div class="col-span-3 bg-light rounded-2xl p-5 border border-gray-100">
                     <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Par ville</h4>
                     <ul class="space-y-2.5">
-                        <li><a href="../orthophonie/villes/paris.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Paris</a></li>
-                        <li><a href="../orthophonie/villes/marseille.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Marseille</a></li>
-                        <li><a href="../orthophonie/villes/lyon.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Lyon</a></li>
-                        <li><a href="../orthophonie/villes/toulouse.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Toulouse</a></li>
-                        <li><a href="../orthophonie/villes/nice.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Nice</a></li>
+                        <li><a href="../../orthophonie/villes/paris.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Paris</a></li>
+                        <li><a href="../../orthophonie/villes/marseille.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Marseille</a></li>
+                        <li><a href="../../orthophonie/villes/lyon.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Lyon</a></li>
+                        <li><a href="../../orthophonie/villes/toulouse.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Toulouse</a></li>
+                        <li><a href="../../orthophonie/villes/nice.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Nice</a></li>
                     </ul>
                 </div>
             </div>
@@ -127,27 +134,27 @@
                 <div class="col-span-6 pr-6">
                     <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Explorer par besoin</h4>
                     <ul class="grid grid-cols-2 gap-x-6 gap-y-2.5">
-                        <li><a href="../psychologie/anxiete.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Anxiété</a></li>
-                        <li><a href="../psychologie/depression.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dépression</a></li>
-                        <li><a href="../psychologie/tdah.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">TDAH</a></li>
-                        <li><a href="../psychologie/hpi.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Haut Potentiel (HPI)</a></li>
-                        <li><a href="../psychologie/phobie-scolaire.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Phobie scolaire</a></li>
-                        <li><a href="../psychologie/harcelement-scolaire.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Harcèlement scolaire</a></li>
-                        <li><a href="../psychologie/tca.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">TCA</a></li>
-                        <li><a href="../psychologie/addictions-ecrans.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Addictions aux écrans</a></li>
-                        <li><a href="../psychologie/troubles-sommeil.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Troubles du sommeil</a></li>
-                        <li><a href="../psychologie/enuresie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Énurésie</a></li>
-                        <li><a href="../psychologie/traumatismes-deuil.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Traumatismes & deuil</a></li>
+                        <li><a href="../../psychologie/anxiete.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Anxiété</a></li>
+                        <li><a href="../../psychologie/depression.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dépression</a></li>
+                        <li><a href="../../psychologie/tdah.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">TDAH</a></li>
+                        <li><a href="../../psychologie/hpi.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Haut Potentiel (HPI)</a></li>
+                        <li><a href="../../psychologie/phobie-scolaire.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Phobie scolaire</a></li>
+                        <li><a href="../../psychologie/harcelement-scolaire.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Harcèlement scolaire</a></li>
+                        <li><a href="../../psychologie/tca.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">TCA</a></li>
+                        <li><a href="../../psychologie/addictions-ecrans.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Addictions aux écrans</a></li>
+                        <li><a href="../../psychologie/troubles-sommeil.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Troubles du sommeil</a></li>
+                        <li><a href="../../psychologie/enuresie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Énurésie</a></li>
+                        <li><a href="../../psychologie/traumatismes-deuil.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Traumatismes & deuil</a></li>
                     </ul>
                 </div>
                 <div class="col-span-3 bg-light rounded-2xl p-5 border border-gray-100">
                     <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Par ville</h4>
                     <ul class="space-y-2.5">
-                        <li><a href="../psychologie/villes/paris.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Paris</a></li>
-                        <li><a href="../psychologie/villes/marseille.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Marseille</a></li>
-                        <li><a href="../psychologie/villes/lyon.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Lyon</a></li>
-                        <li><a href="../psychologie/villes/toulouse.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Toulouse</a></li>
-                        <li><a href="../psychologie/villes/nice.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Nice</a></li>
+                        <li><a href="../../psychologie/villes/paris.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Paris</a></li>
+                        <li><a href="../../psychologie/villes/marseille.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Marseille</a></li>
+                        <li><a href="../../psychologie/villes/lyon.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Lyon</a></li>
+                        <li><a href="../../psychologie/villes/toulouse.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Toulouse</a></li>
+                        <li><a href="../../psychologie/villes/nice.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Nice</a></li>
                     </ul>
                 </div>
             </div>
@@ -163,22 +170,22 @@
                 <div class="col-span-6 pr-6">
                     <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Explorer par matière</h4>
                     <ul class="grid grid-cols-2 gap-x-6 gap-y-2.5">
-                        <li><a href="../soutien-scolaire/mathematiques/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Mathématiques</a></li>
-                        <li><a href="../soutien-scolaire/francais/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Français</a></li>
-                        <li><a href="../soutien-scolaire/anglais/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Anglais</a></li>
-                        <li><a href="../soutien-scolaire/espagnol/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Espagnol</a></li>
-                        <li><a href="../soutien-scolaire/physique-chimie/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Physique-Chimie</a></li>
-                        <li><a href="../soutien-scolaire/aide-aux-devoirs/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Aide aux devoirs</a></li>
+                        <li><a href="../../soutien-scolaire/mathematiques/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Mathématiques</a></li>
+                        <li><a href="../../soutien-scolaire/francais/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Français</a></li>
+                        <li><a href="../../soutien-scolaire/anglais/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Anglais</a></li>
+                        <li><a href="../../soutien-scolaire/espagnol/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Espagnol</a></li>
+                        <li><a href="../../soutien-scolaire/physique-chimie/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Physique-Chimie</a></li>
+                        <li><a href="../../soutien-scolaire/aide-aux-devoirs/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Aide aux devoirs</a></li>
                     </ul>
                 </div>
                 <div class="col-span-3 bg-light rounded-2xl p-5 border border-gray-100">
                     <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Par ville</h4>
                     <ul class="space-y-2.5">
-                        <li><a href="../soutien-scolaire/villes/paris.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Paris</a></li>
-                        <li><a href="../soutien-scolaire/villes/marseille.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Marseille</a></li>
-                        <li><a href="../soutien-scolaire/villes/lyon.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Lyon</a></li>
-                        <li><a href="../soutien-scolaire/villes/toulouse.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Toulouse</a></li>
-                        <li><a href="../soutien-scolaire/villes/nice.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Nice</a></li>
+                        <li><a href="../../soutien-scolaire/villes/paris.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Paris</a></li>
+                        <li><a href="../../soutien-scolaire/villes/marseille.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Marseille</a></li>
+                        <li><a href="../../soutien-scolaire/villes/lyon.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Lyon</a></li>
+                        <li><a href="../../soutien-scolaire/villes/toulouse.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Toulouse</a></li>
+                        <li><a href="../../soutien-scolaire/villes/nice.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Nice</a></li>
                     </ul>
                 </div>
             </div>
@@ -187,11 +194,11 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100">
             <div class="px-6 py-6 space-y-4">
-                <a href="../orthophonie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Orthophonie</a>
-                <a href="../psychologie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Psychologie</a>
-                <a href="../soutien-scolaire/" class="block text-gray-900 hover:text-primary font-semibold py-2">Soutien Scolaire</a>
-                <a href="../tarifs.html" class="block text-gray-900 hover:text-primary font-semibold py-2">Tarifs</a>
-                <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="block text-center font-semibold py-2 text-gray-700 hover:text-primary border-b border-gray-100">Connexion</a>
+                <a href="../../orthophonie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Orthophonie</a>
+                <a href="../../psychologie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Psychologie</a>
+                <a href="../../soutien-scolaire/" class="block text-gray-900 hover:text-primary font-semibold py-2">Soutien Scolaire</a>
+                <a href="../../tarifs.html" class="block text-gray-900 hover:text-primary font-semibold py-2">Tarifs</a>
+                <button type="button" onclick="logopsiToggleLang()" id="lang-toggle-m" class="flex items-center justify-center gap-2 mx-auto my-2 px-5 py-2 rounded-full border border-gray-200 bg-gray-50 text-gray-700 font-semibold hover:bg-primary hover:text-white hover:border-primary transition-all"><i data-lucide="globe" class="w-4 h-4"></i><span class="lang-toggle-label">ES</span></button><a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="block text-center font-semibold py-2 text-gray-700 hover:text-primary border-b border-gray-100">Connexion</a>
                 <a href="#" onclick="openBookingModal(); return false;" class="w-full bg-primary text-white font-semibold py-3 rounded-full shadow-md mt-4 block text-center">Prendre rendez-vous</a>
             </div>
         </div>
@@ -209,14 +216,10 @@
                 <span class="text-gray-900 font-medium">Dysorthographie</span>
             </div>
 
-            <h1 class="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-gray-900">
-                Orthophoniste spécialisé dans la <span class="text-primary">Dysorthographie</span> en ligne
-            </h1>
-            <p class="text-lg text-gray-700 leading-relaxed">
-                Votre enfant accumule les fautes d'orthographe malgré ses efforts ? La dysorthographie est un trouble spécifique de l'écriture. Nos orthophonistes l'accompagnent avec des stratégies adaptées pour progresser durablement.
-            </p>
+            <h1 class="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-gray-900">Bilan dysorthographie : Évaluation, test et diagnostic complet</h1>
+            <p class="text-lg text-gray-700 leading-relaxed">Un bilan orthophonique complet pour évaluer, tester et diagnostiquer la dysorthographie. En ligne par un orthophoniste, premier rendez-vous sous 48h — 150&nbsp;€.</p>
             <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                <button class="bg-primary text-white font-semibold px-8 py-4 rounded-full hover:bg-primaryHover transition-colors shadow-lg flex items-center justify-center gap-2">
+                <button class="bg-primary text-white font-semibold px-8 py-4 rounded-full hover:bg-primaryHover transition-colors shadow-lg flex items-center justify-center gap-2" onclick="openBookingModal()">
                     Réserver mon bilan <i data-lucide="arrow-right" class="w-5 h-5"></i>
                 </button>
                 <button onclick="openModal()" class="bg-white text-gray-900 border-2 border-gray-200 font-semibold px-8 py-4 rounded-full hover:border-primary hover:text-primary transition-colors flex items-center justify-center">
@@ -282,149 +285,15 @@
     </div>
 
     <!-- SYMPTOMES SECTION -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div class="space-y-8">
-                <h2 class="text-3xl font-bold text-gray-900">Comment reconnaître les signes de la dysorthographie ?</h2>
-                <p class="text-gray-600 leading-relaxed">La dysorthographie est un trouble persistant de l'acquisition et de la maîtrise de l'orthographe. Elle accompagne souvent la dyslexie mais peut exister de manière isolée. Voici les signes à surveiller :</p>
-                <ul class="space-y-4">
-                    <li class="flex items-start gap-3">
-                        <div class="mt-1 bg-red-100 text-red-500 rounded-full p-1"><i data-lucide="pencil" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>Fautes d'orthographe persistantes :</strong> Erreurs fréquentes sur les mots courants, oubli de lettres, ajouts ou inversions dans les mots.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <div class="mt-1 bg-orange-100 text-orange-500 rounded-full p-1"><i data-lucide="copy" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>Difficultés en copie et dictée :</strong> L'enfant peine à recopier un texte sans erreurs et la dictée est particulièrement difficile.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <div class="mt-1 bg-purple-100 text-purple-500 rounded-full p-1"><i data-lucide="brain" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>Effort disproportionné :</strong> L'enfant se concentre tellement sur l'orthographe qu'il perd le fil de sa pensée à l'écrit.</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="bg-light p-8 md:p-12 rounded-3xl border border-gray-200">
-                <h3 class="text-2xl font-bold mb-6 text-gray-900">Notre approche de rééducation</h3>
-                <p class="text-gray-600 mb-6 text-sm leading-relaxed">Nos séances ciblent la mémorisation orthographique par des techniques multisensorielles : visualisation des mots, épellation rythmée, cartes mentales et exercices informatisés. Nous renforçons les règles grammaticales par le jeu et la manipulation pour une acquisition durable.</p>
-                <button class="w-full bg-white border-2 border-primary text-primary font-bold py-3 rounded-full hover:bg-primary hover:text-white transition-colors">
-                    Découvrir le déroulement d'une séance
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- A PROPOS SECTION -->
-    <section class="py-20 px-6 bg-light border-t border-gray-100">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div class="order-2 md:order-1 relative">
-                <div class="absolute -inset-4 bg-primary/10 rounded-3xl transform -rotate-3"></div>
-                <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Équipe Logopsi Études" class="relative rounded-2xl shadow-lg w-full object-cover h-[400px]">
-            </div>
-            <div class="order-1 md:order-2 space-y-6">
-                <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
-                    <i data-lucide="award" class="w-4 h-4"></i> Professionnels diplômés
-                </div>
-                <h2 class="text-3xl font-bold text-gray-900">Pourquoi choisir Logopsi Études ?</h2>
-                <p class="text-gray-600 leading-relaxed">Chez Logopsi Études, nous réunissons des orthophonistes diplômés d'État, formés aux dernières avancées scientifiques. Notre plateforme vous connecte avec le bon professionnel en moins de 48h, partout en France.</p>
-                <div class="space-y-4">
-                    <div class="flex items-start gap-3">
-                        <div class="mt-1 bg-primary/10 text-primary rounded-full p-1"><i data-lucide="check" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>Rendez-vous sous 48h</strong> — Plus de listes d'attente interminables</span>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <div class="mt-1 bg-primary/10 text-primary rounded-full p-1"><i data-lucide="check" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>Séances remboursables</strong> — Éligible Sécurité sociale et mutuelles</span>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <div class="mt-1 bg-primary/10 text-primary rounded-full p-1"><i data-lucide="check" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>100% en ligne</strong> — Depuis chez vous, sans déplacement</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CITY LINKS -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">Consultez un orthophoniste près de chez vous</h2>
-                <p class="text-gray-600 mt-3">Nos orthophonistes sont disponibles en ligne, partout en France.</p>
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-                    <a href="villes/dysorthographie-paris.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
-                        </div>
-                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Paris</span>
-                    </a>
-                    <a href="villes/dysorthographie-marseille.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
-                        </div>
-                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Marseille</span>
-                    </a>
-                    <a href="villes/dysorthographie-lyon.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
-                        </div>
-                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Lyon</span>
-                    </a>
-                    <a href="villes/dysorthographie-toulouse.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
-                        </div>
-                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Toulouse</span>
-                    </a>
-                    <a href="villes/dysorthographie-nice.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
-                        </div>
-                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Nice</span>
-                    </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="py-20 bg-light">
-        <div class="max-w-3xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">Questions fréquentes</h2>
-                <p class="text-gray-600 mt-3">Tout ce que vous devez savoir.</p>
-            </div>
-            <div class="space-y-4">
-                <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
-                        <span class="font-semibold text-gray-900 pr-4">Quelle est la différence entre dysorthographie et dyslexie ?</span>
-                        <i data-lucide="plus" class="w-5 h-5 text-primary flex-shrink-0 faq-icon transition-transform"></i>
-                    </button>
-                    <div class="faq-content px-6 pb-0">
-                        <p class="text-gray-600 leading-relaxed pb-6">La dyslexie concerne la lecture tandis que la dysorthographie touche l'écriture et l'orthographe. Les deux troubles sont souvent associés mais peuvent exister indépendamment. Un enfant peut être dysorthographique sans être dyslexique.</p>
-                    </div>
-                </div>
-                <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
-                        <span class="font-semibold text-gray-900 pr-4">La dysorthographie se corrige-t-elle ?</span>
-                        <i data-lucide="plus" class="w-5 h-5 text-primary flex-shrink-0 faq-icon transition-transform"></i>
-                    </button>
-                    <div class="faq-content px-6 pb-0">
-                        <p class="text-gray-600 leading-relaxed pb-6">Avec une rééducation orthophonique adaptée, l'enfant développe des stratégies compensatoires efficaces. L'objectif est d'automatiser les règles orthographiques et de réduire le coût cognitif de l'écriture. Les progrès sont significatifs avec un suivi régulier.</p>
-                    </div>
-                </div>
-                <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
-                        <span class="font-semibold text-gray-900 pr-4">Comment se déroule un bilan de dysorthographie ?</span>
-                        <i data-lucide="plus" class="w-5 h-5 text-primary flex-shrink-0 faq-icon transition-transform"></i>
-                    </button>
-                    <div class="faq-content px-6 pb-0">
-                        <p class="text-gray-600 leading-relaxed pb-6">Le bilan comprend des épreuves de dictée, de copie, d'orthographe lexicale et grammaticale. L'orthophoniste évalue aussi la conscience phonologique et les capacités de mémorisation visuelle. Le bilan dure environ 1h30 et permet de poser un diagnostic précis.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
+    <section class="py-14 px-6 bg-white border-t border-gray-100"><div class="max-w-4xl mx-auto text-gray-600 leading-relaxed text-lg"><p>Le <strong>bilan dysorthographie</strong> évalue le <strong>langage écrit</strong> d'un <strong>enfant</strong> pour distinguer un simple retard d'un véritable <strong>trouble</strong>. Cet <strong>examen</strong> analyse le <strong>profil</strong> du <strong>patient</strong> dans une logique de <strong>santé</strong> et de <strong>développement</strong>. Ce <strong>processus</strong> s'inscrit dans un <a href="https://logopsietudes.com/" class="text-primary font-semibold hover:underline">écosystème global d'accompagnement</a>.</p></div></section>
+<section class="py-16 px-6 bg-light border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Comment repérer la dysorthographie chez un enfant ?</h2><div class="space-y-4 text-gray-600 leading-relaxed text-lg"><p><strong>Repérer</strong> la <strong>dysorthographie</strong> chez un <strong>enfant</strong>, c'est observer une <strong>accumulation de fautes</strong> qui persiste malgré le travail, des <strong>difficultés d'écriture</strong>, et souvent une <strong>lecture lente</strong>. À l'<strong>école</strong>, ce décalage entre les efforts et les résultats — <strong>malgré</strong> l'investissement de l'élève — est caractéristique d'un <strong>trouble d'apprentissage</strong>.</p></div></div></section>
+<section class="py-16 px-6 bg-white border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Quels sont les signes de la dysorthographie ?</h2><div class="space-y-4 text-gray-600 leading-relaxed text-lg"><p>Les <strong>signes</strong> de ce <strong>trouble de l'orthographe</strong>&nbsp;: <strong>confusions</strong> de <strong>lettres</strong> (b/d), inversions de <strong>nature</strong> phonologique, omissions de syllabes, orthographe grammaticale instable. C'est la fréquence de ces <strong>fautes d'orthographe</strong> et de ces <strong>difficultés d'écriture</strong> qu'il faut savoir <strong>repérer</strong> — leurs <strong>symptômes</strong> isolés étant banals.</p></div></div></section>
+<section class="py-16 px-6 bg-light border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Comment poser un diagnostic de dysorthographie ?</h2><div class="space-y-4 text-gray-600 leading-relaxed text-lg"><p><strong>Poser un diagnostic</strong> passe par une <strong>consultation</strong> avec un <strong>professionnel spécialisé</strong>&nbsp;: l'orthophoniste <strong>réalise</strong> le <strong>bilan orthophonique</strong> et évalue la <strong>conscience phonologique</strong>. La démarche est proche de celle du <a href="https://logopsietudes.com/orthophonie/dyslexie/" class="text-primary font-semibold hover:underline">diagnostic de la dyslexie</a>, ce <strong>trouble d'apprentissage</strong> touchant l'<strong>enfant dysorthographique</strong>.</p></div></div></section>
+<section class="py-16 px-6 bg-white border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Quelles sont les étapes du diagnostic ?</h2><div class="space-y-4 text-gray-600 leading-relaxed text-lg"><p>Les <strong>étapes du diagnostic</strong>&nbsp;: <strong>entretien</strong> initial (anamnèse), passation des épreuves étalonnées, analyse, puis <strong>mise en place</strong> d'un plan de rééducation et rédaction du <strong>compte rendu</strong>. Ce <strong>bilan</strong> des <strong>troubles dys</strong> se construit dans le <strong>temps</strong>.</p></div></div></section>
+<section class="py-16 px-6 bg-light border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Quels tests pour diagnostiquer la dysorthographie ?</h2><div class="space-y-4 text-gray-600 leading-relaxed text-lg"><p>Les <strong>tests</strong> du <strong>bilan orthophonique</strong> visent le <strong>diagnostic</strong> par l'<strong>utilisation</strong> d'épreuves étalonnées&nbsp;: dictées, transcription de sons, copie. L'objectif est d'observer la gestion du <strong>code</strong> écrit et la <strong>transcription</strong>, et de <strong>rechercher</strong> les fragilités via des <strong>exercices</strong> ciblés.</p></div></div></section>
+<section class="py-16 px-6 bg-white border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Comment réaliser un bilan pluridisciplinaire ?</h2><div class="space-y-4 text-gray-600 leading-relaxed text-lg"><p>En cas de <strong>troubles associés</strong>, un <strong>bilan pluridisciplinaire</strong> réunit <strong>orthophoniste</strong>, <strong>neuropsychologue</strong>, <strong>psychologue</strong> et <strong>ergothérapeute</strong> (maladresse du <strong>graphisme</strong>). Pour des <strong>calculs</strong> <strong>mentaux</strong> <strong>atypiques</strong>, un <a href="https://logopsietudes.com/orthophonie/dyscalculie/" class="text-primary font-semibold hover:underline">bilan dyscalculie en ligne</a> complète l'évaluation.</p></div></div></section>
+<section class="py-16 px-6 bg-light border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Comment aider un enfant dysorthographique ?</h2><div class="space-y-4 text-gray-600 leading-relaxed text-lg"><p><strong>Aider un enfant dysorthographique</strong>&nbsp;: <strong>rééducation</strong> orthophonique, <strong>soutien</strong> scolaire, aménagements et coordination des <strong>soins</strong> avec le <strong>médecin</strong> référent, pour gagner en <strong>autonomie</strong>. Notre <a href="https://logopsietudes.com/psychologie/anxiete/" class="text-primary font-semibold hover:underline">prise en charge de l'anxiété scolaire</a> aide quand le stress s'installe.</p></div></div></section>
+<section class="py-16 px-6 bg-light border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Questions fréquentes sur l'évaluation de l'écriture (FAQ)</h2><div class="space-y-4"><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">Quelle est la différence entre un simple retard et un trouble dys ?</h3><p class="text-gray-600 leading-relaxed">Un simple retard se résorbe avec le temps&nbsp;; la dysorthographie est un trouble durable, comme la dyslexie, avec une composante en partie génétique confirmée par la recherche.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">Comment fonctionne le remboursement par l'Assurance Maladie ?</h3><p class="text-gray-600 leading-relaxed">Les séances d'orthophonie sur ordonnance sont prises en charge par l'Assurance Maladie (suivi sur votre compte Ameli). Le bilan en ligne Logopsi est un service privé&nbsp;: vérifiez un éventuel forfait auprès de votre mutuelle.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">Un enfant dyslexique est-il toujours dysorthographique ?</h3><p class="text-gray-600 leading-relaxed">Pas systématiquement, mais les deux sont très souvent associés car ils partagent la même base phonologique&nbsp;: un enfant qui déchiffre difficilement, syllabe par syllabe, à voix haute, présente souvent aussi des difficultés d'orthographe.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">Quels sont les liens avec le haut potentiel ou le syndrome d'Asperger ?</h3><p class="text-gray-600 leading-relaxed">Un haut potentiel intellectuel ou un trouble du spectre (syndrome d'Asperger) peuvent coexister avec une dysorthographie&nbsp;; la précocité masque parfois le trouble selon la personnalité de l'enfant.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">Où trouver des structures d'aide comme la PMI ?</h3><p class="text-gray-600 leading-relaxed">La Protection Maternelle et Infantile (PMI), les CMPP et les centres de référence accompagnent gratuitement&nbsp;; le site internet de votre département les recense, dès la maternelle.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">Quel est l'apport des travaux de l'Inserm (2007) ?</h3><p class="text-gray-600 leading-relaxed">L'expertise collective de l'Inserm (2007) a synthétisé les données universitaires et publié des recommandations reprises par la HAS&nbsp;; les fédérations de patients en diffusent l'article.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">Comment gérer l'impact affectif au quotidien ?</h3><p class="text-gray-600 leading-relaxed">L'impact affectif est réel&nbsp;: au quotidien, valorisez les efforts, dédramatisez (ce n'est pas une maladie) et maintenez des activités de réussite. L'attention des proches est essentielle.</p></div></div></div></section>
     <section class="py-20">
         <div class="max-w-4xl mx-auto px-6">
             <div class="bg-primary rounded-3xl p-12 text-center text-white relative overflow-hidden">
@@ -436,7 +305,7 @@
                 <div class="relative z-10">
                     <h2 class="text-3xl font-bold mb-4">Besoin d'un orthophoniste spécialisé en dysorthographie ?</h2>
                     <p class="text-lg mb-8 text-green-50">Réservez votre bilan en ligne et bénéficiez d'un accompagnement personnalisé pour aider votre enfant à progresser en écriture.</p>
-                    <a href="#" class="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-green-50 transition text-lg inline-block shadow-lg">
+                    <a href="#" class="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-green-50 transition text-lg inline-block shadow-lg" onclick="openBookingModal(); return false;">
                         Réserver mon bilan
                     </a>
                 </div>
@@ -450,51 +319,50 @@
             <div class="grid md:grid-cols-4 gap-8 mb-12">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                            <span class="text-white font-bold text-sm">L</span>
-                        </div>
-                        <span class="text-xl font-bold text-white">Logopsi Études</span>
+                        <img src="../../logo-logopsi.png" alt="Logopsi Études" class="h-12 w-auto">
                     </div>
                     <p class="text-gray-400 text-sm">Orthophonie, psychologie et soutien scolaire en ligne. Des professionnels diplômés, partout en France.</p>
                 </div>
                 <div>
                     <h4 class="text-white font-semibold mb-4">Orthophonie</h4>
                     <ul class="space-y-2">
-                        <li><a href="../orthophonie/dyslexie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dyslexie</a></li>
-                        <li><a href="../orthophonie/dysorthographie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dysorthographie</a></li>
-                        <li><a href="../orthophonie/dyscalculie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dyscalculie</a></li>
-                        <li><a href="../orthophonie/begaiement.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Bégaiement</a></li>
-                        <li><a href="../orthophonie/tsa.html" class="text-gray-400 hover:text-primary text-sm transition-colors">TSA</a></li>
+                        <li><a href="../../orthophonie/dyslexie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dyslexie</a></li>
+                        <li><a href="../../orthophonie/dysorthographie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dysorthographie</a></li>
+                        <li><a href="../../orthophonie/dyscalculie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dyscalculie</a></li>
+                        <li><a href="../../orthophonie/begaiement.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Bégaiement</a></li>
+                        <li><a href="../../orthophonie/tsa.html" class="text-gray-400 hover:text-primary text-sm transition-colors">TSA</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-white font-semibold mb-4">Psychologie</h4>
                     <ul class="space-y-2">
-                        <li><a href="../psychologie/tdah.html" class="text-gray-400 hover:text-primary text-sm transition-colors">TDAH</a></li>
-                        <li><a href="../psychologie/hpi.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Haut Potentiel</a></li>
-                        <li><a href="../psychologie/phobie-scolaire.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Phobie scolaire</a></li>
-                        <li><a href="../psychologie/anxiete.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Anxiété</a></li>
-                        <li><a href="../psychologie/depression.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dépression</a></li>
+                        <li><a href="../../psychologie/tdah.html" class="text-gray-400 hover:text-primary text-sm transition-colors">TDAH</a></li>
+                        <li><a href="../../psychologie/hpi.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Haut Potentiel</a></li>
+                        <li><a href="../../psychologie/phobie-scolaire.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Phobie scolaire</a></li>
+                        <li><a href="../../psychologie/anxiete.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Anxiété</a></li>
+                        <li><a href="../../psychologie/depression.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dépression</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-white font-semibold mb-4">Soutien Scolaire</h4>
                     <ul class="space-y-2">
-                        <li><a href="../soutien-scolaire/mathematiques/" class="text-gray-400 hover:text-primary text-sm transition-colors">Mathématiques</a></li>
-                        <li><a href="../soutien-scolaire/francais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Français</a></li>
-                        <li><a href="../soutien-scolaire/anglais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Anglais</a></li>
-                        <li><a href="../soutien-scolaire/physique-chimie/" class="text-gray-400 hover:text-primary text-sm transition-colors">Physique-Chimie</a></li>
-                        <li><a href="../soutien-scolaire/aide-aux-devoirs/" class="text-gray-400 hover:text-primary text-sm transition-colors">Aide aux devoirs</a></li>
+                        <li><a href="../../soutien-scolaire/mathematiques/" class="text-gray-400 hover:text-primary text-sm transition-colors">Mathématiques</a></li>
+                        <li><a href="../../soutien-scolaire/francais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Français</a></li>
+                        <li><a href="../../soutien-scolaire/anglais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Anglais</a></li>
+                        <li><a href="../../soutien-scolaire/espagnol/" class="text-gray-400 hover:text-primary text-sm transition-colors">Espagnol</a></li>
+                        <li><a href="../../soutien-scolaire/physique-chimie/" class="text-gray-400 hover:text-primary text-sm transition-colors">Physique-Chimie</a></li>
+                        <li><a href="../../soutien-scolaire/aide-aux-devoirs/" class="text-gray-400 hover:text-primary text-sm transition-colors">Aide aux devoirs</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-500 text-sm">&copy; 2025 Logopsi Études. Tous droits réservés.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="../mentions-legales.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Mentions légales</a>
-                    <a href="../a-propos.html" class="text-gray-500 hover:text-primary text-sm transition-colors">À propos</a>
-                    <a href="../tarifs.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Tarifs</a>
-                    <a href="../contact.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Contact</a>
+                <div class="flex flex-wrap gap-x-6 gap-y-2 mt-4 md:mt-0">
+                    <a href="../../mentions-legales.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Mentions légales</a>
+                    <a href="../../contact.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Contact</a>
+                    <a href="../../a-propos.html" class="text-gray-500 hover:text-primary text-sm transition-colors">À propos</a>
+                    <a href="../../tarifs.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Tarifs</a>
+                    <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-primary text-sm transition-colors">Espace membre</a>
                 </div>
             </div>
         </div>
@@ -737,5 +605,80 @@
         })();
 
 </script>
+
+<!-- logopsi-lang-toggle -->
+<div id="google_translate_element" style="display:none"></div>
+<style>
+.goog-te-banner-frame,.skiptranslate{display:none!important}
+body{top:0!important}
+#goog-gt-tt,.goog-te-balloon-frame{display:none!important}
+.goog-text-highlight{background:none!important;box-shadow:none!important}
+</style>
+<script>
+function logopsiGoogleInit(){new google.translate.TranslateElement({pageLanguage:'fr',includedLanguages:'es',autoDisplay:false},'google_translate_element');}
+function logopsiGetCookie(n){var m=document.cookie.match('(^|; )'+n+'=([^;]*)');return m?m[2]:'';}
+function logopsiSetLang(lang){var v=(lang==='es')?'/fr/es':'/fr/fr';var h=location.hostname;document.cookie='googtrans='+v+';path=/';document.cookie='googtrans='+v+';path=/;domain=.'+h;location.reload();}
+function logopsiToggleLang(){var c=logopsiGetCookie('googtrans');if(c&&c.indexOf('/es')>-1){logopsiSetLang('fr');}else{logopsiSetLang('es');}}
+function logopsiUpdateLangLabel(){var c=logopsiGetCookie('googtrans');var es=c&&c.indexOf('/es')>-1;document.querySelectorAll('.lang-toggle-label').forEach(function(el){el.textContent=es?'FR':'ES';});}
+document.addEventListener('DOMContentLoaded',logopsiUpdateLangLabel);
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=logopsiGoogleInit"></script>
+<!-- /logopsi-lang-toggle -->
+
+<!-- logopsi-seance-modal -->
+<div id="seance-modal" class="hidden fixed inset-0 z-[110] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+  <div class="bg-white rounded-3xl w-full max-w-lg shadow-2xl relative max-h-[90vh] overflow-y-auto">
+    <button type="button" onclick="closeSeanceModal()" aria-label="Fermer" class="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-800 hover:bg-gray-100 rounded-full transition-colors"><i data-lucide="x" class="w-6 h-6"></i></button>
+    <div class="p-8">
+      <h3 class="text-2xl font-bold text-gray-900 mb-2">Le déroulement d'une séance</h3>
+      <p class="text-gray-600 mb-6 text-sm">Un accompagnement simple, humain et 100% en ligne, en 5 étapes.</p>
+      <ol class="space-y-5">
+          <li class="flex gap-4">
+            <div class="shrink-0 w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold"><i data-lucide="calendar-check" class="w-5 h-5"></i></div>
+            <div>
+              <p class="font-semibold text-gray-900">1. Réservation en ligne</p>
+              <p class="text-sm text-gray-600 leading-relaxed">Choisissez un créneau qui vous convient. Premier rendez-vous sous 48h.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <div class="shrink-0 w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold"><i data-lucide="clipboard-list" class="w-5 h-5"></i></div>
+            <div>
+              <p class="font-semibold text-gray-900">2. Premier bilan</p>
+              <p class="text-sm text-gray-600 leading-relaxed">Un échange avec le professionnel pour comprendre les besoins et fixer des objectifs.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <div class="shrink-0 w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold"><i data-lucide="route" class="w-5 h-5"></i></div>
+            <div>
+              <p class="font-semibold text-gray-900">3. Plan personnalisé</p>
+              <p class="text-sm text-gray-600 leading-relaxed">Un programme d'accompagnement adapté à votre situation et à votre rythme.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <div class="shrink-0 w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold"><i data-lucide="video" class="w-5 h-5"></i></div>
+            <div>
+              <p class="font-semibold text-gray-900">4. Séances en visio</p>
+              <p class="text-sm text-gray-600 leading-relaxed">Des séances régulières en ligne, avec des supports numériques interactifs.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <div class="shrink-0 w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold"><i data-lucide="trending-up" class="w-5 h-5"></i></div>
+            <div>
+              <p class="font-semibold text-gray-900">5. Suivi & bilans d'étape</p>
+              <p class="text-sm text-gray-600 leading-relaxed">Des points réguliers pour mesurer les progrès et ajuster le programme.</p>
+            </div>
+          </li>
+      </ol>
+      <a href="https://logopsietudes.com/contact/" class="mt-8 block w-full bg-primary text-white text-center font-bold py-3 rounded-full hover:opacity-90 transition-opacity">Prendre rendez-vous</a>
+    </div>
+  </div>
+</div>
+<script>
+function openSeanceModal(){var m=document.getElementById('seance-modal');if(m){m.classList.remove('hidden');document.body.style.overflow='hidden';if(window.lucide)lucide.createIcons();}}
+function closeSeanceModal(){var m=document.getElementById('seance-modal');if(m){m.classList.add('hidden');document.body.style.overflow='';}}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSeanceModal();});
+document.addEventListener('click',function(e){var m=document.getElementById('seance-modal');if(m&&e.target===m)closeSeanceModal();});
+</script>
+<!-- /logopsi-seance-modal -->
 </body>
 </html>

@@ -1,0 +1,147 @@
+========================================================================
+AUDIT SITE EN LIGNE — logopsietudes.com
+========================================================================
+Pages publiées listées : 543
+Pages récupérées (HTTP 200) : 543
+Erreurs de récupération : 0
+
+------------------------------------------------------------------------
+1) COHÉRENCE DU MENU — 6 variante(s) distincte(s)
+------------------------------------------------------------------------
+  Variante bcfd6a7c82 : 469 page(s)  ✅ MENU DE RÉFÉRENCE
+      liens menu : 50
+  Variante c529bb1f44 : 62 page(s)
+      liens menu : 49
+        - https://logopsietudes.com/soutien-scolaire/aide-aux-devoirs/cp/
+        - https://logopsietudes.com/soutien-scolaire/aide-aux-devoirs/cm2/
+        - https://logopsietudes.com/soutien-scolaire/aide-aux-devoirs/cm1/
+        - https://logopsietudes.com/soutien-scolaire/aide-aux-devoirs/ce1/
+        - https://logopsietudes.com/soutien-scolaire/aide-aux-devoirs/6eme/
+        - https://logopsietudes.com/soutien-scolaire/aide-aux-devoirs/ce2/
+        - https://logopsietudes.com/soutien-scolaire/aide-aux-devoirs/5eme/
+        - https://logopsietudes.com/soutien-scolaire/aide-aux-devoirs/3eme/
+        - https://logopsietudes.com/soutien-scolaire/aide-aux-devoirs/4eme/
+        - https://logopsietudes.com/soutien-scolaire/mathematiques/terminale/
+        - https://logopsietudes.com/soutien-scolaire/mathematiques/seconde/
+        - https://logopsietudes.com/soutien-scolaire/mathematiques/premiere/
+        - https://logopsietudes.com/soutien-scolaire/mathematiques/cp/
+        - https://logopsietudes.com/soutien-scolaire/mathematiques/cm2/
+        - https://logopsietudes.com/soutien-scolaire/mathematiques/cm1/
+        ... +47 autres
+  Variante 46bce8f390 : 7 page(s)
+      liens menu : 48
+        - https://logopsietudes.com/soutien-scolaire/
+        - https://logopsietudes.com/orthophonie/
+        - https://logopsietudes.com/psychologie/
+        - https://logopsietudes.com/mentions-legales/
+        - https://logopsietudes.com/contact/
+        - https://logopsietudes.com/
+        - https://logopsietudes.com/a-propos/
+  Variante MISSING : 3 page(s)
+      liens menu : 0
+        - https://logopsietudes.com/soutien-scolaire/villes/
+        - https://logopsietudes.com/psychologie/villes/
+        - https://logopsietudes.com/orthophonie/villes/
+  Variante f7c8319c28 : 1 page(s)
+      liens menu : 39
+        - https://logopsietudes.com/tarifs-2/
+  Variante b0516d345f : 1 page(s)
+      liens menu : 543
+        - https://logopsietudes.com/tarifs/
+  Δ variante c529bb1f44 vs référence :
+      manquants : ['https://app.logopsiestudios.com/fr/login']
+      en trop   : []
+  Δ variante 46bce8f390 vs référence :
+      manquants : ['https://app.logopsiestudios.com/fr/login', 'https://logopsietudes.com/soutien-scolaire/']
+      en trop   : []
+  Δ variante MISSING vs référence :
+      manquants : ['#', 'https://app.logopsiestudios.com/fr/login', 'https://logopsietudes.com/', 'https://logopsietudes.com/orthophonie/', 'https://logopsietudes.com/orthophonie/begaiement/', 'https://logopsietudes.com/orthophonie/dyscalculie/', 'https://logopsietudes.com/orthophonie/dyslexie/', 'https://logopsietudes.com/orthophonie/dysorthographie/', 'https://logopsietudes.com/orthophonie/dysphasie/', 'https://logopsietudes.com/orthophonie/fente-palatine/']
+      en trop   : []
+  Δ variante f7c8319c28 vs référence :
+      manquants : ['https://app.logopsiestudios.com/fr/login', 'https://logopsietudes.com/orthophonie/fente-palatine/', 'https://logopsietudes.com/orthophonie/oralite/', 'https://logopsietudes.com/orthophonie/paralysie-cerebrale/', 'https://logopsietudes.com/orthophonie/surdite/', 'https://logopsietudes.com/orthophonie/trisomie-21/', 'https://logopsietudes.com/psychologie/addictions-ecrans/', 'https://logopsietudes.com/psychologie/enuresie/', 'https://logopsietudes.com/psychologie/tca/', 'https://logopsietudes.com/psychologie/traumatismes-deuil/']
+      en trop   : []
+  Δ variante b0516d345f vs référence :
+      manquants : ['#', 'https://app.logopsiestudios.com/fr/login']
+      en trop   : ['https://logopsietudes.com/a-propos/', 'https://logopsietudes.com/contact/', 'https://logopsietudes.com/mentions-legales/', 'https://logopsietudes.com/orthophonie/villes/', 'https://logopsietudes.com/orthophonie/villes/begaiement-lyon/', 'https://logopsietudes.com/orthophonie/villes/begaiement-marseille/', 'https://logopsietudes.com/orthophonie/villes/begaiement-nice/', 'https://logopsietudes.com/orthophonie/villes/begaiement-paris/', 'https://logopsietudes.com/orthophonie/villes/begaiement-toulouse/', 'https://logopsietudes.com/orthophonie/villes/dyscalculie-lyon/']
+
+------------------------------------------------------------------------
+2) COHÉRENCE DU FOOTER — 5 variante(s) distincte(s)
+------------------------------------------------------------------------
+  Variante 79db71f40e : 448 page(s)  ✅ FOOTER DE RÉFÉRENCE
+  Variante cd59efd1f1 : 69 page(s)
+        - https://logopsietudes.com/soutien-scolaire/aide-aux-devoirs/cp/
+        - https://logopsietudes.com/soutien-scolaire/aide-aux-devoirs/cm2/
+        - https://logopsietudes.com/soutien-scolaire/aide-aux-devoirs/cm1/
+        - https://logopsietudes.com/soutien-scolaire/aide-aux-devoirs/ce1/
+        - https://logopsietudes.com/soutien-scolaire/aide-aux-devoirs/6eme/
+        - https://logopsietudes.com/soutien-scolaire/aide-aux-devoirs/ce2/
+        - https://logopsietudes.com/soutien-scolaire/aide-aux-devoirs/5eme/
+        - https://logopsietudes.com/soutien-scolaire/aide-aux-devoirs/3eme/
+        - https://logopsietudes.com/soutien-scolaire/aide-aux-devoirs/4eme/
+        - https://logopsietudes.com/soutien-scolaire/mathematiques/terminale/
+        - https://logopsietudes.com/soutien-scolaire/mathematiques/seconde/
+        - https://logopsietudes.com/soutien-scolaire/mathematiques/premiere/
+        - https://logopsietudes.com/soutien-scolaire/mathematiques/cp/
+        - https://logopsietudes.com/soutien-scolaire/mathematiques/cm2/
+        - https://logopsietudes.com/soutien-scolaire/mathematiques/cm1/
+        ... +54 autres
+  Variante 8053d23b85 : 22 page(s)
+        - https://logopsietudes.com/orthophonie/tsa/
+        - https://logopsietudes.com/orthophonie/trisomie-21/
+        - https://logopsietudes.com/orthophonie/surdite/
+        - https://logopsietudes.com/orthophonie/paralysie-cerebrale/
+        - https://logopsietudes.com/orthophonie/oralite/
+        - https://logopsietudes.com/orthophonie/fente-palatine/
+        - https://logopsietudes.com/orthophonie/dysphasie/
+        - https://logopsietudes.com/orthophonie/dyslexie/
+        - https://logopsietudes.com/orthophonie/dyscalculie/
+        - https://logopsietudes.com/orthophonie/dysorthographie/
+        - https://logopsietudes.com/orthophonie/begaiement/
+        - https://logopsietudes.com/psychologie/troubles-sommeil/
+        - https://logopsietudes.com/psychologie/traumatismes-deuil/
+        - https://logopsietudes.com/psychologie/tdah/
+        - https://logopsietudes.com/psychologie/tca/
+        ... +7 autres
+  Variante MISSING : 3 page(s)
+        - https://logopsietudes.com/soutien-scolaire/villes/
+        - https://logopsietudes.com/psychologie/villes/
+        - https://logopsietudes.com/orthophonie/villes/
+  Variante 98e25d8211 : 1 page(s)
+        - https://logopsietudes.com/tarifs/
+
+------------------------------------------------------------------------
+3) LIENS CASSÉS — 4 sur 598 liens uniques
+------------------------------------------------------------------------
+  [401] https://unsplash.com
+        vu sur 1 page(s), ex: https://logopsietudes.com/mentions-legales/
+  [404] https://logopsietudes.com/index.html#contact/
+        vu sur 13 page(s), ex: https://logopsietudes.com/soutien-scolaire/francais/ce1/
+  [404] /site/soutien-scolaire/physique-chimie/
+        vu sur 6 page(s), ex: https://logopsietudes.com/soutien-scolaire/physique-chimie/3eme/
+  [404] /site/
+        vu sur 7 page(s), ex: https://logopsietudes.com/soutien-scolaire/physique-chimie/3eme/
+
+------------------------------------------------------------------------
+4) ANCRES MORTES (#id introuvable) — 0
+------------------------------------------------------------------------
+  ✅ Aucune ancre morte.
+
+------------------------------------------------------------------------
+5) BOUTONS onclick → fonction non définie — 0
+------------------------------------------------------------------------
+  ✅ Aucun bouton avec fonction manquante.
+
+------------------------------------------------------------------------
+6) FORMULAIRES action invalide — 0
+------------------------------------------------------------------------
+  ✅ Aucun formulaire invalide.
+
+========================================================================
+RÉSUMÉ : 13 catégorie(s)/élément(s) à examiner
+  - Variantes de menu   : 6 (idéal : 1)
+  - Variantes de footer : 5 (idéal : 1)
+  - Liens cassés        : 4
+  - Ancres mortes       : 0 types
+  - Boutons KO          : 0 types
+  - Formulaires KO      : 0
+========================================================================

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Logopsi Études Deployer
  * Description: Déploie le site complet Logopsi Études sur WordPress. Interface d'admin pour mapper les images et pousser toutes les pages.
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: Logopsi Études
  * Text Domain: logopsi-deployer
  */
@@ -76,27 +76,75 @@ function logopsi_admin_assets($hook) {
 add_filter('template_include', 'logopsi_custom_template');
 function logopsi_custom_template($template) {
     if (is_page()) {
-        $custom_html = get_post_meta(get_the_ID(), '_logopsi_full_html', true);
-        if (!empty($custom_html)) {
-            // Serve the raw HTML directly
-            echo $custom_html;
+        // PRIORITÉ AU FICHIER SOURCE : le contenu est servi directement depuis
+        // data/html/*.html. Un simple téléversement du plugin met tout à jour,
+        // sans étape "Deploy". La méta _logopsi_full_html sert de repli.
+        $slug = logopsi_current_slug(get_the_ID());
+        $html = logopsi_render_slug($slug);
+        if (empty($html)) {
+            $html = get_post_meta(get_the_ID(), '_logopsi_full_html', true);
+        }
+        if (!empty($html)) {
+            echo $html;
             exit;
         }
     }
     return $template;
 }
 
+// Slug logopsi d'une page (méta, sinon dérivé de l'URL)
+function logopsi_current_slug($pid) {
+    $slug = get_post_meta($pid, '_logopsi_slug', true);
+    if (empty($slug)) {
+        $slug = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+    }
+    return $slug;
+}
+
+// Charge le fichier HTML d'un slug et applique les transformations à la volée.
+function logopsi_render_slug($slug) {
+    if ($slug === '' || $slug === false) $slug = 'accueil';
+    $html = logopsi_get_html_content($slug);
+    if (empty($html)) return '';
+    $html = logopsi_apply_image_mapping($html);
+    $html = logopsi_fix_links($html, $slug);
+    $html = logopsi_fix_assets($html);
+    return $html;
+}
+
 // Make the homepage work too
 add_action('template_redirect', 'logopsi_homepage_redirect');
 function logopsi_homepage_redirect() {
     if (is_front_page()) {
-        $front_page_id = get_option('page_on_front');
-        if ($front_page_id) {
-            $custom_html = get_post_meta($front_page_id, '_logopsi_full_html', true);
-            if (!empty($custom_html)) {
-                echo $custom_html;
-                exit;
+        $html = logopsi_render_slug('accueil');   // priorité au fichier
+        if (empty($html)) {
+            $front_page_id = get_option('page_on_front');
+            if ($front_page_id) {
+                $html = get_post_meta($front_page_id, '_logopsi_full_html', true);
             }
+        }
+        if (!empty($html)) {
+            echo $html;
+            exit;
+        }
+    }
+}
+
+// ============================================================
+// REDIRECTIONS 301 (pages obsolètes / doublons)
+// ============================================================
+
+add_action('template_redirect', 'logopsi_legacy_redirects', 1);
+function logopsi_legacy_redirects() {
+    // slug source  =>  URL cible (relative à home_url)
+    $map = [
+        'tarifs-2' => '/tarifs/',
+    ];
+    if (is_page()) {
+        $slug = get_post_field('post_name', get_queried_object_id());
+        if (isset($map[$slug])) {
+            wp_redirect(home_url($map[$slug]), 301);
+            exit;
         }
     }
 }
@@ -149,6 +197,13 @@ function logopsi_fix_assets($html) {
     $logo_url = LOGOPSI_PLUGIN_URL . 'admin/logo-logopsi.png';
     // Replace all relative logo references with absolute plugin URL
     $html = preg_replace('/src="[^"]*logo-logopsi\.png"/', 'src="' . $logo_url . '"', $html);
+    // Fix défensif du menu mobile (certaines pages basculaient 'active' au lieu
+    // de la classe Tailwind 'hidden').
+    $html = str_replace(
+        "getElementById('mobile-menu').classList.toggle('active')",
+        "getElementById('mobile-menu').classList.toggle('hidden')",
+        $html
+    );
     return $html;
 }
 
@@ -163,6 +218,12 @@ function logopsi_fix_links($html, $current_slug) {
     // Replace href="villes/dyslexie-paris.html" with proper path
 
     $site_url = home_url();
+
+    // Defensive cleanup: neutralise des liens hérités qui cassaient en prod
+    //  - préfixe de dev "/site/" laissé dans certains fil d'Ariane
+    //  - ancre legacy "...index.html#contact" -> page /contact/
+    $html = str_replace('href="/site/', 'href="/', $html);
+    $html = preg_replace('~href="[^"]*index\.html#contact"~', 'href="' . $site_url . '/contact/"', $html);
 
     // Determine base path for relative resolution
     $parts = explode('/', $current_slug);
@@ -541,9 +602,15 @@ function logopsi_ajax_contact() {
     $lines[] = 'IP             : ' . ($_SERVER['REMOTE_ADDR'] ?? 'inconnue');
     $body = implode("\n", $lines);
 
-    $to       = get_option('admin_email');
+    $to       = array_values(array_unique(array_filter([
+        get_option('admin_email'),
+        'logopsietudes@gmail.com',
+    ])));
+    // From = adresse du domaine (meilleure délivrabilité / SPF) ; Reply-To = visiteur
+    $domain   = preg_replace('#^www\.#', '', parse_url(home_url(), PHP_URL_HOST));
     $headers  = [
         'Content-Type: text/plain; charset=UTF-8',
+        'From: Logopsi Études <no-reply@' . $domain . '>',
         'Reply-To: ' . $name . ' <' . $email . '>',
     ];
 
@@ -585,11 +652,20 @@ function logopsi_register_lead_cpt() {
         'public'        => false,
         'show_ui'       => true,
         'show_in_menu'  => true,
+        'show_in_rest'  => true,            // exposé en REST (récupération fiable des leads)
+        'rest_base'     => 'logopsi_lead',
         'menu_position' => 31,
         'menu_icon'     => 'dashicons-email-alt',
         'supports'      => ['title', 'editor', 'custom-fields'],
         'capability_type' => 'page',
     ]);
+    // Champs du lead exposés en REST (context edit, admin uniquement)
+    foreach (['email', 'phone', 'sujet', 'source'] as $k) {
+        register_post_meta('logopsi_lead', '_logopsi_lead_' . $k, [
+            'type' => 'string', 'single' => true, 'show_in_rest' => true,
+            'auth_callback' => function () { return current_user_can('manage_options'); },
+        ]);
+    }
 }
 
 // ============================================================

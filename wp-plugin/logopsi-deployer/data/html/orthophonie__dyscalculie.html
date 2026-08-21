@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilan dyscalculie en ligne — Orthophoniste 150€/48h | Logopsi Études</title>
-    <meta name="description" content="Bilan orthophonique pour la dyscalculie en ligne — 150€, rendez-vous sous 48h. Orthophonistes diplômés d'État, partout en France.">
+    <title>Dyscalculie Orthophonie – Bilan &amp; Prise en Charge En Ligne</title>
+    <meta name="description" content="Votre enfant souffre d&#x27;un trouble du calcul ? Découvrez les symptômes de la dyscalculie, le déroulement du bilan orthophonique et sa rééducation.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -36,6 +36,12 @@
         .mega-menu { display: none; }
         .mega-menu.active { display: block; }
     </style>
+
+<!-- logopsi-favicon -->
+<link rel="icon" type="image/png" href="/wp-content/plugins/logopsi-deployer/admin/favicon.png">
+<link rel="shortcut icon" href="/wp-content/plugins/logopsi-deployer/admin/favicon.ico">
+<link rel="apple-touch-icon" href="/wp-content/plugins/logopsi-deployer/admin/favicon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "La dyscalculie affecte-t-elle également l'adulte ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, la dyscalculie n'est pas un trouble propre à l'enfance : l'adulte atteint peut continuer à rencontrer des difficultés dans la gestion des chiffres au quotidien (budget, horaires, mesures) si le trouble n'a pas été suffisamment pris en charge. Chaque individu compose alors avec des stratégies de compensation développées avec le temps."}}, {"@type": "Question", "name": "Quelle est la différence entre une simple baisse de niveau en maths et un trouble d'apprentissage ?", "acceptedAnswer": {"@type": "Answer", "text": "Une baisse de niveau ponctuelle s'explique souvent par un contexte particulier (fatigue, anxiété, changement d'enseignant) et reste temporaire. Un trouble d'apprentissage qui affecte durablement les mathématiques, lui, persiste dans le temps, résiste aux aides pédagogiques classiques et se retrouve statistiquement associé à d'autres signes spécifiques repérés lors du bilan."}}, {"@type": "Question", "name": "L'ergothérapeute joue-t-il un rôle dans la prise en charge ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, l'ergothérapeute intervient en complément de l'orthophoniste, notamment lorsque la dyscalculie est associée à une dyspraxie, pour travailler l'organisation spatiale, la pose des opérations ou l'utilisation d'outils de compensation. Un [bilan des troubles associés](https://logopsietudes.com/psychologie/troubles-sommeil/) peut également être proposé lorsque des difficultés de sommeil viennent s'ajouter au tableau clinique."}}, {"@type": "Question", "name": "Un enfant peut-il cumuler une dyscalculie et une dysphasie ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, ces deux troubles peuvent coexister chez un même enfant, la dysphasie touchant le langage oral tandis que la dyscalculie affecte le calcul. Un [bilan dysphasie en ligne](https://logopsietudes.com/orthophonie/dysphasie/) permet d'objectiver précisément cette association."}}, {"@type": "Question", "name": "Quel est le prix habituel d'un accompagnement pluridisciplinaire ?", "acceptedAnswer": {"@type": "Answer", "text": "Le prix unitaire d'une séance varie selon les professionnels sollicités (orthophoniste, ergothérapeute, psychologue) et leur secteur conventionné. Pour connaître les tarifs à jour, mieux vaut contacter directement les cabinets concernés."}}, {"@type": "Question", "name": "Comment organiser efficacement l'environnement de travail scolaire de l'élève ?", "acceptedAnswer": {"@type": "Answer", "text": "Un espace calme, dédié et débarrassé de toute distraction facilite la concentration. L'aménagement du poste de travail à l'école (place en classe, supports visuels, temps supplémentaire) complète utilement le soutien apporté à la maison pour l'enseignement des mathématiques."}}, {"@type": "Question", "name": "Le trouble du calcul a-t-il un impact sur l'intégration sociale ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, la dyscalculie peut affecter indirectement l'intégration sociale de l'enfant : difficulté à suivre un jeu de société chiffré, perte de confiance en groupe, ou évitement de certaines activités. Une prise en charge précoce limite fortement ce retentissement social."}}]}</script>
 </head>
 <body class="font-sans text-gray-900 bg-light min-h-screen">
 
@@ -43,8 +49,8 @@
     <nav class="bg-white shadow-sm sticky top-0 z-50 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="../index.html" class="flex items-center space-x-2 z-50">
-                    <img src="../logo-logopsi.png" alt="Logopsi Études" class="h-14 w-auto">
+                <a href="../../index.html" class="flex items-center space-x-2 z-50">
+                    <img src="../../logo-logopsi.png" alt="Logopsi Études" class="h-14 w-auto">
                 </a>
 
                 <div class="hidden lg:flex items-center space-x-1">
@@ -63,10 +69,11 @@
                             Soutien Scolaire <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </button>
                     </div>
-                    <a href="../tarifs.html" class="px-4 py-2 font-semibold text-[15px] text-gray-800 hover:text-primary transition-colors">Tarifs</a>
+                    <a href="../../tarifs.html" class="px-4 py-2 font-semibold text-[15px] text-gray-800 hover:text-primary transition-colors">Tarifs</a>
                 </div>
 
                 <div class="hidden lg:flex items-center gap-4">
+                    <button type="button" onclick="logopsiToggleLang()" id="lang-toggle" aria-label="Changer de langue (Français / Español)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gray-200 bg-white text-gray-700 text-sm font-semibold hover:bg-primary hover:text-white hover:border-primary shadow-sm transition-all mr-2"><i data-lucide="globe" class="w-4 h-4"></i><span id="lang-toggle-label" class="lang-toggle-label">ES</span></button>
                     <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="text-[15px] font-semibold text-gray-700 hover:text-primary transition-colors">
                         Connexion
                     </a>
@@ -91,27 +98,27 @@
                 <div class="col-span-6 pr-6">
                     <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Explorer par besoin</h4>
                     <ul class="grid grid-cols-2 gap-x-6 gap-y-2.5">
-                        <li><a href="../orthophonie/dyslexie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dyslexie</a></li>
-                        <li><a href="../orthophonie/dysorthographie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dysorthographie</a></li>
-                        <li><a href="../orthophonie/dyscalculie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dyscalculie</a></li>
-                        <li><a href="../orthophonie/dysphasie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dysphasie</a></li>
-                        <li><a href="../orthophonie/begaiement.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Bégaiement</a></li>
-                        <li><a href="../orthophonie/tsa.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">TSA</a></li>
-                        <li><a href="../orthophonie/oralite.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Troubles de l'oralité</a></li>
-                        <li><a href="../orthophonie/surdite.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Surdité</a></li>
-                        <li><a href="../orthophonie/paralysie-cerebrale.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Paralysie cérébrale</a></li>
-                        <li><a href="../orthophonie/fente-palatine.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Fente palatine</a></li>
-                        <li><a href="../orthophonie/trisomie-21.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Trisomie 21</a></li>
+                        <li><a href="../../orthophonie/dyslexie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dyslexie</a></li>
+                        <li><a href="../../orthophonie/dysorthographie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dysorthographie</a></li>
+                        <li><a href="../../orthophonie/dyscalculie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dyscalculie</a></li>
+                        <li><a href="../../orthophonie/dysphasie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dysphasie</a></li>
+                        <li><a href="../../orthophonie/begaiement.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Bégaiement</a></li>
+                        <li><a href="../../orthophonie/tsa.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">TSA</a></li>
+                        <li><a href="../../orthophonie/oralite.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Troubles de l'oralité</a></li>
+                        <li><a href="../../orthophonie/surdite.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Surdité</a></li>
+                        <li><a href="../../orthophonie/paralysie-cerebrale.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Paralysie cérébrale</a></li>
+                        <li><a href="../../orthophonie/fente-palatine.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Fente palatine</a></li>
+                        <li><a href="../../orthophonie/trisomie-21.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Trisomie 21</a></li>
                     </ul>
                 </div>
                 <div class="col-span-3 bg-light rounded-2xl p-5 border border-gray-100">
                     <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Par ville</h4>
                     <ul class="space-y-2.5">
-                        <li><a href="../orthophonie/villes/paris.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Paris</a></li>
-                        <li><a href="../orthophonie/villes/marseille.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Marseille</a></li>
-                        <li><a href="../orthophonie/villes/lyon.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Lyon</a></li>
-                        <li><a href="../orthophonie/villes/toulouse.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Toulouse</a></li>
-                        <li><a href="../orthophonie/villes/nice.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Nice</a></li>
+                        <li><a href="../../orthophonie/villes/paris.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Paris</a></li>
+                        <li><a href="../../orthophonie/villes/marseille.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Marseille</a></li>
+                        <li><a href="../../orthophonie/villes/lyon.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Lyon</a></li>
+                        <li><a href="../../orthophonie/villes/toulouse.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Toulouse</a></li>
+                        <li><a href="../../orthophonie/villes/nice.html" class="text-sm font-medium text-gray-800 hover:text-primary">Orthophonie à Nice</a></li>
                     </ul>
                 </div>
             </div>
@@ -127,27 +134,27 @@
                 <div class="col-span-6 pr-6">
                     <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Explorer par besoin</h4>
                     <ul class="grid grid-cols-2 gap-x-6 gap-y-2.5">
-                        <li><a href="../psychologie/anxiete.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Anxiété</a></li>
-                        <li><a href="../psychologie/depression.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dépression</a></li>
-                        <li><a href="../psychologie/tdah.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">TDAH</a></li>
-                        <li><a href="../psychologie/hpi.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Haut Potentiel (HPI)</a></li>
-                        <li><a href="../psychologie/phobie-scolaire.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Phobie scolaire</a></li>
-                        <li><a href="../psychologie/harcelement-scolaire.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Harcèlement scolaire</a></li>
-                        <li><a href="../psychologie/tca.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">TCA</a></li>
-                        <li><a href="../psychologie/addictions-ecrans.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Addictions aux écrans</a></li>
-                        <li><a href="../psychologie/troubles-sommeil.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Troubles du sommeil</a></li>
-                        <li><a href="../psychologie/enuresie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Énurésie</a></li>
-                        <li><a href="../psychologie/traumatismes-deuil.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Traumatismes & deuil</a></li>
+                        <li><a href="../../psychologie/anxiete.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Anxiété</a></li>
+                        <li><a href="../../psychologie/depression.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Dépression</a></li>
+                        <li><a href="../../psychologie/tdah.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">TDAH</a></li>
+                        <li><a href="../../psychologie/hpi.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Haut Potentiel (HPI)</a></li>
+                        <li><a href="../../psychologie/phobie-scolaire.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Phobie scolaire</a></li>
+                        <li><a href="../../psychologie/harcelement-scolaire.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Harcèlement scolaire</a></li>
+                        <li><a href="../../psychologie/tca.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">TCA</a></li>
+                        <li><a href="../../psychologie/addictions-ecrans.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Addictions aux écrans</a></li>
+                        <li><a href="../../psychologie/troubles-sommeil.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Troubles du sommeil</a></li>
+                        <li><a href="../../psychologie/enuresie.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Énurésie</a></li>
+                        <li><a href="../../psychologie/traumatismes-deuil.html" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Traumatismes & deuil</a></li>
                     </ul>
                 </div>
                 <div class="col-span-3 bg-light rounded-2xl p-5 border border-gray-100">
                     <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Par ville</h4>
                     <ul class="space-y-2.5">
-                        <li><a href="../psychologie/villes/paris.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Paris</a></li>
-                        <li><a href="../psychologie/villes/marseille.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Marseille</a></li>
-                        <li><a href="../psychologie/villes/lyon.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Lyon</a></li>
-                        <li><a href="../psychologie/villes/toulouse.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Toulouse</a></li>
-                        <li><a href="../psychologie/villes/nice.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Nice</a></li>
+                        <li><a href="../../psychologie/villes/paris.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Paris</a></li>
+                        <li><a href="../../psychologie/villes/marseille.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Marseille</a></li>
+                        <li><a href="../../psychologie/villes/lyon.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Lyon</a></li>
+                        <li><a href="../../psychologie/villes/toulouse.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Toulouse</a></li>
+                        <li><a href="../../psychologie/villes/nice.html" class="text-sm font-medium text-gray-800 hover:text-primary">Psychologie à Nice</a></li>
                     </ul>
                 </div>
             </div>
@@ -163,22 +170,22 @@
                 <div class="col-span-6 pr-6">
                     <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Explorer par matière</h4>
                     <ul class="grid grid-cols-2 gap-x-6 gap-y-2.5">
-                        <li><a href="../soutien-scolaire/mathematiques/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Mathématiques</a></li>
-                        <li><a href="../soutien-scolaire/francais/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Français</a></li>
-                        <li><a href="../soutien-scolaire/anglais/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Anglais</a></li>
-                        <li><a href="../soutien-scolaire/espagnol/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Espagnol</a></li>
-                        <li><a href="../soutien-scolaire/physique-chimie/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Physique-Chimie</a></li>
-                        <li><a href="../soutien-scolaire/aide-aux-devoirs/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Aide aux devoirs</a></li>
+                        <li><a href="../../soutien-scolaire/mathematiques/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Mathématiques</a></li>
+                        <li><a href="../../soutien-scolaire/francais/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Français</a></li>
+                        <li><a href="../../soutien-scolaire/anglais/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Anglais</a></li>
+                        <li><a href="../../soutien-scolaire/espagnol/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Espagnol</a></li>
+                        <li><a href="../../soutien-scolaire/physique-chimie/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Physique-Chimie</a></li>
+                        <li><a href="../../soutien-scolaire/aide-aux-devoirs/" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Aide aux devoirs</a></li>
                     </ul>
                 </div>
                 <div class="col-span-3 bg-light rounded-2xl p-5 border border-gray-100">
                     <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Par ville</h4>
                     <ul class="space-y-2.5">
-                        <li><a href="../soutien-scolaire/villes/paris.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Paris</a></li>
-                        <li><a href="../soutien-scolaire/villes/marseille.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Marseille</a></li>
-                        <li><a href="../soutien-scolaire/villes/lyon.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Lyon</a></li>
-                        <li><a href="../soutien-scolaire/villes/toulouse.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Toulouse</a></li>
-                        <li><a href="../soutien-scolaire/villes/nice.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Nice</a></li>
+                        <li><a href="../../soutien-scolaire/villes/paris.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Paris</a></li>
+                        <li><a href="../../soutien-scolaire/villes/marseille.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Marseille</a></li>
+                        <li><a href="../../soutien-scolaire/villes/lyon.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Lyon</a></li>
+                        <li><a href="../../soutien-scolaire/villes/toulouse.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Toulouse</a></li>
+                        <li><a href="../../soutien-scolaire/villes/nice.html" class="text-sm font-medium text-gray-800 hover:text-primary">Soutien scolaire à Nice</a></li>
                     </ul>
                 </div>
             </div>
@@ -187,11 +194,11 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100">
             <div class="px-6 py-6 space-y-4">
-                <a href="../orthophonie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Orthophonie</a>
-                <a href="../psychologie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Psychologie</a>
-                <a href="../soutien-scolaire/" class="block text-gray-900 hover:text-primary font-semibold py-2">Soutien Scolaire</a>
-                <a href="../tarifs.html" class="block text-gray-900 hover:text-primary font-semibold py-2">Tarifs</a>
-                <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="block text-center font-semibold py-2 text-gray-700 hover:text-primary border-b border-gray-100">Connexion</a>
+                <a href="../../orthophonie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Orthophonie</a>
+                <a href="../../psychologie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Psychologie</a>
+                <a href="../../soutien-scolaire/" class="block text-gray-900 hover:text-primary font-semibold py-2">Soutien Scolaire</a>
+                <a href="../../tarifs.html" class="block text-gray-900 hover:text-primary font-semibold py-2">Tarifs</a>
+                <button type="button" onclick="logopsiToggleLang()" id="lang-toggle-m" class="flex items-center justify-center gap-2 mx-auto my-2 px-5 py-2 rounded-full border border-gray-200 bg-gray-50 text-gray-700 font-semibold hover:bg-primary hover:text-white hover:border-primary transition-all"><i data-lucide="globe" class="w-4 h-4"></i><span class="lang-toggle-label">ES</span></button><a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="block text-center font-semibold py-2 text-gray-700 hover:text-primary border-b border-gray-100">Connexion</a>
                 <a href="#" onclick="openBookingModal(); return false;" class="w-full bg-primary text-white font-semibold py-3 rounded-full shadow-md mt-4 block text-center">Prendre rendez-vous</a>
             </div>
         </div>
@@ -209,14 +216,10 @@
                 <span class="text-gray-900 font-medium">Dyscalculie</span>
             </div>
 
-            <h1 class="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-gray-900">
-                Orthophoniste spécialisé dans la <span class="text-primary">Dyscalculie</span> en ligne
-            </h1>
-            <p class="text-lg text-gray-700 leading-relaxed">
-                Votre enfant peine avec les chiffres, le calcul mental ou la résolution de problèmes ? La dyscalculie est un trouble spécifique des apprentissages mathématiques. Nos orthophonistes experts l'accompagnent en ligne.
-            </p>
+            <h1 class="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-gray-900">Orthophonie et dyscalculie : du diagnostic à la rééducation</h1>
+            <p class="text-lg text-gray-700 leading-relaxed">Un bilan orthophonique complet pour évaluer, tester et diagnostiquer la dyscalculie, ce trouble durable des apprentissages en mathématiques. Réalisé en ligne par un orthophoniste spécialisé, premier rendez-vous sous 48h — 150&nbsp;€.</p>
             <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                <button class="bg-primary text-white font-semibold px-8 py-4 rounded-full hover:bg-primaryHover transition-colors shadow-lg flex items-center justify-center gap-2">
+                <button class="bg-primary text-white font-semibold px-8 py-4 rounded-full hover:bg-primaryHover transition-colors shadow-lg flex items-center justify-center gap-2" onclick="openBookingModal()">
                     Réserver mon bilan <i data-lucide="arrow-right" class="w-5 h-5"></i>
                 </button>
                 <button onclick="openModal()" class="bg-white text-gray-900 border-2 border-gray-200 font-semibold px-8 py-4 rounded-full hover:border-primary hover:text-primary transition-colors flex items-center justify-center">
@@ -248,183 +251,33 @@
             </div>
         </div>
     </section>
-
-    <!-- SIMULATOR MODAL -->
-    <div id="simulator-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm modal-enter">
-        <div class="bg-white rounded-3xl w-full max-w-lg shadow-2xl overflow-hidden relative">
-            <button onclick="closeModal()" class="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-800 hover:bg-gray-100 rounded-full transition-colors">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-            <div class="p-8">
-                <div id="quiz-container">
-                    <div class="mb-8">
-                        <span id="quiz-step-text" class="text-sm font-bold text-primary uppercase tracking-wider">Question 1 sur 3</span>
-                        <div class="w-full bg-gray-100 h-2 rounded-full mt-3">
-                            <div id="quiz-progress-bar" class="bg-primary h-2 rounded-full transition-all duration-300" style="width: 0%;"></div>
-                        </div>
-                    </div>
-                    <h3 id="quiz-question-text" class="text-2xl font-bold text-gray-900 mb-8 leading-tight">Question...</h3>
-                    <div id="quiz-options-container" class="space-y-3"></div>
-                </div>
-                <div id="result-container" class="hidden text-center py-6">
-                    <div class="w-16 h-16 bg-primary/20 text-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i data-lucide="check-circle-2" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Test terminé</h3>
-                    <p id="result-text" class="text-gray-600 mb-8"></p>
-                    <button type="button" onclick="closeModal(); openBookingModal();" class="w-full bg-primary text-white font-bold py-4 rounded-xl hover:bg-primaryHover transition-colors shadow-lg">
-                        Prendre rendez-vous
-                    </button>
-                    <button onclick="closeModal()" class="w-full mt-4 text-gray-500 font-medium hover:text-gray-800">Fermer</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SYMPTOMES SECTION -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div class="space-y-8">
-                <h2 class="text-3xl font-bold text-gray-900">Comment reconnaître les signes de la dyscalculie ?</h2>
-                <p class="text-gray-600 leading-relaxed">La dyscalculie est un trouble neurodéveloppemental qui affecte l'acquisition des compétences numériques et mathématiques. Elle touche environ 5% des enfants. Voici les signes qui doivent vous alerter :</p>
-                <ul class="space-y-4">
-                    <li class="flex items-start gap-3">
-                        <div class="mt-1 bg-red-100 text-red-500 rounded-full p-1"><i data-lucide="hash" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>Difficultés avec les nombres :</strong> Confusion dans l'ordre des chiffres, difficulté à dénombrer, à comparer des quantités ou à compter à rebours.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <div class="mt-1 bg-orange-100 text-orange-500 rounded-full p-1"><i data-lucide="clock" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>Calcul mental laborieux :</strong> L'enfant utilise encore ses doigts pour compter, ne mémorise pas les tables et met beaucoup de temps pour des calculs simples.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <div class="mt-1 bg-purple-100 text-purple-500 rounded-full p-1"><i data-lucide="puzzle" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>Problèmes de logique :</strong> Difficulté à comprendre les énoncés de problèmes, à choisir la bonne opération et à organiser un raisonnement mathématique.</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="bg-light p-8 md:p-12 rounded-3xl border border-gray-200">
-                <h3 class="text-2xl font-bold mb-6 text-gray-900">Notre approche de rééducation</h3>
-                <p class="text-gray-600 mb-6 text-sm leading-relaxed">Nos séances s'appuient sur la manipulation concrète (jetons virtuels, barres numériques, abaques) avant de passer à l'abstraction. Nous travaillons le sens du nombre, la construction des opérations et la résolution de problèmes par étapes, avec des supports interactifs ludiques.</p>
-                <button class="w-full bg-white border-2 border-primary text-primary font-bold py-3 rounded-full hover:bg-primary hover:text-white transition-colors">
-                    Découvrir le déroulement d'une séance
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- A PROPOS SECTION -->
-    <section class="py-20 px-6 bg-light border-t border-gray-100">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div class="order-2 md:order-1 relative">
-                <div class="absolute -inset-4 bg-primary/10 rounded-3xl transform -rotate-3"></div>
-                <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Équipe Logopsi Études" class="relative rounded-2xl shadow-lg w-full object-cover h-[400px]">
-            </div>
-            <div class="order-1 md:order-2 space-y-6">
-                <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
-                    <i data-lucide="award" class="w-4 h-4"></i> Professionnels diplômés
-                </div>
-                <h2 class="text-3xl font-bold text-gray-900">Pourquoi choisir Logopsi Études ?</h2>
-                <p class="text-gray-600 leading-relaxed">Chez Logopsi Études, nous réunissons des orthophonistes diplômés d'État, formés aux dernières avancées scientifiques. Notre plateforme vous connecte avec le bon professionnel en moins de 48h, partout en France.</p>
-                <div class="space-y-4">
-                    <div class="flex items-start gap-3">
-                        <div class="mt-1 bg-primary/10 text-primary rounded-full p-1"><i data-lucide="check" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>Rendez-vous sous 48h</strong> — Plus de listes d'attente interminables</span>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <div class="mt-1 bg-primary/10 text-primary rounded-full p-1"><i data-lucide="check" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>Séances remboursables</strong> — Éligible Sécurité sociale et mutuelles</span>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <div class="mt-1 bg-primary/10 text-primary rounded-full p-1"><i data-lucide="check" class="w-4 h-4"></i></div>
-                        <span class="text-gray-700"><strong>100% en ligne</strong> — Depuis chez vous, sans déplacement</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CITY LINKS -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">Consultez un orthophoniste près de chez vous</h2>
-                <p class="text-gray-600 mt-3">Nos orthophonistes sont disponibles en ligne, partout en France.</p>
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-                    <a href="villes/dyscalculie-paris.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
-                        </div>
-                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Paris</span>
-                    </a>
-                    <a href="villes/dyscalculie-marseille.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
-                        </div>
-                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Marseille</span>
-                    </a>
-                    <a href="villes/dyscalculie-lyon.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
-                        </div>
-                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Lyon</span>
-                    </a>
-                    <a href="villes/dyscalculie-toulouse.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
-                        </div>
-                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Toulouse</span>
-                    </a>
-                    <a href="villes/dyscalculie-nice.html" class="bg-white rounded-2xl p-5 text-center hover:shadow-lg transition-all group border border-gray-100">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors"></i>
-                        </div>
-                        <span class="font-semibold text-gray-800 group-hover:text-primary transition-colors">Nice</span>
-                    </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="py-20 bg-light">
-        <div class="max-w-3xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">Questions fréquentes</h2>
-                <p class="text-gray-600 mt-3">Tout ce que vous devez savoir.</p>
-            </div>
-            <div class="space-y-4">
-                <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
-                        <span class="font-semibold text-gray-900 pr-4">La dyscalculie est-elle liée à un manque de travail ?</span>
-                        <i data-lucide="plus" class="w-5 h-5 text-primary flex-shrink-0 faq-icon transition-transform"></i>
-                    </button>
-                    <div class="faq-content px-6 pb-0">
-                        <p class="text-gray-600 leading-relaxed pb-6">Non. La dyscalculie est un trouble neurodéveloppemental d'origine neurobiologique. L'enfant n'est ni paresseux ni en manque d'intelligence. Son cerveau traite les informations numériques différemment, ce qui nécessite un accompagnement spécifique.</p>
-                    </div>
-                </div>
-                <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
-                        <span class="font-semibold text-gray-900 pr-4">À quel âge peut-on dépister la dyscalculie ?</span>
-                        <i data-lucide="plus" class="w-5 h-5 text-primary flex-shrink-0 faq-icon transition-transform"></i>
-                    </button>
-                    <div class="faq-content px-6 pb-0">
-                        <p class="text-gray-600 leading-relaxed pb-6">Les premiers signes peuvent être repérés dès la maternelle (difficultés à dénombrer, à comparer). Un diagnostic formel est généralement posé en CE1-CE2, après un bilan orthophonique complet incluant des épreuves numériques standardisées.</p>
-                    </div>
-                </div>
-                <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
-                        <span class="font-semibold text-gray-900 pr-4">La rééducation en ligne fonctionne-t-elle pour la dyscalculie ?</span>
-                        <i data-lucide="plus" class="w-5 h-5 text-primary flex-shrink-0 faq-icon transition-transform"></i>
-                    </button>
-                    <div class="faq-content px-6 pb-0">
-                        <p class="text-gray-600 leading-relaxed pb-6">Oui. Les outils numériques sont particulièrement adaptés à la dyscalculie : manipulations virtuelles, jeux interactifs, visualisation des quantités. Nos patients montrent des progrès significatifs grâce à ces supports engageants.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
+<section class="py-14 px-6 bg-white border-t border-gray-100"><div class="max-w-4xl mx-auto text-gray-600 leading-relaxed text-lg space-y-4"><p>La dyscalculie est un trouble qui touche l'apprentissage des mathématiques et perturbe durablement la scolarité de l'enfant qui en est atteint. Contrairement à une simple difficulté passagère, ce trouble spécifique nécessite un accompagnement structuré, à commencer par un <a href="https://logopsietudes.com/orthophonie/" class="text-primary font-semibold hover:underline">bilan orthophonique en ligne</a> qui permet d'objectiver les difficultés rencontrées et d'orienter la prise en charge. Cette page fait le point, de manière claire et factuelle, sur les mécanismes de la dyscalculie, ses signes d'alerte et les solutions concrètes que l'orthophonie peut apporter à l'enfant comme à sa famille tout au long de son apprentissage.</p></div></section>
+<section class="py-16 px-6 bg-light border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Qu'est-ce que la dyscalculie ?</h2><div class="text-gray-600 leading-relaxed text-lg space-y-4"><p>La dyscalculie est un trouble spécifique des apprentissages qui affecte la capacité d'un individu à traiter les nombres, les quantités et les opérations arithmétiques. Elle appartient à la grande famille des troubles de la cognition mathématique et se manifeste dès les premières années de scolarisation, lorsque l'enfant est confronté au symbole numérique et à sa logique. Ce trouble n'est pas lié à un déficit intellectuel : il traduit un dysfonctionnement spécifique dans le développement des compétences numériques.</p>
+<p><strong>Définition clinique.</strong> La dyscalculie se définit comme un trouble spécifique et durable de l'acquisition des notions numériques et des habiletés arithmétiques, en l'absence de déficience intellectuelle, de trouble sensoriel ou de carence pédagogique manifeste. Elle figure parmi les troubles « dys » reconnus par les classifications médicales actuelles (CIM-11 de l'Organisation mondiale de la santé, DSM-5), au même titre que la dyslexie ou la dysphasie.</p></div></div></section>
+<section class="py-16 px-6 bg-white border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Quels sont les symptômes de la dyscalculie ?</h2><div class="text-gray-600 leading-relaxed text-lg space-y-4"><p>Les symptômes de la dyscalculie se repèrent aussi bien à la maison qu'en classe. Ils se regroupent en deux grandes catégories de difficultés, qui peuvent être isolées ou associées chez un même enfant.</p>
+<h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">Difficultés liées au nombre et à la logique</h3>
+<ul class="space-y-2 my-4 text-gray-700"><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Difficultés à comprendre les concepts mathématiques de base (quantité, ordre de grandeur, correspondance terme à terme)</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Difficulté à dénommer les nombres ou à les lire à voix haute</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Confusion durable dans l'apprentissage des tables de multiplication</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Lenteur ou erreurs répétées dans la réalisation d'une opération simple</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Recours systématique au comptage sur les doigts, bien au-delà de l'âge attendu</span></li></ul>
+<h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">Difficultés liées à l'orientation spatiale et à la mémoire</h3>
+<ul class="space-y-2 my-4 text-gray-700"><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Difficultés de mémorisation des procédures de calcul, même après un entraînement répété</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Troubles de l'orientation spatiale (confusion entre la droite et la gauche, difficulté à poser une opération en colonnes)</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Difficulté à lire l'heure sur une horloge à aiguilles</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Repères temporels fragiles (jours, mois, dates)</span></li></ul>
+<p>Ces symptômes s'observent parfois en parallèle d'un <a href="https://logopsietudes.com/orthophonie/dysorthographie/" class="text-primary font-semibold hover:underline">trouble de l'orthographe</a>, la dysorthographie, ce qui justifie une évaluation orthophonique globale plutôt qu'un simple diagnostic isolé.</p></div></div></section>
+<section class="py-16 px-6 bg-light border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Comment évaluer la dyscalculie ?</h2><div class="text-gray-600 leading-relaxed text-lg space-y-4"><p>Seul un bilan orthophonique permet d'évaluer les difficultés de l'enfant et de poser un diagnostic fiable. L'évaluation des compétences mathématiques repose sur des tests orthonormés qui mesurent le raisonnement logique, la manipulation du concept de nombre et les stratégies de calcul mises en place par l'enfant. Un bilan orthophonique logico-mathématique correctement mené se déroule en trois grandes étapes.</p>
+<div class="overflow-x-auto my-6"><table class="w-full text-sm border border-gray-100 rounded-xl bg-white"><thead class="bg-light"><th class="text-left font-semibold text-gray-900 px-4 py-3 border-b border-gray-200">Étape</th><th class="text-left font-semibold text-gray-900 px-4 py-3 border-b border-gray-200">Contenu</th><th class="text-left font-semibold text-gray-900 px-4 py-3 border-b border-gray-200">Objectif</th></thead><tbody><tr class="border-b border-gray-100 align-top"><td class="px-4 py-3 text-gray-600">1. L'entretien initial (anamnèse)</td><td class="px-4 py-3 text-gray-600">Recueil de l'histoire développementale et scolaire de l'enfant, échange avec les parents sur les difficultés observées au quotidien</td><td class="px-4 py-3 text-gray-600">Cerner le contexte et les premiers signes du trouble</td></tr><tr class="border-b border-gray-100 align-top"><td class="px-4 py-3 text-gray-600">2. La passation des tests orthonormés</td><td class="px-4 py-3 text-gray-600">Épreuves standardisées évaluant le sens du nombre, le calcul mental, le raisonnement logique et les repères spatio-temporels</td><td class="px-4 py-3 text-gray-600">Évaluer précisément le niveau de l'enfant par rapport à sa classe d'âge</td></tr><tr class="border-b border-gray-100 align-top"><td class="px-4 py-3 text-gray-600">3. La rédaction du compte rendu écrit</td><td class="px-4 py-3 text-gray-600">Analyse des résultats, mise en évidence des points forts et des points faibles, propositions d'axes de rééducation</td><td class="px-4 py-3 text-gray-600">Formaliser un diagnostic et orienter la prise en charge</td></tr></tbody></table></div>
+<p>Ce document écrit est ensuite remis à la famille et sert de base à toute demande d'aménagement scolaire ou administratif.</p></div></div></section>
+<section class="py-16 px-6 bg-white border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Comment consulter un orthophoniste ?</h2><div class="text-gray-600 leading-relaxed text-lg space-y-4"><p>Consulter un orthophoniste pour une suspicion de dyscalculie suit un parcours de soins précis en France, qui permet d'obtenir une prise en charge orthophonique remboursée.</p>
+<ol class="list-decimal list-inside space-y-2 my-4 text-gray-700 marker:text-primary marker:font-bold"><li>Consulter un médecin généraliste ou le médecin traitant de l'enfant afin d'exposer les difficultés observées à la maison et à l'école.</li><li>Obtenir une ordonnance de bilan orthophonique, indispensable pour engager la démarche.</li><li>Prendre rendez-vous auprès d'un orthophoniste, en cabinet ou via un service de téléconsultation, selon les disponibilités sur le territoire.</li><li>Réaliser le bilan afin de lever le doute et de confirmer, ou non, la présence d'un trouble.</li><li>Débuter la rééducation si le compte rendu le préconise, avec un suivi régulier et adapté.</li></ol>
+<p>Lorsque l'accès à un cabinet local est difficile, la téléconsultation permet de conserver une continuité de soins. Pour les familles qui préfèrent une recherche géographique, il est possible de consulter les pages dédiées au <a href="https://logopsietudes.com/orthophonie/villes/dyscalculie-paris/" class="text-primary font-semibold hover:underline">bilan dyscalculie à Paris</a> ou au <a href="https://logopsietudes.com/orthophonie/villes/dyscalculie-nice/" class="text-primary font-semibold hover:underline">bilan dyscalculie à Nice</a>, qui présentent l'offre disponible sur ces territoires.</p></div></div></section>
+<section class="py-16 px-6 bg-light border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Quel est le traitement pour la dyscalculie ?</h2><div class="text-gray-600 leading-relaxed text-lg space-y-4"><p>Le traitement de la dyscalculie repose sur une rééducation ciblée en cognition mathématique, menée par un orthophoniste formé aux troubles logico-mathématiques. L'approche thérapeutique vise à renforcer les représentations mentales du nombre, à automatiser les procédures de calcul et à développer des stratégies de compensation adaptées à chaque enfant atteint de dyscalculie.</p>
+<p>L'intervention combine généralement des exercices de manipulation concrète, des jeux structurés et un travail progressif sur l'abstraction numérique, afin d'améliorer durablement les compétences plutôt que de faire simplement mémoriser des résultats.</p>
+<blockquote class="border-l-4 border-primary bg-light rounded-r-xl px-6 py-4 my-6 text-gray-700 italic">Plus l'intervention est précoce et adaptée au profil de l'enfant, plus les chances de rééducation efficace sont importantes. Chaque stratégie doit être individualisée : il n'existe pas de protocole unique face à la dyscalculie.</blockquote></div></div></section>
+<section class="py-16 px-6 bg-white border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Quels outils pour la dyscalculie ?</h2><div class="text-gray-600 leading-relaxed text-lg space-y-4"><p>Les outils pour la dyscalculie privilégient une approche ludique, plus motivante pour l'enfant et plus efficace sur le long terme. Le matériel pédagogique utilisé en séance combine manipulation concrète et supports numériques spécialisés.</p>
+<ul class="space-y-2 my-4 text-gray-700"><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Jeux de cartes spécialisés dans le renforcement du sens du nombre, comme Tam Tam</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Matériel de manipulation des quantités (jetons, réglettes, cubes emboîtables)</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Logiciels et applications d'accès à la logique mathématique, permettant un entraînement progressif et individualisé</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Ressources éducatives imagées pour travailler l'orientation spatiale et les repères temporels</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1.5 shrink-0">&#10003;</span><span>Jeux de société classiques détournés à des fins de rééducation orthophonique (jeux de dés, jeux de plateau avec déplacements chiffrés)</span></li></ul>
+<p>Ce matériel, spécialisé et varié, est choisi et ajusté par l'orthophoniste en fonction du profil et de l'âge de l'enfant.</p></div></div></section>
+<section class="py-16 px-6 bg-light border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Comment aider un enfant dyscalculique au quotidien ?</h2><div class="text-gray-600 leading-relaxed text-lg space-y-4"><p>Au-delà des séances de rééducation, l'environnement familial joue un rôle essentiel pour aider un enfant dyscalculique à progresser et à retrouver confiance en soi. Voici quelques astuces concrètes à mettre en place dans la vie de famille pour soutenir l'enfant, en complément du soutien scolaire mis en place à l'école.</p>
+<h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">3 astuces à appliquer à la maison</h3>
+<ol class="list-decimal list-inside space-y-2 my-4 text-gray-700 marker:text-primary marker:font-bold"><li>Utiliser les prix lors des courses pour entraîner naturellement la gestion de l'argent et donner du sens concret aux nombres.</li><li>Valoriser chaque réussite, même modeste, pour renforcer la confiance en soi de l'enfant face aux mathématiques.</li><li>Adapter l'enseignement à la maison en fractionnant les exercices et en variant les supports, pour alléger la charge de la vie scolaire au quotidien.</li></ol>
+<p>Cette gestion bienveillante du quotidien évite que les difficultés en mathématiques ne rejaillissent sur l'estime de soi globale de l'enfant.</p></div></div></section>
+<section class="py-16 px-6 bg-white border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Démarches administratives et prise en charge financière</h2><div class="text-gray-600 leading-relaxed text-lg space-y-4"><p>Sur le plan légal, la prise en charge orthophonique de la dyscalculie fait l'objet d'un remboursement par l'Assurance Maladie dès lors qu'elle est prescrite par un médecin, la mutuelle santé pouvant compléter le reste à charge selon les options du contrat. Lorsque le trouble a un retentissement scolaire important, une demande auprès de la MDPH (Maison Départementale des Personnes Handicapées) peut être nécessaire pour obtenir des aménagements pédagogiques ou un accompagnement complémentaire. Il est conseillé de se renseigner directement auprès de sa caisse et de sa mutuelle pour connaître les choix disponibles.</p></div></div></section>
+<section class="py-16 px-6 bg-light border-t border-gray-100"><div class="max-w-4xl mx-auto"><h2 class="text-3xl font-bold text-gray-900 mb-6">Questions fréquentes sur le trouble du calcul (FAQ)</h2><div class="space-y-4"><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">La dyscalculie affecte-t-elle également l'adulte ?</h3><p class="text-gray-600 leading-relaxed">Oui, la dyscalculie n'est pas un trouble propre à l'enfance : l'adulte atteint peut continuer à rencontrer des difficultés dans la gestion des chiffres au quotidien (budget, horaires, mesures) si le trouble n'a pas été suffisamment pris en charge. Chaque individu compose alors avec des stratégies de compensation développées avec le temps.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">Quelle est la différence entre une simple baisse de niveau en maths et un trouble d'apprentissage ?</h3><p class="text-gray-600 leading-relaxed">Une baisse de niveau ponctuelle s'explique souvent par un contexte particulier (fatigue, anxiété, changement d'enseignant) et reste temporaire. Un trouble d'apprentissage qui affecte durablement les mathématiques, lui, persiste dans le temps, résiste aux aides pédagogiques classiques et se retrouve statistiquement associé à d'autres signes spécifiques repérés lors du bilan.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">L'ergothérapeute joue-t-il un rôle dans la prise en charge ?</h3><p class="text-gray-600 leading-relaxed">Oui, l'ergothérapeute intervient en complément de l'orthophoniste, notamment lorsque la dyscalculie est associée à une dyspraxie, pour travailler l'organisation spatiale, la pose des opérations ou l'utilisation d'outils de compensation. Un <a href="https://logopsietudes.com/psychologie/troubles-sommeil/" class="text-primary font-semibold hover:underline">bilan des troubles associés</a> peut également être proposé lorsque des difficultés de sommeil viennent s'ajouter au tableau clinique.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">Un enfant peut-il cumuler une dyscalculie et une dysphasie ?</h3><p class="text-gray-600 leading-relaxed">Oui, ces deux troubles peuvent coexister chez un même enfant, la dysphasie touchant le langage oral tandis que la dyscalculie affecte le calcul. Un <a href="https://logopsietudes.com/orthophonie/dysphasie/" class="text-primary font-semibold hover:underline">bilan dysphasie en ligne</a> permet d'objectiver précisément cette association.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">Quel est le prix habituel d'un accompagnement pluridisciplinaire ?</h3><p class="text-gray-600 leading-relaxed">Le prix unitaire d'une séance varie selon les professionnels sollicités (orthophoniste, ergothérapeute, psychologue) et leur secteur conventionné. Pour connaître les tarifs à jour, mieux vaut contacter directement les cabinets concernés.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">Comment organiser efficacement l'environnement de travail scolaire de l'élève ?</h3><p class="text-gray-600 leading-relaxed">Un espace calme, dédié et débarrassé de toute distraction facilite la concentration. L'aménagement du poste de travail à l'école (place en classe, supports visuels, temps supplémentaire) complète utilement le soutien apporté à la maison pour l'enseignement des mathématiques.</p></div><div class="bg-white rounded-2xl border border-gray-100 p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">Le trouble du calcul a-t-il un impact sur l'intégration sociale ?</h3><p class="text-gray-600 leading-relaxed">Oui, la dyscalculie peut affecter indirectement l'intégration sociale de l'enfant : difficulté à suivre un jeu de société chiffré, perte de confiance en groupe, ou évitement de certaines activités. Une prise en charge précoce limite fortement ce retentissement social.</p></div></div></div></section>
     <section class="py-20">
         <div class="max-w-4xl mx-auto px-6">
             <div class="bg-primary rounded-3xl p-12 text-center text-white relative overflow-hidden">
@@ -436,7 +289,7 @@
                 <div class="relative z-10">
                     <h2 class="text-3xl font-bold mb-4">Besoin d'un orthophoniste spécialisé en dyscalculie ?</h2>
                     <p class="text-lg mb-8 text-green-50">Réservez votre bilan en ligne et offrez à votre enfant un accompagnement adapté pour progresser en mathématiques.</p>
-                    <a href="#" class="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-green-50 transition text-lg inline-block shadow-lg">
+                    <a href="#" class="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-green-50 transition text-lg inline-block shadow-lg" onclick="openBookingModal(); return false;">
                         Réserver mon bilan
                     </a>
                 </div>
@@ -450,51 +303,50 @@
             <div class="grid md:grid-cols-4 gap-8 mb-12">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                            <span class="text-white font-bold text-sm">L</span>
-                        </div>
-                        <span class="text-xl font-bold text-white">Logopsi Études</span>
+                        <img src="../../logo-logopsi.png" alt="Logopsi Études" class="h-12 w-auto">
                     </div>
                     <p class="text-gray-400 text-sm">Orthophonie, psychologie et soutien scolaire en ligne. Des professionnels diplômés, partout en France.</p>
                 </div>
                 <div>
                     <h4 class="text-white font-semibold mb-4">Orthophonie</h4>
                     <ul class="space-y-2">
-                        <li><a href="../orthophonie/dyslexie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dyslexie</a></li>
-                        <li><a href="../orthophonie/dysorthographie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dysorthographie</a></li>
-                        <li><a href="../orthophonie/dyscalculie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dyscalculie</a></li>
-                        <li><a href="../orthophonie/begaiement.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Bégaiement</a></li>
-                        <li><a href="../orthophonie/tsa.html" class="text-gray-400 hover:text-primary text-sm transition-colors">TSA</a></li>
+                        <li><a href="../../orthophonie/dyslexie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dyslexie</a></li>
+                        <li><a href="../../orthophonie/dysorthographie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dysorthographie</a></li>
+                        <li><a href="../../orthophonie/dyscalculie.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dyscalculie</a></li>
+                        <li><a href="../../orthophonie/begaiement.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Bégaiement</a></li>
+                        <li><a href="../../orthophonie/tsa.html" class="text-gray-400 hover:text-primary text-sm transition-colors">TSA</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-white font-semibold mb-4">Psychologie</h4>
                     <ul class="space-y-2">
-                        <li><a href="../psychologie/tdah.html" class="text-gray-400 hover:text-primary text-sm transition-colors">TDAH</a></li>
-                        <li><a href="../psychologie/hpi.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Haut Potentiel</a></li>
-                        <li><a href="../psychologie/phobie-scolaire.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Phobie scolaire</a></li>
-                        <li><a href="../psychologie/anxiete.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Anxiété</a></li>
-                        <li><a href="../psychologie/depression.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dépression</a></li>
+                        <li><a href="../../psychologie/tdah.html" class="text-gray-400 hover:text-primary text-sm transition-colors">TDAH</a></li>
+                        <li><a href="../../psychologie/hpi.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Haut Potentiel</a></li>
+                        <li><a href="../../psychologie/phobie-scolaire.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Phobie scolaire</a></li>
+                        <li><a href="../../psychologie/anxiete.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Anxiété</a></li>
+                        <li><a href="../../psychologie/depression.html" class="text-gray-400 hover:text-primary text-sm transition-colors">Dépression</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-white font-semibold mb-4">Soutien Scolaire</h4>
                     <ul class="space-y-2">
-                        <li><a href="../soutien-scolaire/mathematiques/" class="text-gray-400 hover:text-primary text-sm transition-colors">Mathématiques</a></li>
-                        <li><a href="../soutien-scolaire/francais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Français</a></li>
-                        <li><a href="../soutien-scolaire/anglais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Anglais</a></li>
-                        <li><a href="../soutien-scolaire/physique-chimie/" class="text-gray-400 hover:text-primary text-sm transition-colors">Physique-Chimie</a></li>
-                        <li><a href="../soutien-scolaire/aide-aux-devoirs/" class="text-gray-400 hover:text-primary text-sm transition-colors">Aide aux devoirs</a></li>
+                        <li><a href="../../soutien-scolaire/mathematiques/" class="text-gray-400 hover:text-primary text-sm transition-colors">Mathématiques</a></li>
+                        <li><a href="../../soutien-scolaire/francais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Français</a></li>
+                        <li><a href="../../soutien-scolaire/anglais/" class="text-gray-400 hover:text-primary text-sm transition-colors">Anglais</a></li>
+                        <li><a href="../../soutien-scolaire/espagnol/" class="text-gray-400 hover:text-primary text-sm transition-colors">Espagnol</a></li>
+                        <li><a href="../../soutien-scolaire/physique-chimie/" class="text-gray-400 hover:text-primary text-sm transition-colors">Physique-Chimie</a></li>
+                        <li><a href="../../soutien-scolaire/aide-aux-devoirs/" class="text-gray-400 hover:text-primary text-sm transition-colors">Aide aux devoirs</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-500 text-sm">&copy; 2025 Logopsi Études. Tous droits réservés.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="../mentions-legales.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Mentions légales</a>
-                    <a href="../a-propos.html" class="text-gray-500 hover:text-primary text-sm transition-colors">À propos</a>
-                    <a href="../tarifs.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Tarifs</a>
-                    <a href="../contact.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Contact</a>
+                <div class="flex flex-wrap gap-x-6 gap-y-2 mt-4 md:mt-0">
+                    <a href="../../mentions-legales.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Mentions légales</a>
+                    <a href="../../contact.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Contact</a>
+                    <a href="../../a-propos.html" class="text-gray-500 hover:text-primary text-sm transition-colors">À propos</a>
+                    <a href="../../tarifs.html" class="text-gray-500 hover:text-primary text-sm transition-colors">Tarifs</a>
+                    <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-primary text-sm transition-colors">Espace membre</a>
                 </div>
             </div>
         </div>
@@ -737,5 +589,80 @@
         })();
 
 </script>
+
+<!-- logopsi-lang-toggle -->
+<div id="google_translate_element" style="display:none"></div>
+<style>
+.goog-te-banner-frame,.skiptranslate{display:none!important}
+body{top:0!important}
+#goog-gt-tt,.goog-te-balloon-frame{display:none!important}
+.goog-text-highlight{background:none!important;box-shadow:none!important}
+</style>
+<script>
+function logopsiGoogleInit(){new google.translate.TranslateElement({pageLanguage:'fr',includedLanguages:'es',autoDisplay:false},'google_translate_element');}
+function logopsiGetCookie(n){var m=document.cookie.match('(^|; )'+n+'=([^;]*)');return m?m[2]:'';}
+function logopsiSetLang(lang){var v=(lang==='es')?'/fr/es':'/fr/fr';var h=location.hostname;document.cookie='googtrans='+v+';path=/';document.cookie='googtrans='+v+';path=/;domain=.'+h;location.reload();}
+function logopsiToggleLang(){var c=logopsiGetCookie('googtrans');if(c&&c.indexOf('/es')>-1){logopsiSetLang('fr');}else{logopsiSetLang('es');}}
+function logopsiUpdateLangLabel(){var c=logopsiGetCookie('googtrans');var es=c&&c.indexOf('/es')>-1;document.querySelectorAll('.lang-toggle-label').forEach(function(el){el.textContent=es?'FR':'ES';});}
+document.addEventListener('DOMContentLoaded',logopsiUpdateLangLabel);
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=logopsiGoogleInit"></script>
+<!-- /logopsi-lang-toggle -->
+
+<!-- logopsi-seance-modal -->
+<div id="seance-modal" class="hidden fixed inset-0 z-[110] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+  <div class="bg-white rounded-3xl w-full max-w-lg shadow-2xl relative max-h-[90vh] overflow-y-auto">
+    <button type="button" onclick="closeSeanceModal()" aria-label="Fermer" class="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-800 hover:bg-gray-100 rounded-full transition-colors"><i data-lucide="x" class="w-6 h-6"></i></button>
+    <div class="p-8">
+      <h3 class="text-2xl font-bold text-gray-900 mb-2">Le déroulement d'une séance</h3>
+      <p class="text-gray-600 mb-6 text-sm">Un accompagnement simple, humain et 100% en ligne, en 5 étapes.</p>
+      <ol class="space-y-5">
+          <li class="flex gap-4">
+            <div class="shrink-0 w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold"><i data-lucide="calendar-check" class="w-5 h-5"></i></div>
+            <div>
+              <p class="font-semibold text-gray-900">1. Réservation en ligne</p>
+              <p class="text-sm text-gray-600 leading-relaxed">Choisissez un créneau qui vous convient. Premier rendez-vous sous 48h.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <div class="shrink-0 w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold"><i data-lucide="clipboard-list" class="w-5 h-5"></i></div>
+            <div>
+              <p class="font-semibold text-gray-900">2. Premier bilan</p>
+              <p class="text-sm text-gray-600 leading-relaxed">Un échange avec le professionnel pour comprendre les besoins et fixer des objectifs.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <div class="shrink-0 w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold"><i data-lucide="route" class="w-5 h-5"></i></div>
+            <div>
+              <p class="font-semibold text-gray-900">3. Plan personnalisé</p>
+              <p class="text-sm text-gray-600 leading-relaxed">Un programme d'accompagnement adapté à votre situation et à votre rythme.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <div class="shrink-0 w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold"><i data-lucide="video" class="w-5 h-5"></i></div>
+            <div>
+              <p class="font-semibold text-gray-900">4. Séances en visio</p>
+              <p class="text-sm text-gray-600 leading-relaxed">Des séances régulières en ligne, avec des supports numériques interactifs.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <div class="shrink-0 w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold"><i data-lucide="trending-up" class="w-5 h-5"></i></div>
+            <div>
+              <p class="font-semibold text-gray-900">5. Suivi & bilans d'étape</p>
+              <p class="text-sm text-gray-600 leading-relaxed">Des points réguliers pour mesurer les progrès et ajuster le programme.</p>
+            </div>
+          </li>
+      </ol>
+      <a href="https://logopsietudes.com/contact/" class="mt-8 block w-full bg-primary text-white text-center font-bold py-3 rounded-full hover:opacity-90 transition-opacity">Prendre rendez-vous</a>
+    </div>
+  </div>
+</div>
+<script>
+function openSeanceModal(){var m=document.getElementById('seance-modal');if(m){m.classList.remove('hidden');document.body.style.overflow='hidden';if(window.lucide)lucide.createIcons();}}
+function closeSeanceModal(){var m=document.getElementById('seance-modal');if(m){m.classList.add('hidden');document.body.style.overflow='';}}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSeanceModal();});
+document.addEventListener('click',function(e){var m=document.getElementById('seance-modal');if(m&&e.target===m)closeSeanceModal();});
+</script>
+<!-- /logopsi-seance-modal -->
 </body>
 </html>

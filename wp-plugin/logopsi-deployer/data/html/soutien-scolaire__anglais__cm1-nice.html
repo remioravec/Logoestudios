@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bilan anglais CM1 à Nice — 150€/48h | Logopsi Études</title>
-    <meta name="description" content="Bilan pédagogique de anglais CM1 à Nice — 150€, sous 48h. Cours particuliers 100% en visio depuis Nice.">
+    <meta name="description" content="Bilan pédagogique d'anglais CM1 à Nice — 150€, sous 48h. Cours particuliers 100% en visio depuis Nice.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -36,6 +36,11 @@
         .mega-menu { display: none; }
         .mega-menu.active { display: block; }
     </style>
+
+<!-- logopsi-favicon -->
+<link rel="icon" type="image/png" href="/wp-content/plugins/logopsi-deployer/admin/favicon.png">
+<link rel="shortcut icon" href="/wp-content/plugins/logopsi-deployer/admin/favicon.ico">
+<link rel="apple-touch-icon" href="/wp-content/plugins/logopsi-deployer/admin/favicon.png">
 </head>
 <body class="font-sans text-gray-900 bg-light min-h-screen">
     <!-- NAVBAR -->
@@ -66,6 +71,7 @@
                 </div>
 
                 <div class="hidden lg:flex items-center gap-4">
+                    <button type="button" onclick="logopsiToggleLang()" id="lang-toggle" aria-label="Changer de langue (Français / Español)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gray-200 bg-white text-gray-700 text-sm font-semibold hover:bg-primary hover:text-white hover:border-primary shadow-sm transition-all mr-2"><i data-lucide="globe" class="w-4 h-4"></i><span id="lang-toggle-label" class="lang-toggle-label">ES</span></button>
                     <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="text-[15px] font-semibold text-gray-700 hover:text-primary transition-colors">
                         Connexion
                     </a>
@@ -190,7 +196,7 @@
                 <a href="../../psychologie/" class="block text-gray-900 hover:text-primary font-semibold py-2">Psychologie</a>
                 <a href="../../soutien-scolaire/" class="block text-gray-900 hover:text-primary font-semibold py-2">Soutien Scolaire</a>
                 <a href="../../tarifs.html" class="block text-gray-900 hover:text-primary font-semibold py-2">Tarifs</a>
-                <a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="block text-center font-semibold py-2 text-gray-700 hover:text-primary border-b border-gray-100">Connexion</a>
+                <button type="button" onclick="logopsiToggleLang()" id="lang-toggle-m" class="flex items-center justify-center gap-2 mx-auto my-2 px-5 py-2 rounded-full border border-gray-200 bg-gray-50 text-gray-700 font-semibold hover:bg-primary hover:text-white hover:border-primary transition-all"><i data-lucide="globe" class="w-4 h-4"></i><span class="lang-toggle-label">ES</span></button><a href="https://app.logopsiestudios.com/fr/login" target="_blank" rel="noopener noreferrer" class="block text-center font-semibold py-2 text-gray-700 hover:text-primary border-b border-gray-100">Connexion</a>
                 <a href="#" onclick="openBookingModal(); return false;" class="w-full bg-primary text-white font-semibold py-3 rounded-full shadow-md mt-4 block text-center">Prendre rendez-vous</a>
             </div>
         </div>
@@ -224,7 +230,7 @@
     </section>
     <section class="py-16">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-gray-900 mb-8">Programme de anglais CM1</h2>
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Programme d'anglais CM1</h2>
             <div class="grid sm:grid-cols-2 gap-6 mb-8">
                 <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
                     <div class="flex items-start gap-4">
@@ -264,7 +270,7 @@
                 </div>
             </div>
             <a href="../../soutien-scolaire/anglais/cm1.html" class="text-primary font-semibold inline-flex items-center gap-1 hover:underline">
-                Voir le programme complet de anglais CM1 <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                Voir le programme complet d'anglais CM1 <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
         </div>
     </section>
@@ -347,7 +353,11 @@
         </div>
     </section>
     <!-- FOOTER -->
-    <footer class="bg-dark py-16">
+    
+<!-- logopsi-enrich -->
+<section class="py-16 bg-light border-t border-gray-100"><div class="max-w-5xl mx-auto px-6 space-y-12"><div><h2 class="text-2xl font-bold text-gray-900 mb-5">Le programme d'anglais en CM1</h2><p class="text-gray-600 mb-4">En CM1, nos enseignants travaillent précisément les attendus du programme officiel :</p><ul class="grid sm:grid-cols-2 gap-3 text-gray-700"><li class="flex items-start gap-2"><span class="text-primary mt-1">&#10003;</span><span>le vocabulaire du quotidien</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1">&#10003;</span><span>les premières structures (I am, I have)</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1">&#10003;</span><span>nombres, couleurs et animaux</span></li><li class="flex items-start gap-2"><span class="text-primary mt-1">&#10003;</span><span>la prononciation et les comptines</span></li></ul></div><div><h2 class="text-2xl font-bold text-gray-900 mb-4">Cours d'anglais en CM1 à Nice</h2><p class="text-gray-600">Vous cherchez un professeur d'anglais pour un élève de CM1 <strong>à Nice</strong> ou <strong>autour de vous</strong> ? Nos cours sont <strong>100&nbsp;% en ligne</strong>, accessibles partout à Nice et la Côte d'Azur — Vieux-Nice, Cimiez, Libération, jusqu'à Cagnes et Antibes, sans déplacement. Le même enseignant qualifié suit votre enfant d'une séance à l'autre, avec des horaires souples le soir et le week-end.</p></div><div><h2 class="text-2xl font-bold text-gray-900 mb-5">Autres niveaux en anglais à Nice</h2><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3"><a href="https://logopsietudes.com/soutien-scolaire/anglais/cp-nice/" class="block bg-white rounded-xl border border-gray-100 px-4 py-3 hover:border-primary hover:shadow-sm transition-all text-gray-700 hover:text-primary font-medium">Anglais CP à Nice</a><a href="https://logopsietudes.com/soutien-scolaire/anglais/ce1-nice/" class="block bg-white rounded-xl border border-gray-100 px-4 py-3 hover:border-primary hover:shadow-sm transition-all text-gray-700 hover:text-primary font-medium">Anglais CE1 à Nice</a><a href="https://logopsietudes.com/soutien-scolaire/anglais/ce2-nice/" class="block bg-white rounded-xl border border-gray-100 px-4 py-3 hover:border-primary hover:shadow-sm transition-all text-gray-700 hover:text-primary font-medium">Anglais CE2 à Nice</a><a href="https://logopsietudes.com/soutien-scolaire/anglais/cm2-nice/" class="block bg-white rounded-xl border border-gray-100 px-4 py-3 hover:border-primary hover:shadow-sm transition-all text-gray-700 hover:text-primary font-medium">Anglais CM2 à Nice</a><a href="https://logopsietudes.com/soutien-scolaire/anglais/6eme-nice/" class="block bg-white rounded-xl border border-gray-100 px-4 py-3 hover:border-primary hover:shadow-sm transition-all text-gray-700 hover:text-primary font-medium">Anglais 6ème à Nice</a><a href="https://logopsietudes.com/soutien-scolaire/anglais/5eme-nice/" class="block bg-white rounded-xl border border-gray-100 px-4 py-3 hover:border-primary hover:shadow-sm transition-all text-gray-700 hover:text-primary font-medium">Anglais 5ème à Nice</a></div></div><div><h2 class="text-2xl font-bold text-gray-900 mb-5">Autres matières en CM1 à Nice</h2><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3"><a href="https://logopsietudes.com/soutien-scolaire/mathematiques/cm1-nice/" class="block bg-white rounded-xl border border-gray-100 px-4 py-3 hover:border-primary hover:shadow-sm transition-all text-gray-700 hover:text-primary font-medium">Mathématiques CM1 à Nice</a><a href="https://logopsietudes.com/soutien-scolaire/francais/cm1-nice/" class="block bg-white rounded-xl border border-gray-100 px-4 py-3 hover:border-primary hover:shadow-sm transition-all text-gray-700 hover:text-primary font-medium">Français CM1 à Nice</a><a href="https://logopsietudes.com/soutien-scolaire/espagnol/cm1-nice/" class="block bg-white rounded-xl border border-gray-100 px-4 py-3 hover:border-primary hover:shadow-sm transition-all text-gray-700 hover:text-primary font-medium">Espagnol CM1 à Nice</a><a href="https://logopsietudes.com/soutien-scolaire/physique-chimie/cm1-nice/" class="block bg-white rounded-xl border border-gray-100 px-4 py-3 hover:border-primary hover:shadow-sm transition-all text-gray-700 hover:text-primary font-medium">Physique-chimie CM1 à Nice</a><a href="https://logopsietudes.com/soutien-scolaire/aide-aux-devoirs/cm1-nice/" class="block bg-white rounded-xl border border-gray-100 px-4 py-3 hover:border-primary hover:shadow-sm transition-all text-gray-700 hover:text-primary font-medium">Aide aux devoirs CM1 à Nice</a></div></div><div><h2 class="text-2xl font-bold text-gray-900 mb-5">Aller plus loin</h2><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3"><a href="https://logopsietudes.com/soutien-scolaire/anglais/" class="block bg-white rounded-xl border border-gray-100 px-4 py-3 hover:border-primary hover:shadow-sm transition-all text-gray-700 hover:text-primary font-medium">Tout le anglais</a><a href="https://logopsietudes.com/soutien-scolaire/villes/nice/" class="block bg-white rounded-xl border border-gray-100 px-4 py-3 hover:border-primary hover:shadow-sm transition-all text-gray-700 hover:text-primary font-medium">Soutien scolaire à Nice</a><a href="https://logopsietudes.com/soutien-scolaire/" class="block bg-white rounded-xl border border-gray-100 px-4 py-3 hover:border-primary hover:shadow-sm transition-all text-gray-700 hover:text-primary font-medium">Soutien scolaire</a><a href="https://logopsietudes.com/tarifs/" class="block bg-white rounded-xl border border-gray-100 px-4 py-3 hover:border-primary hover:shadow-sm transition-all text-gray-700 hover:text-primary font-medium">Nos tarifs</a></div></div><div><h2 class="text-2xl font-bold text-gray-900 mb-5">Questions fréquentes</h2><div class="space-y-3"><div class="bg-white rounded-xl border border-gray-100 p-5"><p class="font-semibold text-gray-900 mb-1">Comment se déroule un cours d'anglais en CM1 ?</p><p class="text-gray-600 text-sm">En visioconférence, avec un enseignant spécialisé du CM1. La première séance est un bilan pour cibler les besoins, puis un programme sur mesure.</p></div><div class="bg-white rounded-xl border border-gray-100 p-5"><p class="font-semibold text-gray-900 mb-1">Le suivi d'anglais est-il adapté au CM1 ?</p><p class="text-gray-600 text-sm">Oui, chaque séance suit le programme officiel de CM1 et s'adapte au rythme de l'élève.</p></div><div class="bg-white rounded-xl border border-gray-100 p-5"><p class="font-semibold text-gray-900 mb-1">Trouver un professeur d'anglais à Nice ?</p><p class="text-gray-600 text-sm">À Nice comme partout, nos cours sont 100&nbsp;% en ligne, sans déplacement, premier bilan sous 48h.</p></div></div></div></div></section>
+<!-- /logopsi-enrich -->
+<footer class="bg-dark py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8 mb-12">
                 <div>
@@ -610,5 +620,24 @@
         })();
 
 </script>
+
+<!-- logopsi-lang-toggle -->
+<div id="google_translate_element" style="display:none"></div>
+<style>
+.goog-te-banner-frame,.skiptranslate{display:none!important}
+body{top:0!important}
+#goog-gt-tt,.goog-te-balloon-frame{display:none!important}
+.goog-text-highlight{background:none!important;box-shadow:none!important}
+</style>
+<script>
+function logopsiGoogleInit(){new google.translate.TranslateElement({pageLanguage:'fr',includedLanguages:'es',autoDisplay:false},'google_translate_element');}
+function logopsiGetCookie(n){var m=document.cookie.match('(^|; )'+n+'=([^;]*)');return m?m[2]:'';}
+function logopsiSetLang(lang){var v=(lang==='es')?'/fr/es':'/fr/fr';var h=location.hostname;document.cookie='googtrans='+v+';path=/';document.cookie='googtrans='+v+';path=/;domain=.'+h;location.reload();}
+function logopsiToggleLang(){var c=logopsiGetCookie('googtrans');if(c&&c.indexOf('/es')>-1){logopsiSetLang('fr');}else{logopsiSetLang('es');}}
+function logopsiUpdateLangLabel(){var c=logopsiGetCookie('googtrans');var es=c&&c.indexOf('/es')>-1;document.querySelectorAll('.lang-toggle-label').forEach(function(el){el.textContent=es?'FR':'ES';});}
+document.addEventListener('DOMContentLoaded',logopsiUpdateLangLabel);
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=logopsiGoogleInit"></script>
+<!-- /logopsi-lang-toggle -->
 </body>
 </html>
